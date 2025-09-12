@@ -1,0 +1,5 @@
+Sample	Size	Mixture	Conf#
+1	small	20	38
+2	small	50	66
+3	large	20	29
+4	large	50	53
