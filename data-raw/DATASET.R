@@ -157,14 +157,14 @@ table3_05 <-
              diameter = c(-0.005,  0.000, -0.010, -0.030, -0.010,
                           -0.025, -0.030, -0.035, -0.025, -0.025,
                           -0.025, -0.035, -0.040, -0.035, -0.035,
-                          0.015,  0.000,  0.000, -0.015, -0.015,
+                           0.015,  0.000,  0.000, -0.015, -0.015,
                           -0.005, -0.015, -0.015, -0.010, -0.015,
                           -0.035, -0.025, -0.020, -0.025, -0.015))
 
 # Table 3.6, p. 79
 table3_06 <- data.frame(test = 1:10,
                         strength = c(8577, 9471, 9011, 7583, 8572,
-                                     10688, 9614, 9614, 8527, 9165))
+                                    10688, 9614, 9614, 8527, 9165))
 
 # Table 3.13, p. 94
 table3_13 <- data.frame(supplier = c(rep(1, 6), rep(2, 8)),
@@ -192,7 +192,6 @@ table3_15 <- data.frame(
 # Table 3.16, p. 105
 table3_16 <- data.frame(category = LETTERS[1:4],
                         connectors = c(3, 0, 11, 1))
-
 
 # Table 3.17, p. 106
 table3_17 <- data.frame(
@@ -293,6 +292,7 @@ table4_11 <- data.frame(
 # Table 4.13, p. 169
 # Refer to Table 4.11
 # still can't replicate
+# fit reduced model instead
 
 # Table 4.14, p. 170
 # Refer to Table 4.11
