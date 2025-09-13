@@ -5,10 +5,10 @@
 # 1. Import supplied exercise data sets and modify as needed
 # 2. Reconstruct text examples
 
-library(multcomp)
+# library(multcomp)
 library(tidyverse)
-library(here)
-library(broom)
+# library(here)
+# library(broom)
 
 # ADD anova() WHERE APPROPRIATE
 # TABLE 4.8; CHANGE NAMES TO MATCH
@@ -36,7 +36,7 @@ library(broom)
 # Table 5.8 presented as "uncounted"
 
 # vector of filenames
-file_names <- dir(here("Vardeman/Text"), recursive = TRUE)
+file_names <- dir(here::here("data-raw/"), recursive = TRUE)
 
 # vector of R syntactic names for data sets imported from text
 step1 <- str_replace(file_names, "Chapter ", "ch")
@@ -49,7 +49,7 @@ rm(step1, step2, step3, step4, step5)
 
 # function to import text file
 get_text_data <- function(filename)
-  read_tsv(here(paste0("Vardeman/Text/", filename)),
+  read_tsv(here::here(paste0("data-raw/", filename)),
            show_col_types = FALSE)
 
 # import text files and assign names to dataframe objects
@@ -61,6 +61,8 @@ rm(file_names, df_names, get_text_data)
 
 # move dataframe objects to global environment
 list2env(df_list, envir = .GlobalEnv)
+
+# OK TO HERE --------------------------------------------------------------
 
 # reshape "Chapter 7/End of Chapter/Prob 16.txt"
 ch7_eoc_prob16 <- ch7_eoc_prob16 |>
@@ -1068,8 +1070,23 @@ table_a_5 <- data.frame(
 #
 # purrr::walk(ls(), save_data, .progress = TRUE)
 
+# NEED TO FIX
+# usethis::use_data(DATASET, overwrite = TRUE)
 
+# DIDN'T WORK
+# purrr::walk(ls(x),
+#             usethis::use_data(get(x), overwrite = TRUE)
+#             )
 
+# https://forum.posit.co/t/saving-external-data-in-a-loop-with-usethis-use-data/34021/2
+# https://stackoverflow.com/questions/49673667/how-to-use-devtoolsuse-data-on-a-list-of-data-frames/49676445#49676445
 
+# walk2(ls(), names(ls()), function(obj, name) {
+#   assign(name, obj)
+#   do.call("use_data", list(as.name(name), overwrite = TRUE))
+#   })
 
-usethis::use_data(DATASET, overwrite = TRUE)
+# walk2(my.list, names(my.list), function(obj, name) {
+#   assign(name, obj)
+#   do.call("use_data", list(as.name(name), overwrite = TRUE))
+#   })
