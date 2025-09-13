@@ -5,15 +5,7 @@
 # 1. Import supplied exercise data sets and modify as needed
 # 2. Reconstruct text examples
 
-# library(multcomp)
 library(tidyverse)
-# library(here)
-# library(broom)
-
-# ADD anova() WHERE APPROPRIATE
-# TABLE 4.8; CHANGE NAMES TO MATCH
-
-# load("Vardeman/BECDA.Rdata")
 
 # Import supplied exercise data -------------------------------------------
 
@@ -48,6 +40,7 @@ df_names <- str_replace(step5, "Section ", "sec")
 rm(step1, step2, step3, step4, step5)
 
 # function to import text file
+# CALL list2env() and usethis::use_data() HERE?
 get_text_data <- function(filename)
   read_tsv(here::here(paste0("data-raw/", filename)),
            show_col_types = FALSE)
@@ -57,12 +50,12 @@ df_list <- map(file_names, get_text_data, .progress = TRUE)
 names(df_list) <- df_names
 
 # clean up
-rm(file_names, df_names, get_text_data)
+rm(file_names, df_names)
 
 # move dataframe objects to global environment
 list2env(df_list, envir = .GlobalEnv)
 
-# OK TO HERE --------------------------------------------------------------
+# Reshape data ------------------------------------------------------------
 
 # reshape "Chapter 7/End of Chapter/Prob 16.txt"
 ch7_eoc_prob16 <- ch7_eoc_prob16 |>
@@ -79,21 +72,21 @@ ch7_eoc_prob16 <- ch7_eoc_prob16 |>
 ch7_eoc_prob19b <-
   data.frame(batch = factor(rep(1:15, each = 4)),
              rod_length = c(0.0075,  0.0100,  0.0135,  0.0135,
-                            -0.0085,  0.0035, -0.0180,  0.0010,
+                           -0.0085,  0.0035, -0.0180,  0.0010,
                             0.0085,  0.0000,  0.0100,  0.0020,
                             0.0005, -0.0005,  0.0145,  0.0170,
                             0.0130,  0.0035,  0.0120,  0.0070,
-                            -0.0115, -0.0110, -0.0085, -0.0105,
-                            -0.0080, -0.0070, -0.0060, -0.0045,
-                            -0.0095, -0.0100, -0.0130, -0.0165,
+                           -0.0115, -0.0110, -0.0085, -0.0105,
+                           -0.0080, -0.0070, -0.0060, -0.0045,
+                           -0.0095, -0.0100, -0.0130, -0.0165,
                             0.0090,  0.0125,  0.0125,  0.0080,
-                            -0.0105, -0.0100, -0.0150, -0.0075,
+                           -0.0105, -0.0100, -0.0150, -0.0075,
                             0.0115,  0.0150,  0.0175,  0.0180,
                             0.0020,  0.0005,  0.0010,  0.0010,
-                            -0.0010, -0.0025, -0.0020, -0.0030,
-                            -0.0020,  0.0015,  0.0025,  0.0025,
-                            -0.0010, -0.0015, -0.0020, -0.0045)
-  )
+                           -0.0010, -0.0025, -0.0020, -0.0030,
+                           -0.0020,  0.0015,  0.0025,  0.0025,
+                           -0.0010, -0.0015, -0.0020, -0.0045)
+             )
 
 # workspace consists only of imported data
 rm(df_list)
@@ -435,30 +428,12 @@ table5_06 <- data.frame(weight = x, freq = y) |>
   uncount(freq) |>
   # randomly permute rows to replicate actual results
   slice_sample(prop = 1)
-
+rm(step1, x, y)
 
 # Table 5.7, p. 265
-# https://stackoverflow.com/questions/73461204/new-pipe-placeholder-inside-mutate-transform-function
-
-# table5_07 <- data.frame(weight = x, freq = y) |>
-#   uncount(freq) |>
-#   arrange(weight) |>
-#   mutate(row_id = row_number()) |>
-#   # see above link
-#   {\(.) mutate(., n_rows = nrow(x = .))}()  |>
-#   mutate(q = (row_id - 0.5) / n_rows,
-#          z = qnorm(q))
-
-table5_07 <- data.frame(weight = x, freq = y) |>
-  uncount(freq) |>
-  arrange(weight) |>
-  # using {magrittr} pipe in this step because simpler
-  mutate(i = row_number()) %>%
-  mutate(q = (i - 0.5) / nrow(.),
-         z = qnorm(q)) |>
-  select(i, q, x = weight, z)
-
-rm(step1, x, y)
+table5_07 <- table5_06 |>
+  mutate (p = (rank(weight, ties = "average") - 0.5) / length(weight),
+          z = qnorm(p))
 
 # Table 5.8, p. 267
 x <- c(6, 1, 7, 0, 8, 3, 9, 0, 10, 4, 11, 10, 12, 0, 13, 6, 14, 1)
@@ -480,14 +455,14 @@ ch5_xmp15 <- data.frame(
                 20, 21, 22, 22, 22, 22, 23, 24, 26, 27, 28, 29, 29, 29,
                 30, 32, 32, 32, 34, 34, 36, 36, 37, 37,
                 42, 43, 45, 46, 47, 48, 48, 70, 87)
-)
+  )
 
 # Example 15 and Figure 5.21, p. 270
 ch5_xmp16 <- data.frame(
   voltage = c(39.4, 45.3, 49.2, 49.4, 51.3, 52.0, 53.2, 53.2, 54.9,
               55.5, 57.1, 57.2, 57.5, 59.2, 61.0, 62.4, 63.8, 64.3,
               67.3, 67.7)
-)
+  )
 
 # Table 5.10, p. 280
 # table of joint probabilities
