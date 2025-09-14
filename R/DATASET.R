@@ -48,31 +48,35 @@ get_text_data <- function(filename)
 # import text files and assign names to dataframe objects
 df_list <- map(file_names, get_text_data, .progress = TRUE)
 names(df_list) <- df_names
-
 list2env(df_list, envir = .GlobalEnv)
+
 rm(df_list, df_names, file_names, get_text_data)
-
-
-
-
 
 # https://dataanalytics.org.uk/save-all-objects-to-disk-as-separate-files/
 # THIS SEEMS TO WORK
-obj <- ls()
-for(i in 1:length(obj)) {
-  save(list = (obj[i]),
-       file = paste(obj[i], ".RData", sep = "")
-              )
+
+# for(i in 1:length(ls())) {
+#   save(list = (ls()[i]),
+#        file = paste(ls()[i], ".RData", sep = "")
+#        )
+#   }
+# rm(i)
+
+
+for(i in 1:length(ls())) {
+  save(list = (ls()[i]),
+       file = file.path(here::here(),
+                        "data",
+                        paste0(ls()[i], ".Rdata"))
+       )
+  cat("Saved", ls()[i], "\n")
   }
-rm(i, obj)
+file.remove(here::here("data", "i.Rdata"))
 
+# clean up
+rm(list = ls())
 
-
-
-
-
-
-# this works, but need .Rdata
+## this works, but need .Rdata
 # for (name in names(df_list)) {
 #   file_name <- paste0(name, ".rds")
 #   saveRDS(df_list[[name]],
@@ -101,8 +105,7 @@ rm(i, obj)
 #   }
 
 
-# clean up
-rm(list = ls())
+
 
 # Reshape data ------------------------------------------------------------
 
