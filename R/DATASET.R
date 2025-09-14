@@ -49,14 +49,57 @@ get_text_data <- function(filename)
 df_list <- map(file_names, get_text_data, .progress = TRUE)
 names(df_list) <- df_names
 
-for (name in names(df_list)) {
-  file_name <- paste0(name, ".rds")
-  saveRDS(df_list[[name]],
-          file = file.path(here::here(),
-                           "data",
-                           file_name))
-  print(paste("Saved", name, "to", file_name))
+list2env(df_list, envir = .GlobalEnv)
+rm(df_list, df_names, file_names, get_text_data)
+
+
+
+
+
+# https://dataanalytics.org.uk/save-all-objects-to-disk-as-separate-files/
+# THIS SEEMS TO WORK
+obj <- ls()
+for(i in 1:length(obj)) {
+  save(list = (obj[i]),
+       file = paste(obj[i], ".RData", sep = "")
+              )
   }
+rm(i, obj)
+
+
+
+
+
+
+
+# this works, but need .Rdata
+# for (name in names(df_list)) {
+#   file_name <- paste0(name, ".rds")
+#   saveRDS(df_list[[name]],
+#           file = file.path(here::here(),
+#                            "data",
+#                            file_name))
+#   print(paste("Saved", name, "to", file_name))
+#   }
+
+# https://cran.r-project.org/web/packages/rio/vignettes/rio.html#Importing_Data_Lists
+
+# google search "r save multiple objects to separate files"
+# # Create some example objects
+# object1 <- data.frame(a = 1:5, b = letters[1:5])
+# object2 <- list(name = "John", age = 30)
+# object3 <- c(10, 20, 30)
+#
+# # Store objects in a list for easy iteration
+# object_list <- list(obj1 = object1, obj2 = object2, obj3 = object3)
+#
+# # Loop through the list and save each object to a separate .rds file
+# for (name in names(object_list)) {
+#   file_name <- paste0(name, ".rds")
+#   saveRDS(object_list[[name]], file = file_name)
+#   print(paste("Saved", name, "to", file_name))
+#   }
+
 
 # clean up
 rm(list = ls())
