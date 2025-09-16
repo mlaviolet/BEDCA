@@ -40,7 +40,7 @@ df_names <- str_replace(step5, "Section ", "sec")
 rm(step1, step2, step3, step4, step5)
 
 # function to import text file
-# CALL list2env() and usethis::use_data() HERE?
+# CALL list2env() and # usethis::use_data() HERE?
 get_text_data <- function(filename)
   read_tsv(here::here(paste0("data-raw/", filename)),
            show_col_types = FALSE)
@@ -60,21 +60,9 @@ rm(df_list, df_names, file_names, get_text_data)
 #        file = paste(ls()[i], ".RData", sep = "")
 #        )
 #   }
-# rm(i)
-
-
-for(i in 1:length(ls())) {
-  save(list = (ls()[i]),
-       file = file.path(here::here(),
-                        "data",
-                        paste0(ls()[i], ".Rdata"))
-       )
-  cat("Saved", ls()[i], "\n")
-  }
-file.remove(here::here("data", "i.Rdata"))
 
 # clean up
-rm(list = ls())
+# rm(list = ls())
 
 ## this works, but need .Rdata
 # for (name in names(df_list)) {
@@ -104,44 +92,41 @@ rm(list = ls())
 #   print(paste("Saved", name, "to", file_name))
 #   }
 
-
-
-
 # Reshape data ------------------------------------------------------------
 
 # reshape "Chapter 7/End of Chapter/Prob 16.txt"
-ch7_eoc_prob16 <- ch7_eoc_prob16 |>
-  pivot_longer(cols = -starts_with("Sample"),
-               values_to = "count") |>
-  select(sample = `Sample...1`, name, count) |>
-  separate_wider_position(name,
-                          widths = c(N = 6, day = 2)) |>
-  select(day, sample, count) |>
-  arrange(day, sample)
+# ch7_eoc_prob16 <- ch7_eoc_prob16 |>
+#   pivot_longer(cols = -starts_with("Sample"),
+#                values_to = "count") |>
+#   select(sample = `Sample...1`, name, count) |>
+#   separate_wider_position(name,
+#                           widths = c(N = 6, day = 2)) |>
+#   select(day, sample, count) |>
+#   arrange(day, sample)
+# usethis::use_data(ch7_eoc_prob16, overwrite = TRUE)
 
 # Chapter 7/End of Chapter/Prob 19b.txt
 # use raw data
-ch7_eoc_prob19b <-
-  data.frame(batch = factor(rep(1:15, each = 4)),
-             rod_length = c(0.0075,  0.0100,  0.0135,  0.0135,
-                           -0.0085,  0.0035, -0.0180,  0.0010,
-                            0.0085,  0.0000,  0.0100,  0.0020,
-                            0.0005, -0.0005,  0.0145,  0.0170,
-                            0.0130,  0.0035,  0.0120,  0.0070,
-                           -0.0115, -0.0110, -0.0085, -0.0105,
-                           -0.0080, -0.0070, -0.0060, -0.0045,
-                           -0.0095, -0.0100, -0.0130, -0.0165,
-                            0.0090,  0.0125,  0.0125,  0.0080,
-                           -0.0105, -0.0100, -0.0150, -0.0075,
-                            0.0115,  0.0150,  0.0175,  0.0180,
-                            0.0020,  0.0005,  0.0010,  0.0010,
-                           -0.0010, -0.0025, -0.0020, -0.0030,
-                           -0.0020,  0.0015,  0.0025,  0.0025,
-                           -0.0010, -0.0015, -0.0020, -0.0045)
-             )
+# ch7_eoc_prob19b <-
+#   data.frame(batch = factor(rep(1:15, each = 4)),
+#              rod_length = c(0.0075,  0.0100,  0.0135,  0.0135,
+#                            -0.0085,  0.0035, -0.0180,  0.0010,
+#                             0.0085,  0.0000,  0.0100,  0.0020,
+#                             0.0005, -0.0005,  0.0145,  0.0170,
+#                             0.0130,  0.0035,  0.0120,  0.0070,
+#                            -0.0115, -0.0110, -0.0085, -0.0105,
+#                            -0.0080, -0.0070, -0.0060, -0.0045,
+#                            -0.0095, -0.0100, -0.0130, -0.0165,
+#                             0.0090,  0.0125,  0.0125,  0.0080,
+#                            -0.0105, -0.0100, -0.0150, -0.0075,
+#                             0.0115,  0.0150,  0.0175,  0.0180,
+#                             0.0020,  0.0005,  0.0010,  0.0010,
+#                            -0.0010, -0.0025, -0.0020, -0.0030,
+#                            -0.0020,  0.0015,  0.0025,  0.0025,
+#                            -0.0010, -0.0015, -0.0020, -0.0045)
+#              )
 
-# workspace consists only of imported data
-rm(df_list)
+# usethis::use_data(ch7_eoc_prob19b, overwrite = TRUE)
 
 # Chapter 1 example data --------------------------------------------------
 
@@ -153,6 +138,7 @@ ch1_xmp07 <- data.frame(
                 0.0799, 0.0812, 0.0807, 0.0816, 0.0804,
                 0.0972, 0.0964, 0.0978, 0.0971, 0.0960,
                 0.0947, 0.1200, 0.0991, 0.0980, 0.1033))
+# usethis::use_data(ch1_xmp07, overwrite = TRUE)
 
 # Table 1.4, p. 21
 table1_04 <- data.frame(
@@ -160,6 +146,7 @@ table1_04 <- data.frame(
   displacement = c(0.8, 4.8, 10.8, 20.1, 31.9, 45.9, 63.3, 83.1, 105.8,
                    131.3, 159.5, 190.5, 223.8, 260.0, 299.2, 340.5, 385.0,
                    432.2, 481.8, 534.2, 589.8, 647.7, 708.8))
+# usethis::use_data(table1_04, overwrite = TRUE)
 
 # Chapter 2 example data --------------------------------------------------
 
@@ -186,6 +173,7 @@ table2_01 <- matrix(x, nrow = 18, byrow = TRUE) |>
   as.data.frame() |>
   set_names(c("sample", "item", "mass", "width"))
 rm(x)
+# usethis::use_data(table2_01, overwrite = TRUE)
 
 # Chapter 3 example data --------------------------------------------------
 
@@ -202,6 +190,7 @@ table3_04 <- matrix(x, nrow = 34, byrow = TRUE) |>
   as.data.frame() |>
   set_names(c("component", "bolt3_torque", "bolt4_torque"))
 rm(x)
+# usethis::use_data(table3_04, overwrite = TRUE)
 
 # Table 3.5, p. 76
 table3_05 <-
@@ -212,17 +201,20 @@ table3_05 <-
                            0.015,  0.000,  0.000, -0.015, -0.015,
                           -0.005, -0.015, -0.015, -0.010, -0.015,
                           -0.035, -0.025, -0.020, -0.025, -0.015))
+# usethis::use_data(table3_05, overwrite = TRUE)
 
 # Table 3.6, p. 79
 table3_06 <- data.frame(test = 1:10,
                         strength = c(8577, 9471, 9011, 7583, 8572,
                                     10688, 9614, 9614, 8527, 9165))
+# usethis::use_data(table3_06, overwrite = TRUE)
 
 # Table 3.13, p. 94
 table3_13 <- data.frame(supplier = c(rep(1, 6), rep(2, 8)),
                         pct_waste = c(0.37, 0.52, 0.65, 0.92, 2.89, 3.62,
                                       0.89, 0.99, 1.45, 1.47, 1.58, 2.27,
                                       2.63, 6.54))
+# usethis::use_data(table3_13, overwrite = TRUE)
 
 # Table 3.14, p. 100
 table3_14 <- data.frame(sample = 1:25,
@@ -233,6 +225,7 @@ table3_14 <- data.frame(sample = 1:25,
                                  3511.0, 3510.6, 3510.2, 3510.4, 3510.8),
                         r = c(5, 2, 3, 4, 4, 6, 3, 2, 3, 2, 2, 2, 3, 4, 3,
                               2, 1, 5, 4, 3, 4, 1, 5, 2, 3))
+# usethis::use_data(table3_14, overwrite = TRUE)
 
 # Table 3.15, p. 101
 table3_15 <- data.frame(
@@ -240,10 +233,12 @@ table3_15 <- data.frame(
   glue = rep(c("white", "carpenter's", "cascamite"), times = 3),
   mean_strength = c(131.7, 192.7, 201.3, 92.0, 146.3, 156.7, 257.7,
                     234.3, 177.7))
+# usethis::use_data(table3_15, overwrite = TRUE)
 
 # Table 3.16, p. 105
 table3_16 <- data.frame(category = LETTERS[1:4],
                         connectors = c(3, 0, 11, 1))
+# usethis::use_data(table3_16, overwrite = TRUE)
 
 # Table 3.17, p. 106
 table3_17 <- data.frame(
@@ -251,6 +246,7 @@ table3_17 <- data.frame(
               "Missing part 2", "Missing part 3", "Bad part 4", "Bad part 5",
               "Bad part 6", "Wrong part 7", "Wrong part 8"),
   n_tools = c(8, 4, 3, 2,  1, 2, 1, 2, 1, 2, 2))
+# usethis::use_data(table3_17, overwrite = TRUE)
 
 # Table 3.18, p. 109
 table3_18 <- data.frame(
@@ -258,6 +254,7 @@ table3_18 <- data.frame(
   type = rep(c("scrap", "rework"), each = 18),
   pct_rework = c(2, 3, 0, 0, 0, 2, 0, 0, 2, 3, 0, 1, 0, 0, 0, 0, 0, 1,
                  25, 11, 5, 0, 20, 23, 6, 5, 8, 18, 3, 5, 0, 0, 3, 2, 2, 5))
+# usethis::use_data(table3_18, overwrite = TRUE)
 
 # Table 3.19, p. 110
 table3_19 <- data.frame(day = 1:26,
@@ -266,12 +263,14 @@ table3_19 <- data.frame(day = 1:26,
                                           1.82, 2.07, 2.32, 1.23, 2.91, 1.77,
                                           1.61, 1.25, 1.15, 1.37, 1.79, 1.68,
                                           1.78, 1.84))
+# usethis::use_data(table3_19, overwrite = TRUE)
 
 # Table 3.20, p. 112
 table3_20 <- data.frame(
   shot_size = rep(c("small", "large"), each = 2),
   mixture = rep(c("20_reground", "50_reground"), times = 2),
   n_conform = c(38, 66, 29, 53))
+# usethis::use_data(table3_20, overwrite = TRUE)
 
 # Chapter 4 example data --------------------------------------------------
 
@@ -281,6 +280,7 @@ table4_01 <- data.frame(
   pressure = rep(c(2, 4, 6, 8, 10), each = 3),
   density = c(2.486, 2.479, 2.472, 2.558, 2.570, 2.580, 2.646, 2.657,
               2.653, 2.724, 2.774, 2.808, 2.861, 2.879, 2.858))
+# usethis::use_data(table4_01, overwrite = TRUE)
 
 # Table 4.2, p. 131
 # Refer to Table 4.1
@@ -290,6 +290,7 @@ table4_03 <- data.frame(
   percent = rep(0:5, each = 3),
   strength = c(1221, 1207, 1187, 1555, 1562, 1575, 1827, 1839, 1802,
                1609, 1627, 1642, 1451, 1472, 1465, 1321, 1289, 1292))
+# usethis::use_data(table4_03, overwrite = TRUE)
 
 # Table 4.4, p. 133
 # Refer to Table 4.3
@@ -301,7 +302,7 @@ table4_03 <- data.frame(
 table4_06 <- data.frame(
   x = 10000000 + seq(from = 0.1, by = 0.1, length.out = 6),
   y = c(1.1, 1.9, 3.1, 3.9, 4.9, 6.1))
-
+# usethis::use_data(table4_06, overwrite = TRUE)
 # lm1 <- lm(y ~ x, data = table4_06)
 # Coefficients: (1 not defined because of singularities)
 
@@ -317,6 +318,7 @@ acid <- c(88, 87, 87, 93, 93, 87, 80, 89, 88, 82, 93, 89, 86, 72, 79, 80, 82)
 stack <- c(37, 18, 18, 19, 20, 15, 14, 14, 13, 11, 12, 8, 7, 8, 8, 9, 15)
 table4_08 <- data.frame(air, water, acid, stack)
 rm(air, water, acid, stack)
+# usethis::use_data(table4_08, overwrite = TRUE)
 
 # Table 4.10, p. 156
 # Lift/drag ratios for 9 canard/tail position combinations
@@ -324,6 +326,7 @@ table4_10 <- data.frame(
   canard = rep(c(-1.2, 0, 1.2), each = 3),
   tail = rep(c(-1.2, 0, 1.2), times = 3),
   lift_drag = c(0.858, 3.156, 3.644, 4.281, 3.481, 3.918, 4.136, 3.364, 4.018))
+# usethis::use_data(table4_10, overwrite = TRUE)
 
 # Table 4.11, p. 164
 # Measured strength of 16 wood joints
@@ -337,6 +340,7 @@ table4_11 <- data.frame(
                   "walnut", "pine")),
   strength = c(1518, 829, 2571, 1169, 1927, 1348, 1489, 2443, 1263, 1295,
                1561, 1000, 596, 859, 1029, 1207))
+# usethis::use_data(table4_11, overwrite = TRUE)
 
 # Table 4.12, p. 165
 # Refer to Table 4.11
@@ -361,6 +365,7 @@ table4_15 <-
              evening =rep(c(1, 2), each = 20)) |>
   mutate(across(c(compression, evening), factor))
 rm(A, B, C, D)
+# usethis::use_data(table4_15, overwrite = TRUE)
 
 # Table 4.16, p. 174
 # Refer to Table 4.15
@@ -379,6 +384,7 @@ C <- rep(1:2, each = 4)
 strength_mean = c(1520, 2450, 2340, 2900, 1670, 2540, 2230, 3230)
 table4_19 <- data.frame(temp = A, time = B, span = C, strength_mean)
 rm(A, B, C, strength_mean)
+# usethis::use_data(table4_19, overwrite = TRUE)
 
 # Table 4.21, p. 188
 # Refer to Table 4.19
@@ -395,6 +401,7 @@ table4_24 <- data.frame(
             "d", "ad", "bd", "abd", "cd", "acd", "bcd", "abcd"),
   y = c(1.68, 1.98, 3.28, 3.44, 4.98, 5.70, 9.97, 9.07,
         2.07, 2.44, 4.09, 4.53, 7.77, 9.43, 11.75, 16.30))
+# usethis::use_data(table4_24, overwrite = TRUE)
 
 # Table 4.25, p. 199
 x <- c(90, 24.4, 21.1, 150,
@@ -410,6 +417,7 @@ table4_25 <- matrix(x, nrow = 9, byrow = TRUE) |>
   as.data.frame() |>
   set_names(c("temp", "amt_B", "yield", "fil_time"))
 rm(x)
+# usethis::use_data(table4_25, overwrite = TRUE)
 
 # Table 4.26, p. 200
 # Refer to Table 4.25
@@ -423,17 +431,20 @@ table5_01 <- table3_04 |>
   select(z = bolt3_torque) |>
   summarize(.by = z, n = n()) |>
   arrange(z)
+# usethis::use_data(table5_01, overwrite = TRUE)
 
 # Table 5.2, p. 224
 # Refer to Table 5.1
 table5_02 <- table5_01 |>
   mutate(f_z = n / sum(n)) |>
   select(-n)
+# usethis::use_data(table5_02, overwrite = TRUE)
 
 # Table 5.3, p. 227
 # Refer to Table 5.2
 table5_03 <- table5_02 |>
   mutate(F_z = cumsum(f_z))
+# usethis::use_data(table5_03, overwrite = TRUE)
 
 # mean of random variable Z
 # Z_mean <- summarize(table5_03, mean_z = sum(z * f_z))
@@ -445,6 +456,7 @@ table5_04 <- table5_03 |>
   mutate(z_mean = sum(z * f_z),
          resid = z - z_mean,
          resid_sqr = resid^2)
+# usethis::use_data(table5_04, overwrite = TRUE)
 
 # variance of random variable Z
 # Z_var <- summarize(table5_04, var_z = sum(resid_sqr * f_z))
@@ -452,12 +464,12 @@ table5_04 <- table5_03 |>
 # Table 5.5, p. 231
 table5_05 <- data.frame(w = 0:9,
                         f_w = 0.1)
+# usethis::use_data(table5_05, overwrite = TRUE)
 # "mean of square" minus "square of mean"
 # with(table5_05, sum(w^2 * f_w) - sum(w * f_w)^2)
 
 # Table 5.6, p. 265
 # showing as "uncounted"
-
 x <- c(4.81, 1, 5.00, 12,
        4.86, 1, 5.01, 10,
        4.88, 1, 5.02, 7,
@@ -481,11 +493,13 @@ table5_06 <- data.frame(weight = x, freq = y) |>
   # randomly permute rows to replicate actual results
   slice_sample(prop = 1)
 rm(step1, x, y)
+# usethis::use_data(table5_06, overwrite = TRUE)
 
 # Table 5.7, p. 265
 table5_07 <- table5_06 |>
   mutate (p = (rank(weight, ties = "average") - 0.5) / length(weight),
           z = qnorm(p))
+# usethis::use_data(table5_07, overwrite = TRUE)
 
 # Table 5.8, p. 267
 x <- c(6, 1, 7, 0, 8, 3, 9, 0, 10, 4, 11, 10, 12, 0, 13, 6, 14, 1)
@@ -498,6 +512,7 @@ table5_08 <- matrix(x, nrow = 9, byrow = TRUE) |>
   # randomly permute rows to replicate actual results
   slice_sample(prop = 1)
 rm(x)
+# usethis::use_data(table5_08, overwrite = TRUE)
 
 # Example 15, p. 270
 ch5_xmp15 <- data.frame(
@@ -508,6 +523,7 @@ ch5_xmp15 <- data.frame(
                 30, 32, 32, 32, 34, 34, 36, 36, 37, 37,
                 42, 43, 45, 46, 47, 48, 48, 70, 87)
   )
+# usethis::use_data(ch5_xmp15, overwrite = TRUE)
 
 # Example 15 and Figure 5.21, p. 270
 ch5_xmp16 <- data.frame(
@@ -515,6 +531,7 @@ ch5_xmp16 <- data.frame(
               55.5, 57.1, 57.2, 57.5, 59.2, 61.0, 62.4, 63.8, 64.3,
               67.3, 67.7)
   )
+# usethis::use_data(ch5_xmp16, overwrite = TRUE)
 
 # Table 5.10, p. 280
 # table of joint probabilities
@@ -522,6 +539,7 @@ table5_10 <- table3_04 |>
   summarize(.by = c(bolt3_torque, bolt4_torque), n = n()) |>
   arrange(bolt3_torque, bolt4_torque) |>
   mutate(p = n / sum(n))
+# usethis::use_data(table5_10, overwrite = TRUE)
 
 # Table 5.12, p. 283
 # marginal probabilities for Y (bolt 4 torque)
@@ -529,24 +547,31 @@ table5_11 <- table5_10 |>
   summarize(.by = bolt4_torque,
             marginal_y = sum(p)) |>
   arrange(bolt4_torque)
+# usethis::use_data(table5_11, overwrite = TRUE)
 
 # marginal probabilities for X (bolt 3 torque)
-summarize(table5_10, .by = bolt3_torque,
-          marginal_x = sum(p)) |>
-  arrange(bolt3_torque)
+# summarize(table5_10, .by = bolt3_torque,
+#           marginal_x = sum(p)) |>
+#   arrange(bolt3_torque)
 
 # Table 5.13, p. 284 and Table 5.14, p. 286
 table5_13 <- table5_10 |>
   filter(bolt3_torque == 15) |>
   # summarize(.by = bolt4_torque, n = sum(n)) |>
   mutate(p_15 = p / sum(p))
+# usethis::use_data(table5_13, overwrite = TRUE)
 
-
+# CHECK 5.15 AND 5.16
 # Table 5.15, p. 286 and Table 5.16, p. 287
-table5_10 |>
+table5_15 <- table5_10 |>
   filter(bolt3_torque == 18) |>
   mutate(p_cond = p / sum(p))
+# usethis::use_data(table5_15, overwrite = TRUE)
 
+table5_16 <- table5_10 |>
+  filter(bolt4_torque == 20) |>
+  mutate(p_cond = p / sum(p))
+# usethis::use_data(table5_16, overwrite = TRUE)
 
 # Table 5.17, p. 288
 # Refer to Table 5-10
@@ -571,6 +596,7 @@ table5_10 |>
 # Table 6.4, p. 366
 table6_04 <- data.frame(lifetime = c(225, 171, 198, 189, 189,
                                      135, 162, 135, 117, 162))
+# usethis::use_data(table6_04, overwrite = TRUE)
 
 # Table 6.5, p. 370
 x <- c(1, 0.168, 0.169,
@@ -582,6 +608,7 @@ x <- c(1, 0.168, 0.169,
 table6_05 <- matrix(x, nrow = 5, byrow = TRUE) |>
   as.data.frame() |>
   set_names(c("piece", "leading", "trailing"))
+# usethis::use_data(table6_05, overwrite = TRUE)
 
 # Table 6.6, p. 372
 # refer to table 6.5
@@ -600,12 +627,14 @@ crushed <- c(161.8, 165.8, 169.6,
              190.0, 191.0)
 ch6_xmp10 <- data.frame(molded, crushed)
 rm(molded, crushed)
+# usethis::use_data(ch6_xmp10, overwrite = TRUE)
 
 # Table 6.7, p. 379
 stress_950 <- c(225, 171, 198, 189, 189, 216, 162, 153, 216, 225)
 stress_900 <- c(135, 162, 135, 117, 162, 216, 306, 225, 243, 189)
 table6_07 <- data.frame(stress_950, stress_900)
 rm(stress_950, stress_900)
+# usethis::use_data(table6_07, overwrite = TRUE)
 
 # Table 6.8, p. 389
 x <- c(8, 1, 9, 1, 10, 10, 11, 4, 12, 3, 13, 1)
@@ -617,12 +646,14 @@ table6_08 <- matrix(x, nrow = 6, byrow = TRUE) |>
   # randomly permute rows to replicate actual results
   slice_sample(prop = 1)
 rm(x)
+# usethis::use_data(table6_08, overwrite = TRUE)
 
 # Table 6.9, p. 395
 heat_treated <- c(32.8, 44.9, 34.4, 37.0, 23.6, 29.1, 39.5, 30.1, 29.2, 19.2)
 cold_rolled <- c(21.0, 24.5, 19.9, 14.8, 18.8)
 table6_09 <- data.frame(heat_treated, cold_rolled)
 rm(heat_treated, cold_rolled)
+# usethis::use_data(table6_09, overwrite = TRUE)
 
 # Table 6.10, p. 417
 x <- matrix(c(2.99, 1, 3.11, 24,
@@ -636,6 +667,7 @@ table6_10 <- data.frame(wgt =  c(x[,1], x[,3]),
                         freq = c(x[,2], x[,4])) |>
   uncount(freq)
 rm(x)
+# usethis::use_data(table6_10, overwrite = TRUE)
 
 # Chapter 7 example data --------------------------------------------------
 
@@ -667,6 +699,7 @@ table7_01 <- matrix(c(1, 1, 5800,
                     nrow = 24, byrow = TRUE) |>
   as.data.frame() |>
   set_names(c("specimen", "concrete", "strength"))
+# usethis::use_data(table7_01, overwrite = TRUE)
 
 # Table 7.2, p. 446
 table7_02 <- data.frame(type = c(rep("Type 1", 7),
@@ -678,6 +711,7 @@ table7_02 <- data.frame(type = c(rep("Type 1", 7),
                               2.85, 2.74, 2.74, 2.63, 2.74, 2.80,
                               2.10, 2.01, 1.93, 2.02, 2.10, 2.05)) |>
   mutate(type = factor(type))
+# usethis::use_data(table7_02, overwrite = TRUE)
 
 # Table 7.3 and Table 7.4, p. 450
 # Refer to Table 7.1
@@ -695,6 +729,7 @@ table7_02 <- data.frame(type = c(rep("Type 1", 7),
 table7_08 <- data.frame(n = 5,
                         y_bar = c(93.2, 81.0, 83.8),
                         s = c(0.8, 0.7, 0.8))
+# usethis::use_data(table7_08, overwrite = TRUE)
 
 # Table 7.9, p. 467
 # Sample data
@@ -708,6 +743,7 @@ table7_09 <- data.frame(
                  4911, 5998, 5676,
                  4768, 3672, 3242,
                  4387, 5388, 5007))
+# usethis::use_data(table7_09, overwrite = TRUE)
 
 # Table 7.10, p. 468
 # Refer to Table 7.9
@@ -736,6 +772,7 @@ table7_14 <- data.frame(
          66, 70, 67, 69, 69,
          68, 68, 64, 69, 67)) |>
   arrange(specimen)
+# usethis::use_data(table7_14, overwrite = TRUE)
 
 # Table 7.15, p. 494
 # Refer to Table 7.14
@@ -765,6 +802,7 @@ table7_16 <- data.frame(sample = factor(rep(1:22, each = 5)),
                                    6, 10, 11, 5, 6,
                                    15, 3, 7, 9, 11)) |>
   arrange(sample)
+# usethis::use_data(table7_16, overwrite = TRUE)
 
 # Table 7.17, p. 503
 x <- c(1, 8.8, 1.30, 3,
@@ -794,6 +832,7 @@ table7_17 <- matrix(x, nrow = 22, byrow = TRUE) |>
   as.data.frame() |>
   set_names(c("sample", "xbar", "s", "R"))
 rm(x)
+# usethis::use_data(table7_17, overwrite = TRUE)
 
 # Table 7.18, p. 520
 x <- c(1, 13, .43,
@@ -822,11 +861,14 @@ x <- c(1, 13, .43,
        24, 10, .33,
        25, 12, .40)
 
-table7_17 <- matrix(x, nrow = 25, byrow = TRUE) |>
+table7_18 <- matrix(x, nrow = 25, byrow = TRUE) |>
   as.data.frame() |>
   select(sample = V1, nonconform = V2) |>
   mutate(p_hat = nonconform / 30)
 rm(x)
+# usethis::use_data(table7_18, overwrite = TRUE)
+
+# FILE SAVE STOPS HERE--INVESTIGATE ---------------------------------------
 
 # Table 7.19, p. 526
 
@@ -867,6 +909,7 @@ table7_19 <- matrix(x, nrow = 30, byrow = TRUE) |>
   select(sample, trucks, errors) |>
   mutate(errors_truck = errors/trucks)
 rm(x)
+# usethis::use_data(table7_19, overwrite = TRUE)
 
 # Chapter 8 example data --------------------------------------------------
 # 42 tables
@@ -896,11 +939,12 @@ rm(x)
 
 # Table 9.2, p. 655
 # Refer to Table 9.1
-options(digits = 4)
-table4_01 |>
+# options(digits = 4)
+table9_02 <- table4_01 |>
   summarize(.by = pressure,
             density_mean = mean(density),
             density_sd = sd(density))
+# usethis::use_data(table9_02, overwrite = TRUE)
 
 # Table 9.3, p. 655
 # Refer to Table 9.1
@@ -1002,7 +1046,7 @@ table4_01 |>
 # Table 9.13, p. 695
 # anova(lm2)
 
-# RESUME HERE -------------------------------------------------------------
+# Any more in Ch. 9? -----------------------------------------------------
 
 # Table 9.14, p. 700
 
@@ -1063,6 +1107,7 @@ table_a_2 <- matrix(x, nrow = 23, byrow = TRUE) |>
          o_ring = as.numeric(o_ring),
          tempF = as.numeric(tempF))
 rm(x)
+# usethis::use_data(table_a_2, overwrite = TRUE)
 
 # o_rings <- table_a_2 |>
 #   mutate(any_failure = cut(o_ring, c(0, 1, Inf),
@@ -1077,14 +1122,36 @@ rm(x)
 table_a_4 <- data.frame(
   failure = c(0.073, 0.098, 0.117, 0.135, 0.175, 0.262, 0.270, 0.350,
               0.386, 0.456))
+# usethis::use_data(table_a_4)
 
 # Table A.5, p. 780
 # two largest values are censored
 table_a_5 <- data.frame(
   breakdown = c(50, 134, 187, 882, 1450, 1470, 2290, 2930, 4180, 15800,
                 29200, 86100))
+# usethis::use_data(table_a_5, overwrite = TRUE)
 
 # Save workspace ----------------------------------------------------------
+
+for(i in 1:length(ls())) {
+  save(list = (ls()[i]),
+       file = file.path(here::here(),
+                        "data",
+                        paste0(ls()[i], ".Rdata"))
+  )
+  cat("Saved", ls()[i], "\n")
+  }
+
+# rm(i)
+# file.remove(here::here("data", "i.Rdata"))
+
+# for some reason these two weren't saved; save manually
+save("table7_19", file = file.path(here::here("data/table7_19.Rdata")))
+save("table9_02", file = file.path(here::here("data/table9_02.Rdata")))
+
+# search "r package error data-raw/na does not exist"
+# Error : 'C:/Users/Admin/AppData/Local/Temp/RtmpMj2J9K/R.INSTALL32e450f44896/BEDCA/data-raw/NA' does not exist.
+
 
 # ls() |> length()
 # save.image(here("Vardeman/BECDA.Rdata"))
@@ -1098,14 +1165,14 @@ table_a_5 <- data.frame(
 # purrr::walk(ls(), save_data, .progress = TRUE)
 
 # NEED TO FIX
-# usethis::use_data(DATASET, overwrite = TRUE)
+# # usethis::use_data(DATASET, overwrite = TRUE)
 
 # DIDN'T WORK
 # purrr::walk(ls(x),
-#             usethis::use_data(get(x), overwrite = TRUE)
+#             # usethis::use_data(get(x), overwrite = TRUE)
 #             )
 
-# https://forum.posit.co/t/saving-external-data-in-a-loop-with-usethis-use-data/34021/2
+# https://forum.posit.co/t/saving-external-data-in-a-loop-with-# usethis-use-data/34021/2
 # https://stackoverflow.com/questions/49673667/how-to-use-devtoolsuse-data-on-a-list-of-data-frames/49676445#49676445
 
 # walk2(ls(), names(ls()), function(obj, name) {
