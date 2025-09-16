@@ -16,8 +16,7 @@ License: CC BY 4.0
 Encoding: UTF-8
 LazyData: true
 Imports: 
-    dplyr,
-    ggplot2,
-    tidyr
+    tidyverse,
+    here
 Depends: 
     R (>= 3.5)
