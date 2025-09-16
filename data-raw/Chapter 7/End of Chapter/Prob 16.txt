@@ -1,4 +1,4 @@
-Sample	NonconD1	Sample	NonconD2
+SampleD1	NonconD1	SampleD2	NonconD2
 1	16	1	14
 2	18	2	20
 3	17	3	17
