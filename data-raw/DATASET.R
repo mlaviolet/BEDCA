@@ -133,7 +133,7 @@ rm(df_list, df_names, file_names, get_text_data)
 # Example 7, p. 16
 # Book paper thickness measurements (inches)
 ch1_xmp07 <- data.frame(
-  tech = rep(c("Wendell", "Gulliver"), each = 10),
+  tech = rep(c("Wendel", "Gulliver"), each = 10),
   thickness = c(0.0807, 0.0826, 0.0854, 0.0817, 0.0824,
                 0.0799, 0.0812, 0.0807, 0.0816, 0.0804,
                 0.0972, 0.0964, 0.0978, 0.0971, 0.0960,
