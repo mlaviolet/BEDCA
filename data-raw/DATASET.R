@@ -1142,12 +1142,13 @@ for(i in 1:length(ls())) {
   cat("Saved", ls()[i], "\n")
   }
 
-rm(i)
 file.remove(here::here("data", "i.Rdata"))
 
 # for some reason these two weren't saved; save manually
 save("table7_19", file = file.path(here::here("data/table7_19.RData")))
 save("table9_02", file = file.path(here::here("data/table9_02.RData")))
+
+rm(list = ls())
 
 # search "r package error data-raw/na does not exist"
 # Error : 'C:/Users/Admin/AppData/Local/Temp/RtmpMj2J9K/R.INSTALL32e450f44896/BEDCA/data-raw/NA' does not exist.
