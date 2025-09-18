@@ -47,3 +47,26 @@ NULL
 #'
 
 NULL
+
+#' @name ch2_sec2_prob2
+#' @docType data
+#' @title Chapter 2, Section 2, Problem 2
+#' @usage data(ch1_xmp07)
+#' @keywords datasets
+#'
+#' @format A data frame with 39 rows and 2 variables
+#'  \describe{
+#'   \item{Laid}{Thrust face runouts for laid gears (0.0001 in.)}
+#'   \item{Hung}{Thrust face runouts for hung gears (0.0001 in.)}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) Basic Engineering Data Collection and Analysis
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}
+#'
+#' @examples
+#' data(ch2_sec2_prob2)
+#' str(ch2_sec2_prob2)
+#'
+
+NULL
+
