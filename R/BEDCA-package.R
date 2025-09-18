@@ -48,6 +48,30 @@ NULL
 
 NULL
 
+#' @name table2_01
+#' @docType data
+#' @title Table 2.1
+#' @usage data(table2_01)
+#' @keywords datasets
+#'
+#' @format A data frame with 18 rows and 4 variables
+#'  \describe{
+#'   \item{sample}{Sample taken}
+#'   \item{item}{Item within sample}
+#'   \item{mass}{Mass of bottle (g)}
+#'   \item{width}{Width of bottle (g)}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) Basic Engineering Data Collection and Analysis
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}
+#'
+#' @examples
+#' data(table2_01)
+#' str(table2_01)
+#'
+
+NULL
+
 #' @name ch2_sec2_prob2
 #' @docType data
 #' @title Chapter 2, Section 2, Problem 2
