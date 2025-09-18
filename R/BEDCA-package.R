@@ -10,7 +10,7 @@
 #' @usage data(ch1_xmp07)
 #' @keywords datasets
 #'
-#' @format A data frame with 10 rows and 2 variables
+#' @format A data frame with 10 rows and 2 variables.
 #'  \describe{
 #'   \item{tech}{Student who made measurement}
 #'   \item{thickness}{Thickness of book paper (mm)}
@@ -32,7 +32,7 @@ NULL
 #' @usage data(ch1_eoc_prob4)
 #' @keywords datasets
 #'
-#' @format A data frame with 8 rows and 3 variables
+#' @format A data frame with 8 rows and 3 variables.
 #'  \describe{
 #'   \item{Bushing}{Spanner bushing measured}
 #'   \item{A}{Measurements by student technician A (inches)}
@@ -54,7 +54,7 @@ NULL
 #' @usage data(table2_01)
 #' @keywords datasets
 #'
-#' @format A data frame with 18 rows and 4 variables
+#' @format A data frame with 18 rows and 4 variables.
 #'  \describe{
 #'   \item{sample}{Sample taken}
 #'   \item{item}{Item within sample}
@@ -78,7 +78,7 @@ NULL
 #' @usage data(ch1_xmp07)
 #' @keywords datasets
 #'
-#' @format A data frame with 39 rows and 2 variables
+#' @format A data frame with 39 rows and 2 variables.
 #'  \describe{
 #'   \item{Laid}{Thrust face runouts for laid gears (0.0001 in.)}
 #'   \item{Hung}{Thrust face runouts for hung gears (0.0001 in.)}
