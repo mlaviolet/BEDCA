@@ -5,7 +5,7 @@
 \alias{ch1_eoc_prob4}
 \title{Chapter 1, Exercise 4}
 \format{
-A data frame with 8 rows and 3 variables
+A data frame with 8 rows and 3 variables.
  \describe{
   \item{Bushing}{Spanner bushing measured}
   \item{A}{Measurements by student technician A (inches)}

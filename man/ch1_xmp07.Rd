@@ -5,7 +5,7 @@
 \alias{ch1_xmp07}
 \title{Chapter 1, Example 7}
 \format{
-A data frame with 10 rows and 2 variables
+A data frame with 10 rows and 2 variables.
  \describe{
   \item{tech}{Student who made measurement}
   \item{thickness}{Thickness of book paper (mm)}

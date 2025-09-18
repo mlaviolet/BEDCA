@@ -5,7 +5,7 @@
 \alias{table2_01}
 \title{Table 2.1}
 \format{
-A data frame with 18 rows and 4 variables
+A data frame with 18 rows and 4 variables.
  \describe{
   \item{sample}{Sample taken}
   \item{item}{Item within sample}

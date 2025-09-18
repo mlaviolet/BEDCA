@@ -5,7 +5,7 @@
 \alias{ch2_sec2_prob2}
 \title{Chapter 2, Section 2, Problem 2}
 \format{
-A data frame with 39 rows and 2 variables
+A data frame with 39 rows and 2 variables.
  \describe{
   \item{Laid}{Thrust face runouts for laid gears (0.0001 in.)}
   \item{Hung}{Thrust face runouts for hung gears (0.0001 in.)}
