@@ -25,3 +25,5 @@ Suggests:
     knitr,
     rmarkdown
 VignetteBuilder: knitr
+URL: https://github.com/mlaviolet/BEDCA
+BugReports: https://github.com/mlaviolet/BEDCA/issues
