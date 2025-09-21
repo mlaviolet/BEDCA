@@ -22,4 +22,14 @@ library(BEDCA)
 
 This document describes the use of the statistical application R as computing support in an introductory statistics course based on the text *Basic Engineering Data Collection and Analysis* by Stephen B. Vardeman and J. Marcus Jobe (Brooks/Cole 2001, republished 2023 by [Iowa State University Digital Press](https://www.iastatedigitalpress.com/plugins/books/127/)). We demonstrate how R can be used to reproduce the results in many of the examples in the text.
 
-A desirable feature of this text is the number of examples and exercises based on real data sets. Most of these are drawn from actual experiments performed by students as course projects. As they are real data, some of the data sets are large and have a complex structure. Although it is not dicult to enter these data into a computer package like R, the process is tedious and error-prone. Furthermore, it is not much of a learning experience. We have provided copies of the data sets for the exercices and most examples in a \package", named `BEDCA`, that can be used with R. This document is also part of the \`BEDCA\` package.
+A desirable feature of this text is the number of examples and exercises based on real data sets. Most of these are drawn from actual experiments performed by students as course projects. As they are real data, some of the data sets are large and have a complex structure. Although it is not difficult to enter these data into a computer package like R, the process is tedious, error-prone, and provides a poor learning experience. We have provided copies of the data sets for the exercises and most examples in a package named `BEDCA`, that can be used with R. This document is also part of the `BEDCA` package.
+
+Data for exercises was constructed by importing the supplied tab-delimited text files into R. In most cases the data were imported "as is," so they may require additional processing before analysis. For the most part this involves reshaping data into tidy format. Data for most examples appears as tables in the body of the text; these were copied or transcribed. Data sets are identified as shown in the following examples:
+
+-   `ch1_xmp07.RData`: Chapter 1, Example 7 (p. 16)
+
+-   `ch3_sec1_prob1.RData`: Chapter 3, Section 1, Exercise 1 (p. 77)
+
+-   `ch3_eoc_prob01.RData`: Chapter 3, Chapter Exercise 1 (p. 113)
+
+-   `table3_04.RData`: Table 3.4 (p. 74)
