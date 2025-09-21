@@ -72,10 +72,10 @@ NULL
 
 NULL
 
-#' @name ch2_sec2_prob2
+#' @name table1_01
 #' @docType data
-#' @title Chapter 2, Section 2, Problem 2
-#' @usage data(ch1_xmp07)
+#' @title Table 1.1
+#' @usage data(table1_01)
 #' @keywords datasets
 #'
 #' @format A data frame with 39 rows and 2 variables.
@@ -88,8 +88,8 @@ NULL
 #' \url{https://www.iastatedigitalpress.com/plugins/books/127/}
 #'
 #' @examples
-#' data(ch2_sec2_prob2)
-#' str(ch2_sec2_prob2)
+#' data(table1_01)
+#' str(table1_01)
 #'
 
 NULL

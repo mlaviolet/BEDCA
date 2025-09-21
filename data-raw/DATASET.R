@@ -1131,6 +1131,10 @@ table_a_5 <- data.frame(
                 29200, 86100))
 # usethis::use_data(table_a_5, overwrite = TRUE)
 
+# rename Ch 2, Sec 2, Prob 2 to Table 1.1, where data first appears
+table1_01 <- ch2_sec2_prob2
+rm(ch2_sec2_prob2)
+
 # Save workspace ----------------------------------------------------------
 
 for(i in 1:length(ls())) {
