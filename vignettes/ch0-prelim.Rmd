@@ -18,7 +18,7 @@ knitr::opts_chunk$set(
 library(BEDCA)
 ```
 
-## Chapter 0: Preliminaries
+## Introduction
 
 This document describes the use of the statistical application R as computing support in an introductory statistics course based on the text *Basic Engineering Data Collection and Analysis* by Stephen B. Vardeman and J. Marcus Jobe (Brooks/Cole 2001, republished 2023 by [Iowa State University Digital Press](https://www.iastatedigitalpress.com/plugins/books/127/)). We demonstrate how R can be used to reproduce the results in many of the examples in the text.
 
