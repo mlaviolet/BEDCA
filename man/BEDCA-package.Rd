@@ -8,6 +8,14 @@
 \description{
 Data sets and example analyses from "Basic Engineering Data Collection and Analysis" by Stephen B. Vardeman and J. Marcus Jobe (2001, Brooks/Cole), republished 2023 by Iowa State University Digital Press.
 }
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/mlaviolet/BEDCA}
+  \item Report bugs at \url{https://github.com/mlaviolet/BEDCA/issues}
+}
+
+}
 \author{
 \strong{Maintainer}: Michael Laviolette \email{statman54@gmail.com}
 

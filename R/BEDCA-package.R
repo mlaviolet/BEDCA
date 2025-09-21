@@ -48,6 +48,50 @@ NULL
 
 NULL
 
+#' @name table1_01
+#' @docType data
+#' @title Table 1.1
+#' @usage data(table1_01)
+#' @keywords datasets
+#'
+#' @format A data frame with 39 rows and 2 variables.
+#'  \describe{
+#'   \item{Laid}{Thrust face runouts for laid gears (0.0001 in.)}
+#'   \item{Hung}{Thrust face runouts for hung gears (0.0001 in.)}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) Basic Engineering Data Collection and Analysis
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}
+#'
+#' @examples
+#' data(table1_01)
+#' str(table1_01)
+#'
+
+NULL
+
+#' @name table1_04
+#' @docType data
+#' @title Table 1.4
+#' @usage data(table1_04)
+#' @keywords datasets
+#'
+#' @format A data frame with 23 rows and 2 variables.
+#'  \describe{
+#'   \item{point}{Time interval (1/60 sec.)}
+#'   \item{displacement}{Displacement from initial position (mm)}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) Basic Engineering Data Collection and Analysis
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}
+#'
+#' @examples
+#' data(table1_04)
+#' str(table1_04)
+#'
+
+NULL
+
 #' @name table2_01
 #' @docType data
 #' @title Table 2.1
@@ -72,25 +116,5 @@ NULL
 
 NULL
 
-#' @name table1_01
-#' @docType data
-#' @title Table 1.1
-#' @usage data(table1_01)
-#' @keywords datasets
-#'
-#' @format A data frame with 39 rows and 2 variables.
-#'  \describe{
-#'   \item{Laid}{Thrust face runouts for laid gears (0.0001 in.)}
-#'   \item{Hung}{Thrust face runouts for hung gears (0.0001 in.)}
-#'   }
-#'
-#' @source Vardeman SB & Jobe MJ (2023) Basic Engineering Data Collection and Analysis
-#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}
-#'
-#' @examples
-#' data(table1_01)
-#' str(table1_01)
-#'
 
-NULL
 
