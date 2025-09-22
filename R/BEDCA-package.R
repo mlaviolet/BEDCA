@@ -23,7 +23,6 @@
 #' data(ch1_xmp07)
 #' str(ch1_xmp07)
 #'
-
 NULL
 
 #' @name ch1_eoc_prob4
@@ -45,7 +44,6 @@ NULL
 #' @examples
 #' data(ch1_eoc_prob4)
 #' str(ch1_eoc_prob4)
-
 NULL
 
 #' @name table1_01
@@ -67,7 +65,6 @@ NULL
 #' data(table1_01)
 #' str(table1_01)
 #'
-
 NULL
 
 #' @name table1_04
@@ -89,7 +86,6 @@ NULL
 #' data(table1_04)
 #' str(table1_04)
 #'
-
 NULL
 
 #' @name table2_01
@@ -113,7 +109,6 @@ NULL
 #' data(table2_01)
 #' str(table2_01)
 #'
-
 NULL
 
 #' @name table3_04
@@ -136,7 +131,6 @@ NULL
 #' data(table3_04)
 #' str(table3_04)
 #'
-
 NULL
 
 #' @name table3_05
@@ -158,7 +152,6 @@ NULL
 #' data(table3_05)
 #' str(table3_05)
 #'
-
 NULL
 
 #' @name table3_06
@@ -180,5 +173,5 @@ NULL
 #' data(table3_06)
 #' str(table3_06)
 #'
-
 NULL
+
