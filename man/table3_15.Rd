@@ -13,7 +13,7 @@ A data frame with 9 rows and 3 variables.
   }
 }
 \source{
-Vardeman SB & Jobe MJ (2023) Basic Engineering Data Collection and Analysis
+Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
 \url{https://www.iastatedigitalpress.com/plugins/books/127/}
 }
 \usage{

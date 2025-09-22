@@ -10,11 +10,11 @@ A data frame with 18 rows and 4 variables.
   \item{sample}{Sample taken}
   \item{item}{Item within sample}
   \item{mass}{Mass of bottle (g)}
-  \item{width}{Width of bottle (g)}
+  \item{width}{Width of bottle (mm)}
   }
 }
 \source{
-Vardeman SB & Jobe MJ (2023) Basic Engineering Data Collection and Analysis
+Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
 \url{https://www.iastatedigitalpress.com/plugins/books/127/}
 }
 \usage{

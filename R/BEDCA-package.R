@@ -16,7 +16,7 @@
 #'   \item{thickness}{Thickness of book paper (mm)}
 #'   }
 #'
-#' @source Vardeman SB & Jobe MJ (2023) Basic Engineering Data Collection and Analysis
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
 #' \url{https://www.iastatedigitalpress.com/plugins/books/127/}
 #'
 #' @examples
@@ -38,7 +38,7 @@ NULL
 #'   \item{B}{Measurements by student technician B (inches)}
 #'   }
 #'
-#' @source Vardeman SB & Jobe MJ (2023) Basic Engineering Data Collection and Analysis
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
 #' \url{https://www.iastatedigitalpress.com/plugins/books/127/}
 #'
 #' @examples
@@ -58,7 +58,7 @@ NULL
 #'   \item{Hung}{Thrust face runouts for hung gears (0.0001 in.)}
 #'   }
 #'
-#' @source Vardeman SB & Jobe MJ (2023) Basic Engineering Data Collection and Analysis
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
 #' \url{https://www.iastatedigitalpress.com/plugins/books/127/}
 #'
 #' @examples
@@ -79,7 +79,7 @@ NULL
 #'   \item{displacement}{Displacement from initial position (mm)}
 #'   }
 #'
-#' @source Vardeman SB & Jobe MJ (2023) Basic Engineering Data Collection and Analysis
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
 #' \url{https://www.iastatedigitalpress.com/plugins/books/127/}
 #'
 #' @examples
@@ -99,10 +99,10 @@ NULL
 #'   \item{sample}{Sample taken}
 #'   \item{item}{Item within sample}
 #'   \item{mass}{Mass of bottle (g)}
-#'   \item{width}{Width of bottle (g)}
+#'   \item{width}{Width of bottle (mm)}
 #'   }
 #'
-#' @source Vardeman SB & Jobe MJ (2023) Basic Engineering Data Collection and Analysis
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
 #' \url{https://www.iastatedigitalpress.com/plugins/books/127/}
 #'
 #' @examples
@@ -124,7 +124,7 @@ NULL
 #'   \item{bolt4_torque}{Torque to loosen bolt 4 (ft-lb)}
 #'   }
 #'
-#' @source Vardeman SB & Jobe MJ (2023) Basic Engineering Data Collection and Analysis
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
 #' \url{https://www.iastatedigitalpress.com/plugins/books/127/}
 #'
 #' @examples
@@ -145,7 +145,7 @@ NULL
 #'   \item{diameter}{(inches above nominal)}
 #'   }
 #'
-#' @source Vardeman SB & Jobe MJ (2023) Basic Engineering Data Collection and Analysis
+#' @source Vardeman SB & Jobe MJ (2023) \emph{ Engineering Data Collection and Analysis}
 #' \url{https://www.iastatedigitalpress.com/plugins/books/127/}
 #'
 #' @examples
@@ -166,7 +166,7 @@ NULL
 #'   \item{strength}{Breaking strength (g)}
 #'   }
 #'
-#' @source Vardeman SB & Jobe MJ (2023) Basic Engineering Data Collection and Analysis
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
 #' \url{https://www.iastatedigitalpress.com/plugins/books/127/}
 #'
 #' @examples
@@ -187,7 +187,7 @@ NULL
 #'   \item{pct_waste}{Percent waste by weight}
 #'   }
 #'
-#' @source Vardeman SB & Jobe MJ (2023) Basic Engineering Data Collection and Analysis
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
 #' \url{https://www.iastatedigitalpress.com/plugins/books/127/}
 #'
 #' @examples
@@ -209,7 +209,7 @@ NULL
 #'   \item{r}{Sample range}
 #'   }
 #'
-#' @source Vardeman SB & Jobe MJ (2023) Basic Engineering Data Collection and Analysis
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
 #' \url{https://www.iastatedigitalpress.com/plugins/books/127/}
 #'
 #' @examples
@@ -231,7 +231,7 @@ NULL
 #'   \item{mean_strength}{Mean joint shear strength (lb)}
 #'   }
 #'
-#' @source Vardeman SB & Jobe MJ (2023) Basic Engineering Data Collection and Analysis
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
 #' \url{https://www.iastatedigitalpress.com/plugins/books/127/}
 #'
 #' @examples
@@ -252,7 +252,7 @@ NULL
 #'   \item{connectors}{Number of sampled connectors}
 #'   }
 #'
-#' @source Vardeman SB & Jobe MJ (2023) Basic Engineering Data Collection and Analysis
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
 #' \url{https://www.iastatedigitalpress.com/plugins/books/127/}
 #'
 #' @examples
@@ -273,7 +273,7 @@ NULL
 #'   \item{n_tools}{Number of tools out of 100 with problem}
 #'   }
 #'
-#' @source Vardeman SB & Jobe MJ (2023) Basic Engineering Data Collection and Analysis
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
 #' \url{https://www.iastatedigitalpress.com/plugins/books/127/}
 #'
 #' @examples
@@ -295,7 +295,7 @@ NULL
 #'   \item{pct}{Percent requiring action}
 #'   }
 #'
-#' @source Vardeman SB & Jobe MJ (2023) Basic Engineering Data Collection and Analysis
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
 #' \url{https://www.iastatedigitalpress.com/plugins/books/127/}
 #'
 #' @examples
@@ -316,7 +316,7 @@ NULL
 #'   \item{defects_truck}{Number of defects per truck}
 #'   }
 #'
-#' @source Vardeman SB & Jobe MJ (2023) Basic Engineering Data Collection and Analysis
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
 #' \url{https://www.iastatedigitalpress.com/plugins/books/127/}
 #'
 #' @examples
@@ -338,7 +338,7 @@ NULL
 #'   \item{n_conform}{Number conforming}
 #'   }
 #'
-#' @source Vardeman SB & Jobe MJ (2023) Basic Engineering Data Collection and Analysis
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
 #' \url{https://www.iastatedigitalpress.com/plugins/books/127/}
 #'
 #' @examples
@@ -359,7 +359,7 @@ NULL
 #'   \item{density}{Density of cylinder (g/cc)}
 #'   }
 #'
-#' @source Vardeman SB & Jobe MJ (2023) Basic Engineering Data Collection and Analysis
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
 #' \url{https://www.iastatedigitalpress.com/plugins/books/127/}
 #'
 #' @examples
@@ -380,7 +380,7 @@ NULL
 #'   \item{strength}{Compressive strength (psi)}
 #'   }
 #'
-#' @source Vardeman SB & Jobe MJ (2023) Basic Engineering Data Collection and Analysis
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
 #' \url{https://www.iastatedigitalpress.com/plugins/books/127/}
 #'
 #' @examples
@@ -401,7 +401,7 @@ NULL
 #'   \item{y}{Hypothetical response}
 #'   }
 #'
-#' @source Vardeman SB & Jobe MJ (2023) Basic Engineering Data Collection and Analysis
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
 #' \url{https://www.iastatedigitalpress.com/plugins/books/127/}
 #'
 #' @examples
@@ -426,10 +426,10 @@ NULL
 #'
 #' @note Brownlee's stack loss data, presented here with 17 cases instead of the usual 21. Complete data are available as \code{datasets::stackloss}.
 #'
-#' @source Vardeman SB & Jobe MJ (2023) Basic Engineering Data Collection and Analysis
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
 #' \url{https://www.iastatedigitalpress.com/plugins/books/127/}
 #'
-#' @references Brownlee, K.A. (1965) \emph{Statistical Theory and Methodology In Science and engineering} (second edition), New York: Wiley.
+#' @references Brownlee KA (1965) \emph{Statistical Theory and Methodology In Science and Engineering} (second edition), New York: Wiley.
 #'
 #' @examples
 #' data(table4_08)

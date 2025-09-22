@@ -14,7 +14,7 @@ A data frame with 17 rows and 4 variables.
   }
 }
 \source{
-Vardeman SB & Jobe MJ (2023) Basic Engineering Data Collection and Analysis
+Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
 \url{https://www.iastatedigitalpress.com/plugins/books/127/}
 }
 \usage{
@@ -24,7 +24,7 @@ data(table4_08)
 Table 4.8
 }
 \note{
-Brownlee's stack loss data, presented here with 17 cases instead of the usual 21. Complete data are available as `datasets::stackloss`.
+Brownlee's stack loss data, presented here with 17 cases instead of the usual 21. Complete data are available as \code{datasets::stackloss}.
 }
 \examples{
 data(table4_08)
@@ -32,6 +32,6 @@ str(table4_08)
 
 }
 \references{
-Brownlee, K.A. (1965) \emph{Statistical Theory and Methodology In Science and engineering} (second edition), New York: Wiley.
+Brownlee KA (1965) \emph{Statistical Theory and Methodology In Science and Engineering} (second edition), New York: Wiley.
 }
 \keyword{datasets}
