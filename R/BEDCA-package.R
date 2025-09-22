@@ -346,3 +346,95 @@ NULL
 #' str(table3_20)
 #'
 NULL
+
+#' @name table4_01
+#' @docType data
+#' @title Table 4.1
+#' @usage data(table4_01)
+#' @keywords datasets
+#'
+#' @format A data frame with 15 rows and 2 variables.
+#'  \describe{
+#'   \item{pressure}{Pressing presssure (psi)}
+#'   \item{density}{Density of cylinder (g/cc)}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) Basic Engineering Data Collection and Analysis
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}
+#'
+#' @examples
+#' data(table4_01)
+#' str(table4_01)
+#'
+NULL
+
+#' @name table4_03
+#' @docType data
+#' @title Table 4.3
+#' @usage data(table4_03)
+#' @keywords datasets
+#'
+#' @format A data frame with 18 rows and 2 variables.
+#'  \describe{
+#'   \item{percent}{Percent of ammonium phosphate}
+#'   \item{strength}{Compressive strength (psi)}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) Basic Engineering Data Collection and Analysis
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}
+#'
+#' @examples
+#' data(table4_03)
+#' str(table4_03)
+#'
+NULL
+
+#' @name table4_06
+#' @docType data
+#' @title Table 4.6
+#' @usage data(table4_06)
+#' @keywords datasets
+#'
+#' @format A data frame with 6 rows and 2 variables.
+#'  \describe{
+#'   \item{x}{Hypothetical predictor}
+#'   \item{y}{Hypothetical response}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) Basic Engineering Data Collection and Analysis
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}
+#'
+#' @examples
+#' data(table4_06)
+#' str(table4_06)
+#'
+NULL
+
+#' @name table4_08
+#' @docType data
+#' @title Table 4.8
+#' @usage data(table4_08)
+#' @keywords datasets
+#'
+#' @format A data frame with 17 rows and 4 variables.
+#'  \describe{
+#'   \item{air}{Air flow}
+#'   \item{water}{Cooling water inlet temperature}
+#'   \item{acid}{Acid concentration}
+#'   \item{stack}{Stack loss}
+#'   }
+#'
+#' @note Brownlee's stack loss data, presented here with 17 cases instead of the usual 21. Complete data are available as \code{datasets::stackloss}.
+#'
+#' @source Vardeman SB & Jobe MJ (2023) Basic Engineering Data Collection and Analysis
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}
+#'
+#' @references Brownlee, K.A. (1965) \emph{Statistical Theory and Methodology In Science and engineering} (second edition), New York: Wiley.
+#'
+#' @examples
+#' data(table4_08)
+#' str(table4_08)
+#'
+NULL
+
+
