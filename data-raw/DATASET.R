@@ -252,8 +252,8 @@ table3_17 <- data.frame(
 table3_18 <- data.frame(
   job = rep(1:18, times = 2),
   type = rep(c("scrap", "rework"), each = 18),
-  pct_rework = c(2, 3, 0, 0, 0, 2, 0, 0, 2, 3, 0, 1, 0, 0, 0, 0, 0, 1,
-                 25, 11, 5, 0, 20, 23, 6, 5, 8, 18, 3, 5, 0, 0, 3, 2, 2, 5))
+  pct = c(2, 3, 0, 0, 0, 2, 0, 0, 2, 3, 0, 1, 0, 0, 0, 0, 0, 1,
+          25, 11, 5, 0, 20, 23, 6, 5, 8, 18, 3, 5, 0, 0, 3, 2, 2, 5))
 # usethis::use_data(table3_18, overwrite = TRUE)
 
 # Table 3.19, p. 110
@@ -1153,10 +1153,6 @@ save("table7_19", file = file.path(here::here("data/table7_19.RData")))
 save("table9_02", file = file.path(here::here("data/table9_02.RData")))
 
 rm(list = ls())
-
-# search "r package error data-raw/na does not exist"
-# Error : 'C:/Users/Admin/AppData/Local/Temp/RtmpMj2J9K/R.INSTALL32e450f44896/BEDCA/data-raw/NA' does not exist.
-
 
 # ls() |> length()
 # save.image(here("Vardeman/BECDA.Rdata"))
