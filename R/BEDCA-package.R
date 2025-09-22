@@ -116,5 +116,69 @@ NULL
 
 NULL
 
+#' @name table3_04
+#' @docType data
+#' @title Table 3.4
+#' @usage data(table3_04)
+#' @keywords datasets
+#'
+#' @format A data frame with 34 rows and 3 variables.
+#'  \describe{
+#'   \item{component}{Component ID}
+#'   \item{bolt3_torque}{Torque to loosen bolt 3 (ft-lb)}
+#'   \item{bolt4_torque}{Torque to loosen bolt 4 (ft-lb)}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) Basic Engineering Data Collection and Analysis
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}
+#'
+#' @examples
+#' data(table3_04)
+#' str(table3_04)
+#'
 
+NULL
 
+#' @name table3_05
+#' @docType data
+#' @title Table 3.5
+#' @usage data(table3_05)
+#' @keywords datasets
+#'
+#' @format A data frame with 30 rows and 2 variables.
+#'  \describe{
+#'   \item{joint}{Joint ID}
+#'   \item{diameter}{(inches above nominal)}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) Basic Engineering Data Collection and Analysis
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}
+#'
+#' @examples
+#' data(table3_05)
+#' str(table3_05)
+#'
+
+NULL
+
+#' @name table3_06
+#' @docType data
+#' @title Table 3.6
+#' @usage data(table3_06)
+#' @keywords datasets
+#'
+#' @format A data frame with 10 rows and 2 variables.
+#'  \describe{
+#'   \item{test}{Test ID}
+#'   \item{strength}{(Breaking strength (g))}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) Basic Engineering Data Collection and Analysis
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}
+#'
+#' @examples
+#' data(table3_06)
+#' str(table3_06)
+#'
+
+NULL
