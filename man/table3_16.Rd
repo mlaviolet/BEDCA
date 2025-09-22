@@ -8,7 +8,7 @@
 A data frame with 4 rows and 2 variables.
  \describe{
   \item{category}{Defect category}
-  \item{glue}{Number of sampled connectors}
+  \item{connectors}{Number of sampled connectors}
   }
 }
 \source{

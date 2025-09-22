@@ -249,7 +249,7 @@ NULL
 #' @format A data frame with 4 rows and 2 variables.
 #'  \describe{
 #'   \item{category}{Defect category}
-#'   \item{glue}{Number of sampled connectors}
+#'   \item{connectors}{Number of sampled connectors}
 #'   }
 #'
 #' @source Vardeman SB & Jobe MJ (2023) Basic Engineering Data Collection and Analysis
@@ -270,7 +270,7 @@ NULL
 #' @format A data frame with 11 rows and 2 variables.
 #'  \describe{
 #'   \item{problem}{Description of problem}
-#'   \item{glue}{Number of tools out of 100 with problem}
+#'   \item{n_tools}{Number of tools out of 100 with problem}
 #'   }
 #'
 #' @source Vardeman SB & Jobe MJ (2023) Basic Engineering Data Collection and Analysis
@@ -279,5 +279,70 @@ NULL
 #' @examples
 #' data(table3_17)
 #' str(table3_17)
+#'
+NULL
+
+#' @name table3_18
+#' @docType data
+#' @title Table 3.18
+#' @usage data(table3_18)
+#' @keywords datasets
+#'
+#' @format A data frame with 11 rows and 2 variables.
+#'  \describe{
+#'   \item{job}{Job number}
+#'   \item{type}{Type of action}
+#'   \item{pct}{Percent requiring action}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) Basic Engineering Data Collection and Analysis
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}
+#'
+#' @examples
+#' data(table3_18)
+#' str(table3_18)
+#'
+NULL
+
+#' @name table3_19
+#' @docType data
+#' @title Table 3.19
+#' @usage data(table3_19)
+#' @keywords datasets
+#'
+#' @format A data frame with 26 rows and 2 variables.
+#'  \describe{
+#'   \item{day}{Day number}
+#'   \item{defects_truck}{Number of defects per truck}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) Basic Engineering Data Collection and Analysis
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}
+#'
+#' @examples
+#' data(table3_19)
+#' str(table3_19)
+#'
+NULL
+
+#' @name table3_20
+#' @docType data
+#' @title Table 3.20
+#' @usage data(table3_20)
+#' @keywords datasets
+#'
+#' @format A data frame with 4 rows and 3 variables.
+#'  \describe{
+#'   \item{shot_size}{Shot size}
+#'   \item{mixture}{Percent of reground material}
+#'   \item{n_conform}{Number conforming}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) Basic Engineering Data Collection and Analysis
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}
+#'
+#' @examples
+#' data(table3_20)
+#' str(table3_20)
 #'
 NULL
