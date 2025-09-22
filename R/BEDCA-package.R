@@ -163,7 +163,7 @@ NULL
 #' @format A data frame with 10 rows and 2 variables.
 #'  \describe{
 #'   \item{test}{Test ID}
-#'   \item{strength}{(Breaking strength (g))}
+#'   \item{strength}{Breaking strength (g)}
 #'   }
 #'
 #' @source Vardeman SB & Jobe MJ (2023) Basic Engineering Data Collection and Analysis
@@ -175,3 +175,109 @@ NULL
 #'
 NULL
 
+#' @name table3_13
+#' @docType data
+#' @title Table 3.13
+#' @usage data(table3_13)
+#' @keywords datasets
+#'
+#' @format A data frame with 14 rows and 2 variables.
+#'  \describe{
+#'   \item{supplier}{Supplier ID}
+#'   \item{pct_waste}{Percent waste by weight}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) Basic Engineering Data Collection and Analysis
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}
+#'
+#' @examples
+#' data(table3_13)
+#' str(table3_13)
+#'
+NULL
+
+#' @name table3_14
+#' @docType data
+#' @title Table 3.14
+#' @usage data(table3_14)
+#' @keywords datasets
+#'
+#' @format A data frame with 25 rows and 3 variables.
+#'  \describe{
+#'   \item{sample}{Sample ID}
+#'   \item{xbar}{Sample mean}
+#'   \item{r}{Sample range}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) Basic Engineering Data Collection and Analysis
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}
+#'
+#' @examples
+#' data(table3_14)
+#' str(table3_14)
+#'
+NULL
+
+#' @name table3_15
+#' @docType data
+#' @title Table 3.15
+#' @usage data(table3_15)
+#' @keywords datasets
+#'
+#' @format A data frame with 9 rows and 3 variables.
+#'  \describe{
+#'   \item{wood}{Wood type}
+#'   \item{glue}{Glue type}
+#'   \item{mean_strength}{Mean joint shear strength (lb)}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) Basic Engineering Data Collection and Analysis
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}
+#'
+#' @examples
+#' data(table3_15)
+#' str(table3_15)
+#'
+NULL
+
+#' @name table3_16
+#' @docType data
+#' @title Table 3.16
+#' @usage data(table3_16)
+#' @keywords datasets
+#'
+#' @format A data frame with 4 rows and 2 variables.
+#'  \describe{
+#'   \item{category}{Defect category}
+#'   \item{glue}{Number of sampled connectors}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) Basic Engineering Data Collection and Analysis
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}
+#'
+#' @examples
+#' data(table3_16)
+#' str(table3_16)
+#'
+NULL
+
+#' @name table3_17
+#' @docType data
+#' @title Table 3.17
+#' @usage data(table3_17)
+#' @keywords datasets
+#'
+#' @format A data frame with 11 rows and 2 variables.
+#'  \describe{
+#'   \item{problem}{Description of problem}
+#'   \item{glue}{Number of tools out of 100 with problem}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) Basic Engineering Data Collection and Analysis
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}
+#'
+#' @examples
+#' data(table3_17)
+#' str(table3_17)
+#'
+NULL
