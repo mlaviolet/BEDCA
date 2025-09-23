@@ -33,3 +33,31 @@ Data for exercises was constructed by importing the supplied tab-delimited text 
 -   `ch3_eoc_prob01.RData`: Chapter 3, Chapter Exercise 1 (p. 113)
 
 -   `table3_04.RData`: Table 3.4 (p. 74)
+
+This document assumes that you have both R and RStudio installed on your system. If not, go to <https://posit.co/download/rstudio-desktop/> and follow the instructions there. Once you have both applications installed, launch RStudio and make the following changes:
+
+Go to **Tools \> Global Options...** On the **General** page, go to **Save workspace to .RData** **on exit** and select **Never**.
+
+Click **Code** on the left side, then the **Editing** tab. Check **Use native pipe operator**.
+
+While in **Code** select the **Display** tab. Check **Show margin**. In the Editor pane you'll see a vertical line at 80 columns. Keeping your code within 80 columns makes code easier to read when printed to paper.
+
+I suggest having the Editor and Console panes side-by-side. Select **View \> Panes \> Console on Right**.
+
+You may also want to adjust settings to your own taste. Go to **Tools \> Global Options...** and select **Appearance**. Among other things, you can select an editor theme. This is useful if you prefer a dark background. Select a theme you like.
+
+Besides this package, you will need to install other packages. In the **Console** window, you'll see a **\>** prompt following the R startup message. Click to the right of the prompt and you'll see a blinking cursor. Copy the following, paste it at the cursor, and hit **Enter**.
+
+```{r, eval=FALSE}
+install.packages(c("api2lm", "BEDCA", "broom", "broom.helpers", "emmeans", "fastDummies", "GGally", "ggfortify", "here", "infer", "mosaic", "multcomp", "openintro", "readxl", "scales", "tidyverse", "tinytex", "writexl"))
+```
+
+Once you have R, RStudio, and the needed packages installed, you're ready to do analysis. The first step is to load the necessary packages with the `library()` function; for example:
+
+```{r, eval=FALSE}
+library(BEDCA)
+library(mosaic)
+library(tidyverse)
+```
+
+You can find details of analyses in the other vignettes.
