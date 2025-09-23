@@ -2,7 +2,7 @@
 title: "Chapter 0: Preliminaries"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{ch0-prelim}
+  %\VignetteIndexEntry{Chapter 0: Preliminaries}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
