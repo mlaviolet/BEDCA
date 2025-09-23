@@ -42,7 +42,7 @@ Click **Code** on the left side, then the **Editing** tab. Check **Use native pi
 
 While in **Code** select the **Display** tab. Check **Show margin**. In the Editor pane you'll see a vertical line at 80 columns. Keeping your code within 80 columns makes code easier to read when printed to paper.
 
-I suggest having the Editor and Console panes side-by-side. Select **View \> Panes \> Console on Right**.
+I recommend having the Editor and Console panes side-by-side. Select **View \> Panes \> Console on Right**.
 
 You may also want to adjust settings to your own taste. Go to **Tools \> Global Options...** and select **Appearance**. Among other things, you can select an editor theme. This is useful if you prefer a dark background. Select a theme you like.
 
