@@ -1,8 +1,8 @@
 ---
-title: "ch3-data"
+title: "ch2-data"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{ch3-data}
+  %\VignetteIndexEntry{Chapter 2: Data Collection}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
