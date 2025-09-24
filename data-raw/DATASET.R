@@ -332,12 +332,12 @@ table4_10 <- data.frame(
 # Measured strength of 16 wood joints
 table4_11 <- data.frame(
   specimen = 1:16,
-  joint = factor(c("beveled", "butt", "beveled", "butt", "beveled", "beveled",
-                   "lap", "beveled", "butt", "lap", "lap", "lap", "butt",
-                   "lap", "butt", "beveled")),
-  wood = factor(c("oak", "pine", "walnut", "oak", "oak", "pine", "walnut",
+  joint = c("beveled", "butt", "beveled", "butt", "beveled", "beveled",
+            "lap", "beveled", "butt", "lap", "lap", "lap", "butt",
+            "lap", "butt", "beveled"),
+  wood = c("oak", "pine", "walnut", "oak", "oak", "pine", "walnut",
                   "walnut", "walnut", "oak", "oak", "pine", "pine", "pine",
-                  "walnut", "pine")),
+                  "walnut", "pine"),
   strength = c(1518, 829, 2571, 1169, 1927, 1348, 1489, 2443, 1263, 1295,
                1561, 1000, 596, 859, 1029, 1207))
 # usethis::use_data(table4_11, overwrite = TRUE)
@@ -1141,7 +1141,7 @@ for(i in 1:length(ls())) {
   save(list = (ls()[i]),
        file = file.path(here::here(),
                         "data",
-                        paste0(ls()[i], ".RData"))
+                        paste0(ls()[i], ".rda"))
   )
   cat("Saved", ls()[i], "\n")
   }
