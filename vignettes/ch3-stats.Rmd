@@ -1,5 +1,5 @@
 ---
-title: "ch3-stats"
+title: "Chapter 3: Elementary Descriptive Statistics"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Chapter 3: Elementary Descriptive Statistics}

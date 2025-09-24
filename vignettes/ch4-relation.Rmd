@@ -1,5 +1,5 @@
 ---
-title: "ch4-relation"
+title: "Chapter 4: Describing Relationships Between Variables"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Chapter 4: Describing Relationships Between Variables}

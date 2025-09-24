@@ -1,5 +1,5 @@
 ---
-title: "ch2-data"
+title: "Chapter 2: Data Collection"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Chapter 2: Data Collection}
