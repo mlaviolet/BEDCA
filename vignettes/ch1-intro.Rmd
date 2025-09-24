@@ -1,0 +1,98 @@
+---
+title: "Chapter 1: Introduction"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Chapter 1: Introduction}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup, message=FALSE}
+library(BEDCA)
+library(mosaic)
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+```
+
+We will follow the same sequence of topics and chapter headings as in the text
+and will begin each chapter with a table of R functions that are used in the
+chapter.
+
+### [insert table of functions]
+
+Chapter 1 is mainly concerned with motivation and establishing terminology; thus it contains little data. Table 1.1 of the text presents data on an experiment to determine whether gears should be laid flat or hung on rods while passing through a carburizing furnace. The goal of the experiment was to minimize distortion as measured by "thrust face runout." Table 1.1 presents the results for laid and hung gears, in units of 0.0001 inches.
+
+```{r}
+table1_01
+```
+
+Note that the data for the two gear treatments appear in separate columns, which is not amenable for analysis. To proceed with analysis, the data must be reshaped into "tidy" format. This results in a new data table of two columns: one for the treatment type and a second for the actual measurments. This is accomplished with the `pivot_longer` function from the `tidyr` package.
+
+```{r}
+gears <- table1_01 |> 
+    pivot_longer(cols = everything(), 
+                 values_to = "Runout", 
+                 names_to = "Treatment")
+```
+
+Now we find some numerical summaries. First find the mean distortion for each treatment.
+
+```{r}
+mean(Runout ~ Treatment, data = gears)
+```
+
+The `Laid` gears produce an average of `NA`, which means at least one value is missing. Since the table is small, we can examine the entire table.
+
+```{r}
+print(gears, n = Inf)
+
+```
+
+We see that one laid gear is recorded as missing (row 77). This is because we have measurements for 39 hung gears, but 38 laid gears. Let's confirm with a count of "missing" measurements by treatment.
+
+```{r}
+tally(is.na(Runout) ~ Treatment, data = gears)
+
+```
+
+We'll resolve the issue by removing the missing value (since we don't know it's really missing anyway).
+
+```{r}
+gears <- gears |> 
+  filter(!is.na(Runout))
+nrow(gears)
+```
+
+Now we're ready to find the treatment means. First, let's set the output to a sensible number of digits.
+
+```{r}
+options(digits = 3)
+mean(Runout ~ Treatment, data = gears)
+```
+
+We see that the runout for the hung gears exceeds that for the laid gears by 5.3 $\times$ 0.0001 inches. Now let's make a comparative dotplot.
+
+```{r}
+gf_dotplot(~ Runout, fill = ~ Treatment, data = gears)
+```
+
+```{r}
+ggplot(gears) +
+  aes(x = Runout) +
+  geom_dotplot(binaxis = "y") +
+  facet_grid(~ Treatment) +
+  geom_dotplot() +
+  ylim(0, 0.05)
+
+```
+
+
+

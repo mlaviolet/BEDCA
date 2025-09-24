@@ -1,0 +1,19 @@
+---
+title: "ch3-data"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{ch3-data}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(BEDCA)
+```
