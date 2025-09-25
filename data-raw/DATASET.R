@@ -1146,11 +1146,15 @@ for(i in 1:length(ls())) {
   cat("Saved", ls()[i], "\n")
   }
 
-file.remove(here::here("data", "i.Rdata"))
+file.remove(here::here("data", "i.rda"))
+file.remove(here::here("data", "DATASET.R.rda"))
 
 # for some reason these two weren't saved; save manually
-save("table7_19", file = file.path(here::here("data/table7_19.RData")))
-save("table9_02", file = file.path(here::here("data/table9_02.RData")))
+usethis::use_data(table7_19)
+usethis::use_data(table9_02)
+
+# save("table7_19", file = file.path(here::here("data/table7_19.rda")))
+# save("table9_02", file = file.path(here::here("data/table9_02.rda")))
 
 rm(list = ls())
 
