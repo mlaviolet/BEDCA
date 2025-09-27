@@ -60,5 +60,7 @@ library(mosaic)
 library(tidyverse)
 ```
 
+For ease of exposition, most analyses are done with the `mosaic` package. [elaborate]
+
 For details of analyses, see the other vignettes.
 

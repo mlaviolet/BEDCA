@@ -21,6 +21,7 @@ library(mosaic)
 library(ggplot2)
 library(dplyr)
 library(tidyr)
+theme_set(theme_bw())
 ```
 
 We will follow the same sequence of topics and chapter headings as in the text
@@ -29,7 +30,9 @@ chapter.
 
 ### [insert table of functions]
 
-Chapter 1 is mainly concerned with motivation and establishing terminology; thus it contains little data. Table 1.1 of the text presents data on an experiment to determine whether gears should be laid flat or hung on rods while passing through a carburizing furnace. The goal of the experiment was to minimize distortion as measured by "thrust face runout." Table 1.1 presents the results for laid and hung gears, in units of 0.0001 inches.
+### Example 1: Heat treating gears
+
+Chapter 1 is mainly concerned with motivation and establishing terminology; thus it contains little data. Table 1.1 (p. 3) of the text presents data on an experiment to determine whether gears should be laid flat or hung on rods while passing through a carburizing furnace. The goal of the experiment was to minimize distortion as measured by "thrust face runout." Table 1.1 presents the results for laid and hung gears, in units of 0.0001 inches.
 
 ```{r}
 table1_01
@@ -48,12 +51,12 @@ The treatments `Laid` and `Hung` have type "character." We'll change `Treatment`
 
 ```{r}
 gears <- gears |> 
-  mutate(Treatment = factor(Treatment))
+  mutate(Treatment = factor(Treatment,
+                            levels = c("Laid", "Hung")))
 levels(gears$Treatment)
 ```
 
-
-By default, the levels appear in alphabetical order. Now find some numerical summaries. First find the mean distortion for each treatment.
+By default, the levels appear in alphabetical order; we have specified the `levels` argument to match the order in the text. Now we'll find some numerical summaries. First find the mean distortion for each treatment.
 
 ```{r}
 mean(Runout ~ Treatment, data = gears)
@@ -90,16 +93,39 @@ mean(Runout ~ Treatment, data = gears)
 We see that the runout for the hung gears exceeds that for the laid gears by 5.3 $\times$ 0.0001 inches. Now let's make a comparative dotplot, with the two treatments in separate panels.
 
 ```{r}
-gf_dotplot(~ Runout, fill = ~ Treatment, data = gears)
+mosaic::dotPlot(~ Runout | Treatment, data = gears, nint = 20,
+                xlab = "Runout (0.0001 in.)")
 ```
+
+This is the `ggplot2` version of the plot. I don't know how to remove the dead space.
 
 ```{r}
 ggplot(gears) +
   aes(x = Runout) +
   geom_dotplot(binaxis = "y") +
+  labs(x = "Runout (0.0001 in.)") +
   facet_grid(~ Treatment) +
   geom_dotplot() 
 ```
 
+### Example 7: Book paper thickness measurements
 
+In Example 7 (p. 16) the authors present ten measurements of the thickness of the paper in a classic statistics book. Two students each made ten measurements.
+
+```{r}
+mosaic::dotPlot(~ thickness | tech, data = ch1_xmp07,
+                # nint = 12,
+                xlab = "Thickness (mm)")
+
+```
+
+### Measured displacements of a bob in free fall
+
+In section 1.4 the authors present mathematical models in the context of a standard physics experiment to measure the acceleration due to gravity. Table 1.4 presents results from such an experiment. A scatterplot of displacement against time in free fall results in the following:
+
+```{r}
+gf_point(displacement ~ point, data = table1_04,
+         xlab = "Time (1/60 second)",
+         ylab = "Displacement (mm)")
+```
 
