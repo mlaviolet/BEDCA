@@ -9,7 +9,7 @@ Authors@R: c(
       role = c("aut", "cre")
     )
   )
-Description: Data sets and example analyses from "Basic Engineering Data 
+Description: Data sets and example analyses from book "Basic Engineering Data 
     Collection and Analysis" by Stephen B. Vardeman and J. Marcus Jobe (2001, 
     Brooks/Cole), republished 2023 by Iowa State University Digital Press.
 License: CC BY 4.0

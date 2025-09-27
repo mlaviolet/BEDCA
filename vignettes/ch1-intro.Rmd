@@ -10,8 +10,9 @@ vignette: >
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
-  comment = "#>"
-)
+  comment = "#>",
+  fig.align = "center"
+  )
 ```
 
 ```{r setup, message=FALSE}
@@ -43,7 +44,16 @@ gears <- table1_01 |>
                  names_to = "Treatment")
 ```
 
-Now we find some numerical summaries. First find the mean distortion for each treatment.
+The treatments `Laid` and `Hung` have type "character." We'll change `Treatment` to a factor (categorical variable).
+
+```{r}
+gears <- gears |> 
+  mutate(Treatment = factor(Treatment))
+levels(gears$Treatment)
+```
+
+
+By default, the levels appear in alphabetical order. Now find some numerical summaries. First find the mean distortion for each treatment.
 
 ```{r}
 mean(Runout ~ Treatment, data = gears)
@@ -60,10 +70,9 @@ We see that one laid gear is recorded as missing (row 77). This is because we ha
 
 ```{r}
 tally(is.na(Runout) ~ Treatment, data = gears)
-
 ```
 
-We'll resolve the issue by removing the missing value (since we don't know it's really missing anyway).
+We'll resolve the issue by removing the missing value (since we don't know if it's really missing anyway).
 
 ```{r}
 gears <- gears |> 
@@ -78,7 +87,7 @@ options(digits = 3)
 mean(Runout ~ Treatment, data = gears)
 ```
 
-We see that the runout for the hung gears exceeds that for the laid gears by 5.3 $\times$ 0.0001 inches. Now let's make a comparative dotplot.
+We see that the runout for the hung gears exceeds that for the laid gears by 5.3 $\times$ 0.0001 inches. Now let's make a comparative dotplot, with the two treatments in separate panels.
 
 ```{r}
 gf_dotplot(~ Runout, fill = ~ Treatment, data = gears)
@@ -89,9 +98,7 @@ ggplot(gears) +
   aes(x = Runout) +
   geom_dotplot(binaxis = "y") +
   facet_grid(~ Treatment) +
-  geom_dotplot() +
-  ylim(0, 0.05)
-
+  geom_dotplot() 
 ```
 
 
