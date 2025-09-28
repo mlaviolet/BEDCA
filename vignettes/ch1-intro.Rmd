@@ -93,7 +93,7 @@ mean(Runout ~ Treatment, data = gears)
 We see that the runout for the hung gears exceeds that for the laid gears by 5.3 $\times$ 0.0001 inches. Now let's make a comparative dotplot, with the two treatments in separate panels.
 
 ```{r}
-mosaic::dotPlot(~ Runout | Treatment, data = gears, nint = 20,
+mosaic::dotPlot(~ Runout | Treatment, data = gears, nint = 12,
                 xlab = "Runout (0.0001 in.)")
 ```
 
@@ -124,8 +124,8 @@ mosaic::dotPlot(~ thickness | tech, data = ch1_xmp07,
 In section 1.4 the authors present mathematical models in the context of a standard physics experiment to measure the acceleration due to gravity. Table 1.4 presents results from such an experiment. A scatterplot of displacement against time in free fall results in the following:
 
 ```{r}
-gf_point(displacement ~ point, data = table1_04,
-         xlab = "Time (1/60 second)",
-         ylab = "Displacement (mm)")
+# gf_point(displacement ~ point, data = table1_04,
+#          xlab = "Time (1/60 second)",
+#          ylab = "Displacement (mm)")
 ```
 
