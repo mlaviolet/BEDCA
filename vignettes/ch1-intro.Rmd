@@ -38,20 +38,20 @@ Chapter 1 is mainly concerned with motivation and establishing terminology; thus
 table1_01
 ```
 
-Note that the data for the two gear treatments appear in separate columns, which is not amenable for analysis. To proceed with analysis, the data must be reshaped into "tidy" format. This results in a new data table of two columns: one for the treatment type and a second for the actual measurments. This is accomplished with the `pivot_longer` function from the `tidyr` package.
+Note that the data for the two gear treatments appear in separate columns, which is not amenable for analysis. To proceed with analysis, the data must be reshaped into "tidy" format. This results in a new data table of two columns: one for the treatment type and a second for the actual measurements. This is accomplished with the `pivot_longer` function from the `tidyr` package.
 
 ```{r}
 gears <- table1_01 |> 
-    pivot_longer(cols = everything(), 
-                 values_to = "Runout", 
-                 names_to = "Treatment")
+    tidyr::pivot_longer(cols = everything(), 
+                        values_to = "Runout", 
+                        names_to = "Treatment")
 ```
 
 The treatments `Laid` and `Hung` have type "character." We'll change `Treatment` to a factor (categorical variable).
 
 ```{r}
 gears <- gears |> 
-  mutate(Treatment = factor(Treatment,
+  dplyr::mutate(Treatment = factor(Treatment,
                             levels = c("Laid", "Hung")))
 levels(gears$Treatment)
 ```
@@ -59,27 +59,20 @@ levels(gears$Treatment)
 By default, the levels appear in alphabetical order; we have specified the `levels` argument to match the order in the text. Now we'll find some numerical summaries. First find the mean distortion for each treatment.
 
 ```{r}
-mean(Runout ~ Treatment, data = gears)
+mosaic::mean(Runout ~ Treatment, data = gears)
 ```
 
-The `Laid` gears produce an average of `NA`, which means at least one value is missing. Since the table is small, we can examine the entire table.
+The `Laid` gears produce an average of `NA`, which means at least one value is missing. Let's make a count of "missing" measurements by treatment.
 
 ```{r}
-print(gears, n = Inf)
-
+mosaic::tally(is.na(Runout) ~ Treatment, data = gears)
 ```
 
-We see that one laid gear is recorded as missing (row 77). This is because we have measurements for 39 hung gears, but 38 laid gears. Let's confirm with a count of "missing" measurements by treatment.
-
-```{r}
-tally(is.na(Runout) ~ Treatment, data = gears)
-```
-
-We'll resolve the issue by removing the missing value (since we don't know if it's really missing anyway).
+We see that one laid gear is recorded as missing, so we have measurements for 39 hung gears and 38 laid gears. We'll resolve the issue by removing the missing value (since we don't know if it's really missing anyway).
 
 ```{r}
 gears <- gears |> 
-  filter(!is.na(Runout))
+  dplyr::filter(!is.na(Runout))
 nrow(gears)
 ```
 
@@ -87,7 +80,7 @@ Now we're ready to find the treatment means. First, let's set the output to a se
 
 ```{r}
 options(digits = 3)
-mean(Runout ~ Treatment, data = gears)
+mosaic::mean(Runout ~ Treatment, data = gears)
 ```
 
 We see that the runout for the hung gears exceeds that for the laid gears by 5.3 $\times$ 0.0001 inches. Now let's make a comparative dotplot, with the two treatments in separate panels.
@@ -100,6 +93,7 @@ mosaic::dotPlot(~ Runout | Treatment, data = gears, nint = 12,
 This is the `ggplot2` version of the plot. I don't know how to remove the dead space.
 
 ```{r}
+# all from {ggplot2} package
 ggplot(gears) +
   aes(x = Runout) +
   geom_dotplot(binaxis = "y") +
@@ -114,7 +108,7 @@ In Example 7 (p. 16) the authors present ten measurements of the thickness of th
 
 ```{r}
 mosaic::dotPlot(~ thickness | tech, data = ch1_xmp07,
-                # nint = 12,
+                nint = 8,
                 xlab = "Thickness (mm)")
 
 ```
@@ -124,8 +118,10 @@ mosaic::dotPlot(~ thickness | tech, data = ch1_xmp07,
 In section 1.4 the authors present mathematical models in the context of a standard physics experiment to measure the acceleration due to gravity. Table 1.4 presents results from such an experiment. A scatterplot of displacement against time in free fall results in the following:
 
 ```{r}
-# gf_point(displacement ~ point, data = table1_04,
-#          xlab = "Time (1/60 second)",
-#          ylab = "Displacement (mm)")
+ggformula::gf_point(displacement ~ point, data = table1_04,
+                    xlab = "Time (1/60 second)",
+                    ylab = "Displacement (mm)")
 ```
+
+The authors discuss how the plot can be used to develop a model predicting displacement from time.
 
