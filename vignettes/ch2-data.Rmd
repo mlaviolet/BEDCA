@@ -14,6 +14,107 @@ knitr::opts_chunk$set(
 )
 ```
 
-```{r setup}
+```{r setup, echo=FALSE}
 library(BEDCA)
+options(tidyverse.quiet = TRUE)
+library(tidyverse)
 ```
+
+Chapter 2 discusses the engineering data collection process and contains little data. The only data appears in Table 2.1 (p. 31) and in this package as `table2_01`.
+
+Section 2.2 introduces randomization via paper tables of random digits. The following R code will generate 10 random single digits:
+
+```{r}
+set.seed(42)
+sample(0:9, size = 10, replace = TRUE)
+```
+
+The `set.seed` function specifies the starting seed number for the random digits algorithm. Setting a seed is useful if an investigator wants results to be reproducible. Running the code a second time will produce the same results.
+
+```{r}
+set.seed(42)
+sample(0:9, size = 10, replace = TRUE)
+```
+
+In terms of the paper table, setting a seed is equivalent to entering the table at the same point on each draw.
+
+## 2.4: Some common experimental plans
+
+The authors discuss completely randomized, randomized complete block, and incomplete block experimental plans.
+
+### 2.4.1: Completely randomized experiments
+
+On page 48, the authors describe a student investigation of the effects of two experimental factors, the concentration of hydrofluoric acid in an etching bath and the time spent in the etching bath on the resulting strength of damaged glass rods. The students decided to run a 3 x 3 factorial experiment. The experimental levels of concentration were 50%, 75%, and 100% HF, and the levels of time employed were 30 sec, 60 sec, and 120 sec, resulting in nine treatment
+combinations. Two replications produced 18 experimental runs. The following code generates a completely randomized design.
+
+```{r}
+# Example 11, p. 48
+# fix random seed
+set.seed(42)
+glass <- 
+  # generate all factor-level combinations
+  tidyr::expand_grid(concentration = c("50%", "75%", "100%"), 
+                     time = c("30 sec", "60 sec", "120 sec")) |> 
+  # add 2 replicates
+  dplyr::mutate(k = 2) |> 
+  tidyr::uncount(k) |> 
+  # randomize run order
+  dplyr::slice_sample(prop = 1) |> 
+  tibble::rowid_to_column(var = "run") |> 
+  dplyr::arrange(run) |> 
+  # add blank column for responses
+  dplyr::mutate(strength = NA) 
+glass
+```
+
+The resulting data table can be exported to Excel as a worksheet for collecting data.
+
+```{r, eval=FALSE}
+openxlsx2::write_xlsx(glass, file = "glass.xlsx")
+```
+
+Once data collection is complete, the Excel worksheet can be imported into R.
+
+```{r, eval=FALSE}
+glass_data <- openxlsx2::read_xlsx(file = "glass.xlsx") |> 
+  # convert experimental factors to R factors for analysis
+  # this will change both variables to factor--useful if more than two
+  dplyr::mutate(across(.cols = c(concentration, time), factor))
+```
+
+### 2.4.2: Randomized complete block experiments
+
+The completely randomized design assumes that all experimental runs are carried out under essentially the same conditions. If this might not be the case, blocking is an effective strategy. For example, in the investigation of glass rod strengths, suppose that only nine specimens could be tested in a single day. Each day would then comprise a block, and the randomization would be done separately in each block. The following code will produce such a design.
+
+```{r}
+set.seed(42)
+glass_block <- 
+  tidyr::expand_grid(concentration = c("50%", "75%", "100%"), 
+                           time = c("30 sec", "60 sec", "120 sec")) |> 
+  # add 2 replicates
+  dplyr::mutate(k = 2) |> 
+  # create an ID for each block
+  tidyr::uncount(k, .id = "day") |> 
+  # within each block, generate random order
+  dplyr::mutate(run_order = sample(n()), .by = day) |> 
+  # put rows in order by day and run
+  dplyr::arrange(day, run_order) |> 
+  # add blank column for responses
+  dplyr::mutate(strength = NA) |> 
+  # put day and run order as first columns
+  relocate(day, run_order)
+glass_block
+```
+
+### 2.4.2: Incomplete block experiments
+
+Incomplete block experiments are performed when limitations prevent all factor combinations from appearing in every block. Incomplete blocks are an advanced topic. For more on incomplete blocks and other designs, see the packages `ibd`, `DoE.base`, and `DoE.wrapper`. An overview of R packages for design and analysis is found [here](https://cran.r-project.org/web/views/ExperimentalDesign.html).
+
+## Preparing to collect engineering data
+
+Section 2.5 discusses steps for preparing for the collection of data. See the packages `flowchart`, `ggflowchart`, and `SixSigma` for tools, such as flowcharts and Ishikawa cause-and-effect diagrams.
+
+
+
+
+
