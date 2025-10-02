@@ -51,8 +51,8 @@ Besides this package, you will need to install other packages. In the **Console*
 ```{r, eval=FALSE}
 install.packages(c("BEDCA", "broom", "broom.helpers", "DoE.base", "emmeans",
                    "fastDummies", "FrF2", "GGally", "ggDoE","ggfortify", "here", 
-                   "infer", "mosaic", "multcomp", "openintro", "readxl", 
-                   "scales", "tidyverse", "tinytex", "writexl"))
+                   "infer", "mosaic", "multcomp", "openintro", "openxlsx", 
+                   "readxl", "scales", "tidyverse", "tinytex", "writexl"))
 ```
 
 Package installation needs to be done only once. At this point you're ready to do analysis. The first step is to load the necessary packages with the `library()` function; for example:
@@ -82,6 +82,8 @@ Readers should be familiar with the following basic R concepts:
 -   Functions
 
 -   Packages, installing and loading
+
+-   Factors and levels
 
 Readers not familiar with these should consult one of the many online free tutorials such as [R Basics: Quick and Easy](https://www.sthda.com/english/wiki/r-basics-quick-and-easy) from STHDA.com. Help on functions or data sets is obtained with `help("name")`.
 
