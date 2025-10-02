@@ -49,10 +49,10 @@ You may also want to adjust settings to your own taste. Go to **Tools \> Global 
 Besides this package, you will need to install other packages. In the **Console** window, you'll see a **\>** prompt following the R startup message. Click to the right of the prompt and you'll see a blinking cursor. Copy the following, paste it at the cursor, and hit **Enter**.
 
 ```{r, eval=FALSE}
-install.packages(c("BEDCA", "broom", "broom.helpers", "emmeans",
-                   "fastDummies", "GGally", "ggfortify", "here", "infer",
-                   "mosaic", "multcomp", "openintro", "readxl", "scales",
-                   "tidyverse", "tinytex", "writexl"))
+install.packages(c("BEDCA", "broom", "broom.helpers", "DoE.base", "emmeans",
+                   "fastDummies", "FrF2", "GGally", "ggDoE","ggfortify", "here", 
+                   "infer", "mosaic", "multcomp", "openintro", "readxl", 
+                   "scales", "tidyverse", "tinytex", "writexl"))
 ```
 
 Package installation needs to be done only once. At this point you're ready to do analysis. The first step is to load the necessary packages with the `library()` function; for example:
@@ -83,7 +83,7 @@ Readers should be familiar with the following basic R concepts:
 
 -   Packages, installing and loading
 
-Readers not familiar with these should consult one of the many online free tutorials such as [R Basics: Quick and Easy](https://www.sthda.com/english/wiki/r-basics-quick-and-easy) from STHDA.com.
+Readers not familiar with these should consult one of the many online free tutorials such as [R Basics: Quick and Easy](https://www.sthda.com/english/wiki/r-basics-quick-and-easy) from STHDA.com. Help on functions or data sets is obtained with `help("name")`.
 
 Most analyses are done with the `tidyverse` suite of packages and the `mosaic` package, which provides a formula interface to common statistical analyses and `ggplot` graphics.
 
