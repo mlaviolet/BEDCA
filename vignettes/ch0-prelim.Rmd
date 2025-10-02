@@ -14,15 +14,15 @@ knitr::opts_chunk$set(
 )
 ```
 
-```{r setup}
+```{r setup, echo=FALSE}
 library(BEDCA)
 ```
 
 ## Introduction
 
-This document describes the use of the statistical application R as computing support in an introductory statistics course based on the text *Basic Engineering Data Collection and Analysis* by Stephen B. Vardeman and J. Marcus Jobe (Brooks/Cole 2001, republished 2023 by [Iowa State University Digital Press](https://www.iastatedigitalpress.com/plugins/books/127/)). We demonstrate how R can be used to reproduce the results in many of the examples in the text.
+This document describes the use of the statistical application R as computing support in an introductory statistics course based on the text *Basic Engineering Data Collection and Analysis* by Stephen B. Vardeman and J. Marcus Jobe (Brooks/Cole 2001, republished 2023 by [Iowa State University Digital Press](https://www.iastatedigitalpress.com/plugins/books/127/)). We demonstrate how R can be used to reproduce the results from many of the examples in the text.
 
-A desirable feature of this text is the number of examples and exercises based on real data sets. Most of these are drawn from actual experiments performed by students as course projects. Some of the data sets are large and have a complex structure. Although it is not difficult to enter these data into a computer package like R, the process is tedious, error-prone, and provides a poor learning experience. We have provided copies of the data sets for the exercises and most examples in a package named `BEDCA` that can be used with R. This document is also part of the `BEDCA` package.
+A desirable feature of this text is the number of examples and exercises based on real data sets. Most of these are drawn from actual experiments performed by students as course projects. Some data sets are large and have a complex structure. Although it is not difficult to enter these data into a computer package like R, the process is tedious, error-prone, and provides a poor learning experience. We have provided copies of the data sets for the exercises and most examples in a package named `BEDCA` that can be used with R. This document is also part of the `BEDCA` package.
 
 Data for exercises was constructed by importing the supplied tab-delimited text files into R. In most cases the data were imported "as is," so they may require additional processing before analysis. For the most part this involves reshaping into tidy format. Data for most examples appear as tables in the body of the text; these were copied or transcribed. Data sets are identified as shown in the following examples:
 
@@ -49,7 +49,7 @@ You may also want to adjust settings to your own taste. Go to **Tools \> Global 
 Besides this package, you will need to install other packages. In the **Console** window, you'll see a **\>** prompt following the R startup message. Click to the right of the prompt and you'll see a blinking cursor. Copy the following, paste it at the cursor, and hit **Enter**.
 
 ```{r, eval=FALSE}
-install.packages(c("api2lm", "BEDCA", "broom", "broom.helpers", "emmeans",
+install.packages(c("BEDCA", "broom", "broom.helpers", "emmeans",
                    "fastDummies", "GGally", "ggfortify", "here", "infer",
                    "mosaic", "multcomp", "openintro", "readxl", "scales",
                    "tidyverse", "tinytex", "writexl"))
@@ -63,7 +63,28 @@ library(mosaic)
 library(tidyverse)
 ```
 
-Most analyses are done with the `mosaic` package and its accompanying `ggformula` package. These packages provide a formula interface to common statistical analyses and `ggplot` graphics. 
+Readers should be familiar with the following basic R concepts:
+
+-   Data types
+
+    -   Numeric and integer
+    -   Character
+    -   Logical
+
+-   Data structures
+
+    -   Vectors
+    -   Data frames
+    -   Tibbles
+
+-   Objects and assignment
+
+-   Functions
+
+-   Packages, installing and loading
+
+Readers not familiar with these should consult one of the many online free tutorials such as [R Basics: Quick and Easy](https://www.sthda.com/english/wiki/r-basics-quick-and-easy) from STHDA.com.
+
+Most analyses are done with the `tidyverse` suite of packages and the `mosaic` package, which provides a formula interface to common statistical analyses and `ggplot` graphics.
 
 For details of analyses, see the other vignettes.
-
