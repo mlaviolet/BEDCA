@@ -15,6 +15,10 @@ knitr::opts_chunk$set(
   )
 ```
 
+We will follow the same sequence of topics and chapter headings as the text
+and will begin each chapter with a table of R functions that are used in the
+chapter. For clarity, functions outside base R are called with the double colon operator; that is, as package_name::function_name().
+
 ```{r setup, message=FALSE}
 library(BEDCA)
 library(mosaic)
@@ -24,10 +28,6 @@ library(tidyr)
 theme_set(theme_bw())
 ```
 
-We will follow the same sequence of topics and chapter headings as in the text
-and will begin each chapter with a table of R functions that are used in the
-chapter.
-
 ### [insert table of functions]
 
 ### Example 1: Heat treating gears
@@ -35,10 +35,10 @@ chapter.
 Chapter 1 is mainly concerned with motivation and establishing terminology; thus it contains little data. Table 1.1 (p. 3) of the text presents data on an experiment to determine whether gears should be laid flat or hung on rods while passing through a carburizing furnace. The goal of the experiment was to minimize distortion as measured by "thrust face runout." Table 1.1 presents the results for laid and hung gears, in units of 0.0001 inches.
 
 ```{r}
-table1_01
+dplyr::glimpse(table1_01)
 ```
 
-Note that the data for the two gear treatments appear in separate columns, which is not amenable for analysis. To proceed with analysis, the data must be reshaped into "tidy" format. This results in a new data table of two columns: one for the treatment type and a second for the actual measurements. This is accomplished with the `pivot_longer` function from the `tidyr` package.
+Note that the data for the two gear treatments appear in separate columns, which is not amenable for analysis. To proceed with analysis, the data must be reshaped into "tidy" format. This results in a new data table of two columns: one for the treatment type and a second for the actual measurements. Reshaping is accomplished with the `pivot_longer` function from the `tidyr` package.
 
 ```{r}
 gears <- table1_01 |> 
@@ -52,7 +52,7 @@ The treatments `Laid` and `Hung` have type "character." We'll change `Treatment`
 ```{r}
 gears <- gears |> 
   dplyr::mutate(Treatment = factor(Treatment,
-                            levels = c("Laid", "Hung")))
+                                   levels = c("Laid", "Hung")))
 levels(gears$Treatment)
 ```
 
@@ -83,39 +83,39 @@ options(digits = 3)
 mosaic::mean(Runout ~ Treatment, data = gears)
 ```
 
-We see that the runout for the hung gears exceeds that for the laid gears by 5.3 $\times$ 0.0001 inches. Now let's make a comparative dotplot, with the two treatments in separate panels.
+We see that the runout for the hung gears exceeds that for the laid gears by 5.3 $\times$ 0.0001 inches. Let's make a comparative dot plot, with the two treatments in separate panels.
 
 ```{r}
-mosaic::dotPlot(~ Runout | Treatment, data = gears, nint = 12,
+mosaic::dotPlot(~ Runout | Treatment, data = gears, 
+                nint = 12,
                 xlab = "Runout (0.0001 in.)")
 ```
 
-This is the `ggplot2` version of the plot. I don't know how to remove the dead space.
+### Example 2: Pelletizing hexamine powder
+
+Example 2 (introduced p. 8) describes the problem of reducing the fraction of nonconforming fuel pellets produced in the compression of a raw hexamine powder
+in a pelletizing machine. The students' study used three factors with two levels each. Table 1.2 (p. 12) lists the eight possible combinations of factor levels. The table can be produced with the base `expand.grid` function or with `expand_grid` from the `tidyverse` suite. Further details of setting up an experiment of this type appear in Chapter 2.
 
 ```{r}
-# all from {ggplot2} package
-ggplot(gears) +
-  aes(x = Runout) +
-  geom_dotplot(binaxis = "y") +
-  labs(x = "Runout (0.0001 in.)") +
-  facet_grid(~ Treatment) +
-  geom_dotplot() 
+tidyr::expand_grid(volume = c("low", "high"),
+                   flow = c("current", "manual"),
+                   mixture = c("no binder", "binder")
+                   )
 ```
 
 ### Example 7: Book paper thickness measurements
 
-In Example 7 (p. 16) the authors present ten measurements of the thickness of the paper in a classic statistics book. Two students each made ten measurements.
+In Example 7 (p. 16) the authors present measurements of the thickness of the paper in a classic statistics book. Two students each made ten measurements.
 
 ```{r}
 mosaic::dotPlot(~ thickness | tech, data = ch1_xmp07,
                 nint = 8,
                 xlab = "Thickness (mm)")
-
 ```
 
 ### Measured displacements of a bob in free fall
 
-In section 1.4 the authors present mathematical models in the context of a standard physics experiment to measure the acceleration due to gravity. Table 1.4 presents results from such an experiment. A scatterplot of displacement against time in free fall results in the following:
+In Section 1.4 the authors present mathematical models in the context of a standard physics experiment to measure the acceleration due to gravity. Table 1.4 presents results from such an experiment. A scatterplot of displacement against time in free fall results in the following:
 
 ```{r}
 ggformula::gf_point(displacement ~ point, data = table1_04,
