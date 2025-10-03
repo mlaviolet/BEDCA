@@ -13,7 +13,7 @@ A data frame with 30 rows and 2 variables.
 }
 \source{
 Vardeman SB & Jobe MJ (2023) \emph{ Engineering Data Collection and Analysis}
-\url{https://www.iastatedigitalpress.com/plugins/books/127/}
+\url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 76
 }
 \usage{
 data(table3_05)

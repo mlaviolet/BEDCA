@@ -7,13 +7,13 @@
 \format{
 A data frame with 15 rows and 2 variables.
  \describe{
-  \item{pressure}{Pressing presssure (psi)}
+  \item{pressure}{Pressing presssure (1000 x psi)}
   \item{density}{Density of cylinder (g/cc)}
   }
 }
 \source{
 Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
-\url{https://www.iastatedigitalpress.com/plugins/books/127/}
+\url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 124
 }
 \usage{
 data(table4_01)

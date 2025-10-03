@@ -14,7 +14,7 @@ A data frame with 34 rows and 3 variables.
 }
 \source{
 Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
-\url{https://www.iastatedigitalpress.com/plugins/books/127/}
+\url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 74
 }
 \usage{
 data(table3_04)
