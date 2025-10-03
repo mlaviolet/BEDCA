@@ -3,7 +3,7 @@
 \docType{data}
 \name{ch1_xmp07}
 \alias{ch1_xmp07}
-\title{Chapter 1, Example 7, p. 16}
+\title{Chapter 1, Example 7}
 \format{
 A data frame with 10 rows and 2 variables.
  \describe{
@@ -13,13 +13,13 @@ A data frame with 10 rows and 2 variables.
 }
 \source{
 Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
-\url{https://www.iastatedigitalpress.com/plugins/books/127/}
+\url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 16
 }
 \usage{
 data(ch1_xmp07)
 }
 \description{
-Chapter 1, Example 7, p. 16
+Chapter 1, Example 7
 }
 \examples{
 data(ch1_xmp07)
