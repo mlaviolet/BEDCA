@@ -3,7 +3,7 @@
 \docType{data}
 \name{table1_04}
 \alias{table1_04}
-\title{Table 1.4}
+\title{Table 1.4, p. 21}
 \format{
 A data frame with 23 rows and 2 variables.
  \describe{
@@ -13,13 +13,13 @@ A data frame with 23 rows and 2 variables.
 }
 \source{
 Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
-\url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 21
+\url{https://www.iastatedigitalpress.com/plugins/books/127/}
 }
 \usage{
 data(table1_04)
 }
 \description{
-Table 1.4
+Table 1.4, p. 21
 }
 \examples{
 data(table1_04)

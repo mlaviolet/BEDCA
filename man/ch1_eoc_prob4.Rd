@@ -3,7 +3,7 @@
 \docType{data}
 \name{ch1_eoc_prob4}
 \alias{ch1_eoc_prob4}
-\title{Chapter 1, Exercise 4}
+\title{Chapter 1, Exercise 4, p. 23}
 \format{
 A data frame with 8 rows and 3 variables.
  \describe{
@@ -14,13 +14,13 @@ A data frame with 8 rows and 3 variables.
 }
 \source{
 Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
-\url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 23
+\url{https://www.iastatedigitalpress.com/plugins/books/127/}
 }
 \usage{
 data(ch1_eoc_prob4)
 }
 \description{
-Chapter 1, Exercise 4
+Chapter 1, Exercise 4, p. 23
 }
 \examples{
 data(ch1_eoc_prob4)

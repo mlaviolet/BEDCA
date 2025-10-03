@@ -6,7 +6,7 @@
 
 #' @name ch1_xmp07
 #' @docType data
-#' @title Chapter 1, Example 7
+#' @title Chapter 1, Example 7, p. 16
 #' @usage data(ch1_xmp07)
 #' @keywords datasets
 #'
@@ -17,7 +17,7 @@
 #'   }
 #'
 #' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
-#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 16
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}
 #'
 #' @examples
 #' data(ch1_xmp07)
@@ -27,7 +27,7 @@ NULL
 
 #' @name ch1_eoc_prob4
 #' @docType data
-#' @title Chapter 1, Exercise 4
+#' @title Chapter 1, Exercise 4, p. 23
 #' @usage data(ch1_eoc_prob4)
 #' @keywords datasets
 #'
@@ -39,7 +39,7 @@ NULL
 #'   }
 #'
 #' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
-#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 23
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}
 #'
 #' @examples
 #' data(ch1_eoc_prob4)
@@ -48,7 +48,7 @@ NULL
 
 #' @name table1_01
 #' @docType data
-#' @title Table 1.1
+#' @title Table 1.1, p. 3
 #' @usage data(table1_01)
 #' @keywords datasets
 #'
@@ -59,7 +59,7 @@ NULL
 #'   }
 #'
 #' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
-#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 3
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}
 #'
 #' @examples
 #' data(table1_01)
@@ -69,7 +69,7 @@ NULL
 
 #' @name table1_04
 #' @docType data
-#' @title Table 1.4
+#' @title Table 1.4, p. 21
 #' @usage data(table1_04)
 #' @keywords datasets
 #'
@@ -80,7 +80,7 @@ NULL
 #'   }
 #'
 #' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
-#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 21
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}
 #'
 #' @examples
 #' data(table1_04)
