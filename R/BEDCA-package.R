@@ -17,7 +17,7 @@
 #'   }
 #'
 #' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
-#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 16
 #'
 #' @examples
 #' data(ch1_xmp07)
@@ -39,7 +39,7 @@ NULL
 #'   }
 #'
 #' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
-#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 23
 #'
 #' @examples
 #' data(ch1_eoc_prob4)
@@ -59,7 +59,7 @@ NULL
 #'   }
 #'
 #' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
-#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 3
 #'
 #' @examples
 #' data(table1_01)
@@ -80,7 +80,7 @@ NULL
 #'   }
 #'
 #' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
-#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 21
 #'
 #' @examples
 #' data(table1_04)
@@ -103,7 +103,7 @@ NULL
 #'   }
 #'
 #' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
-#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 31
 #'
 #' @examples
 #' data(table2_01)
@@ -125,7 +125,7 @@ NULL
 #'   }
 #'
 #' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
-#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 74
 #'
 #' @examples
 #' data(table3_04)
@@ -146,7 +146,7 @@ NULL
 #'   }
 #'
 #' @source Vardeman SB & Jobe MJ (2023) \emph{ Engineering Data Collection and Analysis}
-#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 76
 #'
 #' @examples
 #' data(table3_05)
@@ -167,7 +167,7 @@ NULL
 #'   }
 #'
 #' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
-#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 79
 #'
 #' @examples
 #' data(table3_06)
@@ -188,7 +188,7 @@ NULL
 #'   }
 #'
 #' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
-#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 94
 #'
 #' @examples
 #' data(table3_13)
@@ -210,7 +210,7 @@ NULL
 #'   }
 #'
 #' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
-#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 100
 #'
 #' @examples
 #' data(table3_14)
@@ -232,7 +232,7 @@ NULL
 #'   }
 #'
 #' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
-#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 101
 #'
 #' @examples
 #' data(table3_15)
@@ -253,7 +253,7 @@ NULL
 #'   }
 #'
 #' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
-#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 105
 #'
 #' @examples
 #' data(table3_16)
@@ -274,7 +274,7 @@ NULL
 #'   }
 #'
 #' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
-#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 106
 #'
 #' @examples
 #' data(table3_17)
@@ -296,7 +296,7 @@ NULL
 #'   }
 #'
 #' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
-#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 109
 #'
 #' @examples
 #' data(table3_18)
@@ -317,7 +317,7 @@ NULL
 #'   }
 #'
 #' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
-#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 110
 #'
 #' @examples
 #' data(table3_19)
@@ -339,7 +339,7 @@ NULL
 #'   }
 #'
 #' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
-#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 112
 #'
 #' @examples
 #' data(table3_20)
@@ -355,12 +355,12 @@ NULL
 #'
 #' @format A data frame with 15 rows and 2 variables.
 #'  \describe{
-#'   \item{pressure}{Pressing presssure (psi)}
+#'   \item{pressure}{Pressing presssure (1000 x psi)}
 #'   \item{density}{Density of cylinder (g/cc)}
 #'   }
 #'
 #' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
-#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 124
 #'
 #' @examples
 #' data(table4_01)
@@ -381,7 +381,7 @@ NULL
 #'   }
 #'
 #' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
-#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 133
 #'
 #' @examples
 #' data(table4_03)
@@ -402,7 +402,7 @@ NULL
 #'   }
 #'
 #' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
-#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 139
 #'
 #' @examples
 #' data(table4_06)
@@ -427,7 +427,7 @@ NULL
 #' @note Brownlee's stack loss data, presented here with 17 cases instead of the usual 21. Complete data are available as \code{datasets::stackloss}.
 #'
 #' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
-#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 150
 #'
 #' @references Brownlee KA (1965) \emph{Statistical Theory and Methodology In Science and Engineering} (second edition), New York: Wiley.
 #'
