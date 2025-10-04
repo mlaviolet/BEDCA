@@ -190,6 +190,8 @@ NULL
 #' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
 #' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 94
 #'
+#' @note Data used in Chapter 3, Section 2, Exercise 2
+#'
 #' @examples
 #' data(table3_13)
 #' str(table3_13)
@@ -439,7 +441,7 @@ NULL
 
 #' @name ch3_sec1_prob1
 #' @docType data
-#' @title Chapter 3, Section 1, Problem 1
+#' @title Chapter 3, Section 1, Exercise 1
 #' @usage data(ch3_sec1_prob1)
 #' @keywords datasets
 #'
@@ -451,6 +453,8 @@ NULL
 #' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
 #' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 77
 #'
+#' @note Data also used in Chapter 3, Section 2, Exercise 3
+#'
 #' @examples
 #' data(ch3_sec1_prob1)
 #' str(ch3_sec1_prob1)
@@ -459,7 +463,7 @@ NULL
 
 #' @name ch3_sec1_prob2
 #' @docType data
-#' @title Chapter 3, Section 1, Problem 2
+#' @title Chapter 3, Section 1, Exercise 2
 #' @usage data(ch3_sec1_prob2)
 #' @keywords datasets
 #'
@@ -482,7 +486,7 @@ NULL
 
 #' @name ch3_sec1_prob3
 #' @docType data
-#' @title Chapter 3, Section 1, Problem 3
+#' @title Chapter 3, Section 1, Exercise 3
 #' @usage data(ch3_sec1_prob3)
 #' @keywords datasets
 #'
@@ -499,5 +503,26 @@ NULL
 #' @examples
 #' data(ch3_sec1_prob3)
 #' str(ch3_sec1_prob3)
+#'
+NULL
+
+#' @name ch3_sec2_prob1
+#' @docType data
+#' @title Chapter 3, Section 2, Exercise 1
+#' @usage data(ch3_sec2_prob1)
+#' @keywords datasets
+#'
+#' @format A data frame with 10 rows and 2 variables.
+#'  \describe{
+#'   \item{Length}{Impact strength of insulating material cut lengthwise (ft-lb)}
+#'   \item{Cross}{Impact strength of insulating material cut crosswise (ft-lb)}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 92
+#'
+#' @examples
+#' data(ch3_sec2_prob1)
+#' str(ch3_sec2_prob1)
 #'
 NULL

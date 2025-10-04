@@ -21,6 +21,9 @@ data(table3_13)
 \description{
 Table 3.13
 }
+\note{
+Data used in Chapter 3, Section 2, Problem 2
+}
 \examples{
 data(table3_13)
 str(table3_13)

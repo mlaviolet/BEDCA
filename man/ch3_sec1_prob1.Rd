@@ -20,6 +20,9 @@ data(ch3_sec1_prob1)
 \description{
 Chapter 3, Section 1, Problem 1
 }
+\note{
+Data also used in Chapter 3, Section 2, Problem 3
+}
 \examples{
 data(ch3_sec1_prob1)
 str(ch3_sec1_prob1)
