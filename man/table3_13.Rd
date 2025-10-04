@@ -22,7 +22,7 @@ data(table3_13)
 Table 3.13
 }
 \note{
-Data used in Chapter 3, Section 2, Problem 2
+Data used in Chapter 3, Section 2, Exercise 2
 }
 \examples{
 data(table3_13)
