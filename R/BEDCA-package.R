@@ -437,4 +437,67 @@ NULL
 #'
 NULL
 
+#' @name ch3_sec1_prob1
+#' @docType data
+#' @title Chapter 3, Section 1, Problem 1
+#' @usage data(ch3_sec1_prob1)
+#' @keywords datasets
+#'
+#' @format A data frame with 40 rows and 1 variable.
+#'  \describe{
+#'   \item{runs}{Percent yields from 40 runs of a chemical process}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 77
+#'
+#' @examples
+#' data(ch3_sec1_prob1)
+#' str(ch3_sec1_prob1)
+#'
+NULL
 
+#' @name ch3_sec1_prob2
+#' @docType data
+#' @title Chapter 3, Section 1, Problem 2
+#' @usage data(ch3_sec1_prob2)
+#' @keywords datasets
+#'
+#' @format A data frame with 20 rows and 2 variables.
+#'  \describe{
+#'   \item{230_G}{Bullet penetration depths for 230 grain jacketed bullets}
+#'   \item{200_G}{Bullet penetration depths for 200 grain jacketed bullets}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 77
+#'
+#' @note First appearance as Table 3.1, p. 67
+#'
+#' @examples
+#' data(ch3_sec1_prob2)
+#' str(ch3_sec1_prob2)
+#'
+NULL
+
+#' @name ch3_sec1_prob3
+#' @docType data
+#' @title Chapter 3, Section 1, Problem 3
+#' @usage data(ch3_sec1_prob3)
+#' @keywords datasets
+#'
+#' @format A data frame with 20 rows and 2 variables.
+#'  \describe{
+#'   \item{Piece}{Piece ID}
+#'   \item{Top}{Torque required to loosen top bolt (ft-lb)}
+#'   \item{Bottom}{Torque required to loosen bottom bolt (ft-lb)}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 77
+#'
+#' @examples
+#' data(ch3_sec1_prob3)
+#' str(ch3_sec1_prob3)
+#'
+NULL
