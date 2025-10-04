@@ -3,7 +3,7 @@
 \docType{data}
 \name{ch3_sec1_prob3}
 \alias{ch3_sec1_prob3}
-\title{Chapter 3, Section 1, Problem 3}
+\title{Chapter 3, Section 1, Exercise 3}
 \format{
 A data frame with 20 rows and 2 variables.
  \describe{
@@ -20,7 +20,7 @@ Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysi
 data(ch3_sec1_prob3)
 }
 \description{
-Chapter 3, Section 1, Problem 3
+Chapter 3, Section 1, Exercise 3
 }
 \examples{
 data(ch3_sec1_prob3)
