@@ -1135,8 +1135,9 @@ table_a_5 <- data.frame(
 table1_01 <- ch2_sec2_prob2
 rm(ch2_sec2_prob2)
 
-# remove ch3_sec2_prob2 AND ch3_sec2_prob3--data appear elsewhere
-# rm(ch3_sec2_prob2, ch3_sec2_prob3)
+# remove ch3_sec2_prob2, ch3_sec2_prob3, ch3_sec4_prob2
+#   data appear elsewhere
+# rm(ch3_sec2_prob2, ch3_sec2_prob3, ch3_sec4_prob2)
 
 # Save workspace ----------------------------------------------------------
 

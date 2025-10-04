@@ -21,6 +21,9 @@ data(table1_01)
 \description{
 Table 1.1
 }
+\note{
+Data used in Chapter 3, Section 4, Exercise 2
+}
 \examples{
 data(table1_01)
 str(table1_01)
