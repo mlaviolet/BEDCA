@@ -16,16 +16,15 @@ License: CC BY 4.0
 Encoding: UTF-8
 LazyData: true
 Imports: 
-    tidyverse,
-    here,
+    broom,
     dplyr,
-    tidyr,
-    mosaic,
-    ggformula,
-    tibble,
-    openxlsx2,
     emmeans,
-    broom
+    ggformula,
+    here,
+    mosaic,
+    openxlsx2,
+    tibble,
+    tidyr
 Depends: 
     R (>= 3.5)
 RoxygenNote: 7.3.3
