@@ -17,7 +17,15 @@ Encoding: UTF-8
 LazyData: true
 Imports: 
     tidyverse,
-    here
+    here,
+    dplyr,
+    tidyr,
+    mosaic,
+    ggformula,
+    tibble,
+    openxlsx2,
+    emmeans,
+    broom
 Depends: 
     R (>= 3.5)
 RoxygenNote: 7.3.3
