@@ -6,7 +6,7 @@
 \alias{BEDCA-package}
 \title{BEDCA: Basic Engineering Data Collection and Analysis}
 \description{
-Data sets and example analyses from book "Basic Engineering Data Collection and Analysis" by Stephen B. Vardeman and J. Marcus Jobe (2001, Brooks/Cole), republished 2023 by Iowa State University Digital Press.
+Data sets and example analyses from book "Basic Engineering Data Collection and Analysis" by Stephen B. Vardeman and J. Marcus Jobe (2001, Brooks/Cole, republished 2023 by Iowa State University Digital Press).
 }
 \seealso{
 Useful links:
