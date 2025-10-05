@@ -1,20 +1,18 @@
-Package: BEDCA
 Type: Package
+Package: BEDCA
 Title: Basic Engineering Data Collection and Analysis
 Version: 0.1.0
-Authors@R: c(
-    person(
-      "Michael", "Laviolette",
-      email = "statman54@gmail.com",
-      role = c("aut", "cre")
-    )
-  )
-Description: Data sets and example analyses from book "Basic Engineering Data 
-    Collection and Analysis" by Stephen B. Vardeman and J. Marcus Jobe (2001, 
-    Brooks/Cole), republished 2023 by Iowa State University Digital Press.
+Authors@R: 
+    person("Michael", "Laviolette", , "statman54@gmail.com", role = c("aut", "cre"))
+Description: Data sets and example analyses from book "Basic Engineering
+    Data Collection and Analysis" by Stephen B. Vardeman and J. Marcus
+    Jobe (2001, Brooks/Cole), republished 2023 by Iowa State University
+    Digital Press.
 License: CC BY 4.0
-Encoding: UTF-8
-LazyData: true
+URL: https://github.com/mlaviolet/BEDCA
+BugReports: https://github.com/mlaviolet/BEDCA/issues
+Depends: 
+    R (>= 3.5)
 Imports: 
     broom,
     dplyr,
@@ -27,12 +25,11 @@ Imports:
     tibble,
     tidyr,
     tidyverse
-Depends: 
-    R (>= 3.5)
-RoxygenNote: 7.3.3
 Suggests: 
     knitr,
     rmarkdown
-VignetteBuilder: knitr
-URL: https://github.com/mlaviolet/BEDCA
-BugReports: https://github.com/mlaviolet/BEDCA/issues
+VignetteBuilder: 
+    knitr
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.3.3
