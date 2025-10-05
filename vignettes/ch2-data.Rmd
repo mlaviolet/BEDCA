@@ -16,8 +16,6 @@ knitr::opts_chunk$set(
 
 ```{r setup, echo=FALSE}
 library(BEDCA)
-# options(tidyverse.quiet = TRUE)
-# library(tidyverse)
 ```
 
 Chapter 2 discusses the engineering data collection process and contains little data. The only data appears in Table 2.1 (p. 31) and in this package as `table2_01`.
@@ -102,7 +100,7 @@ glass_block <-
   # add blank column for responses
   dplyr::mutate(strength = NA) |> 
   # put day and run order as first columns
-  relocate(day, run_order)
+  dplyr::relocate(day, run_order)
 glass_block
 ```
 
