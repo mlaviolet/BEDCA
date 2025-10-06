@@ -21,10 +21,11 @@ Imports:
     ggplot2,
     here,
     mosaic,
-    openxlsx2,
+    readxl,
     tibble,
     tidyr,
-    tidyverse
+    tidyverse,
+    writexl
 Suggests: 
     knitr,
     rmarkdown
