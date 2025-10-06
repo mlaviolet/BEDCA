@@ -68,13 +68,13 @@ glass
 The resulting data table can be exported to Excel as a worksheet for collecting data.
 
 ```{r, eval=FALSE}
-openxlsx2::write_xlsx(glass, file = "glass.xlsx")
+writexl::write_xlsx(glass, file = "glass.xlsx")
 ```
 
 Once data collection is complete, the Excel worksheet can be imported into R.
 
 ```{r, eval=FALSE}
-glass_data <- openxlsx2::read_xlsx(file = "glass.xlsx") |> 
+glass_data <- readxl::read_xlsx(file = "glass.xlsx") |> 
   # convert experimental factors to R factors for analysis
   # this will change both variables to factor--useful if more than two
   dplyr::mutate(across(.cols = c(concentration, time), factor))
@@ -87,19 +87,16 @@ The completely randomized design assumes that all experimental runs are carried 
 ```{r}
 set.seed(42)
 glass_block <- 
-  tidyr::expand_grid(concentration = c("50%", "75%", "100%"), 
-                           time = c("30 sec", "60 sec", "120 sec")) |> 
+  tidyr::expand_grid(concentration = c("50%", "75%", "100%"),
+                     time = c("30 sec", "60 sec", "120 sec")) |>
   # add 2 replicates
-  dplyr::mutate(k = 2) |> 
+  dplyr::mutate(k = 2) |>
   # create an ID for each block
-  tidyr::uncount(k, .id = "day") |> 
+  tidyr::uncount(k, .id = "day") |>
   # within each block, generate random order
-  dplyr::mutate(run_order = sample(n()), .by = day) |> 
-  # put rows in order by day and run
-  dplyr::arrange(day, run_order) |> 
-  # add blank column for responses
-  dplyr::mutate(strength = NA) |> 
-  # put day and run order as first columns
+  dplyr::slice_sample(prop = 1, by = day) |>
+  dplyr::mutate(run_order = seq_along(day), .by = day) |> 
+  # put day and run_order as first columns
   dplyr::relocate(day, run_order)
 glass_block
 ```
