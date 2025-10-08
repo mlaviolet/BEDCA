@@ -701,3 +701,89 @@ NULL
 #'
 NULL
 
+#' @name ch3_eoc_prob09
+#' @docType data
+#' @title Chapter 3, Chapter Exercise 9
+#' @usage data(ch3_eoc_prob09)
+#' @keywords datasets
+#'
+#' @format A data frame with 405 rows and 1 variable.
+#'  \describe{
+#'   \item{Height}{Punch height (0.001 in.)}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 116
+#'
+#' @examples
+#' data(ch3_eoc_prob09)
+#' str(ch3_eoc_prob09)
+#'
+NULL
+
+#' @name ch3_eoc_prob10
+#' @docType data
+#' @title Chapter 3, Chapter Exercise 10
+#' @usage data(ch3_eoc_prob10)
+#' @keywords datasets
+#'
+#' @format A data frame with 100 rows and 1 variable.
+#'  \describe{
+#'   \item{Purities}{Daily purities of oxygen, in increments of 0.01 percent above 99.00}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 117
+#'
+#' @examples
+#' data(ch3_eoc_prob10)
+#' str(ch3_eoc_prob10)
+#'
+NULL
+
+#' @name ch3_eoc_prob11
+#' @docType data
+#' @title Chapter 3, Chapter Exercise 11
+#' @usage data(ch3_eoc_prob11)
+#' @keywords datasets
+#'
+#' @format A data frame with 10 rows and 4 variables.
+#'  \describe{
+#'   \item{Stres87}{Failure time for hardened steel specimens subjected to 0.87 x 10^6 psi}
+#'   \item{Stres99}{Failure time for hardened steel specimens subjected to 0.99 x 10^6 psi}
+#'   \item{Stres100}{Failure time for hardened steel specimens subjected to 1.09 x 10^6 psi}
+#'   \item{Stres118}{Failure time for hardened steel specimens subjected to 1.18 x 10^6 psi}
+#'   }
+#'
+#' @note Time units are unknown
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 117
+#'
+#' @examples
+#' data(ch3_eoc_prob11)
+#' str(ch3_eoc_prob11)
+#'
+NULL
+
+#' @name ch3_eoc_prob12
+#' @docType data
+#' @title Chapter 3, Chapter Exercise 12
+#' @usage data(ch3_eoc_prob12)
+#' @keywords datasets
+#'
+#' @format A data frame with 20 rows and 3 variables.
+#'  \describe{
+#'   \item{Inch}{Nominal length of steel strip}
+#'   \item{X14G}{Measured length of 14 gauge steel strip (0.001 in. above nominal)}
+#'   \item{X12G}{Measured length of 12 gauge steel strip (0.001 in. above nominal)}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 118
+#'
+#' @examples
+#' data(ch3_eoc_prob12)
+#' str(ch3_eoc_prob12)
+#'
+NULL

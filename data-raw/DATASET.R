@@ -149,6 +149,11 @@ ch3_eoc_prob07 <- ch3_eoc_prob07 |>
   dplyr::select(A, B)
 # usethis::use_data(ch3_eoc_prob07, overwrite = TRUE)
 
+ch3_eoc_prob12 <-
+  read_tsv(
+    here::here(paste0("data-raw/", "Chapter 3/End of Chapter/Prob 12.txt")),
+    name_repair = make.names)
+# usethis::use_data(ch3_eoc_prob12, overwrite = TRUE)
 
 rm(df_list, df_names, file_names, get_text_data)
 
