@@ -530,3 +530,85 @@ NULL
 #' str(ch3_sec2_prob1)
 #'
 NULL
+
+#' @name ch3_eoc_prob01
+#' @docType data
+#' @title Chapter 3, Chapter Exercise 1
+#' @usage data(ch3_eoc_prob01)
+#' @keywords datasets
+#'
+#' @format A data frame with 120 rows and 1 variable.
+#'  \describe{
+#'   \item{Gains}{Gain measured on amplifier (dB)}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 113
+#'
+#' @examples
+#' data(ch3_eoc_prob01)
+#' str(ch3_eoc_prob01)
+#'
+NULL
+
+#' @name ch3_eoc_prob02
+#' @docType data
+#' @title Chapter 3, Chapter Exercise 2
+#' @usage data(ch3_eoc_prob02)
+#' @keywords datasets
+#'
+#' @format A data frame with 26 rows and 1 variable.
+#'  \describe{
+#'   \item{ppm}{Amount of aluminum found in bihourly samples of PET (dB)}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 113
+#'
+#' @examples
+#' data(ch3_eoc_prob02)
+#' str(ch3_eoc_prob02)
+#'
+NULL
+
+#' @name ch3_eoc_prob03
+#' @docType data
+#' @title Chapter 3, Chapter Exercise 3
+#' @usage data(ch3_eoc_prob03)
+#' @keywords datasets
+#'
+#' @format A data frame with 10 rows and 3 variables.
+#'  \describe{
+#'   \item{M1}{Measured manganese content in 1045 steel by method 1}
+#'   \item{M2}{Measured manganese content in 1045 steel by method 2}
+#'   \item{M3}{Measured manganese content in 1045 steel by method 3}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 114
+#'
+#' @examples
+#' data(ch3_eoc_prob03)
+#' str(ch3_eoc_prob03)
+#'
+NULL
+
+#' @name ch3_eoc_prob04
+#' @docType data
+#' @title Chapter 3, Chapter Exercise 4
+#' @usage data(ch3_eoc_prob04)
+#' @keywords datasets
+#'
+#' @format A data frame with 15 rows and 10 variables.
+#'  \describe{
+#'   \item{ppm}{Measured resistances of 15 resistors 10 different types (ohm)}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 114
+#'
+#' @examples
+#' data(ch3_eoc_prob04)
+#' str(ch3_eoc_prob04)
+#'
+NULL
