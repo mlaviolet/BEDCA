@@ -11,14 +11,14 @@ vignette: >
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
-)
+  )
 ```
 
 ```{r setup, echo=FALSE}
 library(BEDCA)
 ```
 
-Chapter 2 discusses the engineering data collection process and contains little data. The only data appears in Table 2.1 (p. 31) and in this package as `table2_01`.
+Chapter 2 discusses the engineering data collection process. The only data appears in Table 2.1 (p. 31) and in this package as `table2_01`.
 
 Section 2.2 introduces randomization via paper tables of random digits. The following R code will generate 10 random single digits:
 
