@@ -5,7 +5,7 @@
 \alias{ch3_eoc_prob04}
 \title{Chapter 3, Chapter Exercise 4}
 \format{
-A data frame with 15 rows and 10 variables.
+A data frame with 150 rows and 3 variables.
  \describe{
   \item{watts}{Wattage rating of resistor (watts)}
   \item{nominal}{Nominal resistance resistor (ohm)}
@@ -14,7 +14,7 @@ A data frame with 15 rows and 10 variables.
 }
 \source{
 Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
-\url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 114
+\url{https://www.iastatedigitalpress.com/plugins/books/127/}, pp. 114-115
 }
 \usage{
 data(ch3_eoc_prob04)
