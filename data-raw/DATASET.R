@@ -50,8 +50,6 @@ df_list <- map(file_names, get_text_data, .progress = TRUE)
 names(df_list) <- df_names
 list2env(df_list, envir = .GlobalEnv)
 
-rm(df_list, df_names, file_names, get_text_data)
-
 # https://dataanalytics.org.uk/save-all-objects-to-disk-as-separate-files/
 # THIS SEEMS TO WORK
 
@@ -127,6 +125,26 @@ rm(df_list, df_names, file_names, get_text_data)
 #              )
 
 # usethis::use_data(ch7_eoc_prob19b, overwrite = TRUE)
+
+# Reshape Chapter 3, Chapter Exercise 4
+# reshaping here because complex; names need to be changed to syntactic
+ch3_eoc_prob04 <-
+  read_tsv(
+    here::here(paste0("data-raw/", "Chapter 3/End of Chapter/Prob 04.txt")),
+    name_repair = make.names) |>
+  pivot_longer(everything(),
+               names_to = "resistor",
+               values_to = "ohms") |>
+  separate_wider_delim(cols = resistor,
+                       delim = "W",
+                       names = c("watts", "nominal")) |>
+  mutate(watts = factor(watts, levels = c("X1.4", "X1.2")),
+         nominal = factor(nominal,
+                          levels = c("20", "75", "100", "150", "200"))) |>
+  arrange(watts, nominal)
+# usethis::use_data(ch3_eoc_prob04, overwrite = TRUE)
+
+rm(df_list, df_names, file_names, get_text_data)
 
 # Chapter 1 example data --------------------------------------------------
 

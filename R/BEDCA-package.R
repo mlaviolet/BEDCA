@@ -601,7 +601,9 @@ NULL
 #'
 #' @format A data frame with 15 rows and 10 variables.
 #'  \describe{
-#'   \item{ppm}{Measured resistances of 15 resistors 10 different types (ohm)}
+#'   \item{watts}{Wattage rating of resistor (watts)}
+#'   \item{nominal}{Nominal resistance resistor (ohm)}
+#'   \item{ohms}{Measured resistance of resistor (ohm)}
 #'   }
 #'
 #' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
