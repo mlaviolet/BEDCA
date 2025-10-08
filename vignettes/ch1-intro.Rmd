@@ -30,9 +30,11 @@ theme_set(theme_bw())
 
 ### [insert table of functions]
 
+Chapter 1 is mainly concerned with motivation and establishing terminology; thus it contains little data.
+
 ### Example 1: Heat treating gears
 
-Chapter 1 is mainly concerned with motivation and establishing terminology; thus it contains little data. Table 1.1 (p. 3) of the text presents data on an experiment to determine whether gears should be laid flat or hung on rods while passing through a carburizing furnace. The goal of the experiment was to minimize distortion as measured by "thrust face runout." Table 1.1 presents the results for laid and hung gears, in units of 0.0001 inches.
+Table 1.1 (p. 3) of the text presents data on an experiment to determine whether gears should be laid flat or hung on rods while passing through a carburizing furnace. The goal of the experiment was to minimize distortion as measured by "thrust face runout." Table 1.1 presents the results for laid and hung gears, in units of 0.0001 inches.
 
 ```{r}
 dplyr::glimpse(table1_01)
@@ -83,7 +85,7 @@ options(digits = 3)
 mosaic::mean(Runout ~ Treatment, data = gears)
 ```
 
-We see that the runout for the hung gears exceeds that for the laid gears by 5.3 $\times$ 0.0001 inches. Let's make a comparative dot plot, with the two treatments in separate panels.
+We see that the runout for the hung gears exceeds that for the laid gears by 5.3 $\times$ 0.0001 inches. Let's make a comparative dot plot using `dotPlot()` from the `mosaic` package. The first argument is a formula where the variable behind the tilde (`~`) represents the varable to be plotted and the variable behind the vertical slash (`|`) specifies that the two graphs appear in separate panels. Formulas are discussed further in Chapter 3.
 
 ```{r}
 mosaic::dotPlot(~ Runout | Treatment, data = gears, 
