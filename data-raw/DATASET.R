@@ -144,6 +144,12 @@ ch3_eoc_prob04 <-
   arrange(watts, nominal)
 # usethis::use_data(ch3_eoc_prob04, overwrite = TRUE)
 
+# Modify Chapter 3, Chapter Exercise 7
+ch3_eoc_prob07 <- ch3_eoc_prob07 |>
+  dplyr::select(A, B)
+# usethis::use_data(ch3_eoc_prob07, overwrite = TRUE)
+
+
 rm(df_list, df_names, file_names, get_text_data)
 
 # Chapter 1 example data --------------------------------------------------

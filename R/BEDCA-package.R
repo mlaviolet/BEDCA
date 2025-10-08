@@ -599,7 +599,7 @@ NULL
 #' @usage data(ch3_eoc_prob04)
 #' @keywords datasets
 #'
-#' @format A data frame with 15 rows and 10 variables.
+#' @format A data frame with 150 rows and 3 variables.
 #'  \describe{
 #'   \item{watts}{Wattage rating of resistor (watts)}
 #'   \item{nominal}{Nominal resistance resistor (ohm)}
@@ -607,10 +607,53 @@ NULL
 #'   }
 #'
 #' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
-#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 114
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, pp. 114-115
 #'
 #' @examples
 #' data(ch3_eoc_prob04)
 #' str(ch3_eoc_prob04)
+#'
+NULL
+
+#' @name ch3_eoc_prob05
+#' @docType data
+#' @title Chapter 3, Chapter Exercise 5
+#' @usage data(ch3_eoc_prob04)
+#' @keywords datasets
+#'
+#' @format A data frame with 18 rows and 5 variables.
+#'  \describe{
+#'   \item{Weight}{5 g weight (1), 20 g weight (2), 100 g weight (3)}
+#'   \item{Student}{ID of student taking weight}
+#'   \item{Scale1}{Measured weight from Scale 1}
+#'   \item{Scale2}{Measured weight from Scale 2}
+#'   \item{Scale3}{Measured weight from Scale 3}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 115
+#'
+#' @examples
+#' data(ch3_eoc_prob05)
+#' str(ch3_eoc_prob05)
+#'
+NULL
+
+#' @name ch3_eoc_prob06
+#' @docType data
+#' @title Chapter 3, Chapter Exercise 6
+#' @usage data(ch3_eoc_prob04)
+#' @keywords datasets
+#'
+#' @format A data frame with 12 rows and 1 variable.
+#'  \describe{
+#'   \item{Weight}{Tool lifetime, in holes drilled before failure}
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 115
+#'
+#' @examples
+#' data(ch3_eoc_prob06)
+#' str(ch3_eoc_prob06)
 #'
 NULL
