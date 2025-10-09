@@ -9,7 +9,7 @@ A data frame with 20 rows and 3 variables.
  \describe{
   \item{Inch}{Nominal length of steel strip}
   \item{X14G}{Measured length of 14 gauge steel strip (0.001 in. above nominal)}
-  \item{X12G}{Measured length of 12 gauge steel strip (0.001 in. above nominal)}
+  \item{X16G}{Measured length of 16 gauge steel strip (0.001 in. above nominal)}
   }
 }
 \source{

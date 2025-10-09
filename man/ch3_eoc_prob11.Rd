@@ -9,7 +9,7 @@ A data frame with 10 rows and 4 variables.
  \describe{
   \item{Stres87}{Failure time for hardened steel specimens subjected to 0.87 x 10^6 psi}
   \item{Stres99}{Failure time for hardened steel specimens subjected to 0.99 x 10^6 psi}
-  \item{Stres100}{Failure time for hardened steel specimens subjected to 1.09 x 10^6 psi}
+  \item{Stres109}{Failure time for hardened steel specimens subjected to 1.09 x 10^6 psi}
   \item{Stres118}{Failure time for hardened steel specimens subjected to 1.18 x 10^6 psi}
   }
 }
