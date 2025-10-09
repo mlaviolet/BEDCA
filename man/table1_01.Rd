@@ -22,7 +22,7 @@ data(table1_01)
 Table 1.1
 }
 \note{
-Data used in Chapter 3, Section 4, Exercise 2
+Data used in Chapter 2, Section 2, Exercise 1; Chapter 3, Section 4, Exercise 2; Chapter 6, Chapter Exercise 2
 }
 \examples{
 data(table1_01)

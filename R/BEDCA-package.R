@@ -441,6 +441,145 @@ NULL
 #'
 NULL
 
+#' @name table4_10
+#' @docType data
+#' @title Table 4.10
+#' @usage data(table4_10)
+#' @keywords datasets
+#'
+#' @format A data frame with 9 rows and 3 variables.
+#'  \describe{
+#'   \item{canard}{Canard position}
+#'   \item{tail}{Tail position}
+#'   \item{lift_drag}{Lift/drag ratio}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 156
+#'
+#' @examples
+#' data(table4_10)
+#' str(table4_10)
+#'
+NULL
+
+#' @name table4_11
+#' @docType data
+#' @title Table 4.11
+#' @usage data(table4_11)
+#' @keywords datasets
+#'
+#' @format A data frame with 16 rows and 4 variables.
+#'  \describe{
+#'   \item{specimen}{Specimen ID}
+#'   \item{joint}{Joint type}
+#'   \item{wood}{Wood type}
+#'   \item{strength}{Stress at failure (psi)}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 164
+#'
+#' @examples
+#' data(table4_11)
+#' str(table4_11)
+#'
+NULL
+
+#' @name table4_15
+#' @docType data
+#' @title Table 4.15
+#' @usage data(table4_15)
+#' @keywords datasets
+#'
+#' @format A data frame with 40 rows and 3 variables.
+#'  \describe{
+#'   \item{distance}{Flight distance of golf ball}
+#'   \item{compression}{Compression of golf ball}
+#'   \item{evening}{Evening of data collecton}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 173
+#'
+#' @examples
+#' data(table4_15)
+#' str(table4_15)
+#'
+NULL
+
+#' @name table4_20
+#' @docType data
+#' @title Table 4.20
+#' @usage data(table4_20)
+#' @keywords datasets
+#'
+#' @format A data frame with 8 rows and 4 variables.
+#'  \describe{
+#'   \item{temp}{Autoclave temperature, 300F or 330F}
+#'   \item{time}{Autoclave time, 4 hr or 12 hr}
+#'   \item{span}{Time between product formation and autoclaving, 4 hr or 12 hr}
+#'   \item{strength_mean}{Mean strength (psi)}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 180
+#'
+#' @examples
+#' data(table4_20)
+#' str(table4_20)
+#'
+NULL
+
+#' @name table4_24
+#' @docType data
+#' @title Table 4.24
+#' @usage data(table4_24)
+#' @keywords datasets
+#'
+#' @format A data frame with 16 rows and 2 variables.
+#'  \describe{
+#'   \item{combn}{Combination of factor levels}
+#'   \item{y}{Rate of advance of drill}
+#'   }
+#'
+#' @note Units of y not given
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 195
+#'
+#' @examples
+#' data(table4_24)
+#' str(table4_24)
+#'
+NULL
+
+#' @name table4_25
+#' @docType data
+#' @title Table 4.25
+#' @usage data(table4_25)
+#' @keywords datasets
+#'
+#' @format A data frame with 9 rows and 4 variables.
+#'  \describe{
+#'   \item{temp}{Condensation temperature (C)}
+#'   \item{amt_B}{Amount of B (cc)}
+#'   \item{yield}{Yield (g)}
+#'   \item{fil_time}{Filtration time (sec)}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 199
+#'
+#' @examples
+#' data(table4_25)
+#' str(table4_25)
+#'
+NULL
+
+
+
+
 #' @name ch3_sec1_prob1
 #' @docType data
 #' @title Chapter 3, Section 1, Exercise 1
