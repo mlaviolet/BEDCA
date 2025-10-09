@@ -1144,10 +1144,10 @@ NULL
 #'
 NULL
 
-#' @name ch4_sec1_prob1
+#' @name ch4_sec1_prob2
 #' @docType data
 #' @title Section 4.1, Exercise 1
-#' @usage data(ch4_sec1_prob1)
+#' @usage data(ch4_sec1_prob2)
 #' @keywords datasets
 #'
 #' @format A data frame with 5 rows and 2 variables.
@@ -1159,11 +1159,11 @@ NULL
 #' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
 #' \url{https://www.iastatedigita5press.com/plugins/books/127/}, p. 139
 #'
-#' @note Data repeated in Section 4.1, Exercise 2
+#' @note Data repeated from Section 4.1, Exercise 1
 #'
 #' @examples
-#' data(ch4_sec1_prob1)
-#' str(ch4_sec1_prob1)
+#' data(ch4_sec1_prob2)
+#' str(ch4_sec1_prob2)
 #'
 NULL
 

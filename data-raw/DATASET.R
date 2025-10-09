@@ -419,7 +419,7 @@ C <- rep(1:2, each = 4)
 strength_mean = c(1520, 2450, 2340, 2900, 1670, 2540, 2230, 3230)
 table4_20 <- data.frame(temp = A, time = B, span = C, strength_mean)
 rm(A, B, C, strength_mean)
-# usethis::use_data(table4_19, overwrite = TRUE)
+# usethis::use_data(table4_20, overwrite = TRUE)
 
 # Table 4.21, p. 188
 # Refer to Table 4.19
