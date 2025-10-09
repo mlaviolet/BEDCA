@@ -1146,3 +1146,119 @@ NULL
 #' str(ch3_eoc_prob22)
 #'
 NULL
+
+#' @name ch4_sec1_prob1
+#' @docType data
+#' @title Chapter 4, Section 1, Exercise 1
+#' @usage data(ch4_sec1_prob1)
+#' @keywords datasets
+#'
+#' @format A data frame with 5 rows and 2 variables.
+#'  \describe{
+#'   \item{y}{Artificial data, y}
+#'   \item{x}{Artificial data, x}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigita5press.com/plugins/books/127/}, p. 139
+#'
+#' @note Data repeated in Chapter 4, Section 1, Exercise 2
+#'
+#' @examples
+#' data(ch4_sec1_prob1)
+#' str(ch4_sec1_prob1)
+#'
+NULL
+
+#' @name ch4_sec1_prob3
+#' @docType data
+#' @title Chapter 4, Section 1, Exercise 3
+#' @usage data(ch4_sec1_prob3)
+#' @keywords datasets
+#'
+#' @format A data frame with 8 rows and 2 variables.
+#'  \describe{
+#'   \item{x}{Pot temperature (C)}
+#'   \item{y}{Average molecular weight}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigita5press.com/plugins/books/127/}, p. 140
+#'
+#' @note Data repeated in Chapter 4, Section 2, Exercise 1
+#'
+#' @examples
+#' data(ch4_sec1_prob3)
+#' str(ch4_sec1_prob3)
+#'
+NULL
+
+#' @name ch4_sec1_prob4
+#' @docType data
+#' @title Chapter 4, Section 1, Exercise 4
+#' @usage data(ch4_sec1_prob4)
+#' @keywords datasets
+#'
+#' @format A data frame with 20 rows and 2 variables.
+#'  \describe{
+#'   \item{y}{Tool life (minutes)}
+#'   \item{x}{Cutting speed (sfpm)}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigita5press.com/plugins/books/127/}, p. 140
+#'
+#' @examples
+#' data(ch4_sec1_prob4)
+#' str(ch4_sec1_prob4)
+#'
+NULL
+
+#' @name ch4_sec2_prob2
+#' @docType data
+#' @title Chapter 4, Section 2, Exercise 2
+#' @usage data(ch4_sec2_prob2)
+#' @keywords datasets
+#'
+#' @format A data frame with 9 rows and 3 variables.
+#'  \describe{
+#'   \item{x1}{Percent NaOH}
+#'   \item{x2}{Pretreatment time (minutes)}
+#'   \item{y}{Specific surface area (cubic cm/g)}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigita5press.com/plugins/books/127/}, p. 162
+#'
+#' @note Data repeated in Chapter 4, Section 3, Exercise 1
+#'
+#' @examples
+#' data(ch4_sec2_prob2)
+#' str(ch4_sec2_prob2)
+#'
+NULL
+
+#' @name ch4_sec3_prob2
+#' @docType data
+#' @title Chapter 4, Section 3, Exercise 2
+#' @usage data(ch4_sec3_prob2)
+#' @keywords datasets
+#'
+#' @format A data frame with 8 rows and 3 variables.
+#'  \describe{
+#'   \item{Tech}{Technician performing measurements, coded -1 and 1}
+#'   \item{Diameter}{Diameter of 0.188 or 0.314 inches, coded -1 and 1}
+#'   \item{Fluid}{Water or ethylene glycol, coded -1 and 1}
+#'   \item{y1}{Time for fluid level to drop, replicate 1}
+#'   \item{y2}{Time for fluid level to drop, replicate 2}
+#'   \item{y3}{Time for fluid level to drop, replicate 3}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigita5press.com/plugins/books/127/}, p. 191
+#'
+#' @examples
+#' data(ch4_sec3_prob2)
+#' str(ch4_sec3_prob2)
+#'
+NULL

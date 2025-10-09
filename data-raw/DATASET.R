@@ -161,9 +161,6 @@ ch3_eoc_prob19 <-
     name_repair = make.names)
 # usethis::use_data(ch3_eoc_prob19, overwrite = TRUE)
 
-
-
-
 rm(df_list, df_names, file_names, get_text_data)
 
 # Chapter 1 example data --------------------------------------------------
@@ -1169,6 +1166,8 @@ table_a_5 <- data.frame(
                 29200, 86100))
 # usethis::use_data(table_a_5, overwrite = TRUE)
 
+# Remove sections where data appears elsewhere ----------------------------
+
 # rename Ch 2, Sec 2, Prob 2 to Table 1.1, where data first appears
 table1_01 <- ch2_sec2_prob2
 rm(ch2_sec2_prob2)
@@ -1176,6 +1175,17 @@ rm(ch2_sec2_prob2)
 # remove ch3_sec2_prob2, ch3_sec2_prob3, ch3_sec4_prob2
 #   data appear elsewhere
 rm(ch3_sec2_prob2, ch3_sec2_prob3, ch3_sec4_prob2)
+
+# remove Chapter 4, Section 1, Exercise 2; data repeated from Exercise 1
+rm(ch4_sec1_prob2)
+
+# remove Chapter 4, Section 2, Exercise 1; data repeated from Chapter 4,
+#   Section 1, Exercise 3
+rm(ch4_sec2_prob1)
+
+# remove Chapter 4, Section 3, Exercise 1; data repeated from Chapter 4,
+#   Section 2, Exercise 2
+rm(ch4_sec3_prob1)
 
 # Save workspace ----------------------------------------------------------
 
