@@ -3,7 +3,7 @@
 \docType{data}
 \name{ch3_eoc_prob20}
 \alias{ch3_eoc_prob20}
-\title{Chapter 3, Chapter Exercise 20}
+\title{Chapter 3, Exercise 20}
 \format{
 A data frame with 13 rows and 3 variables.
  \describe{
@@ -20,7 +20,7 @@ Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysi
 data(ch3_eoc_prob20)
 }
 \description{
-Chapter 3, Chapter Exercise 20
+Chapter 3, Exercise 20
 }
 \note{
 Units are degrees; measurements for EDM Hole B not given.

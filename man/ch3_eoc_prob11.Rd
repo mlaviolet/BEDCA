@@ -3,7 +3,7 @@
 \docType{data}
 \name{ch3_eoc_prob11}
 \alias{ch3_eoc_prob11}
-\title{Chapter 3, Chapter Exercise 11}
+\title{Chapter 3, Exercise 11}
 \format{
 A data frame with 10 rows and 4 variables.
  \describe{
@@ -21,7 +21,7 @@ Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysi
 data(ch3_eoc_prob11)
 }
 \description{
-Chapter 3, Chapter Exercise 11
+Chapter 3, Exercise 11
 }
 \note{
 Time units are unknown

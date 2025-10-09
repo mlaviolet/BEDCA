@@ -3,7 +3,7 @@
 \docType{data}
 \name{ch3_eoc_prob19}
 \alias{ch3_eoc_prob19}
-\title{Chapter 3, Chapter Exercise 19}
+\title{Chapter 3, Exercise 19}
 \format{
 A data frame with 10 rows and 4 variables.
  \describe{
@@ -21,7 +21,7 @@ Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysi
 data(ch3_eoc_prob19)
 }
 \description{
-Chapter 3, Chapter Exercise 19
+Chapter 3, Exercise 19
 }
 \note{
 Units are 10^-5 inches above nominal.

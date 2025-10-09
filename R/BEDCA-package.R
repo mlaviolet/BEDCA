@@ -61,7 +61,7 @@ NULL
 #' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
 #' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 3
 #'
-#' @note Data used in Chapter 2, Section 2, Exercise 1; Chapter 3, Section 4, Exercise 2; Chapter 6, Chapter Exercise 2
+#' @note Data used in Section 2.2, Exercise 1; Section 3.4, Exercise 2; Chapter 6, Exercise 2
 #'
 #' @examples
 #' data(table1_01)
@@ -192,7 +192,7 @@ NULL
 #' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
 #' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 94
 #'
-#' @note Data used in Chapter 3, Section 2, Exercise 2
+#' @note Data used in Section 3.2, Exercise 2
 #'
 #' @examples
 #' data(table3_13)
@@ -577,12 +577,9 @@ NULL
 #'
 NULL
 
-
-
-
 #' @name ch3_sec1_prob1
 #' @docType data
-#' @title Chapter 3, Section 1, Exercise 1
+#' @title Section 3.1, Exercise 1
 #' @usage data(ch3_sec1_prob1)
 #' @keywords datasets
 #'
@@ -594,7 +591,7 @@ NULL
 #' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
 #' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 77
 #'
-#' @note Data also used in Chapter 3, Section 2, Exercise 3
+#' @note Data also used in Section 3.2, Exercise 3
 #'
 #' @examples
 #' data(ch3_sec1_prob1)
@@ -604,7 +601,7 @@ NULL
 
 #' @name ch3_sec1_prob2
 #' @docType data
-#' @title Chapter 3, Section 1, Exercise 2
+#' @title Section 3.1, Exercise 2
 #' @usage data(ch3_sec1_prob2)
 #' @keywords datasets
 #'
@@ -627,7 +624,7 @@ NULL
 
 #' @name ch3_sec1_prob3
 #' @docType data
-#' @title Chapter 3, Section 1, Exercise 3
+#' @title Section 3.1, Exercise 3
 #' @usage data(ch3_sec1_prob3)
 #' @keywords datasets
 #'
@@ -649,7 +646,7 @@ NULL
 
 #' @name ch3_sec2_prob1
 #' @docType data
-#' @title Chapter 3, Section 2, Exercise 1
+#' @title Section 3.2, Exercise 1
 #' @usage data(ch3_sec2_prob1)
 #' @keywords datasets
 #'
@@ -662,7 +659,7 @@ NULL
 #' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
 #' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 92
 #'
-#' @note Data also used in Chapter 3. Section 3, Exercises 1 and 3
+#' @note Data also used in Section 3.3, Exercises 1 and 3
 #'
 #' @examples
 #' data(ch3_sec2_prob1)
@@ -672,7 +669,7 @@ NULL
 
 #' @name ch3_eoc_prob01
 #' @docType data
-#' @title Chapter 3, Chapter Exercise 1
+#' @title Chapter 3, Exercise 1
 #' @usage data(ch3_eoc_prob01)
 #' @keywords datasets
 #'
@@ -692,7 +689,7 @@ NULL
 
 #' @name ch3_eoc_prob02
 #' @docType data
-#' @title Chapter 3, Chapter Exercise 2
+#' @title Chapter 3, Exercise 2
 #' @usage data(ch3_eoc_prob02)
 #' @keywords datasets
 #'
@@ -712,7 +709,7 @@ NULL
 
 #' @name ch3_eoc_prob03
 #' @docType data
-#' @title Chapter 3, Chapter Exercise 3
+#' @title Chapter 3, Exercise 3
 #' @usage data(ch3_eoc_prob03)
 #' @keywords datasets
 #'
@@ -734,7 +731,7 @@ NULL
 
 #' @name ch3_eoc_prob04
 #' @docType data
-#' @title Chapter 3, Chapter Exercise 4
+#' @title Chapter 3, Exercise 4
 #' @usage data(ch3_eoc_prob04)
 #' @keywords datasets
 #'
@@ -756,7 +753,7 @@ NULL
 
 #' @name ch3_eoc_prob05
 #' @docType data
-#' @title Chapter 3, Chapter Exercise 5
+#' @title Chapter 3, Exercise 5
 #' @usage data(ch3_eoc_prob05)
 #' @keywords datasets
 #'
@@ -780,7 +777,7 @@ NULL
 
 #' @name ch3_eoc_prob06
 #' @docType data
-#' @title Chapter 3, Chapter Exercise 6
+#' @title Chapter 3, Exercise 6
 #' @usage data(ch3_eoc_prob06)
 #' @keywords datasets
 #'
@@ -800,7 +797,7 @@ NULL
 
 #' @name ch3_eoc_prob07
 #' @docType data
-#' @title Chapter 3, Chapter Exercise 7
+#' @title Chapter 3, Exercise 7
 #' @usage data(ch3_eoc_prob07)
 #' @keywords datasets
 #'
@@ -821,7 +818,7 @@ NULL
 
 #' @name ch3_eoc_prob08
 #' @docType data
-#' @title Chapter 3, Chapter Exercise 8
+#' @title Chapter 3, Exercise 8
 #' @usage data(ch3_eoc_prob08)
 #' @keywords datasets
 #'
@@ -842,7 +839,7 @@ NULL
 
 #' @name ch3_eoc_prob09
 #' @docType data
-#' @title Chapter 3, Chapter Exercise 9
+#' @title Chapter 3, Exercise 9
 #' @usage data(ch3_eoc_prob09)
 #' @keywords datasets
 #'
@@ -862,7 +859,7 @@ NULL
 
 #' @name ch3_eoc_prob10
 #' @docType data
-#' @title Chapter 3, Chapter Exercise 10
+#' @title Chapter 3, Exercise 10
 #' @usage data(ch3_eoc_prob10)
 #' @keywords datasets
 #'
@@ -882,7 +879,7 @@ NULL
 
 #' @name ch3_eoc_prob11
 #' @docType data
-#' @title Chapter 3, Chapter Exercise 11
+#' @title Chapter 3, Exercise 11
 #' @usage data(ch3_eoc_prob11)
 #' @keywords datasets
 #'
@@ -907,7 +904,7 @@ NULL
 
 #' @name ch3_eoc_prob12
 #' @docType data
-#' @title Chapter 3, Chapter Exercise 12
+#' @title Chapter 3, Exercise 12
 #' @usage data(ch3_eoc_prob12)
 #' @keywords datasets
 #'
@@ -929,7 +926,7 @@ NULL
 
 #' @name ch3_eoc_prob13
 #' @docType data
-#' @title Chapter 3, Chapter Exercise 13
+#' @title Chapter 3, Exercise 13
 #' @usage data(ch3_eoc_prob13)
 #' @keywords datasets
 #'
@@ -951,7 +948,7 @@ NULL
 
 #' @name ch3_eoc_prob14
 #' @docType data
-#' @title Chapter 3, Chapter Exercise 14
+#' @title Chapter 3, Exercise 14
 #' @usage data(ch3_eoc_prob14)
 #' @keywords datasets
 #'
@@ -972,7 +969,7 @@ NULL
 
 #' @name ch3_eoc_prob15
 #' @docType data
-#' @title Chapter 3, Chapter Exercise 15
+#' @title Chapter 3, Exercise 15
 #' @usage data(ch3_eoc_prob15)
 #' @keywords datasets
 #'
@@ -994,7 +991,7 @@ NULL
 
 #' @name ch3_eoc_prob16
 #' @docType data
-#' @title Chapter 3, Chapter Exercise 16
+#' @title Chapter 3, Exercise 16
 #' @usage data(ch3_eoc_prob16)
 #' @keywords datasets
 #'
@@ -1014,7 +1011,7 @@ NULL
 
 #' @name ch3_eoc_prob17
 #' @docType data
-#' @title Chapter 3, Chapter Exercise 17
+#' @title Chapter 3, Exercise 17
 #' @usage data(ch3_eoc_prob17)
 #' @keywords datasets
 #'
@@ -1035,7 +1032,7 @@ NULL
 
 #' @name ch3_eoc_prob18
 #' @docType data
-#' @title Chapter 3, Chapter Exercise 18
+#' @title Chapter 3, Exercise 18
 #' @usage data(ch3_eoc_prob18)
 #' @keywords datasets
 #'
@@ -1057,7 +1054,7 @@ NULL
 
 #' @name ch3_eoc_prob19
 #' @docType data
-#' @title Chapter 3, Chapter Exercise 19
+#' @title Chapter 3, Exercise 19
 #' @usage data(ch3_eoc_prob19)
 #' @keywords datasets
 #'
@@ -1082,7 +1079,7 @@ NULL
 
 #' @name ch3_eoc_prob20
 #' @docType data
-#' @title Chapter 3, Chapter Exercise 20
+#' @title Chapter 3, Exercise 20
 #' @usage data(ch3_eoc_prob20)
 #' @keywords datasets
 #'
@@ -1106,7 +1103,7 @@ NULL
 
 #' @name ch3_eoc_prob21
 #' @docType data
-#' @title Chapter 3, Chapter Exercise 21
+#' @title Chapter 3, Exercise 21
 #' @usage data(ch3_eoc_prob21)
 #' @keywords datasets
 #'
@@ -1128,7 +1125,7 @@ NULL
 
 #' @name ch3_eoc_prob22
 #' @docType data
-#' @title Chapter 3, Chapter Exercise 22
+#' @title Chapter 3, Exercise 22
 #' @usage data(ch3_eoc_prob22)
 #' @keywords datasets
 #'
@@ -1149,7 +1146,7 @@ NULL
 
 #' @name ch4_sec1_prob1
 #' @docType data
-#' @title Chapter 4, Section 1, Exercise 1
+#' @title Section 4.1, Exercise 1
 #' @usage data(ch4_sec1_prob1)
 #' @keywords datasets
 #'
@@ -1162,7 +1159,7 @@ NULL
 #' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
 #' \url{https://www.iastatedigita5press.com/plugins/books/127/}, p. 139
 #'
-#' @note Data repeated in Chapter 4, Section 1, Exercise 2
+#' @note Data repeated in Section 4.1, Exercise 2
 #'
 #' @examples
 #' data(ch4_sec1_prob1)
@@ -1172,7 +1169,7 @@ NULL
 
 #' @name ch4_sec1_prob3
 #' @docType data
-#' @title Chapter 4, Section 1, Exercise 3
+#' @title Section 4.1, Exercise 3
 #' @usage data(ch4_sec1_prob3)
 #' @keywords datasets
 #'
@@ -1185,7 +1182,7 @@ NULL
 #' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
 #' \url{https://www.iastatedigita5press.com/plugins/books/127/}, p. 140
 #'
-#' @note Data repeated in Chapter 4, Section 2, Exercise 1
+#' @note Data repeated in Section 4.2, Exercise 1
 #'
 #' @examples
 #' data(ch4_sec1_prob3)
@@ -1195,7 +1192,7 @@ NULL
 
 #' @name ch4_sec1_prob4
 #' @docType data
-#' @title Chapter 4, Section 1, Exercise 4
+#' @title Section 4.1, Exercise 4
 #' @usage data(ch4_sec1_prob4)
 #' @keywords datasets
 #'
@@ -1216,7 +1213,7 @@ NULL
 
 #' @name ch4_sec2_prob2
 #' @docType data
-#' @title Chapter 4, Section 2, Exercise 2
+#' @title Section 4.2, Exercise 2
 #' @usage data(ch4_sec2_prob2)
 #' @keywords datasets
 #'
@@ -1230,7 +1227,7 @@ NULL
 #' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
 #' \url{https://www.iastatedigita5press.com/plugins/books/127/}, p. 162
 #'
-#' @note Data repeated in Chapter 4, Section 3, Exercise 1
+#' @note Data repeated in Section 4.3, Exercise 1
 #'
 #' @examples
 #' data(ch4_sec2_prob2)
@@ -1240,7 +1237,7 @@ NULL
 
 #' @name ch4_sec3_prob2
 #' @docType data
-#' @title Chapter 4, Section 3, Exercise 2
+#' @title Section 4.3, Exercise 2
 #' @usage data(ch4_sec3_prob2)
 #' @keywords datasets
 #'
