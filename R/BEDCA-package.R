@@ -872,3 +872,138 @@ NULL
 #' str(ch3_eoc_prob16)
 #'
 NULL
+
+#' @name ch3_eoc_prob17
+#' @docType data
+#' @title Chapter 3, Chapter Exercise 17
+#' @usage data(ch3_eoc_prob17)
+#' @keywords datasets
+#'
+#' @format A data frame with 13 rows and 2 variables.
+#'  \describe{
+#'   \item{A}{Latent heat of fusion of ice, measured by electrical method}
+#'   \item{B}{Latent heat of fusion of ice, measured by mixture of methods}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigita5press.com/plugins/books/127/}, p. 120
+#'
+#' @examples
+#' data(ch3_eoc_prob17)
+#' str(ch3_eoc_prob17)
+#'
+NULL
+
+#' @name ch3_eoc_prob18
+#' @docType data
+#' @title Chapter 3, Chapter Exercise 18
+#' @usage data(ch3_eoc_prob18)
+#' @keywords datasets
+#'
+#' @format A data frame with 10 rows and 3 variables.
+#'  \describe{
+#'   \item{H1}{Lives until failure after testing on rotary fatigue strength machine, Heat 1}
+#'   \item{H2}{Lives until failure after testing on rotary fatigue strength machine, Heat 2}
+#'   \item{H3}{Lives until failure after testing on rotary fatigue strength machine, Heat 3}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigita5press.com/plugins/books/127/}, p. 120
+#'
+#' @examples
+#' data(ch3_eoc_prob18)
+#' str(ch3_eoc_prob18)
+#'
+NULL
+
+#' @name ch3_eoc_prob19
+#' @docType data
+#' @title Chapter 3, Chapter Exercise 19
+#' @usage data(ch3_eoc_prob19)
+#' @keywords datasets
+#'
+#' @format A data frame with 10 rows and 4 variables.
+#'  \describe{
+#'   \item{Sleeve}{Sleeve identifier}
+#'   \item{N.DB}{Outside diameter measurement, notch-dial bore}
+#'   \item{NN.DB}{Outside diameter measurement, non-notch-dial bore}
+#'   \item{N.AS}{Outside diameter measurement, notch-air splinder}
+#'   }
+#'
+#' @note Units are 10^-5 inches above nominal.
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigita5press.com/plugins/books/127/}, p. 120
+#'
+#' @examples
+#' data(ch3_eoc_prob19)
+#' str(ch3_eoc_prob19)
+#'
+NULL
+
+#' @name ch3_eoc_prob20
+#' @docType data
+#' @title Chapter 3, Chapter Exercise 20
+#' @usage data(ch3_eoc_prob20)
+#' @keywords datasets
+#'
+#' @format A data frame with 13 rows and 3 variables.
+#'  \describe{
+#'   \item{LaserA}{Angle of laser-drilled hole to top surface of part, Hole A}
+#'   \item{EDM}{Angle of hole drilled by electrical discharge machining to top surface of part, Hole A}
+#'   \item{LaserB}{Angle of laser-drilled hole to top surface of part, Hole B}
+#'   }
+#'
+#' @note Units are degrees; measurements for EDM Hole B not given.
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigita5press.com/plugins/books/127/}, p. 121
+#'
+#' @examples
+#' data(ch3_eoc_prob20)
+#' str(ch3_eoc_prob20)
+#'
+NULL
+
+#' @name ch3_eoc_prob21
+#' @docType data
+#' @title Chapter 3, Chapter Exercise 21
+#' @usage data(ch3_eoc_prob21)
+#' @keywords datasets
+#'
+#' @format A data frame with 10 rows and 3 variables.
+#'  \describe{
+#'   \item{Dial}{Brinell hardness, measured with dial Rockwell tester}
+#'   \item{Digital}{Brinell hardness, measured with digital Rockwell tester}
+#'   \item{Brinell}{Brinell hardness, measured with Brinell tester}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigita5press.com/plugins/books/127/}, p. 122
+#'
+#' @examples
+#' data(ch3_eoc_prob21)
+#' str(ch3_eoc_prob21)
+#'
+NULL
+
+#' @name ch3_eoc_prob22
+#' @docType data
+#' @title Chapter 3, Chapter Exercise 22
+#' @usage data(ch3_eoc_prob22)
+#' @keywords datasets
+#'
+#' @format A data frame with 10 rows and 2 variables.
+#'  \describe{
+#'   \item{D1}{Flight time for paper helicopter (seconds), design 1}
+#'   \item{D2}{Flight time for paper helicopter (seconds), design 2}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigita5press.com/plugins/books/127/}, p. 122
+#'
+#' @examples
+#' data(ch3_eoc_prob22)
+#' str(ch3_eoc_prob22)
+#'
+NULL
