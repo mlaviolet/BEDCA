@@ -22,7 +22,7 @@ data(ch3_sec2_prob1)
 Chapter 3, Section 2, Exercise 1
 }
 \note{
-Data used in Chapter 3. Section 3, Exercise 1
+Data also used in Chapter 3. Section 3, Exercises 1 and 3
 }
 \examples{
 data(ch3_sec2_prob1)

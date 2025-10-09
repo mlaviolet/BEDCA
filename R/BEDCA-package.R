@@ -61,7 +61,7 @@ NULL
 #' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
 #' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 3
 #'
-#' @note Data used in Chapter 3, Section 4, Exercise 2
+#' @note Data used in Chapter 2, Section 2, Exercise 1; Chapter 3, Section 4, Exercise 2; Chapter 6, Chapter Exercise 2
 #'
 #' @examples
 #' data(table1_01)
@@ -523,7 +523,7 @@ NULL
 #' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
 #' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 92
 #'
-#' @note Data used in Chapter 3. Section 3, Exercise 1
+#' @note Data also used in Chapter 3. Section 3, Exercises 1 and 3
 #'
 #' @examples
 #' data(ch3_sec2_prob1)
