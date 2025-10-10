@@ -1168,23 +1168,21 @@ table_a_5 <- data.frame(
 
 # Remove sections where data appears elsewhere ----------------------------
 
-# rename Ch 2, Sec 2, Prob 2 to Table 1.1, where data first appears
+# rename Sec 2.2, Exercise 2 to Table 1.1, where data first appears
 table1_01 <- ch2_sec2_prob2
 rm(ch2_sec2_prob2)
 
-# remove ch3_sec2_prob2, ch3_sec2_prob3, ch3_sec4_prob2
-#   data appear elsewhere
+# remove Section 3.2, Exercise 2; Section 3.2, Exercise 3;
+#   Section 3.4, Exercise 2;   data appear elsewhere
 rm(ch3_sec2_prob2, ch3_sec2_prob3, ch3_sec4_prob2)
 
-# remove Chapter 4, Section 1, Exercise 2; data repeated from Exercise 1
-rm(ch4_sec1_prob2)
+# remove Section 4.1, Exercise 1; data repeated in Exercise 2
+rm(ch4_sec1_prob1)
 
-# remove Chapter 4, Section 2, Exercise 1; data repeated from Chapter 4,
-#   Section 1, Exercise 3
+# remove Section 4.2, Exercise 1; data repeated from Section 4.1, Exercise 3
 rm(ch4_sec2_prob1)
 
-# remove Chapter 4, Section 3, Exercise 1; data repeated from Chapter 4,
-#   Section 2, Exercise 2
+# remove Section 4.3, Exercise 1; data repeated from Section 4.2, Exercise 2
 rm(ch4_sec3_prob1)
 
 # Save workspace ----------------------------------------------------------
