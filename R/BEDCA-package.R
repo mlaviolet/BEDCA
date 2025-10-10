@@ -1579,3 +1579,75 @@ NULL
 #' str(ch4_eoc_prob15)
 #'
 NULL
+
+#' @name ch4_eoc_prob16
+#' @docType data
+#' @title Chapter 4, Exercise 16
+#' @usage data(ch4_eoc_prob16)
+#' @keywords datasets
+#'
+#' @format A data frame with 10 rows and 3 variables.
+#'  \describe{
+#'   \item{Batch}{Batch ID}
+#'   \item{y}{Compressive strength (psi)}
+#'   \item{x}{Splitting tensile strength (psi)}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 211
+#'
+#' @examples
+#' data(ch4_eoc_prob16)
+#' str(ch4_eoc_prob16)
+#'
+NULL
+
+#' @name ch4_eoc_prob18
+#' @docType data
+#' @title Chapter 4, Exercise 18
+#' @usage data(ch4_eoc_prob18)
+#' @keywords datasets
+#'
+#' @format A data frame with 9 rows and 6 variables.
+#'  \describe{
+#'   \item{x1}{Agitator speed (rpm)}
+#'   \item{x2}{Polymer concentration (ppm)}
+#'   \item{y1}{Percent recovery of pyrite}
+#'   \item{y2}{Percent recover of kaolin}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 212
+#'
+#' @note Data also used in Chapter 4, Exercise 19
+#'
+#' @examples
+#' data(ch4_eoc_prob18)
+#' str(ch4_eoc_prob18)
+#'
+NULL
+
+#' @name ch4_eoc_prob20
+#' @docType data
+#' @title Chapter 4, Exercise 20
+#' @usage data(ch4_eoc_prob20)
+#' @keywords datasets
+#'
+#' @format A data frame with 16 rows and 5 variables.
+#'  \describe{
+#'   \item{A}{Plane design: straight wing (-1) vs. t wing (+1)}
+#'   \item{B}{Nose weight: none (-1) vs. paper clip (+1)}
+#'   \item{C}{Paper hype: notebook (-1) vs. construction (+1)}
+#'   \item{D}{Wing tips: straight (-1) vs. bent up (+1)}
+#'   \item{y}{Flight distance of paper airplane}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigita5press.com/plugins/books/127/}, p. 213
+#'
+#' @examples
+#' data(ch4_eoc_prob20)
+#' str(ch4_eoc_prob20)
+#'
+NULL
+
