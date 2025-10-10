@@ -1243,9 +1243,9 @@ NULL
 #'
 #' @format A data frame with 8 rows and 3 variables.
 #'  \describe{
-#'   \item{Tech}{Technician performing measurements, coded -1 and 1}
-#'   \item{Diameter}{Diameter of 0.188 or 0.314 inches, coded -1 and 1}
-#'   \item{Fluid}{Water or ethylene glycol, coded -1 and 1}
+#'   \item{Tech}{Technician performing measurements, coded -1 and +1}
+#'   \item{Diameter}{Diameter of drain tube: 0.188 (-1) or 0.314 inches (+1)}
+#'   \item{Fluid}{Water (-1) or ethylene glycol (1)}
 #'   \item{y1}{Time for fluid level to drop, replicate 1}
 #'   \item{y2}{Time for fluid level to drop, replicate 2}
 #'   \item{y3}{Time for fluid level to drop, replicate 3}
@@ -1332,9 +1332,9 @@ NULL
 #'
 #' @format A data frame with 8 rows and 4 variables.
 #'  \describe{
-#'   \item{A}{Initial epoxy/isocyanate ratio, coded -1 and 1}
-#'   \item{B}{Flexibilizer concentration, coded -1 and 1}
-#'   \item{C}{Accelerator concentration, coded -1 and 1}
+#'   \item{A}{Initial epoxy/isocyanate ratio: 0.4 (-1) or 1.2 (+1)}
+#'   \item{B}{Flexibilizer concentration: 10 mol (-1) or 40 mol (+1)}
+#'   \item{C}{Accelerator concentration, 1/240 mol pct (-1) or 1/30 mol pct 1}
 #'   \item{y}{Impact strength, kJ/sq mm}
 #'   }
 #'
@@ -1355,9 +1355,9 @@ NULL
 #'
 #' @format A data frame with 8 rows and 5 variables.
 #'  \describe{
-#'   \item{A}{Diameter of mechanical pencil lead, coded -1 and 1}
-#'   \item{B}{Length of lead protruding over desk, coded -1 and 1}
-#'   \item{C}{Hardness (B or 2H), coded -1 and 1}
+#'   \item{A}{Diameter of mechanical pencil lead, 0.3 mm (-1) or 0.7 mm (+1)}
+#'   \item{B}{Length of lead protruding over desk: 3 cm (-1) or 4.5 cm (+1)}
+#'   \item{C}{Hardness: B (-1) or 2H (+1)}
 #'   \item{y1}{Number of paper clips loaded until failure, replication 1}
 #'   \item{y2}{Number of paper clips loaded until failure, replication 2}
 #'   }
@@ -1393,4 +1393,75 @@ NULL
 #' str(ch4_eoc_prob06)
 #'
 NULL
+
+#' @name ch4_eoc_prob07
+#' @docType data
+#' @title Chapter 4, Exercise 7
+#' @usage data(ch4_eoc_prob07)
+#' @keywords datasets
+#'
+#' @format A data frame with 27 rows and 4 variables.
+#'  \describe{
+#'   \item{y}{Number of cycles until failure of worsted yarn}
+#'   \item{x1}{Length (mm)}
+#'   \item{x2}{Amplitude of loading cycle (mm)}
+#'   \item{x3}{Load (g)}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigita5press.com/plugins/books/127/}, p. 206
+#'
+#' @examples
+#' data(ch4_eoc_prob07)
+#' str(ch4_eoc_prob07)
+#'
+NULL
+
+#' @name ch4_eoc_prob08
+#' @docType data
+#' @title Chapter 4, Exercise 8
+#' @usage data(ch4_eoc_prob08)
+#' @keywords datasets
+#'
+#' @format A data frame with 30 rows and 3 variables.
+#'  \describe{
+#'   \item{Size}{Size of charge (2.5 mL, 5.0 mL)}
+#'   \item{Prop}{Type of propellant (lighter fluid, gasoline, carburetor fluid)}
+#'   \item{Distance}{Distance traveled by tennis ball shot from Polish cannon (feet)}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigita5press.com/plugins/books/127/}, p. 207
+#'
+#' @examples
+#' data(ch4_eoc_prob08)
+#' str(ch4_eoc_prob08)
+#'
+NULL
+
+#' @name ch4_eoc_prob09
+#' @docType data
+#' @title Chapter 4, Exercise 9
+#' @usage data(ch4_eoc_prob09)
+#' @keywords datasets
+#'
+#' @format A data frame with 16 rows and 5 variables.
+#'  \describe{
+#'   \item{A}{Ceramic surface: unglazed (-1) vs. glazed (+1)}
+#'   \item{B}{Metal film thickness: normal (-1) vs. 1.5 times normal (+1)}
+#'   \item{C}{Annealing Time: normal (-1) vs. 4 times normal (+1)}
+#'   \item{D}{Prebond clean: normal clean (-1) vs. no clean (+1)}
+#'   \item{Pullouts}{Number of pullouts}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigita5press.com/plugins/books/127/}, p. 208
+#'
+#' @examples
+#' data(ch4_eoc_prob09)
+#' str(ch4_eoc_prob09)
+#'
+NULL
+
+
 
