@@ -1463,5 +1463,119 @@ NULL
 #'
 NULL
 
+#' @name ch4_eoc_prob10
+#' @docType data
+#' @title Chapter 4, Exercise 10
+#' @usage data(ch4_eoc_prob10)
+#' @keywords datasets
+#'
+#' @format A data frame with 18 rows and 5 variables.
+#'  \describe{
+#'   \item{Weight}{5 g weight (1), 20 g weight (2), 100 g weight (3)}
+#'   \item{Student}{ID of student taking weight}
+#'   \item{Scale1}{Measured weight from Scale 1}
+#'   \item{Scale2}{Measured weight from Scale 2}
+#'   \item{Scale3}{Measured weight from Scale 3}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 115
+#'
+#' @note Same data as Chapter 3, Exercise 5
+#'
+#' @examples
+#' data(ch4_eoc_prob10)
+#' str(ch4_eoc_prob10)
+#'
+NULL
 
+#' @name ch4_eoc_prob12
+#' @docType data
+#' @title Chapter 4, Exercise 12
+#' @usage data(ch4_eoc_prob12)
+#' @keywords datasets
+#'
+#' @format A data frame with 36 rows and 3 variables.
+#'  \describe{
+#'   \item{x1}{Cutting speed (sfpm)}
+#'   \item{x2}{Feed (ipr)}
+#'   \item{y}{Tool life (minutes)}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 209
+#'
+#' @examples
+#' data(ch4_eoc_prob12)
+#' str(ch4_eoc_prob12)
+#'
+NULL
 
+#' @name ch4_eoc_prob13
+#' @docType data
+#' @title Chapter 4, Exercise 13
+#' @usage data(ch4_eoc_prob13)
+#' @keywords datasets
+#'
+#' @format A data frame with 8 rows and 5 variables.
+#'  \describe{
+#'   \item{Test}{Test sequence}
+#'   \item{mph}{Speed (mph)}
+#'   \item{Octane}{Gasoline octane}
+#'   \item{Used}{Gallon of gasoline used}
+#'   \item{mpg}{Mileage (mpg)}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 209
+#'
+#' @examples
+#' data(ch4_eoc_prob13)
+#' str(ch4_eoc_prob13)
+#'
+NULL
+
+#' @name ch4_eoc_prob14
+#' @docType data
+#' @title Chapter 4, Exercise 14
+#' @usage data(ch4_eoc_prob14)
+#' @keywords datasets
+#'
+#' @format A data frame with 27 rows and 3 variables.
+#'  \describe{
+#'   \item{x1}{Speed (rpm)}
+#'   \item{x2}{Load (psi)}
+#'   \item{y}{Wear life (hours)}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 210
+#'
+#' @examples
+#' data(ch4_eoc_prob14)
+#' str(ch4_eoc_prob14)
+#'
+NULL
+
+#' @name ch4_eoc_prob15
+#' @docType data
+#' @title Chapter 4, Exercise 15
+#' @usage data(ch4_eoc_prob15)
+#' @keywords datasets
+#'
+#' @format A data frame with 27 rows and 3 variables.
+#'  \describe{
+#'   \item{y1}{mL of 1N H2SO4 used in the first phase of titration}
+#'   \item{y2}{mL of 1N H2SO4 used in the second phase of titration}
+#'   \item{x1}{Percent by volume of component A}
+#'   \item{x2}{Percent by volume of component B}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 211
+#'
+#' @examples
+#' data(ch4_eoc_prob15)
+#' str(ch4_eoc_prob15)
+#'
+NULL
