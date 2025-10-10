@@ -1259,3 +1259,138 @@ NULL
 #' str(ch4_sec3_prob2)
 #'
 NULL
+
+#' @name ch4_eoc_prob01
+#' @docType data
+#' @title Chapter 4, Exercise 1
+#' @usage data(ch4_eoc_prob01)
+#' @keywords datasets
+#'
+#' @format A data frame with 9 rows and 2 variables.
+#'  \describe{
+#'   \item{x}{Water/cement ratio}
+#'   \item{y}{14-day compressive strength (psi)}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigita5press.com/plugins/books/127/}, p. 203
+#'
+#' @examples
+#' data(ch4_eoc_prob01)
+#' str(ch4_eoc_prob01)
+#'
+NULL
+
+#' @name ch4_eoc_prob02
+#' @docType data
+#' @title Chapter 4, Exercise 2
+#' @usage data(ch4_eoc_prob02)
+#' @keywords datasets
+#'
+#' @format A data frame with 6 rows and 2 variables.
+#'  \describe{
+#'   \item{x}{Carburetor jetting size}
+#'   \item{y}{Elapsed time (seconds)}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigita5press.com/plugins/books/127/}, p. 204
+#'
+#' @examples
+#' data(ch4_eoc_prob02)
+#' str(ch4_eoc_prob02)
+#'
+NULL
+
+#' @name ch4_eoc_prob03
+#' @docType data
+#' @title Chapter 4, Exercise 3
+#' @usage data(ch4_eoc_prob03)
+#' @keywords datasets
+#'
+#' @format A data frame with 9 rows and 3 variables.
+#'  \describe{
+#'   \item{x1}{Temperature for heat treating, K}
+#'   \item{x2}{Time for heat treating (minutes)}
+#'   \item{y}{Mean grain diameter (micrometers)}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigita5press.com/plugins/books/127/}, p. 204
+#'
+#' @examples
+#' data(ch4_eoc_prob03)
+#' str(ch4_eoc_prob03)
+#'
+NULL
+
+#' @name ch4_eoc_prob04
+#' @docType data
+#' @title Chapter 4, Exercise 4
+#' @usage data(ch4_eoc_prob04)
+#' @keywords datasets
+#'
+#' @format A data frame with 8 rows and 4 variables.
+#'  \describe{
+#'   \item{A}{Initial epoxy/isocyanate ratio, coded -1 and 1}
+#'   \item{B}{Flexibilizer concentration, coded -1 and 1}
+#'   \item{C}{Accelerator concentration, coded -1 and 1}
+#'   \item{y}{Impact strength, kJ/sq mm}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigita5press.com/plugins/books/127/}, p. 205
+#'
+#' @examples
+#' data(ch4_eoc_prob04)
+#' str(ch4_eoc_prob04)
+#'
+NULL
+
+#' @name ch4_eoc_prob05
+#' @docType data
+#' @title Chapter 4, Exercise 5
+#' @usage data(ch4_eoc_prob05)
+#' @keywords datasets
+#'
+#' @format A data frame with 8 rows and 5 variables.
+#'  \describe{
+#'   \item{A}{Diameter of mechanical pencil lead, coded -1 and 1}
+#'   \item{B}{Length of lead protruding over desk, coded -1 and 1}
+#'   \item{C}{Hardness (B or 2H), coded -1 and 1}
+#'   \item{y1}{Number of paper clips loaded until failure, replication 1}
+#'   \item{y2}{Number of paper clips loaded until failure, replication 2}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigita5press.com/plugins/books/127/}, p. 205
+#'
+#' @examples
+#' data(ch4_eoc_prob05)
+#' str(ch4_eoc_prob05)
+#'
+NULL
+
+#' @name ch4_eoc_prob06
+#' @docType data
+#' @title Chapter 4, Exercise 6
+#' @usage data(ch4_eoc_prob06)
+#' @keywords datasets
+#'
+#' @format A data frame with 8 rows and 4 variables.
+#'  \describe{
+#'   \item{A}{Mesh size of powder particles, coded -1 and 1}
+#'   \item{B}{Volume of graduated cylinder, coded -1 and 1}
+#'   \item{C}{Vibration of cylinder, coded -1 and 1}
+#'   \item{Y}{Mean density of crushed tabular alumina powder (g/cc)}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigita5press.com/plugins/books/127/}, p. 206
+#'
+#' @examples
+#' data(ch4_eoc_prob06)
+#' str(ch4_eoc_prob06)
+#'
+NULL
+

@@ -161,6 +161,10 @@ ch3_eoc_prob19 <-
     name_repair = make.names)
 # usethis::use_data(ch3_eoc_prob19, overwrite = TRUE)
 
+ch4_eoc_prob06 <- ch4_eoc_prob06 |>
+  rename(Y = Year)
+usethis::use_data(ch4_eoc_prob06, overwrite = TRUE)
+
 rm(df_list, df_names, file_names, get_text_data)
 
 # Chapter 1 example data --------------------------------------------------
