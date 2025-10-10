@@ -7,9 +7,9 @@
 \format{
 A data frame with 8 rows and 4 variables.
  \describe{
-  \item{A}{Initial epoxy/isocyanate ratio, coded -1 and 1}
-  \item{B}{Flexibilizer concentration, coded -1 and 1}
-  \item{C}{Accelerator concentration, coded -1 and 1}
+  \item{A}{Initial epoxy/isocyanate ratio: 0.4 (-1) or 1.2 (+1)}
+  \item{B}{Flexibilizer concentration: 10 mol (-1) or 40 mol (+1)}
+  \item{C}{Accelerator concentration, 1/240 mol pct (-1) or 1/30 mol pct 1}
   \item{y}{Impact strength, kJ/sq mm}
   }
 }

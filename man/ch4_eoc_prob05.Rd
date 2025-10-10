@@ -7,9 +7,9 @@
 \format{
 A data frame with 8 rows and 5 variables.
  \describe{
-  \item{A}{Diameter of mechanical pencil lead, coded -1 and 1}
-  \item{B}{Length of lead protruding over desk, coded -1 and 1}
-  \item{C}{Hardness (B or 2H), coded -1 and 1}
+  \item{A}{Diameter of mechanical pencil lead, 0.3 mm (-1) or 0.7 mm (+1)}
+  \item{B}{Length of lead protruding over desk: 3 cm (-1) or 4.5 cm (+1)}
+  \item{C}{Hardness: B (-1) or 2H (+1)}
   \item{y1}{Number of paper clips loaded until failure, replication 1}
   \item{y2}{Number of paper clips loaded until failure, replication 2}
   }
