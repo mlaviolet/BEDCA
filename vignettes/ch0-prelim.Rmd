@@ -34,6 +34,9 @@ Data for exercises were constructed by importing the supplied tab-delimited text
 
 -   `table3_04.RData`: Table 3.4 (p. 74)
 
+-   `table_a_2`: Appendix A, Table 2 (p. 768)
+
+
 Since the text is in final form, future revisions to this package will consist of updates to these vignettes.
 
 This document assumes that you have both R and RStudio installed on your system. If not, go to <https://posit.co/download/rstudio-desktop/> and follow the instructions there. Once you have both applications installed, launch RStudio and make the following changes:
