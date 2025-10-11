@@ -1247,7 +1247,7 @@ NULL
 #'  \describe{
 #'   \item{Tech}{Technician performing measurements, coded -1 and +1}
 #'   \item{Diameter}{Diameter of drain tube: 0.188 (-1) or 0.314 inches (+1)}
-#'   \item{Fluid}{Water (-1) or ethylene glycol (1)}
+#'   \item{Fluid}{Water (-1) or ethylene glycol (+1)}
 #'   \item{y1}{Time for fluid level to drop, replicate 1}
 #'   \item{y2}{Time for fluid level to drop, replicate 2}
 #'   \item{y3}{Time for fluid level to drop, replicate 3}
@@ -1653,3 +1653,225 @@ NULL
 #'
 NULL
 
+#' @name ch4_eoc_prob21
+#' @docType data
+#' @title Chapter 4, Exercise 21
+#' @usage data(ch4_eoc_prob21)
+#' @keywords datasets
+#'
+#' @format A data frame with 20 rows and 3 variables.
+#'  \describe{
+#'   \item{x1}{Thickness of armor plate (0.001 in.)}
+#'   \item{x2}{Brinell hardness number}
+#'   \item{y}{Ballistic limit (ft/sec)}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigita5press.com/plugins/books/127/}, p. 214
+#'
+#' @examples
+#' data(ch4_eoc_prob21)
+#' str(ch4_eoc_prob21)
+#'
+NULL
+
+#' @name ch4_eoc_prob22
+#' @docType data
+#' @title Chapter 4, Exercise 22
+#' @usage data(ch4_eoc_prob22)
+#' @keywords datasets
+#'
+#' @format A data frame with 6 rows and 3 variables.
+#'  \describe{
+#'   \item{Width}{Width of bicycle tire}
+#'   \item{Tread}{smooth (1), treaded (2)}
+#'   \item{y}{Time to stop (sec)}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigita5press.com/plugins/books/127/}, p. 214
+#'
+#' @examples
+#' data(ch4_eoc_prob22)
+#' str(ch4_eoc_prob22)
+#'
+NULL
+
+#' @name ch4_eoc_prob23
+#' @docType data
+#' @title Chapter 4, Exercise 23
+#' @usage data(ch4_eoc_prob23)
+#' @keywords datasets
+#'
+#' @format A data frame with 10 rows and 2 variables.
+#'  \describe{
+#'   \item{x}{Density of PETN (g/cc)}
+#'   \item{y}{Detonation velocity (km/sec)}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigita5press.com/plugins/books/127/}, p. 215
+#'
+#' @examples
+#' data(ch4_eoc_prob23)
+#' str(ch4_eoc_prob23)
+#'
+NULL
+
+#' @name ch4_eoc_prob24
+#' @docType data
+#' @title Chapter 4, Exercise 24
+#' @usage data(ch4_eoc_prob24)
+#' @keywords datasets
+#'
+#' @format A data frame with 19 rows and 2 variables.
+#'  \describe{
+#'   \item{x}{Depth of stud (0.001 in. above 0.400)}
+#'   \item{y}{Torque at failure (lbs/in)}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigita5press.com/plugins/books/127/}, p. 215
+#'
+#' @examples
+#' data(ch4_eoc_prob24)
+#' str(ch4_eoc_prob24)
+#'
+NULL
+
+#' @name ch4_eoc_prob25
+#' @docType data
+#' @title Chapter 4, Exercise 25
+#' @usage data(ch4_eoc_prob25)
+#' @keywords datasets
+#'
+#' @format A data frame with 19 rows and 2 variables.
+#'  \describe{
+#'   \item{x}{Amount of drag applied to tire (in percent)}
+#'   \item{y}{Grip force (y)}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigita5press.com/plugins/books/127/}, p. 216
+#'
+#' @examples
+#' data(ch4_eoc_prob25)
+#' str(ch4_eoc_prob25)
+#'
+NULL
+
+#' @name ch4_eoc_prob26
+#' @docType data
+#' @title Chapter 4, Exercise 26
+#' @usage data(ch4_eoc_prob26)
+#' @keywords datasets
+#'
+#' @format A data frame with 24 rows and 2 variables.
+#'  \describe{
+#'   \item{x}{Asphalt content (percent by weight)}
+#'   \item{y}{Permeability (water loss in inches/hour)}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigita5press.com/plugins/books/127/}, p. 216
+#'
+#' @examples
+#' data(ch4_eoc_prob26)
+#' str(ch4_eoc_prob26)
+#'
+NULL
+
+#' @name ch4_eoc_prob27
+#' @docType data
+#' @title Chapter 4, Exercise 27
+#' @usage data(ch4_eoc_prob27)
+#' @keywords datasets
+#'
+#' @format A data frame with 36 rows and 3 variables.
+#'  \describe{
+#'   \item{x1}{Diameter of wooden dowel rod (in.)}
+#'   \item{x2}{Length of wooden dowel rod (in.)}
+#'   \item{y}{Breaking strength (lb.)}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigita5press.com/plugins/books/127/}, p. 217
+#'
+#' @examples
+#' data(ch4_eoc_prob27)
+#' str(ch4_eoc_prob27)
+#'
+NULL
+
+#' @name ch4_eoc_prob28
+#' @docType data
+#' @title Chapter 4, Exercise 28
+#' @usage data(ch4_eoc_prob28)
+#' @keywords datasets
+#'
+#' @format A data frame with 12 rows and 4 variables.
+#'  \describe{
+#'   \item{x1}{Diameter of aluminum alloy (in.)}
+#'   \item{x2}{Feed rate (in. rev)}
+#'   \item{y1}{Thrust (lb.)}
+#'   \item{y2}{Torque (ft-lb.)}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigita5press.com/plugins/books/127/}, p. 218
+#'
+#' @examples
+#' data(ch4_eoc_prob28)
+#' str(ch4_eoc_prob28)
+#'
+NULL
+
+#' @name ch4_eoc_prob29
+#' @docType data
+#' @title Chapter 4, Exercise 29
+#' @usage data(ch4_eoc_prob29)
+#' @keywords datasets
+#'
+#' @format A data frame with 16 rows and 5 variables.
+#'  \describe{
+#'   \item{A}{Amount of glue used}
+#'   \item{B}{Predrying temperature}
+#'   \item{C}{Tunnel temperature}
+#'   \item{D}{Pressure applied}
+#'   \item{y}{Adhesive force (N)}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigita5press.com/plugins/books/127/}, p. 219
+#'
+#' @note Exact levels of variables not given.
+#'
+#' @examples
+#' data(ch4_eoc_prob29)
+#' str(ch4_eoc_prob29)
+#'
+NULL
+
+#' @name ch4_eoc_prob30
+#' @docType data
+#' @title Chapter 4, Exercise 30
+#' @usage data(ch4_eoc_prob30)
+#' @keywords datasets
+#'
+#' @format A data frame with 16 rows and 5 variables.
+#'  \describe{
+#'   \item{A}{Chamber pressure (torr): 8 (-1) vs. 9 (+1)}
+#'   \item{B}{H2 flow (standard cm3/min): 500 (-1) vs. 1000 (+1)}
+#'   \item{C}{SiH4 flow (standard cm3/min): 15 (-1) vs. 25 (+1)}
+#'   \item{D}{WF6 Flow (standard cm3/min): 50 (-1) vs. 60 (+1)}
+#'   \item{y}{Average resistivity of tungsten film (milliohms/cm)}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigita5press.com/plugins/books/127/}, p. 220
+#'
+#' @examples
+#' data(ch4_eoc_prob30)
+#' str(ch4_eoc_prob30)
+#'
+NULL
