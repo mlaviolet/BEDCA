@@ -9,7 +9,7 @@ A data frame with 8 rows and 3 variables.
  \describe{
   \item{Tech}{Technician performing measurements, coded -1 and +1}
   \item{Diameter}{Diameter of drain tube: 0.188 (-1) or 0.314 inches (+1)}
-  \item{Fluid}{Water (-1) or ethylene glycol (1)}
+  \item{Fluid}{Water (-1) or ethylene glycol (+1)}
   \item{y1}{Time for fluid level to drop, replicate 1}
   \item{y2}{Time for fluid level to drop, replicate 2}
   \item{y3}{Time for fluid level to drop, replicate 3}
