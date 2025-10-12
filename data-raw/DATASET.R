@@ -474,15 +474,15 @@ table5_01 <- table3_04 |>
 
 # Table 5.2, p. 224
 # Refer to Table 5.1
-table5_02 <- table5_01 |>
-  mutate(f_z = n / sum(n)) |>
-  select(-n)
+# table5_02 <- table5_01 |>
+#   mutate(f_z = n / sum(n)) |>
+#   select(-n)
 # usethis::use_data(table5_02, overwrite = TRUE)
 
 # Table 5.3, p. 227
 # Refer to Table 5.2
-table5_03 <- table5_02 |>
-  mutate(F_z = cumsum(f_z))
+# table5_03 <- table5_02 |>
+#   mutate(F_z = cumsum(f_z))
 # usethis::use_data(table5_03, overwrite = TRUE)
 
 # mean of random variable Z
@@ -490,19 +490,19 @@ table5_03 <- table5_02 |>
 
 # Table 5.4, p. 231
 # Refer to Table 3.4
-table5_04 <- table5_03 |>
-  select(z, f_z) |>
-  mutate(z_mean = sum(z * f_z),
-         resid = z - z_mean,
-         resid_sqr = resid^2)
+# table5_04 <- table5_03 |>
+#   select(z, f_z) |>
+#   mutate(z_mean = sum(z * f_z),
+#          resid = z - z_mean,
+#          resid_sqr = resid^2)
 # usethis::use_data(table5_04, overwrite = TRUE)
 
 # variance of random variable Z
 # Z_var <- summarize(table5_04, var_z = sum(resid_sqr * f_z))
 
 # Table 5.5, p. 231
-table5_05 <- data.frame(w = 0:9,
-                        f_w = 0.1)
+# table5_05 <- data.frame(w = 0:9,
+#                         f_w = 0.1)
 # usethis::use_data(table5_05, overwrite = TRUE)
 # "mean of square" minus "square of mean"
 # with(table5_05, sum(w^2 * f_w) - sum(w * f_w)^2)
@@ -574,18 +574,18 @@ ch5_xmp16 <- data.frame(
 
 # Table 5.10, p. 280
 # table of joint probabilities
-table5_10 <- table3_04 |>
-  summarize(.by = c(bolt3_torque, bolt4_torque), n = n()) |>
-  arrange(bolt3_torque, bolt4_torque) |>
-  mutate(p = n / sum(n))
+# table5_10 <- table3_04 |>
+#   summarize(.by = c(bolt3_torque, bolt4_torque), n = n()) |>
+#   arrange(bolt3_torque, bolt4_torque) |>
+#   mutate(p = n / sum(n))
 # usethis::use_data(table5_10, overwrite = TRUE)
 
 # Table 5.12, p. 283
 # marginal probabilities for Y (bolt 4 torque)
-table5_11 <- table5_10 |>
-  summarize(.by = bolt4_torque,
-            marginal_y = sum(p)) |>
-  arrange(bolt4_torque)
+# table5_11 <- table5_10 |>
+#   summarize(.by = bolt4_torque,
+#             marginal_y = sum(p)) |>
+#   arrange(bolt4_torque)
 # usethis::use_data(table5_11, overwrite = TRUE)
 
 # marginal probabilities for X (bolt 3 torque)
@@ -594,22 +594,22 @@ table5_11 <- table5_10 |>
 #   arrange(bolt3_torque)
 
 # Table 5.13, p. 284 and Table 5.14, p. 286
-table5_13 <- table5_10 |>
-  filter(bolt3_torque == 15) |>
-  # summarize(.by = bolt4_torque, n = sum(n)) |>
-  mutate(p_15 = p / sum(p))
+# table5_13 <- table5_10 |>
+  # filter(bolt3_torque == 15) |>
+  # # summarize(.by = bolt4_torque, n = sum(n)) |>
+  # mutate(p_15 = p / sum(p))
 # usethis::use_data(table5_13, overwrite = TRUE)
 
 # CHECK 5.15 AND 5.16
 # Table 5.15, p. 286 and Table 5.16, p. 287
-table5_15 <- table5_10 |>
-  filter(bolt3_torque == 18) |>
-  mutate(p_cond = p / sum(p))
+# table5_15 <- table5_10 |>
+#   filter(bolt3_torque == 18) |>
+#   mutate(p_cond = p / sum(p))
 # usethis::use_data(table5_15, overwrite = TRUE)
 
-table5_16 <- table5_10 |>
-  filter(bolt4_torque == 20) |>
-  mutate(p_cond = p / sum(p))
+# table5_16 <- table5_10 |>
+#   filter(bolt4_torque == 20) |>
+#   mutate(p_cond = p / sum(p))
 # usethis::use_data(table5_16, overwrite = TRUE)
 
 # Table 5.17, p. 288
