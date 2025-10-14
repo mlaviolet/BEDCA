@@ -535,9 +535,9 @@ rm(step1, x, y)
 # usethis::use_data(table5_06, overwrite = TRUE)
 
 # Table 5.7, p. 265
-table5_07 <- table5_06 |>
-  mutate (p = (rank(weight, ties = "average") - 0.5) / length(weight),
-          z = qnorm(p))
+# table5_07 <- table5_06 |>
+#   mutate (p = (rank(weight, ties = "average") - 0.5) / length(weight),
+#           z = qnorm(p))
 # usethis::use_data(table5_07, overwrite = TRUE)
 
 # Table 5.8, p. 267

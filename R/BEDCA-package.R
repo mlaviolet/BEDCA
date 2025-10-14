@@ -766,10 +766,10 @@ NULL
 #'   \item{Scale3}{Measured weight from Scale 3}
 #'   }
 #'
+#' @note Data reused in Chapter 4, Exercise 10
+#'
 #' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
 #' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 115
-#'
-#' @note Data also used in Chapter 3, Exercise 5
 #'
 #' @examples
 #' data(ch3_eoc_prob05)
@@ -1873,5 +1873,70 @@ NULL
 #' @examples
 #' data(ch4_eoc_prob30)
 #' str(ch4_eoc_prob30)
+#'
+NULL
+
+#' @name table5_01
+#' @docType data
+#' @title Table 5.1
+#' @usage data(table5_01)
+#' @keywords datasets
+#'
+#' @format A data frame with 10 rows and 2 variables.
+#'  \describe{
+#'   \item{z}{Torque (ft-lb) required to loosen bolt 3 on metal plate of a piece of heavy machinery}
+#'   \item{n}{Frequency}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigita5press.com/plugins/books/127/}, p. 224
+#'
+#' @examples
+#' data(table5_01)
+#' str(table5_01)
+#'
+NULL
+
+#' @name table5_06
+#' @docType data
+#' @title Table 5.6
+#' @usage data(table5_06)
+#' @keywords datasets
+#'
+#' @format A data frame with 100 rows and 1 variable.
+#'  \describe{
+#'   \item{weight}{Weight of U.S. nickels (g)}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigita5press.com/plugins/books/127/}, p. 265
+#'
+#' @note Data are shown as individual measurements in random order.
+#'
+#' @examples
+#' data(table5_06)
+#' str(table5_06)
+#'
+NULL
+
+#' @name table5_08
+#' @docType data
+#' @title Table 5.8
+#' @usage data(table5_08)
+#' @keywords datasets
+#'
+#' @format A data frame with 25 rows and 1 variable.
+#'  \describe{
+#'   \item{thread_lgth}{Thread length of U-bolts (0.001 in over nominal)}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigita5press.com/plugins/books/127/}, p. 267
+#'
+#' @note Data are shown as individual measurements in random order.
+#'
+#' @examples
+#' data(table5_08)
+#' str(table5_08)
 #'
 NULL
