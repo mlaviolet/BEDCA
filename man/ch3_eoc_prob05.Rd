@@ -25,7 +25,7 @@ data(ch3_eoc_prob05)
 Chapter 3, Exercise 5
 }
 \note{
-Data also used in Chapter 3, Exercise 5
+Data reused in Chapter 4, Exercise 10
 }
 \examples{
 data(ch3_eoc_prob05)
