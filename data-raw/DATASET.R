@@ -1194,6 +1194,12 @@ rm(ch4_sec2_prob1)
 # remove Section 4.3, Exercise 1; data repeated from Section 4.2, Exercise 2
 rm(ch4_sec3_prob1)
 
+# remove Chapter 5, Exercise 22; date repeated from Chapter 3, Exercise 6
+rm(ch5_eoc_prob22)
+
+# remove Section 6.1, Exercise 2; data already in Chapter 3, Exercise 2
+rm(ch3_eoc_prob02)
+
 # Save workspace ----------------------------------------------------------
 
 for(i in 1:length(ls())) {
