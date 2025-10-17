@@ -2023,3 +2023,63 @@ NULL
 #'
 NULL
 
+#' @name ch5_eoc_prob27
+#' @docType data
+#' @title Chapter 5, Exercise 27
+#' @usage data(ch5_eoc_prob27)
+#' @keywords datasets
+#'
+#' @format A data frame with 30 rows and 1 variable.
+#'  \describe{
+#'   \item{Strength}{Fracture strengths of specimens of hot-pressed silicon nitrides (MPa)}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigita5press.com/plugins/books/127/}, p. 328
+#'
+#' @examples
+#' data(ch5_eoc_prob27)
+#' str(ch5_eoc_prob27)
+#'
+NULL
+
+#' @name ch5_eoc_prob28
+#' @docType data
+#' @title Chapter 5, Exercise 28
+#' @usage data(ch5_eoc_prob28)
+#' @keywords datasets
+#'
+#' @format A data frame with 17 rows and 1 variable.
+#'  \describe{
+#'   \item{Life}{Number of eight-hour shifts before failure of sinker rollers}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigita5press.com/plugins/books/127/}, p. 328
+#'
+#' @examples
+#' data(ch5_eoc_prob28)
+#' str(ch5_eoc_prob28)
+#'
+NULL
+
+#' @name ch5_eoc_prob29
+#' @docType data
+#' @title Chapter 5, Exercise 29
+#' @usage data(ch5_eoc_prob29)
+#' @keywords datasets
+#'
+#' @format A data frame with 24 rows and 1 variable.
+#'  \describe{
+#'   \item{distance}{Deviations from nominal of distance between two holes drilled in steel plates}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigita5press.com/plugins/books/127/}, p. 329
+#'
+#' @examples
+#' data(ch5_eoc_prob29)
+#' str(ch5_eoc_prob29)
+#'
+NULL
+
