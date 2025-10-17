@@ -691,10 +691,12 @@ rm(x)
 # usethis::use_data(table6_08, overwrite = TRUE)
 
 # Table 6.9, p. 395
-heat_treated <- c(32.8, 44.9, 34.4, 37.0, 23.6, 29.1, 39.5, 30.1, 29.2, 19.2)
-cold_rolled <- c(21.0, 24.5, 19.9, 14.8, 18.8)
-table6_09 <- data.frame(heat_treated, cold_rolled)
-rm(heat_treated, cold_rolled)
+table6_09 <- data.frame(
+  hardness = c(32.8, 44.9, 34.4, 37.0, 23.6, 29.1, 39.5, 30.1, 29.2, 19.2,
+              21.0, 24.5, 19.9, 14.8, 18.8),
+  treatment = c(rep("heat_treated", 10),
+                rep("cold_rolled", 5)
+                ))
 # usethis::use_data(table6_09, overwrite = TRUE)
 
 # Table 6.10, p. 417

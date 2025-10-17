@@ -2083,3 +2083,131 @@ NULL
 #'
 NULL
 
+#' @name table6_04
+#' @docType data
+#' @title Table 6.4
+#' @usage data(table6_04)
+#' @keywords datasets
+#'
+#' @format A data frame with 10 rows and 1 variable.
+#'  \describe{
+#'   \item{lifetime}{Number of cycles to failure of springs under stress of 950 N/mm2}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigita5press.com/plugins/books/127/}, p. 366
+#'
+#' @examples
+#' data(table6_04)
+#' str(table6_04)
+#'
+NULL
+
+#' @name table6_05
+#' @docType data
+#' @title Table 6.5
+#' @usage data(table6_05)
+#' @keywords datasets
+#'
+#' @format A data frame with 5 rows and 3 variables.
+#'  \describe{
+#'   \item{piece}{Wood product piece ID}
+#'   \item{leading}{Leading edge (in.)}
+#'   \item{trailing}{Trailing edge (in.)}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigita5press.com/plugins/books/127/}, p. 370
+#'
+#' @examples
+#' data(table6_05)
+#' str(table6_05)
+#'
+NULL
+
+#' @name table6_07
+#' @docType data
+#' @title Table 6.7
+#' @usage data(table6_07)
+#' @keywords datasets
+#'
+#' @format A data frame with 10 rows and 2 variables.
+#'  \describe{
+#'   \item{stress_950}{Number of cycles to failure of springs under stress of 950 N/mm2}
+#'   \item{stress_900}{Number of cycles to failure of springs under stress of 900 N/mm2}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigita5press.com/plugins/books/127/}, p. 379
+#'
+#' @examples
+#' data(table6_07)
+#' str(table6_07)
+#'
+NULL
+
+#' @name table6_08
+#' @docType data
+#' @title Table 6.8
+#' @usage data(table6_08)
+#' @keywords datasets
+#'
+#' @format A data frame with 20 rows and 1 variable.
+#'  \describe{
+#'   \item{dimension}{measurements of a dimension on 20 parts machined on a CNC lathe (0.0001 in. over nominal)}
+#'   }
+#'
+#' @note Data shown as individual measurements in random order.
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigita5press.com/plugins/books/127/}, p. 389
+#'
+#' @examples
+#' data(table6_08)
+#' str(table6_08)
+#'
+NULL
+
+#' @name table6_09
+#' @docType data
+#' @title Table 6.9
+#' @usage data(table6_09)
+#' @keywords datasets
+#'
+#' @format A data frame with 15 rows and 2 variable.
+#'  \describe{
+#'   \item{hardness}{Rockwell hardness of steel specimens}
+#'   \item{treatment}{Treatment of specimen: heat treated or cold rolled}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigita5press.com/plugins/books/127/}, p. 395
+#'
+#' @examples
+#' data(table6_09)
+#' str(table6_09)
+#'
+NULL
+
+#' @name table6_10
+#' @docType data
+#' @title Table 6.10
+#' @usage data(table6_10)
+#' @keywords datasets
+#'
+#' @format A data frame with 100 rows and 1 variable.
+#'  \describe{
+#'   \item{wgt}{Weight of newly minted U.S. pennies (g)}
+#'   }
+#'
+#' @note Data shown as individual measurements in random order.
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigita5press.com/plugins/books/127/}, p. 417
+#'
+#' @examples
+#' data(table6_10)
+#' str(table6_10)
+#'
+NULL
+
