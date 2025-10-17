@@ -791,6 +791,8 @@ NULL
 #' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
 #' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 115
 #'
+#' @note Data also used in Chapter 5, Exercise 22
+#'
 #' @examples
 #' data(ch3_eoc_prob06)
 #' str(ch3_eoc_prob06)
@@ -1978,6 +1980,46 @@ NULL
 #' @examples
 #' data(ch5_xmp15)
 #' str(ch5_xmp15)
+#'
+NULL
+
+#' @name ch5_sec3_prob4
+#' @docType data
+#' @title Section 5.3, Exercise 4
+#' @usage data(ch5_sec3_prob4)
+#' @keywords datasets
+#'
+#' @format A data frame with 23 rows and 1 variable.
+#'  \describe{
+#'   \item{Bearings}{Lifetimes of ball bearings (10^6 revolutions before failure}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigita5press.com/plugins/books/127/}, p. 278
+#'
+#' @examples
+#' data(ch5_sec3_prob4)
+#' str(ch5_sec3_prob4)
+#'
+NULL
+
+#' @name ch5_sec3_prob5
+#' @docType data
+#' @title Section 5.3, Exercise 5
+#' @usage data(ch5_sec3_prob5)
+#' @keywords datasets
+#'
+#' @format A data frame with 19 rows and 1 variable.
+#'  \describe{
+#'   \item{mileage}{Mileage at first failure for military personnel carriers}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigita5press.com/plugins/books/127/}, p. 278
+#'
+#' @examples
+#' data(ch5_sec3_prob5)
+#' str(ch5_sec3_prob5)
 #'
 NULL
 
