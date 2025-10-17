@@ -1200,6 +1200,11 @@ rm(ch5_eoc_prob22)
 # remove Section 6.1, Exercise 2; data already in Chapter 3, Exercise 2
 rm(ch3_eoc_prob02)
 
+# remove Section 6.2, Exercises 1, 4
+# Exercise 1 first appears as Chapter 3, Exercise 2
+# Exercise 4 first appears as Section 6.1, Exercise 4
+rm(ch6_sec2_prob01, ch6_sec2_prob04)
+
 # Save workspace ----------------------------------------------------------
 
 for(i in 1:length(ls())) {

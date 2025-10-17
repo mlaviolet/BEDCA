@@ -2213,3 +2213,24 @@ NULL
 #'
 NULL
 
+#' @name ch6_sec1_prob04
+#' @docType data
+#' @title Section 6.1, Exercise 4
+#' @usage data(ch6_sec1_prob04)
+#' @keywords datasets
+#'
+#' @format A data frame with 50 rows and 1 variable.
+#'  \describe{
+#'   \item{Diameter}{Diameter of No. 10 machine screws (mm)}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigita5press.com/plugins/books/127/}, p. 265
+#'
+#' @note Data are shown as individual measurements and reused in Section 6.2, Exercise 4.
+#'
+#' @examples
+#' data(ch6_sec1_prob04)
+#' str(ch6_sec1_prob04)
+#'
+NULL
