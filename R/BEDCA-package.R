@@ -1940,3 +1940,24 @@ NULL
 #' str(table5_08)
 #'
 NULL
+
+#' @name table5_09
+#' @docType data
+#' @title Table 5.9
+#' @usage data(table5_09)
+#' @keywords datasets
+#'
+#' @format A data frame with 20 rows and 1 variable.
+#'  \describe{
+#'   \item{voltage}{Failure voltage (kv/mm) for an electrical cable insulation subjected to increasing voltage stress}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigita5press.com/plugins/books/127/}, p. 276
+#'
+#' @examples
+#' data(table5_09)
+#' str(table5_09)
+#'
+NULL
+

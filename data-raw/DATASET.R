@@ -565,11 +565,14 @@ ch5_xmp15 <- data.frame(
 # usethis::use_data(ch5_xmp15, overwrite = TRUE)
 
 # Example 15 and Figure 5.21, p. 270
-ch5_xmp16 <- data.frame(
+# Use as Table 5.9, p. 76
+# Old ID ch5_xmp16
+table5_09 <- data.frame(
   voltage = c(39.4, 45.3, 49.2, 49.4, 51.3, 52.0, 53.2, 53.2, 54.9,
               55.5, 57.1, 57.2, 57.5, 59.2, 61.0, 62.4, 63.8, 64.3,
               67.3, 67.7)
   )
+usethis::use_data(table5_09, overwrite = TRUE)
 # usethis::use_data(ch5_xmp16, overwrite = TRUE)
 
 # Table 5.10, p. 280
