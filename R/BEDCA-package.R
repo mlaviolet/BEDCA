@@ -1961,3 +1961,23 @@ NULL
 #'
 NULL
 
+#' @name ch5_xmp15
+#' @docType data
+#' @title Chapter 5, Example 15
+#' @usage data(ch5_xmp15)
+#' @keywords datasets
+#'
+#' @format A data frame with 65 rows and 1 variable.
+#'  \describe{
+#'   \item{sale_time}{Time (seconds) required to complete postage stamp sale at residence hall service counter}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigita5press.com/plugins/books/127/}, p. 270
+#'
+#' @examples
+#' data(ch5_xmp15)
+#' str(ch5_xmp15)
+#'
+NULL
+
