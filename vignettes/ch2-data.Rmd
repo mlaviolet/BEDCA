@@ -42,8 +42,7 @@ The authors discuss completely randomized, randomized complete block, and incomp
 
 ### 2.4.1: Completely randomized experiments
 
-On page 48, the authors describe a student investigation of the effects of two experimental factors, the concentration of hydrofluoric acid in an etching bath and the time spent in the etching bath on the resulting strength of damaged glass rods. The students decided to run a 3 x 3 factorial experiment. The experimental levels of concentration were 50%, 75%, and 100% HF, and the levels of time employed were 30 sec, 60 sec, and 120 sec, resulting in nine treatment
-combinations. Two replications produced 18 experimental runs. The following code generates a completely randomized design.
+On page 48, the authors describe a student investigation of the effects of two experimental factors, the concentration of hydrofluoric acid in an etching bath and the time spent in the etching bath on the resulting strength of damaged glass rods. The students decided to run a 3 x 3 factorial experiment. The experimental levels of concentration were 50%, 75%, and 100% HF, and the levels of time employed were 30 sec, 60 sec, and 120 sec, resulting in nine treatment combinations. Two replications produced 18 experimental runs. The following code generates a completely randomized design.
 
 ```{r}
 # Example 11, p. 48
@@ -105,11 +104,11 @@ glass_block
 
 Incomplete block experiments are performed when limitations prevent all factor combinations from appearing in every block. Incomplete blocks are an advanced topic. For more on incomplete blocks and other designs, see the packages `ibd`, `DoE.base`, and `DoE.wrapper`. An overview of R packages for design and analysis is found [here](https://cran.r-project.org/web/views/ExperimentalDesign.html).
 
-## Preparing to collect engineering data
+## 2.5: Preparing to collect engineering data
 
-Section 2.5 discusses steps for preparing for the collection of data. See the packages `flowchart`, `ggflowchart`, and `SixSigma` for tools, such as flowcharts and Ishikawa cause-and-effect diagrams.
+Section 2.5 briefly discusses steps for preparing for the collection of data. See the packages `flowchart`, `ggflowchart`, and `SixSigma` for tools, such as flowcharts and Ishikawa cause-and-effect diagrams. Readers interested in more details on these tools should consult the following:
 
+Roger W. Hoerl and Ronald D. Snee (2020), *Statistical Thinking: Improving Business Performance* (3rd. ed.), Wiley, ISBN 978-1-119-60571-3
 
-
-
+Gerald J. Langley et al. (2009), *The Improvement Guide: A Practical Approach to Enhancing Organizational Performance* (2nd. ed.), Jossey-Bass, ISBN 978-0-470-19241-2
 
