@@ -21,6 +21,8 @@ library(BEDCA)
 
 Chapter 3 discusses elementary graphical and numerical summaries: dotplots, histograms, run charts, quantiles, mean, standard deviation. Stem-and-leaf plots are omitted from this vignette. We also present a modeling approach to obtaining summary statistics.
 
+### 3.1.1 Dot diagrams
+
 Example 1 (p. 67) of this chapter revisits the heat-treating process for gears introduced in Chapter 1. As noted there, the data for the two gear treatments appear in separate columns, which is not amenable for analysis. Data must be reshaped into tidy format, with one column (`Treatment`) for the treatment type and a second (`Runout`) for the runout measurements.
 
 ```{r}
@@ -28,11 +30,23 @@ gears <- table1_01 |>
     tidyr::pivot_longer(cols = everything(), 
                         values_to = "Runout", 
                         names_to = "Treatment") |> 
+  # because the sample sizes are unequal one laid gear is shown as missing;
+  #   remove it
   dplyr::filter(!is.na(Runout))
+```
+
+The best way to make a dot diagram is with the `dotPlot` function from the `mosaic` package. The syntax is $\\texttt{textasciitilde}$
+
+
+$$\texttt{dotPlot(}\sim \texttt{y | z, data = mydata)}$$
+
+where `y` is the variable to be plotted. The variable `z` is a panel variable; that is, separate plots are produced for each level of `z`.
+
+```{r}
 mosaic::dotPlot(~ Runout | Treatment, data = gears)
 ```
 
-Example 2 discusses a study to compare penetration depths of .45 caliber bullets fired into oak wood. Data appear in Table 3.1 (p. 67) and Chapter 3, Section 1, Exercise 2 (p. 77).
+Example 2 discusses a study to compare penetration depths of .45 caliber bullets fired into oak wood. Data appear in Table 3.1 (p. 67) and Section 3.1, Exercise 2 (p. 77).
 
 ```{r}
 bullets <- ch3_sec1_prob2 |> 
@@ -42,4 +56,3 @@ bullets <- ch3_sec1_prob2 |>
 mosaic::dotPlot(~ depth | type, data = bullets,
                 nint = 12)
 ```
-
