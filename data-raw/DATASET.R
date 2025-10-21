@@ -1217,6 +1217,10 @@ rm(ch6_sec3_prob03)
 # first appears as Section 6.3, Exercise 4
 rm(ch6_sec3_prob04)
 
+# remove Section 6.4, Exercise 2
+# first appears as Section 3.1, Exercise 3
+rm(ch6_sec4_prob02)
+
 # Save workspace ----------------------------------------------------------
 
 for(i in 1:length(ls())) {
