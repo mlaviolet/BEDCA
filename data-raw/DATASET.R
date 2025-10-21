@@ -1213,6 +1213,9 @@ rm(ch6_sec3_prob02)
 # first appears as Section 6.1, Exercise 4
 rm(ch6_sec3_prob03)
 
+# remove Section 6.4, Exercise 1
+# first appears as Section 6.3, Exercise 4
+rm(ch6_sec3_prob04)
 
 # Save workspace ----------------------------------------------------------
 
