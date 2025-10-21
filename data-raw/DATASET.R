@@ -1225,6 +1225,10 @@ rm(ch6_sec4_prob02)
 # first appears as Table 3.20
 rm(ch6_sec5_prob1)
 
+# remove Section 6.6, Exercise 2
+# first appears as Table 6.7
+rm(ch6_sec6_prob02)
+
 # Save workspace ----------------------------------------------------------
 
 for(i in 1:length(ls())) {
