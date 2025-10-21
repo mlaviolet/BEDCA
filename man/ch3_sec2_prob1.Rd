@@ -22,7 +22,7 @@ data(ch3_sec2_prob1)
 Section 3.2, Exercise 1
 }
 \note{
-Data also used in Section 3.3, Exercises 1 and 3
+Data also used in Section 3.3, Exercises 1 and 3; Section 6.3, Exercise 2
 }
 \examples{
 data(ch3_sec2_prob1)
