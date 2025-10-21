@@ -24,8 +24,8 @@ Section 6.1, Exercise 4
 Data are shown as individual measurements and reused in Section 6.2, Exercise 4.
 }
 \examples{
-data(ch6_sec3_prob04)
-str(ch6_sec3_prob04)
+data(ch6_sec1_prob04)
+str(ch6_sec1_prob04)
 
 }
 \keyword{datasets}

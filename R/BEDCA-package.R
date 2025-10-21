@@ -2238,8 +2238,29 @@ NULL
 #' @note Data are shown as individual measurements and reused in Section 6.2, Exercise 4.
 #'
 #' @examples
-#' data(ch6_sec3_prob04)
-#' str(ch6_sec3_prob04)
+#' data(ch6_sec1_prob04)
+#' str(ch6_sec1_prob04)
+#'
+NULL
+
+#' @name ch6_xmp10
+#' @docType data
+#' @title Chapter 6, Example 10
+#' @usage data(ch6_xmp10)
+#' @keywords datasets
+#'
+#' @format A data frame with 24 rows and 2 variableS.
+#'  \describe{
+#'   \item{molded}{Packing weights for molded pieces (g)}
+#'   \item{crushed}{Packing weights for crushed pieces (g)}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigita5press.com/plugins/books/127/}, p. 375
+#'
+#' @examples
+#' data(ch6_xmp10)
+#' str(ch6_xmp10)
 #'
 NULL
 
@@ -2251,8 +2272,8 @@ NULL
 #'
 #' @format A data frame with 6 rows and 2 variableS.
 #'  \describe{
-#'   \item{Treaded}{Stopping distance with treaded bicycle tire (cm)}
-#'   \item{Smooth}{Stopping distance with smooth bicycle tire (cm)}
+#'   \item{Treaded}{Stopping distance with treaded tires (cm)}
+#'   \item{Smooth}{Stopping distance with smooth tires (cm)}
 #'   }
 #'
 #' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
