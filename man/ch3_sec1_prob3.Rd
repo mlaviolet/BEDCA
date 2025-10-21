@@ -22,6 +22,9 @@ data(ch3_sec1_prob3)
 \description{
 Section 3.1, Exercise 3
 }
+\note{
+Data reused in Section 6.5, Exercise 2
+}
 \examples{
 data(ch3_sec1_prob3)
 str(ch3_sec1_prob3)

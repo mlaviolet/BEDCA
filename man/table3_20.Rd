@@ -22,6 +22,9 @@ data(table3_20)
 \description{
 Table 3.20
 }
+\note{
+Data reused in Section 6.5, Exercise 1
+}
 \examples{
 data(table3_20)
 str(table3_20)

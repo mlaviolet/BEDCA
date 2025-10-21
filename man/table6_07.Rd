@@ -21,6 +21,9 @@ data(table6_07)
 \description{
 Table 6.7
 }
+\note{
+Data reused in Section 6.6, Exercise 2
+}
 \examples{
 data(table6_07)
 str(table6_07)
