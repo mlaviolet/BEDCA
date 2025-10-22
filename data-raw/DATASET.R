@@ -1254,6 +1254,9 @@ rm(ch6_eoc_prob18)
 names(ch6_eoc_prob26) <- c("length_25cm", "length_30cm")
 usethis::use_data(ch6_eoc_prob26, overwrite = TRUE)
 
+# remove Chapter 6, Exercise 32; data reused from Chapter 3, Exercise 18
+rm(ch6_eoc_prob32)
+
 # Save workspace ----------------------------------------------------------
 
 for(i in 1:length(ls())) {
