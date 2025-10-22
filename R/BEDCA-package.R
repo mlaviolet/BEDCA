@@ -2375,3 +2375,47 @@ NULL
 #' str(ch6_eoc_prob11)
 #'
 NULL
+
+#' @name ch6_eoc_prob13
+#' @docType data
+#' @title Chapter 6, Exercise 13
+#' @usage data(ch6_eoc_prob13)
+#' @keywords datasets
+#'
+#' @format A data frame with 5 rows and 2 variables.
+#'  \describe{
+#'   \item{octane_87}{Miles per gallon with 87 octane fuel}
+#'   \item{octane_90}{Miles per gallon with 90 octane fuel}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigita5press.com/plugins/books/127/}, p. 431
+#'
+#' @examples
+#' data(ch6_eoc_prob13)
+#' str(ch6_eoc_prob13)
+#'
+NULL
+
+#' @name ch6_eoc_prob15
+#' @docType data
+#' @title Chapter 6, Exercise 15
+#' @usage data(ch6_eoc_prob15)
+#' @keywords datasets
+#'
+#' @format A data frame with 7 rows and 3 variables.
+#'  \describe{
+#'   \item{wire}{Wire ID}
+#'   \item{C0.0}{Resistivity of copper wire at 0.0 degrees C}
+#'   \item{C21.8}{Resistivity of copper wire at 21.8 degrees C}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigita5press.com/plugins/books/127/}, p. 431
+#'
+#' @examples
+#' data(ch6_eoc_prob15)
+#' str(ch6_eoc_prob15)
+#'
+NULL
+
