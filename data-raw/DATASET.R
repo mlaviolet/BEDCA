@@ -1229,6 +1229,12 @@ rm(ch6_sec5_prob1)
 # first appears as Table 6.7
 rm(ch6_sec6_prob02)
 
+# remove Chapter 6, Exercise 1; first appears as Table 3.6
+rm(ch6_eoc_prob01)
+
+# remove Chapter 6, Exercise 2; first appears as Table 1.1
+rm(ch6_eoc_prob02)
+
 # Save workspace ----------------------------------------------------------
 
 for(i in 1:length(ls())) {
