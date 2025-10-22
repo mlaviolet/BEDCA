@@ -2506,3 +2506,23 @@ NULL
 #'
 NULL
 
+#' @name ch6_eoc_prob35
+#' @docType data
+#' @title Chapter 6, Exercise 35
+#' @usage data(ch6_eoc_prob35)
+#' @keywords datasets
+#'
+#' @format A data frame with 4 rows and 2 variables.
+#'  \describe{
+#'   \item{Van1}{Tilttable ratio for minivan 1}
+#'   \item{Van2}{Tilttable ratio for minivan 2}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigita5press.com/plugins/books/127/}, p. 439
+#'
+#' @examples
+#' data(ch6_eoc_prob35)
+#' str(ch6_eoc_prob35)
+#'
+NULL
