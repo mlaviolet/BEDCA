@@ -1247,6 +1247,8 @@ usethis::use_data(ch6_eoc_prob13, overwrite = TRUE)
 names(ch6_eoc_prob15) <- c("wire", "C0.0", "C21.8")
 usethis::use_data(ch6_eoc_prob15, overwrite = TRUE)
 
+# remove Chapter 6, Exercise 18; full data not needed
+rm(ch6_eoc_prob18)
 
 # Save workspace ----------------------------------------------------------
 
