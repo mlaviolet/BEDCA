@@ -770,7 +770,8 @@ table7_02 <- data.frame(type = c(rep("Type 1", 7),
 # Refer to Table 7.1
 
 # Table 7.8, p. 466
-table7_08 <- data.frame(n = 5,
+table7_08 <- data.frame(brand = c("Generic", "National B", "National V"),
+                        n = 5,
                         y_bar = c(93.2, 81.0, 83.8),
                         s = c(0.8, 0.7, 0.8))
 # usethis::use_data(table7_08, overwrite = TRUE)

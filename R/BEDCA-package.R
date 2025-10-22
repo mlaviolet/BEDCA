@@ -2548,3 +2548,48 @@ NULL
 #' str(table7_01)
 #'
 NULL
+
+#' @name table7_02
+#' @docType data
+#' @title Table 7.2
+#' @usage data(table7_02)
+#' @keywords datasets
+#'
+#' @format A data frame with 19 rows and 2 variables.
+#'  \describe{
+#'   \item{type}{Spring type (1, 2, or 3)}
+#'   \item{k}{Measured spring constant}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 446
+#'
+#' @examples
+#' data(table7_02)
+#' str(table7_02)
+#'
+NULL
+
+#' @name table7_08
+#' @docType data
+#' @title Table 7.8
+#' @usage data(table7_08)
+#' @keywords datasets
+#'
+#' @format A data frame with 4 rows and 3 variables.
+#'  \describe{
+#'   \item{brand}{Brand of paper towels}
+#'   \item{n}{Sample size}
+#'   \item{y_bar}{Mean absorbency}
+#'   \item{s}{Standard deviation of absorbency}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 466
+#'
+#' @examples
+#' data(table7_08)
+#' str(table7_08)
+#'
+NULL
+
