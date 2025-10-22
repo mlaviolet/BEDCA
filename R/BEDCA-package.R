@@ -709,7 +709,7 @@ NULL
 #' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
 #' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 113
 #'
-#' @note Data reused in Section 6.6, Exercise 3 and 4
+#' @note Data reused in Section 6.6, Exercise 3 and 4; Chapter 6, Exercise 4
 #'
 #' @examples
 #' data(ch3_eoc_prob02)
@@ -2288,5 +2288,47 @@ NULL
 #' @examples
 #' data(ch6_sec3_prob04)
 #' str(ch6_sec3_prob04)
+#'
+NULL
+
+#' @name ch6_eoc_prob05
+#' @docType data
+#' @title Chapter 6, Exercise 5
+#' @usage data(ch6_eoc_prob05)
+#' @keywords datasets
+#'
+#' @format A data frame with 16 rows and 1 variable.
+#'  \describe{
+#'   \item{length}{Length of spanner bushings (in)}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigita5press.com/plugins/books/127/}, p. 428
+#'
+#' @examples
+#' data(ch6_eoc_prob05)
+#' str(ch6_eoc_prob05)
+#'
+NULL
+
+#' @name ch6_eoc_prob06
+#' @docType data
+#' @title Chapter 6, Exercise 6
+#' @usage data(ch6_eoc_prob06)
+#' @keywords datasets
+#'
+#' @format A data frame with 16 rows and 3 variables.
+#'  \describe{
+#'   \item{Bushing}{Spanner bushing ID}
+#'   \item{A}{Outside diameter measured by Student A}
+#'   \item{B}{Outside diameter measured by Student B}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigita5press.com/plugins/books/127/}, p. 428
+#'
+#' @examples
+#' data(ch6_eoc_prob06)
+#' str(ch6_eoc_prob06)
 #'
 NULL

@@ -21,9 +21,6 @@ data(ch6_xmp10)
 \description{
 Chapter 6, Example 10
 }
-\note{
-Data used in
-}
 \examples{
 data(ch6_xmp10)
 str(ch6_xmp10)

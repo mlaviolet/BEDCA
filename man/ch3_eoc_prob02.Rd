@@ -21,7 +21,7 @@ data(ch3_eoc_prob02)
 Chapter 3, Exercise 2
 }
 \note{
-Data reused in Section 6.6, Exercise 3 and 4
+Data reused in Section 6.6, Exercise 3 and 4; Chapter 6, Exercise 4
 }
 \examples{
 data(ch3_eoc_prob02)
