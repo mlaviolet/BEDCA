@@ -2419,3 +2419,24 @@ NULL
 #'
 NULL
 
+#' @name ch6_eoc_prob16
+#' @docType data
+#' @title Chapter 6, Exercise 16
+#' @usage data(ch6_eoc_prob16)
+#' @keywords datasets
+#'
+#' @format A data frame with 7 rows and 1 variable.
+#'  \describe{
+#'   \item{resist}{Resistivity of aluminum wire at 21.8 degrees C}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigita5press.com/plugins/books/127/}, p. 432
+#'
+#' @examples
+#' data(ch6_eoc_prob16)
+#' str(ch6_eoc_prob16)
+#'
+NULL
+
+
