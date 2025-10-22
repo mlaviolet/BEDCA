@@ -2439,4 +2439,25 @@ NULL
 #'
 NULL
 
-
+#' @name ch6_eoc_prob20
+#' @docType data
+#' @title Chapter 6, Exercise 20
+#' @usage data(ch6_eoc_prob20)
+#' @keywords datasets
+#'
+#' @format A data frame with 20 rows and 3 variables.
+#'  \describe{
+#'   \item{Setting}{1 = improved, 2 = original}
+#'   \item{Gear}{Gear ID within setting}
+#'   \item{y1}{Flatness of gear (mm of distortion)}
+#'   \item{y2}{Concentricity of gear (mm of distortion)}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigita5press.com/plugins/books/127/}, p. 433
+#'
+#' @examples
+#' data(ch6_eoc_prob20)
+#' str(ch6_eoc_prob20)
+#'
+NULL
