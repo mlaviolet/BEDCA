@@ -1235,6 +1235,11 @@ rm(ch6_eoc_prob01)
 # remove Chapter 6, Exercise 2; first appears as Table 1.1
 rm(ch6_eoc_prob02)
 
+# modify Chapter 6, Exercise 10; remove column of logs
+ch6_eoc_prob11 <- select(ch6_eoc_prob11, y)
+usethis::use_data(ch6_eoc_prob11, overwrite = TRUE)
+
+
 # Save workspace ----------------------------------------------------------
 
 for(i in 1:length(ls())) {

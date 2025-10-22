@@ -2354,3 +2354,24 @@ NULL
 #'
 NULL
 
+#' @name ch6_eoc_prob11
+#' @docType data
+#' @title Chapter 6, Exercise 11
+#' @usage data(ch6_eoc_prob11)
+#' @keywords datasets
+#'
+#' @format A data frame with 10 rows and 1 variable.
+#'  \describe{
+#'   \item{y}{Purity of oxygen (in percent) delivered by an industrial air products supplier}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigita5press.com/plugins/books/127/}, p. 430
+#'
+#' @note Transformation of data is left to the reader.
+#'
+#' @examples
+#' data(ch6_eoc_prob11)
+#' str(ch6_eoc_prob11)
+#'
+NULL
