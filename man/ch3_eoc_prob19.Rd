@@ -24,7 +24,7 @@ data(ch3_eoc_prob19)
 Chapter 3, Exercise 19
 }
 \note{
-Units are 10^-5 inches above nominal.
+Units are 10^-5 inches above nominal. Data also used in Chapter 6, Exercise 33
 }
 \examples{
 data(ch3_eoc_prob19)
