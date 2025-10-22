@@ -2332,3 +2332,25 @@ NULL
 #' str(ch6_eoc_prob06)
 #'
 NULL
+
+#' @name ch6_eoc_prob10
+#' @docType data
+#' @title Chapter 6, Exercise 10
+#' @usage data(ch6_eoc_prob10)
+#' @keywords datasets
+#'
+#' @format A data frame with 3 rows and 2 variables.
+#'  \describe{
+#'   \item{B}{Stretch of fishing line under 3.5 kg load, Brand B}
+#'   \item{D}{Stretch of fishing line under 3.5 kg load, Brand D}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigita5press.com/plugins/books/127/}, p. 428
+#'
+#' @examples
+#' data(ch6_eoc_prob10)
+#' str(ch6_eoc_prob10)
+#'
+NULL
+
