@@ -2461,3 +2461,25 @@ NULL
 #' str(ch6_eoc_prob20)
 #'
 NULL
+
+#' @name ch6_eoc_prob24
+#' @docType data
+#' @title Chapter 6, Exercise 24
+#' @usage data(ch6_eoc_prob24)
+#' @keywords datasets
+#'
+#' @format A data frame with 5 rows and 2 variables.
+#'  \describe{
+#'   \item{Rect}{Gripping pressure (manometers) delivered to rectangular objects}
+#'   \item{Circ}{Gripping pressure (manometers) delivered to circular objects}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigita5press.com/plugins/books/127/}, p. 435
+#'
+#' @examples
+#' data(ch6_eoc_prob24)
+#' str(ch6_eoc_prob24)
+#'
+NULL
+
