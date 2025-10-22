@@ -2483,3 +2483,24 @@ NULL
 #'
 NULL
 
+#' @name ch6_eoc_prob26
+#' @docType data
+#' @title Chapter 6, Exercise 26
+#' @usage data(ch6_eoc_prob26)
+#' @keywords datasets
+#'
+#' @format A data frame with 8 rows and 2 variables.
+#'  \describe{
+#'   \item{length_25cm}{Tensile strength (kg) for 0.012 diameter wire, length 25 cm}
+#'   \item{length_30cm}{Tensile strength (kg) for 0.012 diameter wire, length 30 cm}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigita5press.com/plugins/books/127/}, p. 435
+#'
+#' @examples
+#' data(ch6_eoc_prob26)
+#' str(ch6_eoc_prob26)
+#'
+NULL
+

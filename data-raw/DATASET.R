@@ -1250,6 +1250,10 @@ usethis::use_data(ch6_eoc_prob15, overwrite = TRUE)
 # remove Chapter 6, Exercise 18; full data not needed
 rm(ch6_eoc_prob18)
 
+# modify Chapter 6, Exercise 26; make names syntactic
+names(ch6_eoc_prob26) <- c("length_25cm", "length_30cm")
+usethis::use_data(ch6_eoc_prob26, overwrite = TRUE)
+
 # Save workspace ----------------------------------------------------------
 
 for(i in 1:length(ls())) {
