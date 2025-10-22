@@ -2526,3 +2526,25 @@ NULL
 #' str(ch6_eoc_prob35)
 #'
 NULL
+
+#' @name table7_01
+#' @docType data
+#' @title Table 7.1
+#' @usage data(table7_01)
+#' @keywords datasets
+#'
+#' @format A data frame with 24 rows and 3 variables.
+#'  \describe{
+#'   \item{specimen}{Concrete specimen tested}
+#'   \item{concrete}{Concrete formula (1 through 8)}
+#'   \item{strength}{28-day compressive strength (psi)}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 445
+#'
+#' @examples
+#' data(table7_01)
+#' str(table7_01)
+#'
+NULL
