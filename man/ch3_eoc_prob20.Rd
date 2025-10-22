@@ -23,7 +23,7 @@ data(ch3_eoc_prob20)
 Chapter 3, Exercise 20
 }
 \note{
-Units are degrees; measurements for EDM Hole B not given.
+Units are degrees; measurements for EDM Hole B not given. Data also used in Chapter 6, Exercise 34
 }
 \examples{
 data(ch3_eoc_prob20)

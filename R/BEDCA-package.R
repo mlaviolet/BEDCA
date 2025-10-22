@@ -1108,7 +1108,7 @@ NULL
 #'   \item{LaserB}{Angle of laser-drilled hole to top surface of part, Hole B}
 #'   }
 #'
-#' @note Units are degrees; measurements for EDM Hole B not given.
+#' @note Units are degrees; measurements for EDM Hole B not given. Data also used in Chapter 6, Exercise 34
 #'
 #' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
 #' \url{https://www.iastatedigita5press.com/plugins/books/127/}, p. 121

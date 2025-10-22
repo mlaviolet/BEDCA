@@ -1260,6 +1260,9 @@ rm(ch6_eoc_prob32)
 # remove Chapter 6, Exercise 33; data reused from Chapter 3, Exercise 19
 rm(ch6_eoc_prob33)
 
+# remove Chapter 6, Exercise 34; data reused from Chapter 3, Exercise 20
+rm(ch6_eoc_prob34)
+
 # Save workspace ----------------------------------------------------------
 
 for(i in 1:length(ls())) {
