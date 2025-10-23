@@ -2967,3 +2967,26 @@ NULL
 #'
 NULL
 
+#' @name ch7_eoc_prob07
+#' @docType data
+#' @title Chapter 7, Exercise 7
+#' @usage data(ch7_eoc_prob07)
+#' @keywords datasets
+#'
+#' @format A data frame with 10 rows and 4 variables.
+#'  \describe{
+#'   \item{Sample}{}
+#'   \item{x}{Mean of 4 pinhead diameters on an electrical component}
+#'   \item{R}{Range of 4 pinhead diameters on an electrical component}
+#'   \item{s}{Standard deviation of 4 pinhead diameters on an electrical component}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 536
+#'
+#' @examples
+#' data(ch7_eoc_prob07)
+#' str(ch7_eoc_prob07)
+#'
+NULL
+
