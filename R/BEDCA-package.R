@@ -2678,3 +2678,27 @@ NULL
 #' str(table7_18)
 #'
 NULL
+
+#' @name table7_19
+#' @docType data
+#' @title Table 7.19
+#' @usage data(table7_19)
+#' @keywords datasets
+#'
+#' @format A data frame with 30 rows and 4 variables.
+#'  \describe{
+#'   \item{sample}{Sample ID}
+#'   \item{trucks}{Number of trucks produced}
+#'   \item{errors}{Errors found}
+#'   \item{errors_truck}{Errors per truck}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 526
+#'
+#' @examples
+#' data(table7_19)
+#' str(table7_19)
+#'
+NULL
+
