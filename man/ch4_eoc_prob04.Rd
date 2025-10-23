@@ -23,6 +23,9 @@ data(ch4_eoc_prob04)
 \description{
 Chapter 4, Exercise 4
 }
+\note{
+Data reused in Chapter 8, Exercise 1
+}
 \examples{
 data(ch4_eoc_prob04)
 str(ch4_eoc_prob04)

@@ -3207,3 +3207,26 @@ NULL
 #' data(ch7_eoc_prob24)
 #' str(ch7_eoc_prob24)
 NULL
+
+#' @name ch8_eoc_prob04
+#' @docType data
+#' @title Chapter 8, Exercise 4
+#' @usage data(ch8_eoc_prob04)
+#' @keywords datasets
+#'
+#' @format A data frame with 12 rows and 4 variables.
+#'  \describe{
+#'   \item{ybar}{Mean viscosity of motor oil}
+#'   \item{s}{Standard deviation of viscosity of motor oil}
+#'   \item{brand}{Brand of motor oil}
+#'   \item{oil}{Type of motor oil (1 = 10W30, 2 = SAE 30, 3 = 10W40, 4 = 20W50)}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 633
+#'
+#' @examples
+#' data(ch8_eoc_prob04)
+#' str(ch8_eoc_prob04)
+NULL
+
