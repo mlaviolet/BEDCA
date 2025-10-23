@@ -2990,3 +2990,24 @@ NULL
 #'
 NULL
 
+#' @name ch7_eoc_prob11
+#' @docType data
+#' @title Chapter 7, Exercise 11
+#' @usage data(ch7_eoc_prob11)
+#' @keywords datasets
+#'
+#' @format A data frame with 20 rows and 3 variables.
+#'  \describe{
+#'   \item{Sample}{}
+#'   \item{xbar}{Mean of 5 skive lengths of hydraulic hoses}
+#'   \item{s}{Standard deviation of 5 }
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 537
+#'
+#' @examples
+#' data(ch7_eoc_prob11)
+#' str(ch7_eoc_prob11)
+#'
+NULL
