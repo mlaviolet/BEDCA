@@ -1280,6 +1280,12 @@ rm(ch7_sec3_prob1)
 # remove Section 7.3, Exercise 2; data reused from Section 7.1, Exercise 2
 rm(ch7_sec3_prob2)
 
+# remove Section 7.4, Exercise 1; data reused from Table 4.1
+rm(ch7_sec4_prob1)
+
+# remove Section 7.4, Exercise 2; data reused from Section 7.1, Exercise 2
+rm(ch7_sec4_prob2)
+
 
 # Save workspace ----------------------------------------------------------
 

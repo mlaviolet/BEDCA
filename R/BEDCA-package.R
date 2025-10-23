@@ -370,7 +370,7 @@ NULL
 #' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
 #' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 124
 #'
-#' @note Data used in Chapter 6, Exercise 3; Section 7.1, Exercise 1; Section 7.2, Exercise 1; Section 7.3, Exercise 1
+#' @note Data used in Chapter 6, Exercise 3; Section 7.1, Exercise 1; Section 7.2, Exercise 1; Section 7.3, Exercise 1; Section 7.4, Exercise 1
 #'
 #' @examples
 #' data(table4_01)
@@ -2719,7 +2719,7 @@ NULL
 #' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
 #' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 460
 #'
-#' @note Van #3 was tested five times while the others were tested four times each. No data are missing. Data reused in Section 7.2, Exercise 2 and Section 7.3, Exercise 2
+#' @note Van #3 was tested five times while the others were tested four times each. No data are missing. Data reused in Section 7.2, Exercise 2; Section 7.3, Exercise 2; Section 7.4, Exercise 2
 #'
 #' @examples
 #' data(ch7_sec1_prob2)
