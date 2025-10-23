@@ -3230,3 +3230,46 @@ NULL
 #' str(ch8_eoc_prob04)
 NULL
 
+#' @name ch8_sec1_prob1
+#' @docType data
+#' @title Section 8.1, Exercise 1
+#' @usage data(ch8_sec1_prob1)
+#' @keywords datasets
+#'
+#' @format A data frame with 18 rows and 4 variables.
+#'  \describe{
+#'   \item{Strg}{Shear strength of joint (lb)}
+#'   \item{wood}{1 = pine, 2 = fir}
+#'   \item{glue}{1 = white, 2 = carpenters, 3 = cascamite}
+#'   \item{trt}{wood-glue combination}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 567
+#'
+#' @examples
+#' data(ch8_sec1_prob1)
+#' str(ch8_sec1_prob1)
+NULL
+
+#' @name ch8_sec1_prob2
+#' @docType data
+#' @title Section 8.1, Exercise 2
+#' @usage data(ch8_sec1_prob2)
+#' @keywords datasets
+#'
+#' @format A data frame with 9 rows and 4 variables.
+#'  \describe{
+#'   \item{ybar}{Mean stopping distance (cm)}
+#'   \item{s}{{Standard deviation of stopping distance (cm)}
+#'   \item{Tires}{1 = smooth, 2 = reverse tread, 3 = treaded}
+#'   \item{Condt}{1 = dry concrete, 2 = wet concrete, 3 = dirt}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 568
+#'
+#' @examples
+#' data(ch8_sec1_prob2)
+#' str(ch8_sec1_prob2)
+NULL
