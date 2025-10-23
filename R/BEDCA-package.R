@@ -2719,7 +2719,7 @@ NULL
 #' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
 #' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 460
 #'
-#' @note Van #3 was tested five times while the others were tested four times each. No data are missing.
+#' @note Van #3 was tested five times while the others were tested four times each. No data are missing. Data reused in Section 7.2, Exercise 2
 #'
 #' @examples
 #' data(ch7_sec1_prob2)
