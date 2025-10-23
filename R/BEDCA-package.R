@@ -2747,3 +2747,25 @@ NULL
 #' str(ch7_sec4_prob3)
 #'
 NULL
+
+#' @name ch7_sec5_prob2
+#' @docType data
+#' @title Section 7.5, Exercise 2
+#' @usage data(ch7_sec5_prob2)
+#' @keywords datasets
+#'
+#' @format A data frame with 95 rows and 2 variables.
+#'  \describe{
+#'   \item{Sample}{Sample ID}
+#'   \item{Length}{Thread length of U-bolt}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 516
+#'
+#' @examples
+#' data(ch7_sec5_prob2)
+#' str(ch7_sec5_prob2)
+#'
+NULL
+

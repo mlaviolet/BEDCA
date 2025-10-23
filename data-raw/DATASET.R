@@ -50,6 +50,8 @@ df_list <- map(file_names, get_text_data, .progress = TRUE)
 names(df_list) <- df_names
 list2env(df_list, envir = .GlobalEnv)
 
+# RUN TO HERE FOR CHANGES TO DATA -----------------------------------------
+
 # https://dataanalytics.org.uk/save-all-objects-to-disk-as-separate-files/
 # THIS SEEMS TO WORK
 
@@ -1117,7 +1119,6 @@ table9_02 <- table4_01 |>
 # Table 9.24, p. 716
 # subset of Table 8.8
 
-
 # Appendix A --------------------------------------------------------------
 
 # Table A.2, p. 768
@@ -1286,6 +1287,10 @@ rm(ch7_sec4_prob1)
 # remove Section 7.4, Exercise 2; data reused from Section 7.1, Exercise 2
 rm(ch7_sec4_prob2)
 
+# rename ch7_sec5_prob2a to ch7_sec5_prob2; remove ch7_sec5_prob2b
+ch7_sec5_prob2 <- ch7_sec5_prob2a
+rm(ch7_sec5_prob2a, ch7_sec5_prob2b)
+usethis::use_data(ch7_sec5_prob2)
 
 # Save workspace ----------------------------------------------------------
 
