@@ -22,8 +22,8 @@ data(ch7_eoc_prob17)
 Chapter 7, Exercise 17
 }
 \examples{
-data(ch7_eoc_prob15)
-str(ch7_eoc_prob15)
+data(ch7_eoc_prob17)
+str(ch7_eoc_prob17)
 
 }
 \keyword{datasets}

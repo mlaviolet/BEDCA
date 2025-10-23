@@ -3095,7 +3095,7 @@ NULL
 #' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 541
 #'
 #' @examples
-#' data(ch7_eoc_prob15)
-#' str(ch7_eoc_prob15)
+#' data(ch7_eoc_prob17)
+#' str(ch7_eoc_prob17)
 #'
 NULL
