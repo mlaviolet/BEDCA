@@ -3044,7 +3044,7 @@ NULL
 #' @format A data frame with 35 rows and 2 variables.
 #'  \describe{
 #'   \item{Tank}{Space shuttle fuel tank ID}
-#'   \item{Nonconf}{Number of  nonconformances}
+#'   \item{Nonconf}{Number of nonconformances}
 #'   }
 #'
 #' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
@@ -3079,3 +3079,23 @@ NULL
 #'
 NULL
 
+#' @name ch7_eoc_prob17
+#' @docType data
+#' @title Chapter 7, Exercise 17
+#' @usage data(ch7_eoc_prob17)
+#' @keywords datasets
+#'
+#' @format A data frame with 15 rows and 2 variables.
+#'  \describe{
+#'   \item{Sample}{Sample ID}
+#'   \item{Nonconf}{Number of nonconformances}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 541
+#'
+#' @examples
+#' data(ch7_eoc_prob15)
+#' str(ch7_eoc_prob15)
+#'
+NULL
