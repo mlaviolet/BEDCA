@@ -2624,7 +2624,7 @@ NULL
 #' @format A data frame with 50 rows and 2 variables.
 #'  \describe{
 #'   \item{specimen}{Specimen ID}
-#'   \item{Mg}{Magnesium content (0.001% magnesium)}
+#'   \item{Mg}{Magnesium content (0.001 percent magnesium)}
 #'   }
 #'
 #' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
@@ -2636,3 +2636,23 @@ NULL
 #'
 NULL
 
+#' @name table7_16
+#' @docType data
+#' @title Table 7.16
+#' @usage data(table7_16)
+#' @keywords datasets
+#'
+#' @format A data frame with 110 rows and 2 variables.
+#'  \describe{
+#'   \item{sample}{Sample ID}
+#'   \item{excess}{Lengtth of rolled sheet in 1/64 in. over reference length}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 488
+#'
+#' @examples
+#' data(table7_16)
+#' str(table7_16)
+#'
+NULL
