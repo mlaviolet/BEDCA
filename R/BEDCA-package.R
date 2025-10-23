@@ -3099,3 +3099,24 @@ NULL
 #' str(ch7_eoc_prob17)
 #'
 NULL
+
+#' @name ch7_eoc_prob18
+#' @docType data
+#' @title Chapter 7, Exercise 18
+#' @usage data(ch7_eoc_prob18)
+#' @keywords datasets
+#'
+#' @format A data frame with 15 rows and 2 variables.
+#'  \describe{
+#'   \item{Temp}{Boiling point of 10W30 motor oil (F)}
+#'   \item{Brand}{Brand of motor oil}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 541
+#'
+#' @examples
+#' data(ch7_eoc_prob18)
+#' str(ch7_eoc_prob18)
+#'
+NULL
