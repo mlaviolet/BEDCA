@@ -2878,3 +2878,25 @@ NULL
 #' str(ch7_sec6_prob4)
 #'
 NULL
+
+#' @name ch7_eoc_prob01
+#' @docType data
+#' @title Chapter 7, Exercise 1
+#' @usage data(ch7_eoc_prob01)
+#' @keywords datasets
+#'
+#' @format A data frame with 5 rows and 3 variables.
+#'  \describe{
+#'   \item{Lead_4H}{Grams of load on 4H pencil lead applied at failure}
+#'   \item{Lead_H}{Grams of load on H pencil lead applied at failure}
+#'   \item{Lead_B}{Grams of load on B pencil lead applied at failure}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 533
+#'
+#' @examples
+#' data(ch7_eoc_prob01)
+#' str(ch7_eoc_prob01)
+#'
+NULL
