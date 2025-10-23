@@ -2593,3 +2593,25 @@ NULL
 #'
 NULL
 
+#' @name table7_09
+#' @docType data
+#' @title Table 7.9
+#' @usage data(table7_09)
+#' @keywords datasets
+#'
+#' @format A data frame with 12 rows and 3 variables.
+#'  \describe{
+#'   \item{pct_water}{Percent water in mix of bricks}
+#'   \item{heat}{Heat treatment}
+#'   \item{MOR}{Modulus of rupture value (psi)}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 467
+#'
+#' @examples
+#' data(table7_09)
+#' str(table7_09)
+#'
+NULL
+
