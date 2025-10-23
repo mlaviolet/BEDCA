@@ -24,7 +24,7 @@ data(ch7_sec1_prob2)
 Section 7.1, Exercise 2
 }
 \note{
-Van #3 was tested five times while the others were tested four times each. No data are missing.
+Van #3 was tested five times while the others were tested four times each. No data are missing. Data reused in Section 7.2, Exercise 2; Section 7.3, Exercise 2; Section 7.4, Exercise 2
 }
 \examples{
 data(ch7_sec1_prob2)

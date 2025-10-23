@@ -2727,4 +2727,23 @@ NULL
 #'
 NULL
 
-
+#' @name ch7_sec4_prob3
+#' @docType data
+#' @title Section 7.4, Exercise 3
+#' @usage data(ch7_sec4_prob3)
+#' @keywords datasets
+#'
+#' @format A data frame with 18 rows and 2 variables.
+#'  \describe{
+#'   \item{Rail}{Railroad rail ID}
+#'   \item{Time}{Travel time of a certain type of mechanical wave, in excess of 36.1 microseconds}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 495
+#'
+#' @examples
+#' data(ch7_sec4_prob3)
+#' str(ch7_sec4_prob3)
+#'
+NULL
