@@ -2615,3 +2615,24 @@ NULL
 #'
 NULL
 
+#' @name table7_14
+#' @docType data
+#' @title Table 7.14
+#' @usage data(table7_14)
+#' @keywords datasets
+#'
+#' @format A data frame with 50 rows and 2 variables.
+#'  \describe{
+#'   \item{specimen}{Specimen ID}
+#'   \item{Mg}{Magnesium content (0.001% magnesium)}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 488
+#'
+#' @examples
+#' data(table7_14)
+#' str(table7_14)
+#'
+NULL
+
