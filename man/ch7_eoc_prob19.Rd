@@ -8,7 +8,7 @@
 A data frame with 60 rows and 2 variables.
  \describe{
   \item{Sample}{Sample ID}
-  \item{Lengths of metal rods above 33.69 in.}{}
+  \item{Lengths}{Lengths of metal rods above 33.69 in.}
   }
 }
 \source{
