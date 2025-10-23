@@ -1324,6 +1324,9 @@ rm(ch8_eoc_prob01)
 # remove Chapter 8, Exercise 2; data appeared in Chapter 4, Exercise 5
 rm(ch8_eoc_prob02)
 
+# remove Table 9.2; data derived from Table 4.1
+rm(table9_02)
+
 # Save workspace ----------------------------------------------------------
 
 for(i in 1:length(ls())) {
