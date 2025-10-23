@@ -2900,3 +2900,25 @@ NULL
 #' str(ch7_eoc_prob01)
 #'
 NULL
+
+#' @name ch7_eoc_prob02
+#' @docType data
+#' @title Chapter 7, Exercise 2
+#' @usage data(ch7_eoc_prob02)
+#' @keywords datasets
+#'
+#' @format A data frame with 20 rows and 3 variables.
+#'  \describe{
+#'   \item{Sample}{Sample ID}
+#'   \item{x}{Mean of 4 diameter measurements on metal parts}
+#'   \item{R}{Range of 4 diameter measurements on metal parts}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 534
+#'
+#' @examples
+#' data(ch7_eoc_prob02)
+#' str(ch7_eoc_prob02)
+#'
+NULL
