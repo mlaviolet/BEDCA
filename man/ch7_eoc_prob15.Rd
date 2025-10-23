@@ -7,8 +7,8 @@
 \format{
 A data frame with 35 rows and 2 variables.
  \describe{
-  \item{Tank}{Space shuttle fuel tank}
-  \item{Nonconf}{Number of nonconformances}
+  \item{Tank}{Space shuttle fuel tank ID}
+  \item{Nonconf}{Number of  nonconformances}
   }
 }
 \source{
