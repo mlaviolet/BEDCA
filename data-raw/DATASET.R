@@ -1292,6 +1292,11 @@ ch7_sec5_prob2 <- ch7_sec5_prob2a
 rm(ch7_sec5_prob2a, ch7_sec5_prob2b)
 usethis::use_data(ch7_sec5_prob2)
 
+# correct names in Section 7.6, Exercise 1
+names(ch7_sec6_prob1) <- c("Sample", "Defects")
+usethis::use_data(ch7_sec6_prob1, overwrite = TRUE)
+
+
 # Save workspace ----------------------------------------------------------
 
 for(i in 1:length(ls())) {

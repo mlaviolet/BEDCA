@@ -2792,3 +2792,23 @@ NULL
 #'
 NULL
 
+#' @name ch7_sec6_prob1
+#' @docType data
+#' @title Section 7.6, Exercise 1
+#' @usage data(ch7_sec6_prob1)
+#' @keywords datasets
+#'
+#' @format A data frame with 20 rows and 4 variables.
+#'  \describe{
+#'   \item{Sample}{Sample ID}
+#'   \item{Defects}{Number of defectives}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 532
+#'
+#' @examples
+#' data(ch7_sec5_prob6)
+#' str(ch7_sec5_prob6)
+#'
+NULL
