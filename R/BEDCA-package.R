@@ -3000,7 +3000,7 @@ NULL
 #'  \describe{
 #'   \item{Sample}{}
 #'   \item{xbar}{Mean of 5 skive lengths of hydraulic hoses}
-#'   \item{s}{Standard deviation of 5 }
+#'   \item{s}{Standard deviation of 5 skive lengths of hydraulic hoses}
 #'   }
 #'
 #' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}

@@ -9,7 +9,7 @@ A data frame with 20 rows and 3 variables.
  \describe{
   \item{Sample}{}
   \item{xbar}{Mean of 5 skive lengths of hydraulic hoses}
-  \item{s}{Standard deviation of 5 }
+  \item{s}{Standard deviation of 5 skive lengths of hydraulic hoses}
   }
 }
 \source{
