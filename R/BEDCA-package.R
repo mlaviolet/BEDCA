@@ -2656,3 +2656,25 @@ NULL
 #' str(table7_16)
 #'
 NULL
+
+#' @name table7_18
+#' @docType data
+#' @title Table 7.18
+#' @usage data(table7_18)
+#' @keywords datasets
+#'
+#' @format A data frame with 25 rows and 3 variables.
+#'  \describe{
+#'   \item{sample}{Sample ID}
+#'   \item{nonconform}{Number of nonconforming pellets out of 30}
+#'   \item{p_hat}{Proportion of nonconforming pellets out of 30}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 520
+#'
+#' @examples
+#' data(table7_18)
+#' str(table7_18)
+#'
+NULL
