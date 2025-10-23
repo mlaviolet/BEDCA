@@ -2702,3 +2702,29 @@ NULL
 #'
 NULL
 
+#' @name ch7_sec1_prob2
+#' @docType data
+#' @title Section 7.1, Exercise 2
+#' @usage data(ch7_sec1_prob2)
+#' @keywords datasets
+#'
+#' @format A data frame with 5 rows and 4 variables.
+#'  \describe{
+#'   \item{Van1}{Tilttable ratio for Van 1}
+#'   \item{Van2}{Tilttable ratio for Van 2}
+#'   \item{Van3}{Tilttable ratio for Van 3}
+#'   \item{Van4}{Tilttable ratio for Van 4}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 460
+#'
+#' @note Van #3 was tested five times while the others were tested four times each. No data are missing.
+#'
+#' @examples
+#' data(ch7_sec1_prob2)
+#' str(ch7_sec1_prob2)
+#'
+NULL
+
+
