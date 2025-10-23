@@ -1296,6 +1296,10 @@ usethis::use_data(ch7_sec5_prob2)
 names(ch7_sec6_prob1) <- c("Sample", "Defects")
 usethis::use_data(ch7_sec6_prob1, overwrite = TRUE)
 
+# correct names in Section 7.6, Exercise 2
+names(ch7_sec6_prob2) <- c("Date", "Tested", "Leaks")
+usethis::use_data(ch7_sec6_prob2, overwrite = TRUE)
+
 
 # Save workspace ----------------------------------------------------------
 

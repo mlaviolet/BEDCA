@@ -2798,7 +2798,7 @@ NULL
 #' @usage data(ch7_sec6_prob1)
 #' @keywords datasets
 #'
-#' @format A data frame with 20 rows and 4 variables.
+#' @format A data frame with 20 rows and 2 variables.
 #'  \describe{
 #'   \item{Sample}{Sample ID}
 #'   \item{Defects}{Number of defectives}
@@ -2808,7 +2808,29 @@ NULL
 #' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 532
 #'
 #' @examples
-#' data(ch7_sec5_prob6)
-#' str(ch7_sec5_prob6)
+#' data(ch7_sec6_prob1)
+#' str(ch7_sec6_prob1)
+#'
+NULL
+
+#' @name ch7_sec6_prob2
+#' @docType data
+#' @title Section 7.6, Exercise 2
+#' @usage data(ch7_sec6_prob2)
+#' @keywords datasets
+#'
+#' @format A data frame with 18 rows and 3 variables.
+#'  \describe{
+#'   \item{Date}{Sample ID}
+#'   \item{Tested}{Number of radiators tested}
+#'   \item{Leaks}{Number of leaks}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 532
+#'
+#' @examples
+#' data(ch7_sec6_prob2)
+#' str(ch7_sec6_prob2)
 #'
 NULL
