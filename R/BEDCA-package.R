@@ -2932,8 +2932,8 @@ NULL
 #' @format A data frame with 3 rows and 3 variables.
 #'  \describe{
 #'   \item{Sample}{Sample ID}
-#'   \item{x}{Mean of 3 measurements water weight loss of fabric}
-#'   \item{R}{Standard deviation of 3 measurements water weight loss of fabric}
+#'   \item{y}{Mean of 3 measurements water weight loss of fabric}
+#'   \item{s}{Standard deviation of 3 measurements water weight loss of fabric}
 #'   }
 #'
 #' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
@@ -2942,6 +2942,28 @@ NULL
 #' @examples
 #' data(ch7_eoc_prob03)
 #' str(ch7_eoc_prob03)
+#'
+NULL
+
+#' @name ch7_eoc_prob04
+#' @docType data
+#' @title Chapter 7, Exercise 4
+#' @usage data(ch7_eoc_prob04)
+#' @keywords datasets
+#'
+#' @format A data frame with 8 rows and 3 variables.
+#'  \describe{
+#'   \item{i}{Construction adhesive ID}
+#'   \item{ybar}{Mean strength of 8 tested joints}
+#'   \item{s}{Standard deviation strength of 8 tested joints}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 535
+#'
+#' @examples
+#' data(ch7_eoc_prob05)
+#' str(ch7_eoc_prob05)
 #'
 NULL
 

@@ -8,8 +8,8 @@
 A data frame with 3 rows and 3 variables.
  \describe{
   \item{Sample}{Sample ID}
-  \item{x}{Mean of 3 measurements water weight loss of fabric}
-  \item{R}{Standard deviation of 3 measurements water weight loss of fabric}
+  \item{y}{Mean of 3 measurements water weight loss of fabric}
+  \item{s}{Standard deviation of 3 measurements water weight loss of fabric}
   }
 }
 \source{
