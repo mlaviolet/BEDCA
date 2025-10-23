@@ -2857,3 +2857,24 @@ NULL
 #'
 NULL
 
+#' @name ch7_sec6_prob4
+#' @docType data
+#' @title Section 7.6, Exercise 4
+#' @usage data(ch7_sec6_prob4)
+#' @keywords datasets
+#'
+#' @format A data frame with 10 rows and 3 variables.
+#'  \describe{
+#'   \item{Sample}{Sample ID}
+#'   \item{Size}{Sample size}
+#'   \item{Nonconf}{Number nonconforming}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 533
+#'
+#' @examples
+#' data(ch7_sec6_prob4)
+#' str(ch7_sec6_prob4)
+#'
+NULL
