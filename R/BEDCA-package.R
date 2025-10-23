@@ -2834,3 +2834,26 @@ NULL
 #' str(ch7_sec6_prob2)
 #'
 NULL
+
+#' @name ch7_sec6_prob3
+#' @docType data
+#' @title Section 7.6, Exercise 3
+#' @usage data(ch7_sec6_prob3)
+#' @keywords datasets
+#'
+#' @format A data frame with 8 rows and 3 variables.
+#'  \describe{
+#'   \item{i}{Sample ID}
+#'   \item{k}{Number of units inspected}
+#'   \item{u}{Defects per unit}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 532
+#'
+#' @examples
+#' data(ch7_sec6_prob3)
+#' str(ch7_sec6_prob3)
+#'
+NULL
+
