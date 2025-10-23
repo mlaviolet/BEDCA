@@ -1304,6 +1304,10 @@ usethis::use_data(ch7_sec6_prob2, overwrite = TRUE)
 names(ch7_eoc_prob01) <- c("Lead_4H", "Lead_H", "Lead_B")
 usethis::use_data(ch7_eoc_prob01, overwrite = TRUE)
 
+# correct names in Chapter 7, Exercise 15
+names(ch7_eoc_prob15) <- c("Tank", "Nonconf")
+usethis::use_data(ch7_eoc_prob15, overwrite = TRUE)
+
 # Save workspace ----------------------------------------------------------
 
 for(i in 1:length(ls())) {

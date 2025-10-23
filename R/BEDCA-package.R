@@ -3020,7 +3020,7 @@ NULL
 #'
 #' @format A data frame with 20 rows and 3 variables.
 #'  \describe{
-#'   \item{Widget}{}
+#'   \item{Widget}{Widget ID}
 #'   \item{A}{Type A nonconformance}
 #'   \item{B}{Type B nonconformance}
 #'   \item{Total}{Total nonconformances}
@@ -3032,5 +3032,26 @@ NULL
 #' @examples
 #' data(ch7_eoc_prob12)
 #' str(ch7_eoc_prob12)
+#'
+NULL
+
+#' @name ch7_eoc_prob15
+#' @docType data
+#' @title Chapter 7, Exercise 15
+#' @usage data(ch7_eoc_prob15)
+#' @keywords datasets
+#'
+#' @format A data frame with 35 rows and 2 variables.
+#'  \describe{
+#'   \item{Tank}{Space shuttle fuel tank}
+#'   \item{Nonconf}{Number of nonconformances}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 540
+#'
+#' @examples
+#' data(ch7_eoc_prob15)
+#' str(ch7_eoc_prob15)
 #'
 NULL

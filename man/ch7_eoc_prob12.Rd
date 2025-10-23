@@ -7,7 +7,7 @@
 \format{
 A data frame with 20 rows and 3 variables.
  \describe{
-  \item{Widget}{}
+  \item{Widget}{Widget ID}
   \item{A}{Type A nonconformance}
   \item{B}{Type B nonconformance}
   \item{Total}{Total nonconformances}
