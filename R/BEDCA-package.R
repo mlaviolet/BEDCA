@@ -2922,3 +2922,26 @@ NULL
 #' str(ch7_eoc_prob02)
 #'
 NULL
+
+#' @name ch7_eoc_prob03
+#' @docType data
+#' @title Chapter 7, Exercise 3
+#' @usage data(ch7_eoc_prob03)
+#' @keywords datasets
+#'
+#' @format A data frame with 3 rows and 3 variables.
+#'  \describe{
+#'   \item{Sample}{Sample ID}
+#'   \item{x}{Mean of 3 measurements water weight loss of fabric}
+#'   \item{R}{Standard deviation of 3 measurements water weight loss of fabric}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 534
+#'
+#' @examples
+#' data(ch7_eoc_prob03)
+#' str(ch7_eoc_prob03)
+#'
+NULL
+
