@@ -1,4 +1,4 @@
-## code to prepare `DATASET` dataset goes here
+ns## code to prepare `DATASET` dataset goes here
 
 # This script constructs R data sets from the book
 # "Basic Engineering Data Collection and Analysis" by Vardeman and Jobe
@@ -1317,6 +1317,11 @@ usethis::use_data(ch7_eoc_prob17, overwrite = TRUE)
 ch7_eoc_prob19 <- ch7_eoc_prob19a
 rm(ch7_eoc_prob19a, ch7_eoc_prob19b)
 usethis::use_data(ch7_eoc_prob19, overwrite = TRUE)
+
+# Remove Chapter 8, Exercise 1; data appeared in Chapter 4, Exercise 4
+rm(ch8_eoc_prob01)
+
+
 
 # Save workspace ----------------------------------------------------------
 
