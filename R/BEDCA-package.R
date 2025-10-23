@@ -2769,3 +2769,26 @@ NULL
 #'
 NULL
 
+#' @name ch7_sec5_prob1
+#' @docType data
+#' @title Section 7.5, Exercise 1
+#' @usage data(ch7_sec5_prob1)
+#' @keywords datasets
+#'
+#' @format A data frame with 20 rows and 4 variables.
+#'  \describe{
+#'   \item{Sample}{Sample ID}
+#'   \item{x1}{Drained Weight of canned tomatoes, can 1}
+#'   \item{x2}{Drained Weight of canned tomatoes, can 2}
+#'   \item{x3}{Drained Weight of canned tomatoes, can 3}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 516
+#'
+#' @examples
+#' data(ch7_sec5_prob1)
+#' str(ch7_sec5_prob1)
+#'
+NULL
+
