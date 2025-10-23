@@ -3120,3 +3120,25 @@ NULL
 #' str(ch7_eoc_prob18)
 #'
 NULL
+
+#' @name ch7_eoc_prob19
+#' @docType data
+#' @title Chapter 7, Exercise 19
+#' @usage data(ch7_eoc_prob19)
+#' @keywords datasets
+#'
+#' @format A data frame with 60 rows and 2 variables.
+#'  \describe{
+#'   \item{Sample}{Sample ID}
+#'   \item{Lengths of metal rods above 33.69 in.}{}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 542
+#'
+#' @examples
+#' data(ch7_eoc_prob19)
+#' str(ch7_eoc_prob19)
+#'
+NULL
+

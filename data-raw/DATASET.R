@@ -1312,6 +1312,12 @@ usethis::use_data(ch7_eoc_prob15, overwrite = TRUE)
 names(ch7_eoc_prob17) <- c("Sample", "Nonconf")
 usethis::use_data(ch7_eoc_prob17, overwrite = TRUE)
 
+# Chapter 7, Exercise 19
+# combine ch7_eoc_prob19a and ch7_eoc_prob19a into ch7_eoc_prob19
+ch7_eoc_prob19 <- ch7_eoc_prob19a
+rm(ch7_eoc_prob19a, ch7_eoc_prob19b)
+usethis::use_data(ch7_eoc_prob19, overwrite = TRUE)
+
 # Save workspace ----------------------------------------------------------
 
 for(i in 1:length(ls())) {
