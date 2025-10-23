@@ -3142,3 +3142,64 @@ NULL
 #'
 NULL
 
+#' @name ch7_eoc_prob21
+#' @docType data
+#' @title Chapter 7, Exercise 21
+#' @usage data(ch7_eoc_prob21)
+#' @keywords datasets
+#'
+#' @format A data frame with 12 rows and 3 variables.
+#'  \describe{
+#'   \item{Month}{Month of study}
+#'   \item{Injuries}{Number of disabling injuries suffered}
+#'   \item{Manhr}{Millions of man-hours worked}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 543
+#'
+#' @examples
+#' data(ch7_eoc_prob21)
+#' str(ch7_eoc_prob21)
+#'
+NULL
+
+#' @name ch7_eoc_prob22
+#' @docType data
+#' @title Chapter 7, Exercise 22
+#' @usage data(ch7_eoc_prob22)
+#' @keywords datasets
+#'
+#' @format A data frame with 15 rows and 2 variables.
+#'  \describe{
+#'   \item{Trials}{Force required to move cutter arm of a paper trimmer}
+#'   \item{Type}{Type of paper}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 543
+#'
+#' @examples
+#' data(ch7_eoc_prob22)
+#' str(ch7_eoc_prob22)
+NULL
+
+#' @name ch7_eoc_prob24
+#' @docType data
+#' @title Chapter 7, Exercise 24
+#' @usage data(ch7_eoc_prob24)
+#' @keywords datasets
+#'
+#' @format A data frame with 12 rows and 2 variables.
+#'  \describe{
+#'   \item{Depth}{Depth of cut}
+#'   \item{Pulse}{Coded number of pulses of laser beam}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 544
+#'
+#' @examples
+#' data(ch7_eoc_prob24)
+#' str(ch7_eoc_prob24)
+NULL
