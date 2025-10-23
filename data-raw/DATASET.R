@@ -1318,10 +1318,11 @@ ch7_eoc_prob19 <- ch7_eoc_prob19a
 rm(ch7_eoc_prob19a, ch7_eoc_prob19b)
 usethis::use_data(ch7_eoc_prob19, overwrite = TRUE)
 
-# Remove Chapter 8, Exercise 1; data appeared in Chapter 4, Exercise 4
+# remove Chapter 8, Exercise 1; data appeared in Chapter 4, Exercise 4
 rm(ch8_eoc_prob01)
 
-
+# remove Chapter 8, Exercise 2; data appeared in Chapter 4, Exercise 5
+rm(ch8_eoc_prob02)
 
 # Save workspace ----------------------------------------------------------
 
