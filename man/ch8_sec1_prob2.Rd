@@ -5,7 +5,13 @@
 \alias{ch8_sec1_prob2}
 \title{Section 8.1, Exercise 2}
 \format{
-
+A data frame with 9 rows and 4 variables.
+ \describe{
+  \item{ybar}{Mean stopping distance, cm}
+  \item{s}{Standard deviation of stopping distance, cm}
+  \item{Tires}{1 = smooth, 2 = reverse tread, 3 = treaded}
+  \item{Condt}{1 = dry concrete, 2 = wet concrete, 3 = dirt}
+  }
 }
 \source{
 Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}

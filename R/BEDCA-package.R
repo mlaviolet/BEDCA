@@ -3260,8 +3260,8 @@ NULL
 #'
 #' @format A data frame with 9 rows and 4 variables.
 #'  \describe{
-#'   \item{ybar}{Mean stopping distance (cm)}
-#'   \item{s}{{Standard deviation of stopping distance (cm)}
+#'   \item{ybar}{Mean stopping distance, cm}
+#'   \item{s}{Standard deviation of stopping distance, cm}
 #'   \item{Tires}{1 = smooth, 2 = reverse tread, 3 = treaded}
 #'   \item{Condt}{1 = dry concrete, 2 = wet concrete, 3 = dirt}
 #'   }
@@ -3272,4 +3272,51 @@ NULL
 #' @examples
 #' data(ch8_sec1_prob2)
 #' str(ch8_sec1_prob2)
+NULL
+
+#' @name ch8_sec2_prob3
+#' @docType data
+#' @title Section 8.2, Exercise 3
+#' @usage data(ch8_sec2_prob3)
+#' @keywords datasets
+#'
+#' @format A data frame with 16 rows and 5 variables.
+#'  \describe{
+#'   \item{A}{Fabric tested: sateen (-1), monk's cloth (+1)}
+#'   \item{B}{Treatment: X (-1), Y (+1)}
+#'   \item{C}{Laundering condition: (-1), (+1)}
+#'   \item{D}{Direction of test: before (-1), after (+1)}
+#'   \item{y}{Inches burned on standard-size sample in flame test}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 590
+#'
+#' @examples
+#' data(ch8_sec2_prob3)
+#' str(ch8_sec2_prob3)
+NULL
+
+#' @name ch8_sec3_prob2
+#' @docType data
+#' @title Section 8.3, Exercise 2
+#' @usage data(ch8_sec3_prob2)
+#' @keywords datasets
+#'
+#' @format A data frame with 16 rows and 6 variables.
+#'  \describe{
+#'   \item{A}{Constant velocity: 0.6 in/sec (-1), 1.2 in/sec (+1)}
+#'   \item{B}{Temperature: 150C (-1), 300C (+1)}
+#'   \item{C}{Bond force: 80 g (-1), 120 g (+1)}
+#'   \item{D}{Ultrasonic power: 120 mW (-1), 200 mW (+1)}
+#'   \item{E}{(-1),  (+1)}
+#'   \item{y}{Force required to pull wire bonds (g)}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 611
+#'
+#' @examples
+#' data(ch8_sec3_prob2)
+#' str(ch8_sec3_prob2)
 NULL
