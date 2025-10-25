@@ -3284,8 +3284,8 @@ NULL
 #'  \describe{
 #'   \item{A}{Fabric tested: sateen (-1), monk's cloth (+1)}
 #'   \item{B}{Treatment: X (-1), Y (+1)}
-#'   \item{C}{Laundering condition: (-1), (+1)}
-#'   \item{D}{Direction of test: before (-1), after (+1)}
+#'   \item{C}{Laundering condition: before (-1), after (+1)}
+#'   \item{D}{Direction of test: warp (-1), fill (+1)}
 #'   \item{y}{Inches burned on standard-size sample in flame test}
 #'   }
 #'

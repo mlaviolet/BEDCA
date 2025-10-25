@@ -55,8 +55,8 @@ Besides this package, you will need to install other packages. In the **Console*
 ```{r, eval=FALSE}
 install.packages(c("BEDCA", "broom", "broom.helpers", "DoE.base", "emmeans",
                    "fastDummies", "FrF2", "GGally", "ggDoE","ggfortify", "here", 
-                   "infer", "mosaic", "multcomp", "openintro", "openxlsx", 
-                   "readxl", "scales", "tidyverse", "tinytex", "writexl"))
+                   "infer", "mosaic", "multcomp", "openintro", "openxlsx", "
+                   readxl", "scales", "tidyverse", "tinytex", "writexl"))
 ```
 
 Package installation needs to be done only once. At this point you're ready to do analysis. The first step is to load the necessary packages with the `library()` function; for example:
