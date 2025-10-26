@@ -3608,3 +3608,52 @@ NULL
 #' data(ch8_eoc_prob24)
 #' str(ch8_eoc_prob24)
 NULL
+
+#' @name ch8_eoc_prob25
+#' @docType data
+#' @title Chapter 8, Exercise 25
+#' @usage data(ch8_eoc_prob25)
+#' @keywords datasets
+#'
+#' @format A data frame with 8 rows and 4 variables.
+#'  \describe{
+#'   \item{A}{Speed (rpm): 2500 (-1) or 4500 (+1)}
+#'   \item{B}{Feed (in/rev): 0.003 (-1) or 0.009 (+1)}
+#'   \item{C}{Tool condition: new (-1) or used (+1)}
+#'   \item{ybar}{Mean surface finish measurement (m = 2)}
+#'   \item{s}{Standard deviation surface finish measurement}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 646
+#'
+#' @examples
+#' data(ch8_eoc_prob25)
+#' str(ch8_eoc_prob25)
+NULL
+
+#' @name ch8_eoc_prob26
+#' @docType data
+#' @title Chapter 8, Exercise 26
+#' @usage data(ch8_eoc_prob26)
+#' @keywords datasets
+#'
+#' @format A data frame with 16 rows and 6 variables.
+#'  \describe{
+#'   \item{A}{Chamber pressure: 8 (-1) or 9 (+1)}
+#'   \item{B}{H2 flow: 500 (-1) or 1000 (+1)}
+#'   \item{C}{SiH4 flow: 15 (-1) or 25 (+1)}
+#'   \item{D}{WF6 flow: 50 (-1) or 60 (+1)}
+#'   \item{y1}{Percent step coverage}
+#'   \item{y2}{Average sheet resistance}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 647
+#'
+#' @examples
+#' data(ch8_eoc_prob26)
+#' str(ch8_eoc_prob26)
+NULL
+
+
