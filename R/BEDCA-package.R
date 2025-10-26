@@ -3438,6 +3438,28 @@ NULL
 #' str(ch8_eoc_prob12)
 NULL
 
+#' @name ch8_eoc_prob14
+#' @docType data
+#' @title Chapter 8, Exercise 14
+#' @usage data(ch8_eoc_prob14)
+#' @keywords datasets
+#'
+#' @format A data frame with 6 rows and 4 variables.
+#'  \describe{
+#'   \item{ybar}{Mean strength of rubber band before failure (m = 5)}
+#'   \item{s}{Standard deviation of rubber band strength}
+#'   \item{Brand}{Brand of rubber band}
+#'   \item{Width}{narrow (1), medium (2), wide (3)}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 638
+#'
+#' @examples
+#' data(ch8_eoc_prob14)
+#' str(ch8_eoc_prob14)
+NULL
+
 #' @name ch8_eoc_prob17
 #' @docType data
 #' @title Chapter 8, Exercise 17
