@@ -3532,3 +3532,79 @@ NULL
 #' data(ch8_eoc_prob20)
 #' str(ch8_eoc_prob20)
 NULL
+
+#' @name ch8_eoc_prob21
+#' @docType data
+#' @title Chapter 8, Exercise 21
+#' @usage data(ch8_eoc_prob21)
+#' @keywords datasets
+#'
+#' @format A data frame with 16 rows and 7 variables.
+#'  \describe{
+#'   \item{A}{Bulk density: low (-1) or high (+1)}
+#'   \item{B}{Moisture: low (-1) or high (+1)}
+#'   \item{C}{Crammer current: low (-1) or high (+1)}
+#'   \item{D}{Extruder screw speed: low (-1) or high (+1)}
+#'   \item{E}{Front-end temperature: low (-1) or high (+1)}
+#'   \item{F}{Back-end temperature: low (-1) or high (+1)}
+#'   \item{ybar}{Mean output}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 642
+#'
+#' @examples
+#' data(ch8_eoc_prob21)
+#' str(ch8_eoc_prob21)
+NULL
+
+#' @name ch8_eoc_prob22
+#' @docType data
+#' @title Chapter 8, Exercise 22
+#' @usage data(ch8_eoc_prob22)
+#' @keywords datasets
+#'
+#' @format A data frame with 32 rows and 10 variables.
+#'  \describe{
+#'   \item{A}{Preheat temperature: 180 (-1) or 220 (+1)}
+#'   \item{B}{Solder wave height: 250 (-1) or 400 (+1)}
+#'   \item{C}{Wave temperature: 490 (-1) or 510 (+1)}
+#'   \item{D}{Conveyor angle: 5.0 (-1) or 6.1 (+1)}
+#'   \item{E}{Flux type: A857 (-1) or K192 (+1)}
+#'   \item{F}{Direction of boards: 0 (-1) or 90 (+1)}
+#'   \item{G}{Wave width: 2.25 (-1) or 3.00 (+1)}
+#'   \item{H}{Conveyor speed: 3.5 (-1) or 6.0 (+1)}
+#'   \item{y1}{Lead shorts per circuit board}
+#'   \item{y2}{Touch shorts per circuit board}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 643
+#'
+#' @examples
+#' data(ch8_eoc_prob22)
+#' str(ch8_eoc_prob22)
+NULL
+
+#' @name ch8_eoc_prob24
+#' @docType data
+#' @title Chapter 8, Exercise 24
+#' @usage data(ch8_eoc_prob24)
+#' @keywords datasets
+#'
+#' @format A data frame with 12 rows and 5 variables.
+#'  \describe{
+#'   \item{Day}{Day of experimental run}
+#'   \item{Flow}{Total feed flow: 50 (-1) or 180 (+1)}
+#'   \item{Temp}{Reactor wall temperature (F): 470 (-1) or 520 (+1)}
+#'   \item{Ratio}{Feed ratio: 4 (-1) or 8 (+1)}
+#'   \item{y}{Percent conversion of butane}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 645
+#'
+#' @examples
+#' data(ch8_eoc_prob24)
+#' str(ch8_eoc_prob24)
+NULL
