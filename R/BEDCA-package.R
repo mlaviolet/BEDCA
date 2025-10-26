@@ -3309,7 +3309,7 @@ NULL
 #'   \item{B}{Temperature: 150C (-1), 300C (+1)}
 #'   \item{C}{Bond force: 80 g (-1), 120 g (+1)}
 #'   \item{D}{Ultrasonic power: 120 mW (-1), 200 mW (+1)}
-#'   \item{E}{(-1),  (+1)}
+#'   \item{E}{Bond time: 10 ms (-1), 20 ms (+1)}
 #'   \item{y}{Force required to pull wire bonds (g)}
 #'   }
 #'
@@ -3319,4 +3319,26 @@ NULL
 #' @examples
 #' data(ch8_sec3_prob2)
 #' str(ch8_sec3_prob2)
+NULL
+
+#' @name ch8_eoc_prob06
+#' @docType data
+#' @title Chapter 8, Exercise 6
+#' @usage data(ch8_eoc_prob06)
+#' @keywords datasets
+#'
+#' @format A data frame with 8 rows and 4 variables.
+#'  \describe{
+#'   \item{ybar}{Mean of compressive strength for 5 specimens of Type III cement concrete (MPa)}
+#'   \item{s}{Standard deviation of compressive strength}
+#'   \item{Ratio}{Water-cement ration}
+#'   \item{Temp}{Curing temperature (C)}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 634
+#'
+#' @examples
+#' data(ch8_eoc_prob06)
+#' str(ch8_eoc_prob06)
 NULL
