@@ -3479,5 +3479,56 @@ NULL
 #' str(ch8_eoc_prob17)
 NULL
 
+#' @name ch8_eoc_prob19
+#' @docType data
+#' @title Chapter 8, Exercise 19
+#' @usage data(ch8_eoc_prob19)
+#' @keywords datasets
+#'
+#' @format A data frame with 16 rows and 6 variables.
+#'  \describe{
+#'   \item{A}{Conveyor speed: -1 or +1}
+#'   \item{B}{Preheat temperature: -1 or +1}
+#'   \item{C}{Solder temperature: -1 or +1}
+#'   \item{D}{Conveyor angle: -1 or +1}
+#'   \item{E}{Flux concentration: -1 or +1}
+#'   \item{y}{Number of faults per 100 solder joints on circuit boards}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 640
+#'
+#' @note Actual levels of factors were not given.
+#'
+#' @examples
+#' data(ch8_eoc_prob19)
+#' str(ch8_eoc_prob19)
+NULL
 
-
+#' @name ch8_eoc_prob20
+#' @docType data
+#' @title Chapter 8, Exercise 20
+#' @usage data(ch8_eoc_prob20)
+#' @keywords datasets
+#'
+#' @format A data frame with 16 rows and 10 variables.
+#'  \describe{
+#'   \item{A}{Arsenic flow rate (percent): 55 (-1) or 59 (+1)}
+#'   \item{B}{Deposition temperature (C): 1210 (-1) or 1220 (+1)}
+#'   \item{C}{Code of wafers: 668G4 (-1) or 678G4 (+1)}
+#'   \item{D}{Susceptor rotation: continuous (-1) or oscillating (+1)}
+#'   \item{E}{Deposition time: high (-1) or low (+1)}
+#'   \item{F}{HC1 Etch temperature (C): 1180 (-1) or 1215 (+1)}
+#'   \item{G}{HC1 Flow rate (percent): 10 (-1) or 14 (+1)}
+#'   \item{H}{Nozzle position: 2 (-1) or 6 (+1)}
+#'   \item{y1}{Mean of thickness measurements (mm)}
+#'   \item{y2}{Logarithm of variance of thickness measurements}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 641
+#'
+#' @examples
+#' data(ch8_eoc_prob20)
+#' str(ch8_eoc_prob20)
+NULL
