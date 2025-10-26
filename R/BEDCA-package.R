@@ -3656,4 +3656,43 @@ NULL
 #' str(ch8_eoc_prob26)
 NULL
 
+#' @name ch8_eoc_prob28
+#' @docType data
+#' @title Chapter 8, Exercise 28
+#' @usage data(ch8_eoc_prob28)
+#' @keywords datasets
+#'
+#' @format A data frame with 15 rows and 1 variable.
+#'  \describe{
+#'   \item{Fit}{Separated clear volume for a suspension of antibiotic (percent)}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 648
+#'
+#' @examples
+#' data(ch8_eoc_prob28)
+#' str(ch8_eoc_prob28)
+NULL
 
+#' @name ch8_eoc_prob29
+#' @docType data
+#' @title Chapter 8, Exercise 29
+#' @usage data(ch8_eoc_prob29)
+#' @keywords datasets
+#'
+#' @format A data frame with 8 rows and 4 variables.
+#'  \describe{
+#'   \item{A}{Tube height: low (-1) or high (+1)}
+#'   \item{B}{Tube width: low (-1) or high (+1)}
+#'   \item{C}{Paint viscosity: low (-1) or high (+1)}
+#'   \item{y}{Paint coating thickness (mm)}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 649
+#'
+#' @examples
+#' data(ch8_eoc_prob29)
+#' str(ch8_eoc_prob29)
+NULL
