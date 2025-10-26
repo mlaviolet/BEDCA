@@ -3438,3 +3438,24 @@ NULL
 #' str(ch8_eoc_prob12)
 NULL
 
+#' @name ch8_eoc_prob17
+#' @docType data
+#' @title Chapter 8, Exercise 17
+#' @usage data(ch8_eoc_prob17)
+#' @keywords datasets
+#'
+#' @format A data frame with 8 rows and 1 variable.
+#'  \describe{
+#'   \item{means}{Artificial means}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 639
+#'
+#' @examples
+#' data(ch8_eoc_prob17)
+#' str(ch8_eoc_prob17)
+NULL
+
+
+
