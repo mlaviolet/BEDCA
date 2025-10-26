@@ -1,1 +1,1 @@
-Data sets from the text "Basic Engineering Data Collection and Analysis" by SB Vardeman and JM Jobe (2001, republication 2023). In progress.
+IN PROGRESS: Data sets from the [textbook](https://www.iastatedigitalpress.com/plugins/books/127/) *Basic Engineering Data Collection and Analysis* by Stephen B. Vardeman and J. Marcus Jobe.
