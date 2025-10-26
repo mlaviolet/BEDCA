@@ -1666,6 +1666,8 @@ NULL
 #'   \item{y}{Flight distance of paper airplane}
 #'   }
 #'
+#' @note Data used in Chapter 8, Exercise 13
+#'
 #' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
 #' \url{https://www.iastatedigita5press.com/plugins/books/127/}, p. 213
 #'

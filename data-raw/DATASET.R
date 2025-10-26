@@ -1339,6 +1339,9 @@ rm(ch8_sec3_prob3)
 # remove Chapter 8, Exercise 9; data appeared in Chapter 4, Exercise 9
 rm(ch8_eoc_prob09)
 
+# remove Chapter 8, Exercise 13; data appeared in Chapter 4, Exercise 20
+rm(ch8_eoc_prob13)
+
 # Save workspace ----------------------------------------------------------
 
 for(i in 1:length(ls())) {
