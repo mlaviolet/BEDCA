@@ -11,7 +11,7 @@ A data frame with 16 rows and 6 variables.
   \item{B}{Temperature: 150C (-1), 300C (+1)}
   \item{C}{Bond force: 80 g (-1), 120 g (+1)}
   \item{D}{Ultrasonic power: 120 mW (-1), 200 mW (+1)}
-  \item{E}{(-1),  (+1)}
+  \item{E}{Bond time: 10 ms (-1), 20 ms (+1)}
   \item{y}{Force required to pull wire bonds (g)}
   }
 }

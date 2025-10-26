@@ -1479,6 +1479,8 @@ NULL
 #' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
 #' \url{https://www.iastatedigita5press.com/plugins/books/127/}, p. 208
 #'
+#' @note Data reused in Section 8.2, Exercise 2 and Chapter 8, Exercise 9
+#'
 #' @examples
 #' data(ch4_eoc_prob09)
 #' str(ch4_eoc_prob09)
@@ -3342,3 +3344,27 @@ NULL
 #' data(ch8_eoc_prob06)
 #' str(ch8_eoc_prob06)
 NULL
+
+#' @name ch8_eoc_prob08
+#' @docType data
+#' @title Chapter 8, Exercise 8
+#' @usage data(ch8_eoc_prob08)
+#' @keywords datasets
+#'
+#' @format A data frame with 8 rows and 5 variables.
+#'  \describe{
+#'   \item{A}{Crankshaft material: cast modular iron (-1), forged steel (+1)}
+#'   \item{B}{Bearing material: aluminum (-1), copper-lead (+1)}
+#'   \item{C}{Debris added to oil: none (-1), 5.5 g SAE fine dust (+1)}
+#'   \item{y1}{Rod journal wear (micrometers)}
+#'   \item{y2}{Main journal wear (micrometers)}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 635
+#'
+#' @examples
+#' data(ch8_eoc_prob08)
+#' str(ch8_eoc_prob08)
+NULL
+
