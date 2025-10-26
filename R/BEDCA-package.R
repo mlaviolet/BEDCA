@@ -3390,3 +3390,49 @@ NULL
 #' str(ch8_eoc_prob10)
 NULL
 
+#' @name ch8_eoc_prob11
+#' @docType data
+#' @title Chapter 8, Exercise 11
+#' @usage data(ch8_eoc_prob11)
+#' @keywords datasets
+#'
+#' @format A data frame with 16 rows and 6 variables.
+#'  \describe{
+#'   \item{A}{Lead type: standard (-1), new (+1)}
+#'   \item{B}{Plant: 1 (-1), 2 (+1)}
+#'   \item{C}{Machine type: standard (-1), high speed (+1)}
+#'   \item{D}{Shift: first (-1), second (+1)}
+#'   \item{ybar}{Mean number of leads missed per hour}
+#'   \item{ssquare}{Variance of leads missed per hour}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 637
+#'
+#' @examples
+#' data(ch8_eoc_prob11)
+#' str(ch8_eoc_prob11)
+NULL
+
+#' @name ch8_eoc_prob12
+#' @docType data
+#' @title Chapter 8, Exercise 12
+#' @usage data(ch8_eoc_prob12)
+#' @keywords datasets
+#'
+#' @format A data frame with 27 rows and 4 variables.
+#'  \describe{
+#'   \item{Type}{Can type: cola (1), beer (2), soup (3)}
+#'   \item{Temp}{0C (1), 22C (2), 200C (3)}
+#'   \item{trt}{Can type-temperature combination}
+#'   \item{y}{Force required to buckle can (lb)}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 638
+#'
+#' @examples
+#' data(ch8_eoc_prob12)
+#' str(ch8_eoc_prob12)
+NULL
+
