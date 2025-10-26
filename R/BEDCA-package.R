@@ -3368,3 +3368,25 @@ NULL
 #' str(ch8_eoc_prob08)
 NULL
 
+#' @name ch8_eoc_prob10
+#' @docType data
+#' @title Chapter 8, Exercise 10
+#' @usage data(ch8_eoc_prob10)
+#' @keywords datasets
+#'
+#' @format A data frame with 8 rows and 4 variables.
+#'  \describe{
+#'   \item{A}{Lead type: standard (-1), new (+1)}
+#'   \item{B}{Polymer concetration: 0.01 (-1), 0.04 (+1)}
+#'   \item{C}{Amount of additive: 2 lb (-1), 12 lb (+1)}
+#'   \item{ybar}{Percentage impurity of chemical product}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 636
+#'
+#' @examples
+#' data(ch8_eoc_prob10)
+#' str(ch8_eoc_prob10)
+NULL
+
