@@ -1626,6 +1626,8 @@ NULL
 #' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
 #' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 211
 #'
+#' @note Data also used in Chapter 9, Exercise 6
+#'
 #' @examples
 #' data(ch4_eoc_prob16)
 #' str(ch4_eoc_prob16)
