@@ -3752,6 +3752,46 @@ NULL
 #' str(ch9_eoc_prob02)
 NULL
 
+#' @name ch9_eoc_prob03
+#' @docType data
+#' @title Chapter 9, Exercise 3
+#' @usage data(ch9_eoc_prob03)
+#' @keywords datasets
+#'
+#' @format A data frame with 10 rows and 5 variables.
+#'  \describe{
+#'   \item{x1}{Force (g)}
+#'   \item{x2}{Power (mw)}
+#'   \item{x3}{Temp (C)}
+#'   \item{x4}{Time (ms)}
+#'   \item{y}{Ball bond shear strength}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 722
+#'
+#' @examples
+#' data(ch9_eoc_prob03)
+#' str(ch9_eoc_prob03)
+NULL
 
-
+#' @name ch9_eoc_prob07
+#' @docType data
+#' @title Chapter 9, Exercise 7
+#' @usage data(ch9_eoc_prob07)
+#' @keywords datasets
+#'
+#' @format A data frame with 80 rows and 2 variables.
+#'  \describe{
+#'   \item{y}{Weights of portions of 14-gram samples of oat seeds}
+#'   \item{Spacing}{Door spacing of cleaning chamber of thresher}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 725
+#'
+#' @examples
+#' data(ch9_eoc_prob05)
+#' str(ch9_eoc_prob05)
+NULL
 
