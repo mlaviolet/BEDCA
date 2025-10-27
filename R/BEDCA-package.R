@@ -3795,3 +3795,63 @@ NULL
 #' str(ch9_eoc_prob05)
 NULL
 
+#' @name table_a_2
+#' @docType data
+#' @title Table A.2
+#' @usage data(table_a_2)
+#' @keywords datasets
+#'
+#' @format A data frame with 23 rows and 3 variables.
+#'  \describe{
+#'   \item{flight_date}{Date of flight of space shuttle Challenger}
+#'   \item{o_ring}{Number of field joint primary O-ring incidents}
+#'   \item{tempF}{Temperature at launch (F)}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 768
+#'
+#' @examples
+#' data(table_a_2)
+#' str(table_a_2)
+NULL
+
+#' @name table_a_4
+#' @docType data
+#' @title Table A.4
+#' @usage data(table_a_4)
+#' @keywords datasets
+#'
+#' @format A data frame with 10 rows and 1 variable.
+#'  \describe{
+#'   \item{failure}{Failure times for hardened steel specimens subjected to rolling fatigue test}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 778
+#'
+#' @examples
+#' data(table_a_4)
+#' str(table_a_4)
+NULL
+
+#' @name table_a_5
+#' @docType data
+#' @title Table A.5
+#' @usage data(table_a_5)
+#' @keywords datasets
+#'
+#' @format A data frame with 12 rows and 1 variable.
+#'  \describe{
+#'   \item{breakdown}{Time (sec) to breakdown of an insulating fluid at 30 kV}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 780
+#'
+#' @note Largest two times are censored.
+#'
+#' @examples
+#' data(table_a_5)
+#' str(table_a_5)
+NULL
