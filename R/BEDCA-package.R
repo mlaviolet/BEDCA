@@ -1200,7 +1200,7 @@ NULL
 #' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
 #' \url{https://www.iastatedigita5press.com/plugins/books/127/}, p. 140
 #'
-#' @note Data repeated in Section 4.2, Exercise 1
+#' @note Data repeated in Section 4.2, Exercise 1; Section 9.2, Exercise 1
 #'
 #' @examples
 #' data(ch4_sec1_prob3)
