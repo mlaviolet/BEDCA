@@ -3727,3 +3727,31 @@ NULL
 #' str(ch9_sec3_prob1)
 NULL
 
+#' @name ch9_eoc_prob02
+#' @docType data
+#' @title Chapter 9, Exercise 2
+#' @usage data(ch9_eoc_prob02)
+#' @keywords datasets
+#'
+#' @format A data frame with 11 rows and 7 variables.
+#'  \describe{
+#'   \item{x1}{Power applied to the cathode (W)}
+#'   \item{x2}{Pressure in the reaction chamber (mTorr)}
+#'   \item{x3}{Gap between the anode and the cathode (cm)}
+#'   \item{x4}{Flow of the reactant gas (sccm)}
+#'   \item{y1}{Etch rate for SiN (A/min)}
+#'   \item{y2}{Uniformity for SiN (percent)}
+#'   \item{y3}{Selectivity of process (SiN/poly)}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 721
+#'
+#' @examples
+#' data(ch9_eoc_prob02)
+#' str(ch9_eoc_prob02)
+NULL
+
+
+
+
