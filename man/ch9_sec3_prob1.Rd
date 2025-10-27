@@ -23,6 +23,9 @@ data(ch9_sec3_prob1)
 \description{
 Section 9.3, Exercise 1
 }
+\note{
+Data also used in Chapter 9, Exercise 4c
+}
 \examples{
 data(ch9_sec3_prob1)
 str(ch9_sec3_prob1)

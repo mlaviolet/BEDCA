@@ -1363,6 +1363,10 @@ rm(ch9_eoc_prob01)
 # remove Chapter 9, Exercise 4b; data appeared in Chapter 4, Exercise 1
 rm(ch9_eoc_prob04b)
 
+# remove Chapter 9, Exercise 4c; data appeared in Section 9.3, Exercise 1
+rm(ch9_eoc_prob04c)
+
+
 
 # Save workspace ----------------------------------------------------------
 
