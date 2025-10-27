@@ -1357,6 +1357,9 @@ rm(ch9_sec2_prob2)
 # remove Section 9.3, Exercise 2; data appeared in Chapter 8, Exercise 10
 rm(ch9_sec3_prob2)
 
+# remove Chapter 9, Exercise 1; data appeared in Chapter 4, Exercise 3
+rm(ch9_eoc_prob01)
+
 
 # Save workspace ----------------------------------------------------------
 
