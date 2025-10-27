@@ -1354,6 +1354,10 @@ rm(ch9_sec2_prob1)
 # remove Section 9.2, Exercise 2; data appeared in Section 4.2, Exercise 2
 rm(ch9_sec2_prob2)
 
+# remove Section 9.3, Exercise 2; data appeared in Chapter 8, Exercise 10
+rm(ch9_sec3_prob2)
+
+
 # Save workspace ----------------------------------------------------------
 
 for(i in 1:length(ls())) {

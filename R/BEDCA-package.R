@@ -3391,6 +3391,8 @@ NULL
 #' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
 #' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 636
 #'
+#' @note Data also used in Section 9.3, Exercise 2
+#'
 #' @examples
 #' data(ch8_eoc_prob10)
 #' str(ch8_eoc_prob10)
@@ -3700,3 +3702,26 @@ NULL
 #' data(ch8_eoc_prob29)
 #' str(ch8_eoc_prob29)
 NULL
+
+#' @name ch9_sec3_prob1
+#' @docType data
+#' @title Section 9.3, Exercise 1
+#' @usage data(ch9_sec3_prob1)
+#' @keywords datasets
+#'
+#' @format A data frame with 48 rows and 4 variables.
+#'  \describe{
+#'   \item{x1}{Time (min) of tempering stainless steel slugs}
+#'   \item{x2}{Temperature (F) of tempering stainless steel slugs}
+#'   \item{y}{Increse in hardness}
+#'   \item{trt}{Time-temperature combination}
+#'   }
+#'
+#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 719
+#'
+#' @examples
+#' data(ch9_sec3_prob1)
+#' str(ch9_sec3_prob1)
+NULL
+

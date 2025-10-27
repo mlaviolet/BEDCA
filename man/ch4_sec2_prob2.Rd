@@ -23,7 +23,7 @@ data(ch4_sec2_prob2)
 Section 4.2, Exercise 2
 }
 \note{
-Data repeated in Section 4.3, Exercise 1
+Data repeated in Section 4.3, Exercise 1; Section 9.2, Exercise 2
 }
 \examples{
 data(ch4_sec2_prob2)
