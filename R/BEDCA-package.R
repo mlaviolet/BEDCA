@@ -3811,8 +3811,8 @@ NULL
 #' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 725
 #'
 #' @examples
-#' data(ch9_eoc_prob05)
-#' str(ch9_eoc_prob05)
+#' data(ch9_eoc_prob07)
+#' str(ch9_eoc_prob07)
 NULL
 
 #' @name table_a_2
