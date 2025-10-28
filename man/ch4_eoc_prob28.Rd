@@ -23,6 +23,9 @@ data(ch4_eoc_prob28)
 \description{
 Chapter 4, Exercise 28
 }
+\note{
+Data also appears in Chapter 9, Exercise 11
+}
 \examples{
 data(ch4_eoc_prob28)
 str(ch4_eoc_prob28)
