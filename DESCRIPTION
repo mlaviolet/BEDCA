@@ -1,7 +1,7 @@
 Type: Package
 Package: BEDCA
 Title: Basic Engineering Data Collection and Analysis
-Version: 0.1.0
+Version: 0.2.0
 Authors@R: 
     person("Michael", "Laviolette", , "statman54@gmail.com", role = c("aut", "cre"))
 Description: Data sets and example analyses from book "Basic Engineering

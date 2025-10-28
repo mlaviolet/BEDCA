@@ -1,1 +1,1 @@
-IN PROGRESS: Data sets from the [textbook](https://www.iastatedigitalpress.com/plugins/books/127/) *Basic Engineering Data Collection and Analysis* by Stephen B. Vardeman and J. Marcus Jobe.
+IN PROGRESS: Data sets from the [textbook](https://www.iastatedigitalpress.com/plugins/books/127/) *Basic Engineering Data Collection and Analysis* by Stephen B. Vardeman and J. Marcus Jobe. UPDATE: Preliminary documentation of data sets completed 2025-10-27.
