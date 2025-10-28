@@ -67,6 +67,15 @@ NULL
 #' data(table1_01)
 #' str(table1_01)
 #'
+#' gears <- table1_01 |>
+#'   tidyr::pivot_longer(cols = everything(),
+#'                       values_to = "Runout",
+#'                       names_to = "Treatment") |>
+#'   dplyr::mutate(Treatment = factor(Treatment,
+#'                                    levels = c("Laid", "Hung"))) |>
+#'   dplyr::filter(!is.na(Runout))
+#' mosaic::dotPlot(~ Runout | Treatment, data = gears)
+#'
 NULL
 
 #' @name table1_04
