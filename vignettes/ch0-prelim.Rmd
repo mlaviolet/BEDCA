@@ -93,7 +93,7 @@ Readers not familiar with these should consult one of the many online free tutor
 
 Most analyses are done with the `tidyverse` suite of packages and the `mosaic` package, which provides a formula interface to common statistical analyses and `ggplot` graphics.
 
-Most data sets in this package appear only once, usually in the table or data set where introduced.
+Data sets appearing in multiple exercises are found under first appearance; for example, data for Chapter 9, Exercise 10 are found under Chapter 4, Exercise 24.
 
 For details of analyses, see the other vignettes.
 
