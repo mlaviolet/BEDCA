@@ -1502,32 +1502,6 @@ NULL
 #'
 NULL
 
-#' @name ch4_eoc_prob10
-#' @docType data
-#' @title Chapter 4, Exercise 10
-#' @usage data(ch4_eoc_prob10)
-#' @keywords datasets
-#'
-#' @format A data frame with 18 rows and 5 variables.
-#'  \describe{
-#'   \item{Weight}{5 g weight (1), 20 g weight (2), 100 g weight (3)}
-#'   \item{Student}{ID of student taking weight}
-#'   \item{Scale1}{Measured weight from Scale 1}
-#'   \item{Scale2}{Measured weight from Scale 2}
-#'   \item{Scale3}{Measured weight from Scale 3}
-#'   }
-#'
-#' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
-#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 115
-#'
-#' @note Same data as Chapter 3, Exercise 5
-#'
-#' @examples
-#' data(ch4_eoc_prob10)
-#' str(ch4_eoc_prob10)
-#'
-NULL
-
 #' @name ch4_eoc_prob12
 #' @docType data
 #' @title Chapter 4, Exercise 12
