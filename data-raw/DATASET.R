@@ -52,48 +52,6 @@ list2env(df_list, envir = .GlobalEnv)
 
 # RUN TO HERE FOR CHANGES TO DATA -----------------------------------------
 
-# https://dataanalytics.org.uk/save-all-objects-to-disk-as-separate-files/
-# THIS SEEMS TO WORK
-
-# for(i in 1:length(ls())) {
-#   save(list = (ls()[i]),
-#        file = paste(ls()[i], ".RData", sep = "")
-#        )
-#   }
-
-# clean up
-# rm(list = ls())
-
-## this works, but need .Rdata
-# for (name in names(df_list)) {
-#   file_name <- paste0(name, ".rds")
-#   saveRDS(df_list[[name]],
-#           file = file.path(here::here(),
-#                            "data",
-#                            file_name))
-#   print(paste("Saved", name, "to", file_name))
-#   }
-
-# https://cran.r-project.org/web/packages/rio/vignettes/rio.html#Importing_Data_Lists
-
-# google search "r save multiple objects to separate files"
-# # Create some example objects
-# object1 <- data.frame(a = 1:5, b = letters[1:5])
-# object2 <- list(name = "John", age = 30)
-# object3 <- c(10, 20, 30)
-#
-# # Store objects in a list for easy iteration
-# object_list <- list(obj1 = object1, obj2 = object2, obj3 = object3)
-#
-# # Loop through the list and save each object to a separate .rds file
-# for (name in names(object_list)) {
-#   file_name <- paste0(name, ".rds")
-#   saveRDS(object_list[[name]], file = file_name)
-#   print(paste("Saved", name, "to", file_name))
-#   }
-
-# Reshape data ------------------------------------------------------------
-
 # reshape "Chapter 7/End of Chapter/Prob 16.txt"
 # ch7_eoc_prob16 <- ch7_eoc_prob16 |>
 #   pivot_longer(cols = -starts_with("Sample"),
@@ -353,6 +311,7 @@ table4_06 <- data.frame(
 # Table 4.8, p. 150
 # data in book are different than generally presented
 # these are the data as they appear in the book
+# data in book are partial stack loss dataset
 air <- c(80, rep(62, 4), rep(58, 6), rep(50, 5), 56)
 water <- c(27, 22, 23, 24, 24, 23, 18, 18, 17, 18, 19, 18, 18, 19, 19, 20, 20)
 acid <- c(88, 87, 87, 93, 93, 87, 80, 89, 88, 82, 93, 89, 86, 72, 79, 80, 82)
@@ -1008,64 +967,6 @@ table9_02 <- table4_01 |>
 # Table 9.5, p. 666
 # Refer to Table 9.1
 
-# intervals from augmented object
-# > lm1_aug |>
-#      dplyr::select(pressure, .fitted, .lower, .upper) |>
-#      distinct() |>
-#      as.data.frame()
-#   pressure .fitted  .lower  .upper
-# 1        2  2.4723  2.4531  2.4916
-# 2        4  2.5697  2.5561  2.5833
-# 3        6  2.6670  2.6559  2.6781
-# 4        8  2.7643  2.7507  2.7779
-# 5       10  2.8617  2.8424  2.8809
-
-# simultaneous intervals from Table 4.5
-#   pressure      est   lower   upper
-#          2   2.4723  2.4477  2.4969
-#          4   2.5697  2.5523  2.5871
-#          6   2.6670  2.6528  2.6812
-#          8   2.7643  2.7469  2.7817
-#         10   2.8617  2.8371  2.8863
-
-# individual intervals from Table 4.5
-#  pressure       est   lower   upper
-#         2    2.4723  2.4587  2.4859
-#         4    2.5697  2.5579  2.5815
-#         6    2.6670  2.6559  2.6781
-#         8    2.7643  2.7525  2.7761
-#        10    2.8617  2.8481  2.8753
-
-# using glht() from {multcomp}
-# for complete list of adjustment methods, see stats::p.adjust
-# for simultaneous inference about mean response, use model matrix as linfct
-# K <- model.matrix(lm1) |> unique()
-# lm1_glht <- glht(model = lm1,
-#                  linfct = unique(model.matrix(lm1))
-#                  )
-
-# joint test, just to see how it works
-# summary(lm1_glht, test = adjusted(type = "holm"))
-
-# confint(lm1_glht, level = 0.95)
-# Simultaneous Confidence Intervals
-#
-# Fit: lm(formula = density ~ pressure, data = table4_01)
-#
-# Quantile = 2.6772
-# 95% family-wise confidence level
-#
-#
-# Linear Hypotheses:
-#         Estimate lwr    upr
-# 1 == 0  2.4723   2.4485 2.4962
-# 4 == 0  2.5697   2.5528 2.5865
-# 7 == 0  2.6670   2.6532 2.6808
-# 10 == 0 2.7643   2.7475 2.7812
-# 13 == 0 2.8617   2.8378 2.8855
-
-# 1, 4, 7, 10, 13 are row indices of model matrix
-
 # Table 9.6, p. 671
 # No data
 
@@ -1093,8 +994,6 @@ table9_02 <- table4_01 |>
 
 # Table 9.13, p. 695
 # anova(lm2)
-
-# Any more in Ch. 9? -----------------------------------------------------
 
 # Table 9.14, p. 700
 
@@ -1178,7 +1077,7 @@ table_a_5 <- data.frame(
                 29200, 86100))
 # usethis::use_data(table_a_5, overwrite = TRUE)
 
-# Remove sections where data appears elsewhere ----------------------------
+# Remove objects where data appears elsewhere -----------------------------
 
 # rename Sec 2.2, Exercise 2 to Table 1.1, where data first appears
 table1_01 <- ch2_sec2_prob2
@@ -1453,3 +1352,41 @@ rm(list = ls())
 #   assign(name, obj)
 #   do.call("use_data", list(as.name(name), overwrite = TRUE))
 #   })
+
+# https://dataanalytics.org.uk/save-all-objects-to-disk-as-separate-files/
+# THIS SEEMS TO WORK
+
+# for(i in 1:length(ls())) {
+#   save(list = (ls()[i]),
+#        file = paste(ls()[i], ".RData", sep = "")
+#        )
+#   }
+
+## this works, but need .Rdata
+# for (name in names(df_list)) {
+#   file_name <- paste0(name, ".rds")
+#   saveRDS(df_list[[name]],
+#           file = file.path(here::here(),
+#                            "data",
+#                            file_name))
+#   print(paste("Saved", name, "to", file_name))
+#   }
+
+# google search "r save multiple objects to separate files"
+# # Create some example objects
+# object1 <- data.frame(a = 1:5, b = letters[1:5])
+# object2 <- list(name = "John", age = 30)
+# object3 <- c(10, 20, 30)
+#
+# # Store objects in a list for easy iteration
+# object_list <- list(obj1 = object1, obj2 = object2, obj3 = object3)
+#
+# # Loop through the list and save each object to a separate .rds file
+# for (name in names(object_list)) {
+#   file_name <- paste0(name, ".rds")
+#   saveRDS(object_list[[name]], file = file_name)
+#   print(paste("Saved", name, "to", file_name))
+#   }
+
+# https://cran.r-project.org/web/packages/rio/vignettes/rio.html#Importing_Data_Lists
+
