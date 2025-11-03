@@ -67,15 +67,29 @@ NULL
 #' data(table1_01)
 #' str(table1_01)
 #'
+#' # reshape data for analysis
 #' gears <- table1_01 |>
 #'   tidyr::pivot_longer(cols = everything(),
 #'                       values_to = "Runout",
 #'                       names_to = "Treatment") |>
 #'   dplyr::mutate(Treatment = factor(Treatment,
 #'                                    levels = c("Laid", "Hung"))) |>
+#'   # one laid gear was dropped from study; remove NA value
 #'   dplyr::filter(!is.na(Runout))
+#'
+#' # dot plot of runouts by hung or laid
 #' mosaic::dotPlot(~ Runout | Treatment, data = gears)
 #'
+#' # mean runout by treatment, mosaic version
+#' mosaic::mean_(Runout ~ Treatment, data = gears)
+#'
+#' # mean runout by treatment, tidyverse version
+#' gears |>
+#'   dplyr::summarize(runout_mean = mean(Runout), .by = Treatment)
+#'
+#' # summary statistics of runout by treatment
+#' mosaic::favstats(Runout ~ Treatment, data = gears)
+
 NULL
 
 #' @name table1_04
