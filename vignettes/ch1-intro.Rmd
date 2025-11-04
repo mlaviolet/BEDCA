@@ -82,10 +82,16 @@ Now we're ready to find the treatment means. First, let's set the output to a se
 
 ```{r}
 options(digits = 3)
+```
+
+
+
+```{r}
 mosaic::mean(Runout ~ Treatment, data = gears)
 ```
 
-We see that the runout for the hung gears exceeds that for the laid gears by 5.3 $\times$ 0.0001 inches. Let's make a comparative dot plot using `dotPlot()` from the `mosaic` package. The first argument is a formula where the variable behind the tilde (`~`) represents the varable to be plotted and the variable behind the vertical slash (`|`) specifies that the two graphs appear in separate panels. Formulas are discussed further in Chapter 3.
+
+We see that the runout for the hung gears exceeds that for the laid gears by 5.3 $\times$ 0.0001 inches. Let's make a comparative dot plot using `dotPlot()` from the `mosaic` package. The first argument is a formula where the variable behind the tilde (`~`) represents the varable to be plotted and the variable behind the vertical slash (`|`) specifies that the graphs for laid gears and hung gears appear in separate panels. Formulas are discussed further in Chapter 3. The argument `nint` specifies the number of intervals to use and `xlab` tells R the text to use for a label on the x-axis.
 
 ```{r}
 mosaic::dotPlot(~ Runout | Treatment, data = gears, 
@@ -124,6 +130,8 @@ ggformula::gf_point(displacement ~ point, data = table1_04,
                     xlab = "Time (1/60 second)",
                     ylab = "Displacement (mm)")
 ```
+
+The argument to 
 
 The authors discuss how the plot can be used to develop a model predicting displacement from time.
 
