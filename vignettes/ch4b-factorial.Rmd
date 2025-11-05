@@ -1,0 +1,19 @@
+---
+title: "Chapter 4, Part 2: Fitted Effects for Factorial Data"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{ch4b-factorial}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(BEDCA)
+```
