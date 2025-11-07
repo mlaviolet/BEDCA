@@ -1,4 +1,4 @@
-ns## code to prepare `DATASET` dataset goes here
+## code to prepare `DATASET` dataset goes here
 
 # This script constructs R data sets from the book
 # "Basic Engineering Data Collection and Analysis" by Vardeman and Jobe
@@ -86,7 +86,13 @@ list2env(df_list, envir = .GlobalEnv)
 
 # usethis::use_data(ch7_eoc_prob19b, overwrite = TRUE)
 
-# Reshape Chapter 3, Chapter Exercise 4
+# Change Section 3.1, Exercise 2 to Table 3.1 and make names syntactic
+table3_01 <- ch3_sec1_prob2
+names(table3_01) <- c("G230", "G200")
+rm(ch3_sec1_prob2)
+# usethis::use_data(table3_01)
+
+# Reshape Chapter 3, Exercise 4
 # reshaping here because complex; names need to be changed to syntactic
 ch3_eoc_prob04 <-
   read_tsv(

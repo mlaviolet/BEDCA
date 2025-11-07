@@ -628,26 +628,26 @@ NULL
 #'
 NULL
 
-#' @name ch3_sec1_prob2
+#' @name table3_01
 #' @docType data
-#' @title Section 3.1, Exercise 2
-#' @usage data(ch3_sec1_prob2)
+#' @title Table 3.1
+#' @usage data(table3_01)
 #' @keywords datasets
 #'
 #' @format A data frame with 20 rows and 2 variables.
 #'  \describe{
-#'   \item{230_G}{Bullet penetration depths for 230 grain jacketed bullets}
-#'   \item{200_G}{Bullet penetration depths for 200 grain jacketed bullets}
+#'   \item{G230}{Bullet penetration depths for 230 grain jacketed bullets (mm)}
+#'   \item{G200}{Bullet penetration depths for 200 grain jacketed bullets (mm)}
 #'   }
 #'
 #' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
-#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 77
+#' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 67
 #'
-#' @note First appearance as Table 3.1, p. 67
+#' @note Data also used in Section 3.1, Exercise 2
 #'
 #' @examples
-#' data(ch3_sec1_prob2)
-#' str(ch3_sec1_prob2)
+#' data(table3_01)
+#' str(table3_01)
 #'
 NULL
 
