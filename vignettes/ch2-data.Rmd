@@ -42,7 +42,7 @@ The authors discuss completely randomized, randomized complete block, and incomp
 
 ### 2.4.1: Completely randomized experiments
 
-On page 48, the authors describe a student investigation of the effects of two experimental factors, the concentration of hydrofluoric acid in an etching bath and the time spent in the etching bath on the resulting strength of damaged glass rods. The students decided to run a 3 x 3 factorial experiment. The experimental levels of concentration were 50%, 75%, and 100% HF, and the levels of time employed were 30 sec, 60 sec, and 120 sec, resulting in nine treatment combinations. Two replications produced 18 experimental runs. The following code generates a completely randomized design.
+On page 48, the authors describe a student investigation of the effects of two experimental factors, the concentration of hydrofluoric acid in an etching bath and the time spent in the etching bath on the resulting strength of damaged glass rods. The students decided to run a 3 x 3 factorial experiment. The experimental levels of concentration were 50%, 75%, and 100% HF, and the levels of time employed were 30 sec, 60 sec, and 120 sec, resulting in nine treatment combinations. Two replications produced 18 experimental runs. The following code generates a completely randomized design for this study.
 
 ```{r}
 # Example 11, p. 48
