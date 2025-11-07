@@ -40,13 +40,13 @@ Table 1.1 (p. 3) of the text presents data on an experiment to determine whether
 dplyr::glimpse(table1_01)
 ```
 
-Note that the data for the two gear treatments appear in separate columns, which is not amenable for analysis. To proceed with analysis, the data must be reshaped into "tidy" format. This results in a new data table of two columns: one for the treatment type and a second for the actual measurements. Reshaping is accomplished with the `pivot_longer` function from the `tidyr` package.
+Note that the data for the two gear treatments appear in separate columns, which is not amenable for analysis. To proceed with analysis, the data must be reshaped into "tidy" format. This results in a new data table of two columns: one for the treatment type and a second for the actual measurements. Reshaping is accomplished with the `pivot_longer()` function from the `tidyr` package.
 
 ```{r}
 gears <- table1_01 |> 
     tidyr::pivot_longer(cols = everything(), 
-                        values_to = "Runout", 
-                        names_to = "Treatment")
+                        names_to = "Treatment",
+                        values_to = "Runout")
 ```
 
 The treatments `Laid` and `Hung` have type "character." We'll change `Treatment` to a factor (categorical variable).
@@ -58,19 +58,32 @@ gears <- gears |>
 levels(gears$Treatment)
 ```
 
-By default, the levels appear in alphabetical order; we have specified the `levels` argument to match the order in the text. Now we'll find some numerical summaries. First find the mean distortion for each treatment.
+By default, the levels appear in alphabetical order; we have specified the `levels` argument of `factor()` to match the order in the text. 
+
+Now we'll find some numerical summaries. 
+
+Now we're ready to find the treatment means. First, let's set the output to a sensible number of digits.
+
 
 ```{r}
-mosaic::mean(Runout ~ Treatment, data = gears)
+options(digits = 3)
 ```
 
-The `Laid` gears produce an average of `NA`, which means at least one value is missing. Let's make a count of "missing" measurements by treatment.
+Now find the mean distortion for each treatment.
+
+```{r}
+mosaic::mean_(Runout ~ Treatment, data = gears)
+```
+
+The first argument is a modeling formula, which can be read as "find the mean of `Runout`, broken down by `Treatment`. The `data` argument tells R where to find the data. The syntax is similar to that for fitting a model, which you'll do often. 
+
+The `Laid` gears report an average of `NA`, which means at least one value is missing. Let's make a count of "missing" runouts by treatment.
 
 ```{r}
 mosaic::tally(is.na(Runout) ~ Treatment, data = gears)
 ```
 
-We see that one laid gear is recorded as missing, so we have measurements for 39 hung gears and 38 laid gears. We'll resolve the issue by removing the missing value (since we don't know if it's really missing anyway).
+We see that one laid gear is recorded as missing, so we have measurements for 39 hung gears and 38 laid gears. The text notes that the original study called for applying each treatment to 39 gears but that one laid gear was omitted. We'll resolve the issue by removing the missing value.
 
 ```{r}
 gears <- gears |> 
@@ -78,20 +91,7 @@ gears <- gears |>
 nrow(gears)
 ```
 
-Now we're ready to find the treatment means. First, let's set the output to a sensible number of digits.
-
-```{r}
-options(digits = 3)
-```
-
-
-
-```{r}
-mosaic::mean(Runout ~ Treatment, data = gears)
-```
-
-
-We see that the runout for the hung gears exceeds that for the laid gears by 5.3 $\times$ 0.0001 inches. Let's make a comparative dot plot using `dotPlot()` from the `mosaic` package. The first argument is a formula where the variable behind the tilde (`~`) represents the varable to be plotted and the variable behind the vertical slash (`|`) specifies that the graphs for laid gears and hung gears appear in separate panels. Formulas are discussed further in Chapter 3. The argument `nint` specifies the number of intervals to use and `xlab` tells R the text to use for a label on the x-axis.
+We see that the runout for the hung gears exceeds that for the laid gears by 5.3 $\times$ 0.0001 inches. Let's make a comparative dot plot using `mosaic::dotPlot()`. The first argument is a formula where the variable behind the tilde (`~`) represents the variable to be plotted; the variable behind the vertical slash (`|`) specifies that the graphs for laid gears and hung gears appear in separate panels. Formulas are discussed further in Chapter 3. The argument `nint` specifies the number of intervals to use and `xlab` tells R the text to use for a label on the x-axis.
 
 ```{r}
 mosaic::dotPlot(~ Runout | Treatment, data = gears, 
@@ -102,13 +102,12 @@ mosaic::dotPlot(~ Runout | Treatment, data = gears,
 ### Example 2: Pelletizing hexamine powder
 
 Example 2 (introduced p. 8) describes the problem of reducing the fraction of nonconforming fuel pellets produced in the compression of a raw hexamine powder
-in a pelletizing machine. The students' study used three factors with two levels each. Table 1.2 (p. 12) lists the eight possible combinations of factor levels. The table can be produced with the base `expand.grid` function or with `expand_grid` from the `tidyverse` suite. Further details of setting up an experiment of this type appear in Chapter 2.
+in a pelletizing machine. The students' study used three factors with two levels each. Table 1.2 (p. 12) lists the eight possible combinations of factor levels. The table can be produced with the base `expand.grid` function or with `tidyr::expand_grid()` from the `tidyverse` suite. Further details of setting up an experiment of this type appear in Chapter 2.
 
 ```{r}
 tidyr::expand_grid(volume = c("low", "high"),
                    flow = c("current", "manual"),
-                   mixture = c("no binder", "binder")
-                   )
+                   mixture = c("no binder", "binder"))
 ```
 
 ### Example 7: Book paper thickness measurements
@@ -130,8 +129,6 @@ ggformula::gf_point(displacement ~ point, data = table1_04,
                     xlab = "Time (1/60 second)",
                     ylab = "Displacement (mm)")
 ```
-
-The argument to 
 
 The authors discuss how the plot can be used to develop a model predicting displacement from time.
 
