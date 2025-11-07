@@ -99,7 +99,7 @@ Most analyses are done with the `tidyverse` suite of packages and the `mosaic` p
 
 -   `ggplot2` for graphing
 
-The `mosaic` package provides a formula interface to common statistical analyses and `ggplot` graphics. The formula interface provides a consistent approach to statistical analyses.
+The `mosaic` and `ggformula` packages provide a formula interface to common statistical analyses and `ggplot` graphics. The formula interface provides a consistent approach to statistical analyses.
 
 Data sets appearing in multiple exercises are found under first appearance; for example, data for Chapter 9, Exercise 10 are found under Chapter 4, Exercise 24.
 
