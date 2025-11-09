@@ -119,14 +119,68 @@ gf_jitter(bolt4_torque ~ bolt3_torque, data = table3_04,
           ylab = "Bolt 4 torque (ft-lb)")
 ```
 
-A run chart is a scatterplot where the horizontal variable represents time. Run charts are usually drawn as points with connecting lines. In the following example, the aspect ratio is changed to the "golden ratio" for aesthetics.
+A run chart is a scatterplot where the horizontal variable represents time. Run charts are usually drawn as points with connecting lines. In the following example (Figure 3.10, p. 76), the aspect ratio is changed to the "golden ratio" for aesthetics.
 
 ```{r}
 gf_point(diameter ~ joint, data = table3_05) |> 
-  gf_line() +
+  gf_line() +                # the + operator adds features to the graph
   theme(aspect.ratio = 0.62) # this type of plot looks better this way
 ```
 
 ## 3.2 Quantiles and Related Graphical Tools
 
+Compute approximate quantiles, p. 79
+
+```{r}
+towels <- table3_06 |> 
+  dplyr::mutate(i = rank(strength, ties.method = "random"),
+                p = (i - 0.5) / length(i)) |> 
+  dplyr::arrange(i)
+```
+
+Quantile plot, p. 81
+
+```{r}
+ggformula::gf_point(strength ~ p, data = towels) |> 
+  gf_line() +               
+  theme(aspect.ratio = 0.62)
+```
+
+Statistics by bullet type
+
+```{r}
+mosaic::IQR(depth ~ grain, data = bullets)
+mosaic::favstats(depth ~ grain, data = bullets)
+```
+
+Boxplot, p. 85
+
+```{r}
+ggformula::gf_boxplot(depth ~ grain, data = bullets,
+                      xlab = "grain",
+                      ylab = "Penetration depth (mm)")
+```
+
+Normal plot, p. 90
+
+Add normal quantiles
+
+```{r}
+towels <- towels |> 
+  mutate(z = qnorm(p))
+```
+
+Normal plot
+
+```{r}
+ggformula::gf_point(z ~ strength, data = towels)
+```
+
+Direct normal plot
+
+```{r}
+ggformula::gf_qq(~ strength, data = towels) +
+  # flip axes to replicate format in text
+  coord_flip()
+```
 
