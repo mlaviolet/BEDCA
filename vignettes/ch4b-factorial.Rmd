@@ -2,7 +2,7 @@
 title: "Chapter 4, Part 2: Fitted Effects for Factorial Data"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{ch4b-factorial}
+  %\VignetteIndexEntry{Chapter 4, Part 2: Fitted Effects for Factorial Data}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -10,10 +10,259 @@ vignette: >
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
-  comment = "#>"
-)
+  comment = "#>",
+  fig.align="center"
+  )
 ```
 
-```{r setup}
+```{r setup, message=FALSE}
 library(BEDCA)
+library(mosaic)
+library(tidyverse)
+library(emmeans)
+library(broom)
+theme_set(theme_bw())
+options(digits = 5)
 ```
+
+## 4.3: Fitted Effects for Factorial Data
+
+Introduce effects with example in Vardeman-Jobe SMQA, p. 253.
+
+```{r}
+solder <- expand_grid(cooling = c("H2O quench", "Oil quench"),
+            Sb = c(3, 5, 10)) |> 
+  mutate(k = 3) |> 
+  uncount(k) |> 
+  mutate(cooling = factor(cooling),
+         Sb = factor(Sb),
+         strength = c(18.6, 19.5, 19.0, 22.3, 19.5, 20.5,
+                      15.2, 17.1, 16.6, 20.0, 20.9, 20.4,
+                      20.9, 22.9, 20.6, 16.4, 19.0, 18.1))
+```
+
+### One factor, two levels
+
+```{r}
+levels(solder$cooling)
+options("contrasts")
+```
+
+Means with two levels
+
+All responses
+
+```{r}
+mosaic::mean_(~ strength, data = solder)
+```
+
+Responses by cooling method
+
+```{r}
+mosaic::mean_(strength ~ cooling, data = solder)
+```
+
+With default coding
+
+```{r}
+lm_cool0 <- lm(strength ~ cooling, data = solder)
+coef(lm_cool0)
+```
+
+With effects coding
+
+```{r}
+lm_cool1 <- lm(strength ~ cooling, data = solder,
+               contrasts = list(cooling = "contr.sum"))
+coef(lm_cool1)
+```
+
+Means and effects, default coding
+
+```{r}
+lsmeans(lm_cool0, ~ cooling)
+lsmeans(lm_cool0, ~ cooling) |> 
+  contrast()
+```
+
+Means and effects, effect coding
+
+```{r}
+lsmeans(lm_cool1, ~ cooling)
+lsmeans(lm_cool1, ~ cooling) |> 
+   contrast()
+```
+
+### One factor, more than two levels
+
+```{r}
+levels(solder$Sb)
+solder |> 
+  summarize(.by = Sb,
+            strength_mean = mean(strength))
+```
+
+All responses
+
+```{r}
+mosaic::mean_(~ strength, data = solder)
+```
+
+Responses by antimony content
+
+```{r}
+mosaic::mean_(strength ~ Sb, data = solder)
+```
+
+With default coding
+
+```{r}
+lm_Sb0 <- lm(strength ~ Sb, data = solder)
+summary(lm_Sb0)
+lsmeans(lm_Sb0, ~ Sb)
+lsmeans(lm_Sb0, ~ Sb) |> 
+  contrast()
+```
+
+With effects coding
+
+```{r}
+lm_Sb1 <- lm(strength ~ Sb, data = solder,
+             contrasts = list(Sb = "contr.sum"))
+summary(lm_Sb1)
+lsmeans(lm_Sb1, ~ Sb)
+lsmeans(lm_Sb1, ~ Sb) |> 
+  contrast()
+```
+
+### Two factors, additive model
+
+```{r}
+lm_add <- lm(strength ~ cooling + Sb, data = solder,
+             contrasts = list(cooling = "contr.sum",
+                              Sb = "contr.sum"))
+summary(lm_add)
+```
+
+Interaction plot, additive model
+
+```{r}
+emmip(lm_add, cooling ~ Sb)
+```
+
+### Two factors, full model with interaction
+
+```{r}
+lm_int <- lm(strength ~ cooling * Sb, data = solder,
+             contrasts = list(cooling = "contr.sum",
+                              Sb = "contr.sum"))
+summary(lm_int)
+anova(lm_int)
+```
+
+### Means and effects, full model
+
+```{r}
+# table 5.4, p. 271
+lsmeans(lm_int, ~ cooling + Sb) 
+
+lsmeans(lm_int, ~ Sb + cooling) |> 
+  contrast(interaction = TRUE)
+```
+
+
+
+```{r}
+emmip(lm_int, cooling ~ Sb)
+
+```
+
+Interaction plot, full model
+
+```{r}
+emmip(lm_int, cooling ~ Sb)
+```
+
+### Example from student study
+
+Change `wood` and `joint` variables to factors.
+
+```{r}
+wood_joints <- table4_11 |> 
+  mutate(wood = factor(wood, levels = c("pine", "oak", "walnut")),
+         joint = factor(joint, levels = c("butt", "beveled", "lap")))
+dplyr::glimpse(wood_joints)
+```
+
+Find mean strength of all specimens.
+
+```{r}
+wood_joints |> 
+  summarize(mean_strength = mean(strength))
+```
+
+Find sample means for all nine wood-joint combinations.
+
+```{r}
+options(digits = 4)
+wood_joints |> 
+  summarize(.by = c(joint, wood),
+            mean_strength = mean(strength)
+            )
+```
+
+Find mean of the nine combination means.
+
+```{r}
+options(digits = 5)
+wood_joints |> 
+  summarize(.by = c(joint, wood),
+            mean_strength = mean(strength)) |> 
+  summarize(cell_mean_strength = mean(mean_strength)
+            )
+```
+
+Note difference due to unbalanced data.
+
+Fit model with main effects only.
+
+```{r}
+wj_mod_main <- lm(strength ~ joint + wood, data = wood_joints,
+                  contrasts = list(joint = contr.sum,
+                                   wood = contr.sum))
+summary(wj_mod_main)
+
+lsmeans(wj_mod_main, spec = ~ joint + wood) 
+```
+
+Interaction plot, main effects only.
+
+```{r}
+emmip(wj_mod_main, joint ~ wood, col = "black",
+      linearg = list(), dotarg = list(size = 2)) +
+  scale_y_continuous(breaks = seq(600, 2400, 200)) +
+  labs(x = "Wood", y = "Stress at failure (psi)")
+```
+
+Fit the full model with interaction.
+
+```{r}
+wj_mod <- lm(strength ~ joint * wood, data = wood_joints,
+             contrasts = list(joint = contr.sum,
+                              wood = contr.sum))
+summary(wj_mod)
+lsmeans(wj_mod, spec = ~ joint + wood) 
+```
+
+Interaction plot, full model with interaction.
+
+```{r}
+emmip(wj_mod, joint ~ wood, col = "black",
+      linearg = list(), dotarg = list(size = 2)) +
+  scale_y_continuous(breaks = seq(600, 2400, 200)) +
+  labs(x = "Wood", y = "Stress at failure (psi)")
+```
+
+
+## 4.4 Transformations and Choice of Measurement Scale
+
