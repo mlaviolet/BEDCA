@@ -64,7 +64,6 @@ Now we'll find some numerical summaries.
 
 Now we're ready to find the treatment means. First, let's set the output to a sensible number of digits.
 
-
 ```{r}
 options(digits = 3)
 ```
@@ -72,7 +71,7 @@ options(digits = 3)
 Now find the mean distortion for each treatment.
 
 ```{r}
-mosaic::mean_(Runout ~ Treatment, data = gears)
+mosaic::mean(Runout ~ Treatment, data = gears)
 ```
 
 The first argument is a modeling formula, which can be read as "find the mean of `Runout`, broken down by `Treatment`. The `data` argument tells R where to find the data. The syntax is similar to that for fitting a model, which you'll do often. 
@@ -87,7 +86,7 @@ We see that one laid gear is recorded as missing, so we have measurements for 39
 
 ```{r}
 gears <- gears |> 
-  dplyr::filter(!is.na(Runout))
+  dplyr::filter(!is.na(Runout)) # keep runouts that are not missing
 nrow(gears)
 ```
 
@@ -95,7 +94,7 @@ We see that the runout for the hung gears exceeds that for the laid gears by 5.3
 
 ```{r}
 mosaic::dotPlot(~ Runout | Treatment, data = gears, 
-                nint = 12,
+                nint = 12, # use 12 intervals
                 xlab = "Runout (0.0001 in.)")
 ```
 
