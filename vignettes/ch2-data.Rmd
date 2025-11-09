@@ -42,7 +42,7 @@ The authors discuss completely randomized, randomized complete block, and incomp
 
 ### 2.4.1: Completely randomized experiments
 
-On page 48, the authors describe a student investigation of the effects of two experimental factors, the concentration of hydrofluoric acid in an etching bath and the time spent in the etching bath on the resulting strength of damaged glass rods. The students decided to run a 3 x 3 factorial experiment. The experimental levels of concentration were 50%, 75%, and 100% HF, and the levels of time employed were 30 sec, 60 sec, and 120 sec, resulting in nine treatment combinations. Two replications produced 18 experimental runs. The following code generates a completely randomized design for this study.
+On page 48, the authors describe a student investigation of the effects of two experimental factors, the concentration of hydrofluoric acid in an etching bath and the time spent in the etching bath on the resulting strength of damaged glass rods. The students decided to run a 3 x 3 factorial experiment. The experimental levels of concentration were 50%, 75%, and 100% HF, and the levels of time employed were 30 sec, 60 sec, and 120 sec, resulting in nine treatment combinations. Two replications produced 18 experimental runs. The following code generates a worksheet for a completely randomized design.
 
 ```{r}
 # Example 11, p. 48
@@ -57,7 +57,9 @@ glass <-
   tidyr::uncount(k) |> 
   # randomize run order
   dplyr::slice_sample(prop = 1) |> 
+  # add run ID
   tibble::rowid_to_column(var = "run") |> 
+  # arrange rows in run order
   dplyr::arrange(run) |> 
   # add blank column for responses
   dplyr::mutate(strength = NA) 
@@ -74,9 +76,9 @@ Once data collection is complete, the Excel worksheet can be imported into R.
 
 ```{r, eval=FALSE}
 glass_data <- readxl::read_xlsx(file = "glass.xlsx") |> 
-  # convert experimental factors to R factors for analysis
-  # this will change both variables to factor--useful if more than two
-  dplyr::mutate(across(.cols = c(concentration, time), factor))
+  # convert both experimental factors to R factors
+  dplyr::mutate(concentration = factor(concentration),
+                time = factor(time))
 ```
 
 ### 2.4.2: Randomized complete block experiments
@@ -94,6 +96,7 @@ glass_block <-
   tidyr::uncount(k, .id = "day") |>
   # within each block, generate random order
   dplyr::slice_sample(prop = 1, by = day) |>
+  # within each block, sort rows in run order
   dplyr::mutate(run_order = seq_along(day), .by = day) |> 
   # put day and run_order as first columns
   dplyr::relocate(day, run_order)
