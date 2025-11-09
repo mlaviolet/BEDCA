@@ -1,0 +1,65 @@
+Base R
+------
+is.na()
+length()
+options()
+qnorm()
+rank()
+seq_along()
+
+Data import and export
+----------------------
+readxl::read_xlsx()
+writexl::write_xlsx()
+
+Data wrangling
+--------------
+dplyr::arrange()
+dplyr::count()
+dplyr::filter()
+dplyr::glimpse()
+dplyr::mutate()
+dplyr::relocate()
+dplyr::select()
+dplyr::slice_sample()
+
+tibble::rowid_to_column()
+
+tidyr::drop_na()
+tidyr::pivot_longer()
+tidyr::uncount()
+
+Design of experiments
+---------------------
+expand.grid
+tidyr::expand_grid
+
+Factors
+-------
+cut()
+factor()
+levels()
+
+Graphs
+------
+ggformula::gf_boxplot()
+ggformula::gf_histogram()
+ggformula::gf_jitter()
+ggformula::gf_line()
+ggformula::gf_point()
+ggformula::gf_qq()
+mosaic::dotPlot()
+
+Sampling
+--------
+set.seed()
+sample()
+
+Summary statistics
+------------------
+cumsum()
+mean()
+sum()
+mosaic::favstats()
+mosaic::mean()
+mosaic::tally()
