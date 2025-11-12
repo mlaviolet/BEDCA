@@ -13,11 +13,15 @@ knitr::opts_chunk$set(
   comment = "#>",
   fig.align = "center"
   )
-ggplot2::theme_set(ggplot2::theme_bw())
 ```
 
-```{r setup}
+```{r setup, message=FALSE, warning=FALSE}
 library(BEDCA)
+library(mosaic) 
+library(dplyr)
+library(tidyr)
+library(broom)
+theme_set(theme_bw())
 ```
 
 ## 3.1: Elementary Graphical and Tabular Treatment of Quantitatve Data
@@ -38,13 +42,13 @@ gears <- table1_01 |>
   dplyr::filter(!is.na(Runout))
 ```
 
-This code replicates Figure 3.1 (p. 67)
-
-The best way to make a dot diagram is with the `dotPlot` function from the `mosaic` package. The syntax is 
+The best way to make a dot diagram is with the `dotPlot` function from the `mosaic` package. The syntax is
 
 $$\texttt{dotPlot(}\sim \texttt{y | z, data = mydata)}$$
 
-where `y` is the variable to be plotted and `z` is a panel variable; that is, separate plots are produced for each level of `z`. Note the `xlab` argument: always put meaningful labels on your graphs.
+where `y` is the variable to be plotted and `z` is a panel variable; that is, separate plots are produced for each level of `z`.
+
+This code replicates Figure 3.1 (p. 67). Note the `xlab` argument: always put meaningful labels on your graphs.
 
 ```{r}
 mosaic::dotPlot(~ Runout | Treatment, data = gears,
@@ -65,7 +69,7 @@ mosaic::dotPlot(~ depth | grain, data = bullets,
 
 ### 3.1.2 Frequency Tables and Histograms
 
-The following produces the data for Example 1, page 70. Since the measurements for laid gears and hung gears are in separate columns, we need only retain the laid gears with `dplyr::select()`. The `cut()` function divides the range of a quantitative variable into intervals and codes the values according to which interval they fall. The `seq()` function generates the sequence 5, 9, 13, ..., 32 to define the intervals [5,9), [9,13), ..., [25,28). The result of using `cut()`is a factor variable with the intervals as levels.
+The following produces the data for Example 1, page 70. Since the measurements for laid gears and hung gears are in separate columns, we need only retain the laid gears with `dplyr::select()`. The `cut()` function divides the range of a quantitative variable into intervals and codes the values according to which interval they fall. The `breaks()` argument uses the `seq()` function to generate the sequence 5, 9, 13, ..., 32 and define the intervals [5,9), [9,13), ..., [25,28). The result of using `cut()`is a factor variable with the intervals as levels.
 
 ```{r}
 gears_laid <- table1_01 |> 
@@ -101,7 +105,7 @@ ggformula::gf_histogram(~ depth | grain, data = bullets,
 
 ### 3.1.3 Scatterplots and Run Charts
 
-Figure 3.9 (p. 75) shows a scatterplot of the torque required to loosen two bolsts (designated Bolt 3 and Bolt 4) on the front plate of a heavy equipment component. The numbers in the plots indicate points falling on the same coordinates.
+Figure 3.9 (p. 75) shows a scatterplot of the torque required to loosen two bolts (designated Bolt 3 and Bolt 4) on the front plate of a heavy equipment component. In the figure presented in the textbook, the numbers in the plots indicate points falling on the same coordinates.
 
 ```{r}
 gf_point(bolt4_torque ~ bolt3_torque, data = table3_04,
@@ -109,7 +113,7 @@ gf_point(bolt4_torque ~ bolt3_torque, data = table3_04,
          ylab = "Bolt 4 torque (ft-lb)")
 ```
 
-The numbers in the plot indicate points falling on the same coordinates. To show distinct points we'll add a small amount of "jitter" to the scatterplot. Jittering adds a small amount of random variation to the point location so that all points are visible.
+To show distinct points we'll add a small amount of "jitter" to the scatterplot. Jittering adds a small amount of random variation to the point location so that all points are visible.
 
 ```{r}
 gf_jitter(bolt4_torque ~ bolt3_torque, data = table3_04,
@@ -129,7 +133,21 @@ gf_point(diameter ~ joint, data = table3_05) |>
 
 ## 3.2 Quantiles and Related Graphical Tools
 
-Compute approximate quantiles, p. 79
+In this section, the authors consider numeric measures based on position and graphs based on them.
+
+### 3.2.1 Quantiles and Quantile Plots
+
+The text defines the $i$th smallest data point as the $\frac{i-0.5}{n}$ quantile. This is only one of many possible definitions; the authors chose it as the working definition. The $p$th quantile ($0\le{p}\le1$) is written as $Q(p)$.
+
+The R function `quantile()` computes quantiles without the need for manual linear interpolation. The `probs` argument takes a vector containing the desired proportion(s). For example, to compute the 0.33 and 0.67 quantiles of the paper towel breaking strength data in Table 3.6, use this code:
+
+```{r}
+mosaic::quantile(~ strength, data = table3_06, probs = c(0.33, 0.67))
+```
+
+Note: The discreteness of finite data sets complicates the process of finding arbitrary quantiles. End users generally don't need to be concerned unless they need a definition for a specific purpose. Just for the record, R provides nine different algorithms for computing quantiles. The R default is "Type 7" and the text's definition is "Type 5."
+
+The R function to find the $i$th smallest data point is `rank()`. The smallest value is rank 1; the second-smallest rank 2; etc. The following code computes the data quantiles shown in Table 3.7 (p. 79).
 
 ```{r}
 towels <- table3_06 |> 
@@ -138,7 +156,7 @@ towels <- table3_06 |>
   dplyr::arrange(i)
 ```
 
-Quantile plot, p. 81
+A quantile plot is a plot of $Q(p)$ against $p$. The following replicates Figure 3.11, page 81:
 
 ```{r}
 ggformula::gf_point(strength ~ p, data = towels) |> 
@@ -146,41 +164,140 @@ ggformula::gf_point(strength ~ p, data = towels) |>
   theme(aspect.ratio = 0.62)
 ```
 
-Statistics by bullet type
+### 3.2.2 Boxplots
+
+Most of this section uses the bullet penetration depth data from Table 3.1. The most straightforward way to compute summary statistics is with `mosaic::favstats()`.
 
 ```{r}
-mosaic::IQR(depth ~ grain, data = bullets)
 mosaic::favstats(depth ~ grain, data = bullets)
 ```
 
-Boxplot, p. 85
+The first five numbers shown are known as the *five-number summary*: minimum, first quartile (Q1), median, third quartile (Q3), maximum. The range is the difference maximum - minimum. The interquartile range (IQR) is the difference Q3 - Q1; that is, the IQR is the range of the middle 50% of the data.
+
+```{r}
+mosaic::IQR(depth ~ grain, data = bullets)
+```
+
+This is the procedure for constructing a boxplot, also known as a box-and-whiskers plot.
+
+-   Draw a box whose lower end is Q1 and whose upper end is Q3. The length of the box becomes the IQR.
+
+-   The median is shown as a line inside the box.
+
+-   The whiskers extend from the ends of the box to the minimum and maximum, unless any values are more than 1.5 box lengths from the end of the box. In that case, the whiskers extend only to the most extreme value within 1.5 box lengths and the values outside that range are plotted separately as outliers.
+
+Boxplots are typically used for comparing distributions. Here's the code to produce Figure 3.14 on page 85.
 
 ```{r}
 ggformula::gf_boxplot(depth ~ grain, data = bullets,
-                      xlab = "grain",
+                      xlab = "Grain",
                       ylab = "Penetration depth (mm)")
 ```
 
+Note that Figure 3.14 shows one outlier among the 200-grain bullets, while the R boxplot shows two. This difference is minor; due to roundoff in the text's manual calculations or differences in the algorithm for computing quantiles.
+
+### 3.2.3 Q-Q Plots and Comparing Distributional Shapes
+
 Normal plot, p. 90
 
-Add normal quantiles
+This section discusses quantile plots as a means for comparing the shapes of distributions. In practce, quantiles of the data are plotted against the quantiles of a theoretical distribution. The theoretical distribution most used for this purpose is the *normal* distribution, which has the distinctive bell shape.
+
+```{r, echo = FALSE}
+df <- data.frame(x = c(-4, 4))
+ggplot(data = df, aes(x = x)) +
+  stat_function(fun = dnorm, args = list(mean = 0, sd = 1)) +
+  labs(x = "", y = "") +
+  theme_bw() +
+  theme(axis.ticks.x = element_blank(), 
+        axis.ticks.y = element_blank(),
+        axis.text.x = element_blank(),
+        axis.text.y = element_blank(),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        aspect.ratio = 0.62)
+```
+
+The normal distribution is discussed in detail in Sections 5.2 and 5.3. For now, note the following:
+
+-   The quantiles of the discrete data set are plotted against the quantiles of a hypothetical distribution.
+
+-   If the plot tracks a straight line, then the two distributions have similar shapes.
+
+The resulting plot is often called a *normal probability* plot. To produce such a plot from the paper towel data, we need to add the normal distribution quantiles with the `qnorm()` function,
 
 ```{r}
 towels <- towels |> 
   mutate(z = qnorm(p))
+towels
 ```
 
-Normal plot
+Now we plot the normal distribution quantiles (called `z`) against the paper towel breaking strengths.
 
 ```{r}
-ggformula::gf_point(z ~ strength, data = towels)
+ggformula::gf_point(z ~ strength, data = towels,
+                    xlab = "Breaking strength (g)",
+                    ylab = "Standard normal quantile")
 ```
 
-Direct normal plot
+The plot is fairly linear; bear in mind that almost no real data set, especially if small, will produce a perfectly linear plot. We can use the `gf_qq()` function to directly produce a Q-Q plot.
 
 ```{r}
-ggformula::gf_qq(~ strength, data = towels) +
+ggformula::gf_qq(~ strength, data = towels,
+                 xlab = "Standard normal quantile",
+                 ylab = "Breaking strength (g)") +
   # flip axes to replicate format in text
   coord_flip()
 ```
 
+The normal distribution is the default. The `gf_qq()` function can also used to plot other distributions; these are discussed in Section 5.3. The default behavior also places the data on the vertical axis and the normal quantiles on the horizontal, which is the opposite of the text. The `coord_flip()` function will replicate the format in the text. Note that the labels are flipped along with the points.
+
+## 3.3 Standard Numerical Summary Measures
+
+### 3.3.1 Measures of location
+
+```{r}
+# why is mean_() needed instead of mean()?
+mosaic::mean(pct_waste ~ supplier, data = table3_13)
+# mosaic::median(pct_waste ~ supplier, data = table3_13)
+
+```
+
+### 3.3.2 Measures of spread
+
+```{r}
+supplier1 <- table3_13 |> 
+  filter(supplier == 1)
+```
+
+Note double equal sign
+
+$$\texttt{DATA = FITTED + RESIDUAL}$$
+
+$$\texttt{lm(y}\sim \texttt{x, data = mydata, ...)}$$
+
+```{r}
+mosaic::sd(~ pct_waste, data = supplier1)
+```
+
+Find fitted and residual from first principles.
+
+```{r}
+supplier1 |> 
+  mutate(.fitted = mean(pct_waste),
+         .resid = pct_waste - .fitted)
+```
+
+Actually fit model
+
+```{r}
+lm0 <- lm(pct_waste ~ 1, data = supplier1)
+summary(lm0)
+```
+
+Introduce `augment()`
+
+```{r}
+broom::augment(lm0)
+```
+
+### 3.3.4 Plots of summary statistics
