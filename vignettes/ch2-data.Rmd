@@ -16,6 +16,8 @@ knitr::opts_chunk$set(
 
 ```{r setup, echo=FALSE}
 library(BEDCA)
+library(dplyr)
+library(tidyr)
 ```
 
 Chapter 2 discusses the engineering data collection process. The only data appears in Table 2.1 (p. 31) and in this package as `table2_01`.
