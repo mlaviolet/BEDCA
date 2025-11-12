@@ -17,7 +17,7 @@ knitr::opts_chunk$set(
 
 We will follow the same sequence of topics and chapter headings as the text
 and will begin each chapter with a table of R functions that are used in the
-chapter. For clarity, functions outside base R are called with the double colon operator; that is, as package_name::function_name().
+chapter. For clarity, functions outside base R are called with the double colon operator; that is, as package_name::function_name(). Functions can also be called by loading their libraries, as below.
 
 ```{r setup, message=FALSE}
 library(BEDCA)
