@@ -50,6 +50,11 @@ ggformula::gf_point()
 ggformula::gf_qq()
 mosaic::dotPlot()
 
+Model fitting
+-------------
+lm()
+broom::augment()
+
 Sampling
 --------
 set.seed()
