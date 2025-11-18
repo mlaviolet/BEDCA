@@ -223,7 +223,7 @@ The normal distribution is discussed in detail in Sections 5.2 and 5.3. For now,
 
 -   If the plot tracks a straight line, then the two distributions have similar shapes.
 
-The resulting plot is often called a *normal probability* plot. To produce such a plot from the paper towel data, we need to add the normal distribution quantiles with the `qnorm()` function,
+The resulting plot is often called a *normal probability* plot or *normal plot*. To produce such a plot from the paper towel data, we need to add the normal distribution quantiles with the `qnorm()` function,
 
 ```{r}
 towels <- towels |> 
@@ -249,43 +249,139 @@ ggformula::gf_qq(~ strength, data = towels,
   coord_flip()
 ```
 
-The normal distribution is the default. The `gf_qq()` function can also used to plot other distributions; these are discussed in Section 5.3. The default behavior also places the data on the vertical axis and the normal quantiles on the horizontal, which is the opposite of the text. The `coord_flip()` function will replicate the format in the text. Note that the labels are flipped along with the points.
+The `gf_qq()` function can also used to plot other distributions; the normal distribution is the default. These plots are discussed in detail in Section 5.3.
+
+The default behavior also places the data on the vertical axis and the normal quantiles on the horizontal, which is the opposite of the text. The `coord_flip()` function will replicate the format in the text. Note that the labels are flipped along with the points.
 
 ## 3.3 Standard Numerical Summary Measures
 
+The previous section presented measures of center and spread based on position: median, range, quartiles, interquartile range. This section discusses measures of center and spread based on sums: mean, variance, standard deviation.
+
 ### 3.3.1 Measures of location
 
-```{r}
-# why is mean_() needed instead of mean()?
-mosaic::mean(pct_waste ~ supplier, data = table3_13)
-# mosaic::median(pct_waste ~ supplier, data = table3_13)
+The median and the mean (as statisticians like to call the average) are the two most common methods for identifying the "center" of a data set. The respective R functions are `median()` and `mean()`. The primary example in this section deals with percentage of waste on bulk paper rolls purchased from two different suppliers. To find the median by group with the formula interface, use `mosaic::median()`.
 
+```{r}
+mosaic::median(pct_waste ~ supplier, data = table3_13)
+```
+
+To produce a data frame we can use the tidyverse approach.
+
+```{r}
+table3_13 |> 
+  dplyr::summarize(median_pct = median(pct_waste), .by = supplier)
+```
+
+We can find the mean percent waste by supplier in a similar manner.
+
+```{r}
+# formula interface
+mosaic::mean(pct_waste ~ supplier, data = table3_13)
+# tidyverse with dplyr()
+table3_13 |> 
+  dplyr::summarize(mean_pct = mean(pct_waste), .by = supplier)
 ```
 
 ### 3.3.2 Measures of spread
 
+As seen in Section 3.2, the interquartile range (IQR) is the difference between the first and third quartiles; that is, the middle 50% of the data. The *range* is the difference between the maximum value and the minimum value. While the `IQR()` operator returns the IQR as a single number, the `range()` operator returns both the minimum and maximum values.
+
 ```{r}
-supplier1 <- table3_13 |> 
-  filter(supplier == 1)
+mosaic::range(pct_waste ~ supplier, data = table3_13)
 ```
 
-Note double equal sign
+This output is a *named vector*, a vector whose components have names. In this case the names "11" and "12" refer to supplier 1 with the second digit showing "1" for the minimum and "2" for the maximum.
+
+Methods of formal statistical inference are based on a measure of spread called the *standard deviation*, which measures spread about the mean. We'll develop the standard deviation using a modeling approach which will be followed throughout these notes. As our example we'll use the percent waste values for Supplier 1. To replicate a possible order of collection, we'll randomize the order of values.
+
+```{r}
+set.seed(42) # for reproducibility
+supplier1 <- table3_13 |>
+  filter(supplier == 1) |>  # note double equal sign for logical equality
+  sample_frac(size = 1) |>  # size = 1 ensures all rows are included 
+  select(pct_waste)         # only need values
+supplier1
+```
+
+Chapter 2 introduced the taxonomy of variables. The variable of primary interest is called a *response variable*. The goal is to develop a model that predicts the response from other variables. Variables to which a researcher assigns values are called *experimental variables*, while variables not managed in the study are called *concomitant variables* or *covariates*. Experimental variables and covariates are collectively called *predictor variables* or *predictors*.
+
+R uses formulas to define models. The general format for a model is `y ~ x`, where `y` is the response variable and `x` is one or more predictors. We'll start with the simplest possible model: one with no predictors. This model is called the \*null model\*. Developing the procedures for the null model will help us to understand more complex models.
+
+Return to the waste data for Supplier 1 and suppose you had to predict the percent waste for the next shipment, so you have to choose a single number. How would you choose? Most people would use the average percent waste for a prediction. This turns out to be a sound choice, for reasons we'll develop shortly.
+
+```{r}
+supplier1
+mosaic::mean(~ pct_waste, data = supplier1)
+```
+
+Looking at the data values and the mean, we can make two obvious but important observations: the values are not all the same, and none are equal to the mean. Statistics at its core is about two things:
+
+-   Measuring variation
+
+-   Distinguishing variation explained by the model from variation left unexplained
+
+Another key observation is that some values are greater than the mean while others are less. The differences between each value and that predicted by the model are called the *residuals*. In other words, we can partiton each data value as
 
 $$\texttt{DATA = FITTED + RESIDUAL}$$
 
-$$\texttt{lm(y}\sim \texttt{x, data = mydata, ...)}$$
+Let's add fitted (predicted) values and residuals to our data.
 
 ```{r}
-mosaic::sd(~ pct_waste, data = supplier1)
+supplier1 <- supplier1 |> 
+  mutate(.fitted = mean(pct_waste),
+         .resid = pct_waste - .fitted)
+supplier1
 ```
 
-Find fitted and residual from first principles.
+Small variation in the residuals indicates a well-fitting model. How do we measure variation? The residuals will always sum to zero, so that's no help. It turns out that the best way to eliminate the negative sign is to square the residuals.
+
+```{r}
+supplier1 <- supplier1 |> 
+  mutate(resid_sq = .resid^2)
+supplier1
+```
+
+Our intuition about the mean as an effective predictor is justified by the *principle of least squares*. Choosing the mean as a predictor in the null model will always minimize the sum of the squared residuals, or the *residual sum of squares*.
+
+Our small sample has six values. What if we had 100? Clearly, a larger sample means more opportunity for a large residual sum of squares. We'd like to have a measure for a "typical" squared residual. Our first thought is to divide by $n$, but we need to adjust for the complexity of the model as well as the sample size. The more complex the model, the more data is "used up" in fitting it (We're being intentionally informal here). Our measure of a "typical" squared residual is called a *mean square*; for the null model the appropriate divisor is $n-1$. Now we compute the mean square as the sum of the squared residuals divided by $n-1$.
 
 ```{r}
 supplier1 |> 
-  mutate(.fitted = mean(pct_waste),
-         .resid = pct_waste - .fitted)
+  summarize(resid_mean_sq = sum(resid_sq) / (length(resid_sq) - 1))
 ```
+
+For the null model the residual mean square has a special name: the *variance*. So in this case, our prediction is 1.495 percent and the variance is 1.945 ... what? The units of variance are the squared units of the data, which is not intuitive. To get back to the original units, take the square root.
+
+```{r}
+supplier1 |> 
+  summarize(resid_mean_sq = sum(resid_sq) / (length(resid_sq) - 1)) |> 
+  sqrt()
+```
+
+The square root of the variance gives a measure of spread generically called the *residual standard error* and has the same units as the original data. For the null model, the residual standard error has a special name: the *standard deviation*. We can summarize our data as having a mean of 1.495 and a standard deviation of 1.394. See the results on pages 93 and 96 of the textbook.
+
+Important note: Always report results to a sensible precision. Software can churn out as many decimal places as you want, but excess decimal places just look silly. A good practice is to report one decimal place beyond the original data.
+
+We'll look at more streamlined ways to fit a model shortly. For now, let's summarize:
+
+-   The mean is the least-squares measure of the center of a distribution; that is, the mean minimizes the sum of the squared residuals from the null model (containing no predictors).
+
+-   The variance is the mean squared residual from the null model.
+
+-   The standard deviation, the square root of the variance, is the residual standard error from the null model and has the same units as the data. The standard deviation measures spread about the mean.
+
+As noted in the text on page 98, at least 75% of a data set falls within two standard deviations of the mean; at least 89% falls within three standard deviations. The smaller the standard deviation, the more tightly the data are packed about their mean.
+
+We can compute the mean and standard deviation directly with the following:
+
+```{r}
+mosaic::mean(~ pct_waste, data = supplier1)
+mosaic::sd(~ pct_waste, data = supplier1)
+```
+
+Now we'll learn the specialized tools for fitting models. We'll begin with the null model and later apply these methods for more complex models.
+
+$$\texttt{lm(y}\sim \texttt{x, data = mydata, ...)}$$
 
 Actually fit model
 
