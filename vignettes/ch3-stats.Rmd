@@ -343,7 +343,9 @@ supplier1
 
 Our intuition about the mean as an effective predictor is justified by the *principle of least squares*. Choosing the mean as a predictor in the null model will always minimize the sum of the squared residuals, or the *residual sum of squares*.
 
-Our small sample has six values. What if we had 100? Clearly, a larger sample means more opportunity for a large residual sum of squares. We'd like to have a measure for a "typical" squared residual. Our first thought is to divide by $n$, but we need to adjust for the complexity of the model as well as the sample size. The more complex the model, the more data is "used up" in fitting it (We're being intentionally informal here). Our measure of a "typical" squared residual is called a *mean square*; for the null model the appropriate divisor is $n-1$. Now we compute the mean square as the sum of the squared residuals divided by $n-1$.
+Our small sample has six values. What if we had 100? Clearly, a larger sample means more opportunity for a large residual sum of squares. We'd like to have a measure for a "typical" squared residual. Our first thought is to divide by $n$, but we need to adjust for the complexity of the model as well as the sample size. The more complex the model, the more data is "used up" in fitting it. Think of the data as currency; to fit a model you have to "spend" some of it. The more complex the model, the more data you need to spend.
+
+Our measure of a "typical" squared residual is called a *mean square*; for the null model the appropriate divisor is $n-1$. Now we compute the mean square as the sum of the squared residuals divided by $n-1$.
 
 ```{r}
 supplier1 |> 
@@ -362,6 +364,22 @@ The square root of the variance gives a measure of spread generically called the
 
 Important note: Always report results to a sensible precision. Software can churn out as many decimal places as you want, but excess decimal places just look silly. A good practice is to report one decimal place beyond the original data.
 
+Finally, we can partition the variation by computing the sum of the squared data values and the sum of the squared model values. We've already computed the residual sum of squares.
+
+```{r}
+supplier1 <- supplier1 |> 
+  mutate(data_sq = pct_waste^2,
+         model_sq = .fitted^2)
+supplier1 |> 
+  summarize(data_sum_sq = sum(data_sq),
+            model_sum_sq = sum(model_sq),
+            resid_sum_sq = sum(resid_sq))
+```
+
+Note that the model sum of squares (13.4) and the residual sum of squares (9.7) sum to the data sum of squares (23.1). This is not a coincidence. Like a right triangle, the following relationship holds for the models we will fit:
+
+$$\texttt{DATA}^2 = \texttt{FITTED}^2 + \texttt{RESIDUAL}^2$$
+
 We'll look at more streamlined ways to fit a model shortly. For now, let's summarize:
 
 -   The mean is the least-squares measure of the center of a distribution; that is, the mean minimizes the sum of the squared residuals from the null model (containing no predictors).
@@ -369,6 +387,8 @@ We'll look at more streamlined ways to fit a model shortly. For now, let's summa
 -   The variance is the mean squared residual from the null model.
 
 -   The standard deviation, the square root of the variance, is the residual standard error from the null model and has the same units as the data. The standard deviation measures spread about the mean.
+
+-   The variation in the data, as measured by the sum of squares, can partitioned into a sum of squares due to the model and a sum of squares corresponding to variation left unexplained.
 
 As noted in the text on page 98, at least 75% of a data set falls within two standard deviations of the mean; at least 89% falls within three standard deviations. The smaller the standard deviation, the more tightly the data are packed about their mean.
 
@@ -381,19 +401,40 @@ mosaic::sd(~ pct_waste, data = supplier1)
 
 Now we'll learn the specialized tools for fitting models. We'll begin with the null model and later apply these methods for more complex models.
 
+The operator for fitting models is `lm()` for "linear model." The syntax is
+
 $$\texttt{lm(y}\sim \texttt{x, data = mydata, ...)}$$
 
-Actually fit model
+where `y` is a response variable, `x` is one or more predictor variables, 'mydata' is the data set containing `y` and `x`, and the triple dot `...` represents additional arguments as needed.
+
+For the null model `x` is replaced by `1`. Let's fit the model using our example data.
 
 ```{r}
-lm0 <- lm(pct_waste ~ 1, data = supplier1)
-summary(lm0)
+lm_null <- lm(pct_waste ~ 1, data = supplier1)
 ```
 
-Introduce `augment()`
+The result is assigned to an object `lm_null`, which contains all information about the fitted model. We'll use `summary()` to get some information. Note that the argument is the model object.
 
 ```{r}
-broom::augment(lm0)
+summary(lm_null)
 ```
+
+First, look at the `Coefficients:` table, `(Intercept)` row, `Estimate` column. The entry is `1.495`, which is the mean percentage waste. The line `Residual standard error: 1.39 on 5 degrees of freedom`, for this model, means that the standard deviation is 1.39 and that the divisor for finding the mean square is 5; that is, 6 - 1. That's all we need for now.
+
+To see the variance, we call the `anova()` operator.
+
+```{r}
+anova(lm_null)
+```
+
+The number beneath `Mean Sq` is the variance; here 1.95.
+
+The `augment()` operator from the `broom` package creates a date set containing the fitted values and residuals. 
+
+```{r}
+broom::augment(lm_null)
+```
+
+We only need the first three columns: the first contains the data values, the `.fitted` column contains the model fit, and `.resid` contains the residuals. In Chapter 4, when we fit more interesting models, we'll see how to use this model data.
 
 ### 3.3.4 Plots of summary statistics
