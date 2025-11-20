@@ -481,6 +481,25 @@ The following code replicates Figure 3.22. For now, we'll focus on interpreting 
 ```{r}
 wood_joint <- table3_15 |> 
   # make wood and glue "factors" (categorical variables)
+  # order levels to match Figure 3.22
+  dplyr::mutate(wood = factor(wood, 
+                              levels = c("pine", "fir", "oak")),
+                glue = factor(glue, 
+                              levels = c("white", "carpenter's", "cascamite")))
+
+ggformula::gf_point(mean_strength ~ glue,
+                    data = wood_joint,
+                    group = ~ wood) |>
+  gf_line(linetype = ~ wood, 
+          show.legend = TRUE,
+          xlab = "Glue type",
+          ylab = "Strength (lb)") +
+  theme(aspect.ratio = 0.35)
+```
+
+```{r echo=FALSE, eval=FALSE}
+wood_joint <- table3_15 |> 
+  # make wood and glue "factors" (categorical variables)
   dplyr::mutate(wood = factor(wood, 
                               levels = c("pine", "fir", "oak")),
                 glue = factor(glue, 
@@ -505,9 +524,7 @@ The takeaways from this plot are
 
 This type of analysis is discussed in more detail in Section 4.4.
 
-The following code produces a black-and-white version of the same graph.
-
-```{r}
+```{r echo=FALSE, eval=FALSE}
 # black-and-white version
 emmeans::emmip(wood_joint_lm, 
                wood ~ glue, 
@@ -520,3 +537,52 @@ emmeans::emmip(wood_joint_lm,
                                           # oak = square
   theme(aspect.ratio = 0.62)
 ```
+
+### 3.4 Descriptive Statistics for Qualitative [Categorical] and Count Data
+
+UPDATE FUNCTION LIST
+TWEAK PLOTS
+ADD LABELS
+
+Figure 3.23, p. 108
+
+Note difference between gf_col and gf_bar
+
+```{r}
+ggformula::gf_col(connectors ~ category, data = table3_16,
+                  fill = "steelblue")
+```
+
+Figure 3.24, p. 108
+
+```{r}
+ggformula::gf_col(n_tools ~ problem, data = table3_17,
+                  fill = "steelblue")
+```
+
+Figure 3.25, p. 110
+
+```{r}
+ggformula::gf_col(pct ~ job, data = table3_18,
+                  fill = ~ type)
+```
+
+Figure 3.26, p. 111
+
+```{r}
+ggformula::gf_point(defects_truck ~ day,
+                    data = table3_19) |>
+  gf_line()
+```
+
+Figure 3.27, p. 112
+
+```{r}
+ggformula::gf_point(n_conform ~ shot_size,
+                    group = ~ mixture,
+                    data = table3_20) |>
+  gf_line(linetype = ~ mixture, 
+          show.legend = TRUE)
+```
+
+
