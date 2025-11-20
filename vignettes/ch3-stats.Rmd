@@ -69,7 +69,7 @@ mosaic::dotPlot(~ depth | grain, data = bullets,
 
 ### 3.1.2 Frequency Tables and Histograms
 
-The following produces the data for Example 1, page 70. Since the measurements for laid gears and hung gears are in separate columns, we need only retain the laid gears with `dplyr::select()`. The `cut()` function divides the range of a quantitative variable into intervals and codes the values according to which interval they fall. The `breaks()` argument uses the `seq()` function to generate the sequence 5, 9, 13, ..., 32 and define the intervals [5,9), [9,13), ..., [25,28). The result of using `cut()`is a factor variable with the intervals as levels.
+The following produces the data for Example 1, page +70. Since the measurements for laid gears and hung gears are in separate columns, we need only retain the laid gears with `dplyr::select()`. The `cut()` function divides the range of a quantitative variable into intervals and codes the values according to which interval they fall. The `breaks()` argument uses the `seq()` function to generate the sequence 5, 9, 13, ..., 32 and define the intervals [5,9), [9,13), ..., [25,28). The result of using `cut()`is a factor variable with the intervals as levels.
 
 ```{r}
 gears_laid <- table1_01 |> 
@@ -127,8 +127,8 @@ A run chart is a scatterplot where the horizontal variable represents time. Run 
 
 ```{r}
 gf_point(diameter ~ joint, data = table3_05) |> 
-  gf_line() +                # the + operator adds features to the graph
-  theme(aspect.ratio = 0.62) # this type of plot looks better this way
+  gf_line() +
+  theme(aspect.ratio = 0.62)
 ```
 
 ## 3.2 Quantiles and Related Graphical Tools
@@ -160,7 +160,7 @@ A quantile plot is a plot of $Q(p)$ against $p$. The following replicates Figure
 
 ```{r}
 ggformula::gf_point(strength ~ p, data = towels) |> 
-  gf_line() +               
+  gf_line() +
   theme(aspect.ratio = 0.62)
 ```
 
@@ -429,12 +429,94 @@ anova(lm_null)
 
 The number beneath `Mean Sq` is the variance; here 1.95.
 
-The `augment()` operator from the `broom` package creates a date set containing the fitted values and residuals. 
+Let's recap what we've done. In mathematical terms, the null model is represented as
+
+$$y \approx \mu$$
+
+read as "$y$ is approximately equal to $\mu$, where $\mu$ (Greek "m") is some constant. In the R language, the model is represented as
+
+$$\texttt{lm(y}\sim \texttt{1)}$$
+
+The model fitted from the data is
+
+$$\hat{y}=1.495$$
+
+where the "hat" above $y$ means "fitted" or "predicted."
+
+Now we'll examine the fitted values and residuals, using the `augment()` operator from the `broom` package to create a data set.
 
 ```{r}
 broom::augment(lm_null)
 ```
 
-We only need the first three columns: the first contains the data values, the `.fitted` column contains the model fit, and `.resid` contains the residuals. In Chapter 4, when we fit more interesting models, we'll see how to use this model data.
+We only need the first three columns: the first contains the data values, the `.fitted` column contains the model fit, and `.resid` contains the residuals. In the null model, the values for `.fitted` are all the same. In Chapter 4, when we fit more interesting models, we'll see how to use this model data.
 
 ### 3.3.4 Plots of summary statistics
+
+Plotting data values against time or the order of collection is a very useful technique. This code produces Figure 3.14 (p. 100). The graph shows the mean and range (maximum minus minimum) of 25 samples of five parts, each measuring a critical dimension of a metal part.
+
+```{r}
+# plot of means
+ggformula::gf_point(xbar ~ sample, data = table3_14,
+                    title = "Means chart",
+                    xlab = "Sample",
+                    ylab = "Mean") |> 
+  gf_line() +
+  theme(aspect.ratio = 0.62)
+# plot of ranges
+ggformula::gf_point(r ~ sample, data = table3_14,
+                    title = "Range chart",
+                    xlab = "Sample",
+                    ylab = "Range") |>
+  gf_line() +
+  theme(aspect.ratio = 0.62)
+```
+
+As discussed in the text, the means for samples 9 through 15 are much less than the other samples. 
+
+Example 9 (p. 101) discusses a student experiment studying the strength of glued wood joints with three woods and three glues. Figure 3.22 (p. 102) shows an **interaction plot**, which examines the pattern of differences between woods for each type of glue. In the graph, glues are the **x-factor** (the horizontal axis variable) and woods are the **trace factor** (the values connected with lines for each wood type).
+
+The following code replicates Figure 3.22. For now, we'll focus on interpreting the resulting graph.
+
+```{r}
+wood_joint <- table3_15 |> 
+  # make wood and glue "factors" (categorical variables)
+  dplyr::mutate(wood = factor(wood, 
+                              levels = c("pine", "fir", "oak")),
+                glue = factor(glue, 
+                              levels = c("white", "carpenter's", "cascamite")))
+
+# fit model predicting strength from wood and glue combined
+wood_joint_lm <- lm(mean_strength ~ wood * glue, data = wood_joint)
+
+# make graph
+emmeans::emmip(wood_joint_lm, 
+               wood ~ glue,
+               xlab = "Glue type",
+               ylab = "Strength (lb)") +
+  theme(aspect.ratio = 0.62)
+```
+
+The takeaways from this plot are
+
+-   The differences in strength between pine and fir are roughly the same for all glue types.
+
+-   The gluing properties of oak are very different from those of pine and fir.
+
+This type of analysis is discussed in more detail in Section 4.4.
+
+The following code produces a black-and-white version of the same graph.
+
+```{r}
+# black-and-white version
+emmeans::emmip(wood_joint_lm, 
+               wood ~ glue, 
+               xlab = "Glue type",
+               ylab = "Strength (lb)",
+               # additional arguments for black-and-white
+               col = "black",    
+               linearg = list(), # pine = solid, fir = dashed, oak = longdash
+               dotarg = list(size = 2)) + # pine = dot, fir = triangle, 
+                                          # oak = square
+  theme(aspect.ratio = 0.62)
+```
