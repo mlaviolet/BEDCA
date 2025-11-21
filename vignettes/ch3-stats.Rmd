@@ -55,7 +55,7 @@ mosaic::dotPlot(~ Runout | Treatment, data = gears,
                 xlab = "Runout (0.0001 in.)")
 ```
 
-Example 2 discusses a study to compare penetration depths of .45 caliber bullets fired into oak wood. Data appear in Table 3.1 (p. 67) and Section 3.1, Exercise 2 (p. 77). Note that in `table3_01` the 230-grain bullets and the 200-grain bullets are in separate columns. For analysis and graphics we need to reshape the data into "tidy" format. The following code produces a new data set `bullets` with two columns: one (`grain`) for the type of bullet and a second (`depth`) for the depth measurements. This format allows us to group numeric and graphic output by bullet type. After reshaping, we can do a grouped dot diagram.
+Example 2 discusses a study to compare penetration depths of .45 caliber bullets fired into oak wood. Data appear in Table 3.1 (p. 67). Note that in `table3_01` the 230-grain bullets and the 200-grain bullets are in separate columns. For analysis and graphics we need to reshape the data into "tidy" format. The following code produces a new data set `bullets` with two columns: one (`grain`) for the type of bullet and a second (`depth`) for the depth measurements. This format allows us to group numeric and graphic output by bullet type. After reshaping, we can do a grouped dot diagram.
 
 ```{r}
 bullets <- table3_01 |> 
@@ -69,7 +69,7 @@ mosaic::dotPlot(~ depth | grain, data = bullets,
 
 ### 3.1.2 Frequency Tables and Histograms
 
-The following produces the data for Example 1, page +70. Since the measurements for laid gears and hung gears are in separate columns, we need only retain the laid gears with `dplyr::select()`. The `cut()` function divides the range of a quantitative variable into intervals and codes the values according to which interval they fall. The `breaks()` argument uses the `seq()` function to generate the sequence 5, 9, 13, ..., 32 and define the intervals [5,9), [9,13), ..., [25,28). The result of using `cut()`is a factor variable with the intervals as levels.
+The following produces the data for Example 1, page 70. Since the measurements for laid gears and hung gears are in separate columns, we need only retain the laid gears with `dplyr::select()`. The `cut()` function divides the range of a quantitative variable into intervals and codes the values according to which interval they fall. The `breaks()` argument uses the `seq()` function to generate the sequence 5, 9, 13, ..., 32 and define the intervals [5,9), [9,13), ..., [25,28). The result of using `cut()`is a factor variable with the intervals as levels.
 
 ```{r}
 gears_laid <- table1_01 |> 
@@ -86,7 +86,7 @@ gears_laid <- table1_01 |>
 Now we compute the frequencies, relative frequencies, and cumulative relative frequencies from Table 3.2 on page 70:
 
 ```{r}
-options(digits = 3) # check this out
+options(digits = 3)
 gears_laid |> 
   dplyr::count(grp, .drop = FALSE) |>  # show intervals with zero count
   dplyr::mutate(rel_freq = n / sum(n), # divide count by number of runouts
@@ -145,7 +145,7 @@ The R function `quantile()` computes quantiles without the need for manual linea
 mosaic::quantile(~ strength, data = table3_06, probs = c(0.33, 0.67))
 ```
 
-Note: The discreteness of finite data sets complicates the process of finding arbitrary quantiles. End users generally don't need to be concerned unless they need a definition for a specific purpose. Just for the record, R provides nine different algorithms for computing quantiles. The R default is "Type 7" and the text's definition is "Type 5."
+Note: The discreteness of finite data sets complicates the process of finding arbitrary quantiles. End users generally don't need to be concerned unless they need a definition for a specific purpose. Just for the record, R provides nine different algorithms for computing quantiles from discrete data. The R default is "Type 7" and the text's definition is "Type 5."
 
 The R function to find the $i$th smallest data point is `rank()`. The smallest value is rank 1; the second-smallest rank 2; etc. The following code computes the data quantiles shown in Table 3.7 (p. 79).
 
@@ -231,7 +231,7 @@ towels <- towels |>
 towels
 ```
 
-Now we plot the normal distribution quantiles (called `z`) against the paper towel breaking strengths.
+Now we plot the normal distribution quantiles (called `z`) against the paper towel breaking strengths. This is Figure 3.18, p. 90.
 
 ```{r}
 ggformula::gf_point(z ~ strength, data = towels,
@@ -343,9 +343,9 @@ supplier1
 
 Our intuition about the mean as an effective predictor is justified by the *principle of least squares*. Choosing the mean as a predictor in the null model will always minimize the sum of the squared residuals, or the *residual sum of squares*.
 
-Our small sample has six values. What if we had 100? Clearly, a larger sample means more opportunity for a large residual sum of squares. We'd like to have a measure for a "typical" squared residual. Our first thought is to divide by $n$, but we need to adjust for the complexity of the model as well as the sample size. The more complex the model, the more data is "used up" in fitting it. Think of the data as currency; to fit a model you have to "spend" some of it. The more complex the model, the more data you need to spend.
+Our small sample has six values. What if we had 100? Clearly, a larger sample means more opportunity for a large residual sum of squares. We'd like to have a measure for a "typical" squared residual. Our first thought is to divide by $n$, but we need to adjust for the complexity of the model as well as the sample size. The more complex the model, the more data is "used up" in fitting it. Think of the data as currency; to fit a model you have to "spend" some of it. Spending data effectively reduces the sample size. The more complex the model, the more data you need to spend and the more the sample size decreases. We'll see how this works when we fit other models.
 
-Our measure of a "typical" squared residual is called a *mean square*; for the null model the appropriate divisor is $n-1$. Now we compute the mean square as the sum of the squared residuals divided by $n-1$.
+Our measure of a "typical" squared residual is called a *mean square*; for the null model the appropriate divisor is $n-1$ instead of $$n. Now we compute the mean square as the sum of the squared residuals divided by $n-1$.
 
 ```{r}
 supplier1 |> 
@@ -357,7 +357,8 @@ For the null model the residual mean square has a special name: the *variance*. 
 ```{r}
 supplier1 |> 
   summarize(resid_mean_sq = sum(resid_sq) / (length(resid_sq) - 1)) |> 
-  sqrt()
+  sqrt() |> 
+  setNames("resid_std_err") # change name
 ```
 
 The square root of the variance gives a measure of spread generically called the *residual standard error* and has the same units as the original data. For the null model, the residual standard error has a special name: the *standard deviation*. We can summarize our data as having a mean of 1.495 and a standard deviation of 1.394. See the results on pages 93 and 96 of the textbook.
@@ -405,7 +406,7 @@ The operator for fitting models is `lm()` for "linear model." The syntax is
 
 $$\texttt{lm(y}\sim \texttt{x, data = mydata, ...)}$$
 
-where `y` is a response variable, `x` is one or more predictor variables, 'mydata' is the data set containing `y` and `x`, and the triple dot `...` represents additional arguments as needed.
+where `y` is a response variable, `x` is one or more predictor variables, 'mydata` is the data set containing `y` and `x`, and the triple dot `...` represents additional arguments as needed.
 
 For the null model `x` is replaced by `1`. Let's fit the model using our example data.
 
@@ -474,9 +475,9 @@ ggformula::gf_point(r ~ sample, data = table3_14,
 
 As discussed in the text, the means for samples 9 through 15 are much less than the other samples. 
 
-Example 9 (p. 101) discusses a student experiment studying the strength of glued wood joints with three woods and three glues. Figure 3.22 (p. 102) shows an **interaction plot**, which examines the pattern of differences between woods for each type of glue. In the graph, glues are the **x-factor** (the horizontal axis variable) and woods are the **trace factor** (the values connected with lines for each wood type).
+Example 9 (p. 101) discusses a student experiment studying the strength of glued wood joints with three woods and three glues. Figure 3.22 (p. 102) shows an *interaction plot*, which examines the pattern of differences between woods for each type of glue. In the graph, glues are the *x-factor* (the horizontal axis variable) and woods are the *trace factor* (the values connected with lines for each wood type).
 
-The following code replicates Figure 3.22. For now, we'll focus on interpreting the resulting graph.
+The following code replicates Figure 3.22. In the `gf_line()` operator, `mean_strength` is the variable to plotted, `glue` is the x-factor, and `wood` is the trace factor.
 
 ```{r}
 wood_joint <- table3_15 |> 
@@ -500,6 +501,7 @@ ggformula::gf_point(mean_strength ~ glue,
 ```{r echo=FALSE, eval=FALSE}
 wood_joint <- table3_15 |> 
   # make wood and glue "factors" (categorical variables)
+  # reorder levels to match order in textbook
   dplyr::mutate(wood = factor(wood, 
                               levels = c("pine", "fir", "oak")),
                 glue = factor(glue, 

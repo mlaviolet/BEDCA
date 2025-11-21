@@ -48,13 +48,16 @@ levels()
 
 Graphs
 ------
+ggformula::gf_bar()
 ggformula::gf_boxplot()
+ggformula::gf_col()
 ggformula::gf_histogram()
 ggformula::gf_jitter()
 ggformula::gf_line()
 ggformula::gf_point()
 ggformula::gf_qq()
 ggplot2::coord_flip()
+ggplot2::theme()
 mosaic::dotPlot()
 
 Model fitting
