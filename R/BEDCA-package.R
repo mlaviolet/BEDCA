@@ -457,7 +457,7 @@ NULL
 #'   \item{stack}{Stack loss}
 #'   }
 #'
-#' @note Brownlee's stack loss data, presented here with 17 cases instead of the usual 21. Complete data are available as \code{datasets::stackloss}.
+#' @note Brownlee's stack loss data, presented here with 4 cases of 21 omitted. Complete data are available as \code{datasets::stackloss}. Omitted rows are 1, 3, 4, 21.
 #'
 #' @source Vardeman SB & Jobe MJ (2023) \emph{Basic Engineering Data Collection and Analysis}
 #' \url{https://www.iastatedigitalpress.com/plugins/books/127/}, p. 150

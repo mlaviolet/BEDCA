@@ -24,7 +24,7 @@ data(table4_08)
 Table 4.8
 }
 \note{
-Brownlee's stack loss data, presented here with 17 cases instead of the usual 21. Complete data are available as \code{datasets::stackloss}.
+Brownlee's stack loss data, presented here with 4 cases of 21 omitted. Complete data are available as \code{datasets::stackloss}. Omitted rows are 1, 3, 4, 21.
 }
 \examples{
 data(table4_08)
