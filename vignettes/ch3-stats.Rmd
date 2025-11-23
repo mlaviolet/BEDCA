@@ -400,6 +400,14 @@ mosaic::mean(~ pct_waste, data = supplier1)
 mosaic::sd(~ pct_waste, data = supplier1)
 ```
 
+Other summary statistics are computed similarly. The mathematical formulas for the sample mean and standard deviation are:
+
+$$\text{Mean: } \bar{x} = \frac{x_1 + x_2+ \ldots + x_n}{n} = \frac{1}{n} \sum_{i=1}^{n}x_i$$
+
+$$\text{Variance: }s^2=\frac{1}{n-1} \sum_{i=1}^{n}(x_i-\bar{x})^2$$
+
+$$\text{Standard deviation: } s = \sqrt{s^2}$$
+
 Now we'll learn the specialized tools for fitting models. We'll begin with the null model and later apply these methods for more complex models.
 
 The operator for fitting models is `lm()` for "linear model." The syntax is
