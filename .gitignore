@@ -1,5 +1,5 @@
 .Rproj.user
 .Rhistory
 .Ruserdata
-scratch.R
 inst/doc
+R/scratch.R
