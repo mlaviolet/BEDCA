@@ -30,7 +30,7 @@ Chapter 3 discusses elementary graphical and numerical summaries: dot diagrams, 
 
 ### 3.1.1 Dot diagrams
 
-Example 1 (p. 67) of this chapter revisits the heat-treating process for gears introduced in Chapter 1. As noted there, the data for the two gear treatments appear in separate columns, which is not amenable for analysis. Data must be reshaped into tidy format, with one column (`Treatment`) for the treatment type and a second (`Runout`) for the runout measurements.
+Example 1 (p. 67) of this chapter revisits the heat-treating process for gears introduced in Chapter 1. As noted there, the data for the two gear treatments appear in separate columns, which is not amenable for analysis. Data must be reshaped into "tidy" format, with one column (`Treatment`) for the treatment type and a second (`Runout`) for the runout measurements.
 
 ```{r}
 gears <- table1_01 |> 
@@ -46,7 +46,7 @@ The best way to make a dot diagram is with the `dotPlot` function from the `mosa
 
 $$\texttt{dotPlot(}\sim \texttt{y | z, data = mydata)}$$
 
-where `y` is the variable to be plotted and `z` is a panel variable; that is, separate plots are produced for each level of `z`.
+where `y` is the variable to be plotted and `z` is a panel variable; that is, separate plots are produced for each level of `z`. The tilde `~` is part of the syntax for a *modeling formula*, which will be explained shortly.
 
 This code replicates Figure 3.1 (p. 67). Note the `xlab` argument: always put meaningful labels on your graphs.
 
@@ -62,6 +62,11 @@ bullets <- table3_01 |>
       tidyr::pivot_longer(cols = everything(), 
                           names_to = "grain",
                           values_to = "depth")
+```
+
+This code produces a dot diagram similar to Figure 3.2, page 68. The `nint` argument specifies the number of intervals to use.
+
+```{r}
 mosaic::dotPlot(~ depth | grain, data = bullets,
                 nint = 12,
                 xlab = "Penetration depth (mm)")
@@ -83,7 +88,13 @@ gears_laid <- table1_01 |>
                           right = FALSE))
 ```
 
-Now we compute the frequencies, relative frequencies, and cumulative relative frequencies from Table 3.2 on page 70:
+For a quick look at the frequency distribution, use the `summary()` operator on the `grp` variable.
+
+```{r}
+summary(gears_laid$grp)
+```
+
+Now compute the frequencies, relative frequencies, and cumulative relative frequencies from Table 3.2 on page 70:
 
 ```{r}
 options(digits = 3)
@@ -95,11 +106,19 @@ gears_laid |>
 
 Table 3.3 (p. 71) is constructed in a similar manner. Try it!
 
-Figure 3.6 (p. 72) is a histogram of penetration depths for the 200-grain bullets. Since we already have the data reshaped, we'll do comparative histograms using both bullet types. The `gf_histogram()` function does the work of dividing the measurements into intervals. Usually the function makes good choices but we can refine the graph by specifying the number of intervals with the `bins` argument.
+Figure 3.6 (p. 72) is a histogram of penetration depths for the 200-grain bullets. The `gf_histogram()` function does the work of dividing the measurements into intervals. Usually the function makes good choices but we can refine the graph by specifying the intervals with the `breaks` argument. We can also specify the number of intervals with the `bins` argument and the interval length with `binwidth`.
+
+```{r}
+ggformula::gf_histogram(~ G200, data = table3_01,
+                        breaks = seq(58, 72, 2),
+                        xlab = "Penetration depth (mm)")
+```
+
+We can also do comparative histograms with the reshaped data. To put both graphs on the same scale, specify `breaks` to cover the range of depths for both tipes.
 
 ```{r}
 ggformula::gf_histogram(~ depth | grain, data = bullets,
-                        bins = 7, # use 7 intervals
+                        breaks = seq(26, 72, 2),
                         xlab = "Penetration depth (mm)")
 ```
 
@@ -172,7 +191,7 @@ Most of this section uses the bullet penetration depth data from Table 3.1. The 
 mosaic::favstats(depth ~ grain, data = bullets)
 ```
 
-The first five numbers shown are known as the *five-number summary*: minimum, first quartile (Q1), median, third quartile (Q3), maximum. The range is the difference maximum - minimum. The interquartile range (IQR) is the difference Q3 - Q1; that is, the IQR is the range of the middle 50% of the data.
+The first five numbers shown are known as the *five-number summary*: minimum, first quartile (Q1), median, third quartile (Q3), maximum. The range is the difference maximum - minimum. The *interquartile range* (IQR) is the difference Q3 - Q1; that is, the IQR is the range of the middle 50% of the data.
 
 ```{r}
 mosaic::IQR(depth ~ grain, data = bullets)
@@ -184,7 +203,7 @@ This is the procedure for constructing a boxplot, also known as a box-and-whiske
 
 -   The median is shown as a line inside the box.
 
--   The whiskers extend from the ends of the box to the minimum and maximum, unless any values are more than 1.5 box lengths from the end of the box. In that case, the whiskers extend only to the most extreme value within 1.5 box lengths and the values outside that range are plotted separately as outliers.
+-   The whiskers extend from the ends of the box to the minimum and maximum, unless any values are more than 1.5 box lengths from the nearest end of the box. In that case, the whiskers extend only to the most extreme value within 1.5 box lengths and the values outside that range are plotted separately as outliers.
 
 Boxplots are typically used for comparing distributions. Here's the code to produce Figure 3.14 on page 85.
 
@@ -197,8 +216,6 @@ ggformula::gf_boxplot(depth ~ grain, data = bullets,
 Note that Figure 3.14 shows one outlier among the 200-grain bullets, while the R boxplot shows two. This difference is minor; due to roundoff in the text's manual calculations or differences in the algorithm for computing quantiles.
 
 ### 3.2.3 Q-Q Plots and Comparing Distributional Shapes
-
-Normal plot, p. 90
 
 This section discusses quantile plots as a means for comparing the shapes of distributions. In practce, quantiles of the data are plotted against the quantiles of a theoretical distribution. The theoretical distribution most used for this purpose is the *normal* distribution, which has the distinctive bell shape.
 
@@ -251,7 +268,7 @@ ggformula::gf_qq(~ strength, data = towels,
 
 The `gf_qq()` function can also used to plot other distributions; the normal distribution is the default. These plots are discussed in detail in Section 5.3.
 
-The default behavior also places the data on the vertical axis and the normal quantiles on the horizontal, which is the opposite of the text. The `coord_flip()` function will replicate the format in the text. Note that the labels are flipped along with the points.
+Note: The default behavior of `gf_qq()` places the data on the vertical axis and the normal quantiles on the horizontal, which is the opposite of the text. The `coord_flip()` function will replicate the format in the text. Note that the labels are flipped along with the points.
 
 ## 3.3 Standard Numerical Summary Measures
 
@@ -259,7 +276,7 @@ The previous section presented measures of center and spread based on position: 
 
 ### 3.3.1 Measures of location
 
-The median and the mean (as statisticians like to call the average) are the two most common methods for identifying the "center" of a data set. The respective R functions are `median()` and `mean()`. The primary example in this section deals with percentage of waste on bulk paper rolls purchased from two different suppliers. To find the median by group with the formula interface, use `mosaic::median()`.
+The median and the mean (as statisticians like to call the average) are the two most common methods for identifying the "center" of a variable. The respective R functions are `median()` and `mean()`. The primary example in this section deals with percentage of waste on bulk paper rolls purchased from two different suppliers. To find the median by group with the formula interface, use `mosaic::median()`.
 
 ```{r}
 mosaic::median(pct_waste ~ supplier, data = table3_13)
@@ -305,7 +322,11 @@ supplier1
 
 Chapter 2 introduced the taxonomy of variables. The variable of primary interest is called a *response variable*. The goal is to develop a model that predicts the response from other variables. Variables to which a researcher assigns values are called *experimental variables*, while variables not managed in the study are called *concomitant variables* or *covariates*. Experimental variables and covariates are collectively called *predictor variables* or *predictors*.
 
-R uses formulas to define models. The general format for a model is `y ~ x`, where `y` is the response variable and `x` is one or more predictors. We'll start with the simplest possible model: one with no predictors. This model is called the \*null model\*. Developing the procedures for the null model will help us to understand more complex models.
+R uses *formulas* to define models. The general format for a formula is
+
+$$\texttt{y} \sim \texttt{x}$$
+
+where `y` is the response variable and `x` is one or more predictors. We'll start with the simplest possible model: one with no predictors. This model is called the *null model*. Developing procedures for the null model will help us to understand more complex models.
 
 Return to the waste data for Supplier 1 and suppose you had to predict the percent waste for the next shipment, so you have to choose a single number. How would you choose? Most people would use the average percent waste for a prediction. This turns out to be a sound choice, for reasons we'll develop shortly.
 
@@ -345,14 +366,14 @@ Our intuition about the mean as an effective predictor is justified by the *prin
 
 Our small sample has six values. What if we had 100? Clearly, a larger sample means more opportunity for a large residual sum of squares. We'd like to have a measure for a "typical" squared residual. Our first thought is to divide by $n$, but we need to adjust for the complexity of the model as well as the sample size. The more complex the model, the more data is "used up" in fitting it. Think of the data as currency; to fit a model you have to "spend" some of it. Spending data effectively reduces the sample size. The more complex the model, the more data you need to spend and the more the sample size decreases. We'll see how this works when we fit other models.
 
-Our measure of a "typical" squared residual is called a *mean square*; for the null model the appropriate divisor is $n-1$ instead of \$\$n. Now we compute the mean square as the sum of the squared residuals divided by $n-1$.
+Our measure of a "typical" squared residual is called a *mean square*; for the null model the appropriate divisor is *n* - 1 instead of *n*. Now we compute the mean square as the sum of the squared residuals divided by *n* - 1.
 
 ```{r}
 supplier1 |> 
   summarize(resid_mean_sq = sum(resid_sq) / (length(resid_sq) - 1))
 ```
 
-For the null model the residual mean square has a special name: the *variance*. So in this case, our prediction is 1.495 percent and the variance is 1.945 ... what? The units of variance are the squared units of the data, which is not intuitive. To get back to the original units, take the square root.
+For the null model the residual mean square has a special name: the *variance*. So in this case, our predicted waste is 1.495 percent and the variance is 1.945 ... what? The units of variance are the squared units of the data, which is not intuitive. To get back to the original units, take the square root.
 
 ```{r}
 supplier1 |> 
@@ -383,7 +404,7 @@ $$\texttt{DATA}^2 = \texttt{FITTED}^2 + \texttt{RESIDUAL}^2$$
 
 We'll look at more streamlined ways to fit a model shortly. For now, let's summarize:
 
--   The mean is the least-squares measure of the center of a distribution; that is, the mean minimizes the sum of the squared residuals from the null model (containing no predictors).
+-   The mean is the least-squares measure of the center of a distribution; that is, the mean minimizes the sum of the squared residuals from the null model containing no predictors.
 
 -   The variance is the mean squared residual from the null model.
 
@@ -391,7 +412,7 @@ We'll look at more streamlined ways to fit a model shortly. For now, let's summa
 
 -   The variation in the data, as measured by the sum of squares, can partitioned into a sum of squares due to the model and a sum of squares corresponding to variation left unexplained.
 
-As noted in the text on page 98, at least 75% of a data set falls within two standard deviations of the mean; at least 89% falls within three standard deviations. The smaller the standard deviation, the more tightly the data are packed about their mean.
+As noted in the text on page 98, at least 75% of a data set always falls within two standard deviations of the mean; at least 89% always falls within three standard deviations. The smaller the standard deviation, the more tightly the data are packed about their mean.
 
 We can compute the mean and standard deviation directly with the following:
 
@@ -408,13 +429,13 @@ $$\text{Variance: }s^2=\frac{1}{n-1} \sum_{i=1}^{n}(x_i-\bar{x})^2$$
 
 $$\text{Standard deviation: } s = \sqrt{s^2}$$
 
-Now we'll learn the specialized tools for fitting models. We'll begin with the null model and later apply these methods for more complex models.
+Now we'll learn the specialized tools for fitting models. We'll begin with the null model and later apply these methods to more complex models.
 
 The operator for fitting models is `lm()` for "linear model." The syntax is
 
 $$\texttt{lm(y}\sim \texttt{x, data = mydata, ...)}$$
 
-where `y` is a response variable, `x` is one or more predictor variables, 'mydata`is the data set containing`y`and`x`, and the triple dot`...\` represents additional arguments as needed.
+where `y` is a response variable, `x` is one or more predictor variables, `mydata` is the data set containing`y`and`x`, and the triple dot `...` represents additional arguments as needed.
 
 For the null model `x` is replaced by `1`. Let's fit the model using our example data.
 
@@ -422,13 +443,15 @@ For the null model `x` is replaced by `1`. Let's fit the model using our example
 lm_null <- lm(pct_waste ~ 1, data = supplier1)
 ```
 
-The result is assigned to an object `lm_null`, which contains all information about the fitted model. We'll use `summary()` to get some information. Note that the argument is the model object.
+The result is assigned to an object `lm_null`, which contains all information about the fitted model. The `summary()` operator produces a report on the fitted model. Note that the argument is the model object.
 
 ```{r}
 summary(lm_null)
 ```
 
-First, look at the `Coefficients:` table, `(Intercept)` row, `Estimate` column. The entry is `1.495`, which is the mean percentage waste. The line `Residual standard error: 1.39 on 5 degrees of freedom`, for this model, means that the standard deviation is 1.39 and that the divisor for finding the mean square is 5; that is, 6 - 1. That's all we need for now.
+**RESUME HERE**
+
+The formula First, look at the `Coefficients:` table, `(Intercept)` row, `Estimate` column. The entry is `1.495`, which is the mean percentage waste. The line `Residual standard error: 1.39 on 5 degrees of freedom`, for this model, means that the standard deviation is 1.39 and that the divisor for finding the mean square is 5; that is, 6 - 1. That's all we need for now.
 
 To see the variance, we call the `anova()` operator.
 
