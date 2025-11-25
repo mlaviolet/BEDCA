@@ -26,5 +26,124 @@ theme_set(theme_bw())
 
 ## 4.1: Fitting a Line by Least Squares
 
+Table 4.1, p. 124 Note units of pressure changed to psi x 1000
+
+Scatterplot
+
+```{r}
+ggformula::gf_point(density ~ pressure, data = table4_01,
+                    xlab = "Pressure (psi x 1000)",
+                    ylab = "Density (g/cc)")
+```
+
+Fit line
+
+```{r}
+lm_density <- lm(density ~ 1 + pressure, data = table4_01)
+```
+
+Regression report, brief
+
+```{r}
+mosaic::msummary(lm_density)
+```
+
+Model, hypothetical $$y \approx \beta_0 + \beta_1 x $$
+
+Model, fitted
+
+$$\hat{y} = b_0 + b_1 x $$
+
+Model in R formula language
+
+$$\texttt{y} \sim \texttt{1 + x}$$ R code for model
+
+$$\texttt{lm(y}\sim\texttt{1 + x)}$$
+
+Obtain results
+
+$$\texttt{density = 2.37 + 0.0487}\times \texttt{pressure}$$
+
+Correlation coefficient
+
+$$r = \frac{1}{n-1}\sum_{i=1}^{n}\left(\frac{x_i-\bar{x}}{s_x}\right)\left(\frac{y_i-\bar{y}}{s_y}\right)$$
+
+```{r}
+mosaic::cor(pressure ~ density, data = table4_01)
+```
+
+Facts about the correlation coefficient $r$
+
+-    $-1 \le r\le 1$ ; $r$ equals 1 (-1) when all points fall on a line with positive (negative) slope
+
+-   $r$ does not depend on which variable is the response and which is the predictor; that is, the correlation between $x$ and $y$ is the same as the correlation between $y$ and $x$
+
+-   $r$ has no units
+
+-   $r$ measures linear association specifically, not association in general
+
+Formulas for regression coefficients
+
+$$\hat{y}= b_0 + b_1x$$ where
+
+$$\text{Slope: } b_1 = r\frac{s_y}{s_x}$$
+
+$$\text{Intercept: } b_0 = \bar{y}-b_1\bar{x}$$
+
+```{r}
+tidy(lm_density)
+glance(lm_density)
+```
+
+Get residuals data = original_data
+
+```{r}
+lm_density_aug <- augment(lm_density)
+lm_density_aug
+```
+
 ## 4.2: Fitting Curves and Surfaces by Least Squares
+
+### 4.2.1 Curve Fitting by Least Squares
+
+Correlation coefficient is nearly zero
+
+```{r}
+cor(strength ~ percent, data = table4_03)
+```
+
+Fitting quadratic to data in Table 4.3, p. 133 Actually multiple regression
+
+```{r}
+fly_ash_q <- lm(strength ~ 1 + percent + I(percent^2), data = table4_03)
+mosaic::msummary(fly_ash_q)
+```
+
+Using orthogonal polynomials
+
+```{r}
+# x values are equally spaced, so okay
+fly_ash_q2 <- lm(strength ~ 1 + poly(percent, 2), data = table4_03)
+  mosaic::msummary(fly_ash_q2)
+```
+
+### 4.2.2 Surface Fitting by Least Squares
+
+Subset of Brownlee stack loss data
+
+```{r}
+lm(stack ~ 1 + air + water + acid, data = table4_08)
+```
+
+Three-surface configuration study
+
+```{r}
+lm(lift_drag ~ 1 + canard + tail + canard:tail)
+```
+
+Note shortcuts: intercept is not explicit; * operator for interaction
+
+Make graphs like Fig 4.16 (p. 157) showing different slopes
+
+
 
