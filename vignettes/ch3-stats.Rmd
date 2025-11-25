@@ -114,11 +114,10 @@ ggformula::gf_histogram(~ G200, data = table3_01,
                         xlab = "Penetration depth (mm)")
 ```
 
-We can also do comparative histograms with the reshaped data. To put both graphs on the same scale, specify `breaks` to cover the range of depths for both tipes.
+We can also do comparative histograms with the reshaped data. By default the scales of both graphs are the same.
 
 ```{r}
 ggformula::gf_histogram(~ depth | grain, data = bullets,
-                        breaks = seq(26, 72, 2),
                         xlab = "Penetration depth (mm)")
 ```
 
@@ -382,7 +381,7 @@ supplier1 |>
   setNames("resid_std_err") # change name
 ```
 
-The square root of the variance gives a measure of spread generically called the *residual standard error* and has the same units as the original data. For the null model, the residual standard error has a special name: the *standard deviation*. We can summarize our data as having a mean of 1.495 and a standard deviation of 1.394. See the results on pages 93 and 96 of the textbook.
+The square root of the variance gives a measure of spread generically called the *residual standard error* with the same units as the original data. For the null model, the residual standard error has a special name: the *standard deviation*. We can summarize our data as having a mean of 1.495 and a standard deviation of 1.394. See the results on pages 93 and 96 of the textbook.
 
 Important note: Always report results to a sensible precision. Software can churn out as many decimal places as you want, but excess decimal places just look silly. A good practice is to report one decimal place beyond the original data.
 
@@ -435,7 +434,7 @@ The operator for fitting models is `lm()` for "linear model." The syntax is
 
 $$\texttt{lm(y}\sim \texttt{x, data = mydata, ...)}$$
 
-where `y` is a response variable, `x` is one or more predictor variables, `mydata` is the data set containing`y`and`x`, and the triple dot `...` represents additional arguments as needed.
+The first argument is the model formula: `y` is a response variable and `x` is one or more predictor variables. `mydata` is the data set containing`y`and`x`, and the triple dot `...` represents additional arguments as needed.
 
 For the null model `x` is replaced by `1`. Let's fit the model using our example data.
 
@@ -443,15 +442,14 @@ For the null model `x` is replaced by `1`. Let's fit the model using our example
 lm_null <- lm(pct_waste ~ 1, data = supplier1)
 ```
 
-The result is assigned to an object `lm_null`, which contains all information about the fitted model. The `summary()` operator produces a report on the fitted model. Note that the argument is the model object.
+The result is assigned to an object `lm_null`, which contains all information about the fitted model. The information can be extracted in various ways; the `mosaic::msummary()` operator produces a brief report. Note that the argument is the model object.
 
 ```{r}
-summary(lm_null)
+mosaic::msummary(lm_null)
 ```
 
-**RESUME HERE**
-
-The formula First, look at the `Coefficients:` table, `(Intercept)` row, `Estimate` column. The entry is `1.495`, which is the mean percentage waste. The line `Residual standard error: 1.39 on 5 degrees of freedom`, for this model, means that the standard deviation is 1.39 and that the divisor for finding the mean square is 5; that is, 6 - 1. That's all we need for now.
+The formula specifies the structure of the model. The specific numbers for the model computed from the data are called *coefficients*. The null model has only one coefficient: the mean response, which in this case is 1.495. The coefficient is labelled `(Intercept)` for reasons you'll see in Section 4.1.
+The line `Residual standard error: 1.39 on 5 degrees of freedom`, for this model, means that the standard deviation is 1.39 and that the divisor for finding the mean square is 5; that is, 6 - 1. That's all we need for now.
 
 To see the variance, we call the `anova()` operator.
 
@@ -465,17 +463,15 @@ Let's recap what we've done. In mathematical terms, the null model is represente
 
 $$y \approx \mu$$
 
-read as "$y$ is approximately equal to $\mu$, where $\mu$ (Greek "m") is some constant. In the R language, the model is represented as
+read as "$y$ is approximately equal to $\mu$, where $\mu$ (Greek "m") is some constant. In the R language, the model is fitted with the `lm()` function.
 
 $$\texttt{lm(y}\sim \texttt{1)}$$
 
 The model fitted from the data is
 
-$$\hat{y}=1.495$$
+$$\texttt{pct_waste = 1.495%}$$
 
-where the "hat" above $y$ means "fitted" or "predicted."
-
-Now we'll examine the fitted values and residuals, using the `augment()` operator from the `broom` package to create a data set.
+Now we'll examine the fitted values and residuals, using the `augment()` operator from the `broom` package. This will create a data set containing fitted values, residuals and other information about the model data.
 
 ```{r}
 broom::augment(lm_null)
@@ -506,9 +502,9 @@ ggformula::gf_point(r ~ sample, data = table3_14,
 
 As discussed in the text, the means for samples 9 through 15 are much less than the other samples.
 
-Example 9 (p. 101) discusses a student experiment studying the strength of glued wood joints with three woods and three glues. Figure 3.22 (p. 102) shows an *interaction plot*, which examines the pattern of differences between woods for each type of glue. The plot is a line graph of responses against the levels of one factor (*x-factor*), grouped by levels of a second factor (*trace factor*).
+Example 9 (p. 101) discusses a student experiment studying the strength of glued wood joints with three woods and three glues. Figure 3.22 (p. 102) shows an *interaction plot*, which examines the pattern of differences between woods for each type of glue. The plot is a line graph of responses against the levels of one factor (*x factor*), grouped by levels of a second factor (*trace factor*).
 
-The following code replicates Figure 3.22 (p. 102). In the `gf_line()` operator, `mean_strength` is the variable to plotted, `glue` is the x-factor, and `wood` is the trace factor. First we change the character variables to factors.
+The following code replicates Figure 3.22 (p. 102). The variable to be plotted is `mean_strength`, `glue` is the x factor, and `wood` is the trace factor. First we change the character variables to factors.
 
 ```{r}
 wood_joint <- table3_15 |> 
@@ -520,9 +516,10 @@ wood_joint <- table3_15 |>
                               levels = c("white", "carpenter's", "cascamite")))
 
 ggformula::gf_point(mean_strength ~ glue, data = wood_joint,
-                    group = ~ wood,
-                    shape = ~ wood) |>
-  ggformula::gf_line(linetype = ~ wood, 
+                    # glue is x factor
+                    group = ~ wood, # wood is trace factor
+                    shape = ~ wood) |> # different symbol for each wood
+  ggformula::gf_line(linetype = ~ wood, # different line type for each wood
                      show.legend = TRUE,
                      xlab = "Glue type",
                      ylab = "Strength (lb)") +
@@ -548,12 +545,12 @@ connectors <- table3_16 |>
   mutate(p = connectors / 3000)
 
 ggformula::gf_col(p ~ category, data = connectors,
-                  fill = "steelblue",
+                  fill = "steelblue", # bar color
                   xlab = "Connector category",
                   ylab = "Fraction of connectors")
 ```
 
-Figure 3.24 (p. 108) is a bar chart of manufactured tools with various problems. Leaks are the most frequently occurring problems.
+Figure 3.24 (p. 108) is a bar chart of manufactured tools with various problems. The graph shows that leaks are the most frequently occurring problems.
 
 ```{r}
 tools <- table3_17 |> 
