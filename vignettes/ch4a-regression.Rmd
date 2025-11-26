@@ -32,7 +32,7 @@ In Example 1 (p. 124) a group of students studied the effects of varying pressin
 ggformula::gf_point(density ~ pressure, data = table4_01,
                     xlab = "Pressure (psi x 1000)",
                     ylab = "Density (g/cc)") |> 
-  ggformula::gf_lm(se = FALSE)
+  ggformula::gf_lm(se = FALSE) # show the "best-fit" line
 ```
 
 The `gf_lm()` operator adds the best fit line. Since that looks like a good fit, we'll proceed to fit the model
@@ -63,7 +63,7 @@ We can get more information using the `msummary()` operator from the `mosaic` pa
 mosaic::msummary(lm_density)
 ```
 
-The model is fit applying the least squares principle; the coefficients are computed to minimize the residual sum of squares. The column `Estimate` gives the coefficients. We'll discuss the details of computation shortly. 
+The model is fit applying the least squares principle; the coefficients are computed to minimize the residual sum of squares. The column `Estimate` gives the coefficients. We'll discuss the details of computation shortly.
 
 The slope is interpreted as the change in the response variable for an increase in the predictor variable of one unit. Here, for each increase of 1,000 (g/cc)/psi the density increases by 0.0487 g/cc. The intercept, the point at which the line crosses the *y*-axis, only makes practical sense if a pressure of 0 psi is meaningful. In almost all cases we focus attention on the slope.
 
@@ -86,9 +86,9 @@ pressure_new
 broom::augment(lm_density, newdata = pressure_new)
 ```
 
-Note that both the new predictor values are within the range of the data. Be extremely cautious if extrapolating outside that range.
+The `data.frame()` operator creates a data frame containing the desired predictor values; here, `pressure_new` is a data frame with one column `pressure` and two rows with the values 5 and 7.5. The column names must match those in the data used to fit the model.
 
-The `data.frame()` operator creates a data set containing the desired predictor values; here, we get a data frame with one column `pressure` and two rows with the values 5 and 7.5. The column names must match those in the data used to fit the model. 
+Note that the new predictor values are within the range of the data. Take extreme caution if extrapolating outside that range.
 
 In fitting any model, we need to check whether the model is a good fit to the data. Some subjectivity is involved, but we have tools from which we can make that determination. The most useful tool is to plot the residuals from the augmented data. First we'll plot the residuals against the fitted values.
 
@@ -123,19 +123,19 @@ $$\texttt{Degrees of freedom = sample size - number of model terms}$$
 
 For the density-pressure data we have $n$ = 15 and two model terms (slope and intercept), so degrees of freedom are 13 with a residual standard error of 0.01991.
 
-We can also partition the variation. Recall from Section 3.3 that 
+We can also partition the variation. Recall from Section 3.3 that
 
 $$\texttt{DATA}^2 = \texttt{FITTED}^2 + \texttt{RESIDUAL}^2$$
 
-We can obtain the partition using the `anova()` function. 
+We can obtain the partition using the `anova()` function.
 
 ```{r}
 anova(lm_density)
 ```
 
-The `Df` column sums to 14, although we have two model terms. This is because the null model is considered the baseline model. The total degrees of freedom will always be the number of model terms less one.
+The `Df` column sums to 14, although the sample size is 15. This is because the null model is considered the baseline model. The model degrees of freedom will always be the number of model terms less one.
 
-The "fitted" (model) and "residual" components are shown in the `Sum Sq` column. These add to a "total sum of squares," or `Sum Sq(total)` which R does not typically show. We can obtain the total sum of squares by multiplying the variance of the responses by the total degrees of freedom; that is, as $(n-1)s^2$. First we get the variance.
+The "fitted" (model) and "residual" components of variation are shown in the `Sum Sq` column. These add to a "total sum of squares," or `Sum Sq(total)` which R does not typically show. We can obtain the total sum of squares by multiplying the variance of the responses by the total degrees of freedom; that is, as $(n-1)s^2$. First we obtain the variance.
 
 ```{r}
 var(~ density, data = table4_01)  
@@ -143,15 +143,33 @@ var(~ density, data = table4_01)
 
 For the pressure-density data the sum of squares breakdown looks like this:
 
-
 $$(15-1) \times 0.020669 = 0.289366 = 0.284213 + 0.005153$$
 
 and the general rule is
 
 $$\texttt{Sum Sq(total) = Sum Sq(model) + Sum Sq(Residuals)}$$
 
-DISCUSSION OF R-SQUARED
+The last part of the report that we'll examine for now says `Multiple R-squared: 0.9822`. This is a measure of model fit formally called the *coefficient of determination*, but usually called "R-squared" for reasons we'll see shortly. R-squared is computed as
 
+$$R^2=\frac{\texttt{Sum Sq(model)}}{\texttt{Sum Sq(model) + Sum Sq(Residuals)}}$$
+
+The numerator is the variation due to the model, and the denominator is the total variation in the data. So R-squared is the proportion of variation in the data accounted for by the model. If the model fits the data perfectly, then it accounts for 100 percent of the variation and R-squared equals 1. If the model accounts for none of the variation in the data, then R-squared = 0 and the model is useless.
+
+R-squared is straightforward to interpret: it always falls between 0 and 1 and has no units. For the pressure-density data
+
+$$R^2=\frac{\texttt{0.284213}}{\texttt{0.284213 + 0.005153}} = \texttt{0.9822}$$
+
+so the model accounts for 98.2 percent of the variation in cylinder density.
+
+We'll look at the other parts of the regression report later. For now, in a simple linear regression
+
+-   The `Estimate` column contains the coefficients computed according to the least-squares principle. The *y*-intercept is labelled `(Intercept)`, and the slope is labelled with the name of the predictor *x* variable.
+
+-   `Residual standard error` (RSE) is the standard deviation of the residuals, computed with the divisor $n-2$. The smaller the RSE, the better the model fits the data.
+
+-   `Multiple R-squared` gives the proportion of variation in the data that is accounted for by the model. R-squared is always between 0 and 1. All else being equal, a high R-squared indicates a good fit to the data.
+
+$$\texttt{RESUME HERE}$$
 
 Model, fitted
 
@@ -164,7 +182,6 @@ $$\texttt{y} \sim \texttt{1 + x}$$ R code for model
 $$\texttt{lm(y}\sim\texttt{1 + x)}$$
 
 Obtain results
-
 
 Correlation coefficient
 
@@ -207,6 +224,14 @@ lm_density_aug
 ## 4.2: Fitting Curves and Surfaces by Least Squares
 
 ### 4.2.1 Curve Fitting by Least Squares
+
+Table 4.3, p. 133
+Figure 4.9, p. 143
+
+```{r}
+ggformula::gf_point(strength ~ percent, data = table4_03) |> 
+  gf_smooth(se = FALSE)
+```
 
 Correlation coefficient is nearly zero
 
