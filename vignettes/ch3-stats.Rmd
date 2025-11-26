@@ -340,7 +340,7 @@ Looking at the data values and the mean, we can make two obvious but important o
 
 -   Distinguishing variation explained by the model from variation left unexplained
 
-Another key observation is that some values are greater than the mean while others are less. The differences between each value and that predicted by the model are called the *residuals*. In other words, we can partiton each data value as
+Another key observation is that some values are greater than the mean while others are less. The differences between each value and that predicted by the model are called the *residuals*. In other words, we can partition each data value as
 
 $$\texttt{DATA = FITTED + RESIDUAL}$$
 
@@ -442,14 +442,21 @@ For the null model `x` is replaced by `1`. Let's fit the model using our example
 lm_null <- lm(pct_waste ~ 1, data = supplier1)
 ```
 
-The result is assigned to an object `lm_null`, which contains all information about the fitted model. The information can be extracted in various ways; the `mosaic::msummary()` operator produces a brief report. Note that the argument is the model object.
+The result is assigned to an object `lm_null`, which contains all information about the fitted model. The information can be extracted in various ways. Printing the model object gives bare-bones information.
+
+```{r}
+lm_null 
+```
+
+The `Call` section repeats the model we just fitted. The `Coefficients` section gives the numbers computed according to the least squares principle. The null model has only one coefficient: the mean response, shown here as 1.5. The coefficient is labelled `(Intercept)` for reasons you'll see in Section 4.1.
+
+The `mosaic::msummary()` operator gives more information. Note that the argument is the model object.
 
 ```{r}
 mosaic::msummary(lm_null)
 ```
 
-The formula specifies the structure of the model. The specific numbers for the model computed from the data are called *coefficients*. The null model has only one coefficient: the mean response, which in this case is 1.495. The coefficient is labelled `(Intercept)` for reasons you'll see in Section 4.1.
-The line `Residual standard error: 1.39 on 5 degrees of freedom`, for this model, means that the standard deviation is 1.39 and that the divisor for finding the mean square is 5; that is, 6 - 1. That's all we need for now.
+The sole coefficient is shown here as 1.495. The line `Residual standard error: 1.39 on 5 degrees of freedom` means that the standard deviation of the data values is 1.39 and the divisor for finding the mean square is 5; that is, $6-1$. That's all we need for now.
 
 To see the variance, we call the `anova()` operator.
 
@@ -469,7 +476,7 @@ $$\texttt{lm(y}\sim \texttt{1)}$$
 
 The model fitted from the data is
 
-$$\texttt{pct_waste = 1.495%}$$
+$$\texttt{pct_waste = 1.495}$$
 
 Now we'll examine the fitted values and residuals, using the `augment()` operator from the `broom` package. This will create a data set containing fitted values, residuals and other information about the model data.
 
