@@ -39,7 +39,7 @@ The `gf_lm()` operator adds the best fit line. Since that looks like a good fit,
 
 $$y \approx \beta_0 + \beta_1 x $$
 
-that is, a straight line with slope $\beta_1$ and *y*-intercept $\beta_0$.
+that is, a straight line with slope $\beta_1$ and *y*-intercept $\beta_0$. This model is called the *simple linear regression model*. "Simple" just means that the model has one quantitative predictor.
 
 The response variable is `density`. We began our discussion of models with the null model. Now we'll fit a model adding a term for the single predictor `pressure`.
 
@@ -47,17 +47,25 @@ The response variable is `density`. We began our discussion of models with the n
 lm_density <- lm(density ~ 1 + pressure, data = table4_01)
 ```
 
-We can get a brief summary of the fit using the `msummary()` operator from the `mosaic` package. The operator `summary()` will produce a more extensive summary that we don't need yet.
+We can get minimal information by printing the model object.
+
+```{r}
+lm_density
+```
+
+The `Call:` section repeats the model we fit. The `Coefficients` section gives the computed slope and intercept. In this case, the fitted model is
+
+$$\texttt{density = 2.37500 + 0.04867pressure}$$
+
+We can get more information using the `msummary()` operator from the `mosaic` package. The base R operator `summary()` will produce a more extensive summary that we don't need yet.
 
 ```{r}
 mosaic::msummary(lm_density)
 ```
 
-The model is fit applying the least squares principle; the coefficients are computed to minimize the residual sum of squares. The column `Estimate` gives the coefficients: the intercept and slope of the best fit line. In this case, the fitted model is
+The model is fit applying the least squares principle; the coefficients are computed to minimize the residual sum of squares. The column `Estimate` gives the coefficients. We'll discuss the details of computation shortly. 
 
-$$\texttt{density = 2.375 + 0.0487pressure}$$
-
-We'll discuss the details of computation shortly. The slope is interpreted as the change in the response variable for an increase in the predictor variable of one unit. Here, for each increase of 1,000 (g/cc)/psi the density increases by 0.0487 g/cc. The intercept, the point at which the line crosses the *y*-axis, only makes practical sense if a pressure of 0 psi is meaningful. In almost all cases we focus attention on the slope.
+The slope is interpreted as the change in the response variable for an increase in the predictor variable of one unit. Here, for each increase of 1,000 (g/cc)/psi the density increases by 0.0487 g/cc. The intercept, the point at which the line crosses the *y*-axis, only makes practical sense if a pressure of 0 psi is meaningful. In almost all cases we focus attention on the slope.
 
 As before, we can obtain fitted values and residuals with the `augment()` function from the `broom` package.
 
@@ -103,7 +111,47 @@ ggformula::gf_qq(~ .resid, data = lm_density_aug,
 
 As the authors note, some idiosyncracies in the residual plots warrant further investigation.
 
-Discussion of R-square
+Let's look at the rest of the brief summary.
+
+```{r}
+mosaic::msummary(lm_density)
+```
+
+The `Residual standard error` is the square root of the residual mean square. In the null model, we saw that the divisor for the residual mean square, called *degrees of freedom*, was $n-1$. For the simple linear regression model, the divisor is $n-2$. The general rule is
+
+$$\texttt{Degrees of freedom = sample size - number of model terms}$$
+
+For the density-pressure data we have $n$ = 15 and two model terms (slope and intercept), so degrees of freedom are 13 with a residual standard error of 0.01991.
+
+We can also partition the variation. Recall from Section 3.3 that 
+
+$$\texttt{DATA}^2 = \texttt{FITTED}^2 + \texttt{RESIDUAL}^2$$
+
+We can obtain the partition using the `anova()` function. 
+
+```{r}
+anova(lm_density)
+```
+
+The `Df` column sums to 14, although we have two model terms. This is because the null model is considered the baseline model. The total degrees of freedom will always be the number of model terms less one.
+
+The "fitted" (model) and "residual" components are shown in the `Sum Sq` column. These add to a "total sum of squares," or `Sum Sq(total)` which R does not typically show. We can obtain the total sum of squares by multiplying the variance of the responses by the total degrees of freedom; that is, as $(n-1)s^2$. First we get the variance.
+
+```{r}
+var(~ density, data = table4_01)  
+```
+
+For the pressure-density data the sum of squares breakdown looks like this:
+
+
+$$(15-1) \times 0.020669 = 0.289366 = 0.284213 + 0.005153$$
+
+and the general rule is
+
+$$\texttt{Sum Sq(total) = Sum Sq(model) + Sum Sq(Residuals)}$$
+
+DISCUSSION OF R-SQUARED
+
 
 Model, fitted
 
