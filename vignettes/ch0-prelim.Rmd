@@ -113,6 +113,8 @@ Nicholas J. Horton, Randall Pruim, and Daniel T. Kaplan (2018): [A Student's Gui
 
 Daniel T. Kaplan and Randall Pruim, [Statistical Modeling: A Fresh Approach](https://statistical-modeling.netlify.app)
 
+Harvey Motulsky: *Intuitive Biostatistics: A Nonmathematical Guide to Statistical Thinking* (4th. ed.) Oxford University Press. ISBN 978-0-19-064356-0 
+
 Randall Pruim, Daniel T. Kaplan, and Nicholas J. Horton (2017): "The `mosaic` package: Helping students to think with data using R", *The R Journal* 9(1), 77-102, <https://doi.org/10.32614/RJ-2017-024>
 
 Stephen B. Vardeman and J. Marcus Jobe (2001), *Basic Engineering Data Collection and Analysis*, Pacific Grove, CA: Brooks/Cole. Republished 2023 by [Iowa State University Digital Press](https://www.iastatedigitalpress.com/plugins/books/127/). ISBN 978-1-958291-03-0
