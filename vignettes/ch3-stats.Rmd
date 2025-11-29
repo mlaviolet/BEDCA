@@ -1,6 +1,7 @@
 ---
 title: "Chapter 3: Elementary Descriptive Statistics"
-output: rmarkdown::html_vignette
+# output: rmarkdown::html_vignette
+output: pdf_document
 vignette: >
   %\VignetteIndexEntry{Chapter 3: Elementary Descriptive Statistics}
   %\VignetteEngine{knitr::rmarkdown}
@@ -363,7 +364,7 @@ supplier1
 
 Our intuition about the mean as an effective predictor is justified by the *principle of least squares*. Choosing the mean as a predictor in the null model will always minimize the sum of the squared residuals, or the *residual sum of squares*.
 
-Our small sample has six values. What if we had 100? Clearly, a larger sample means more opportunity for a large residual sum of squares. We'd like to have a measure for a "typical" squared residual. Our first thought is to divide by $n$, but we need to adjust for the complexity of the model as well as the sample size. The more complex the model, the more data is "used up" in fitting it. Think of the data as currency; to fit a model you have to "spend" some of it. Spending data effectively reduces the sample size. The more complex the model, the more data you need to spend and the more the sample size decreases. We'll see how this works when we fit other models.
+Our small sample has six values. What if we had 100? Clearly, a larger sample means more opportunity for a large residual sum of squares. We'd like to have a measure for a "typical" squared residual. Our first thought is to divide by $n$, but we need to adjust for the complexity of the model as well as the sample size. The more complex the model, the more data is "used up" in fitting it. Think of the data as currency; to fit a model you have to "spend" some of it. Spending data has the effect of reducing the sample size. The more complex the model, the more data you need to spend and the more the sample size decreases. We'll see how this works when we fit other models.
 
 Our measure of a "typical" squared residual is called a *mean square*; for the null model the appropriate divisor is *n* - 1 instead of *n*. Now we compute the mean square as the sum of the squared residuals divided by *n* - 1.
 
@@ -372,7 +373,7 @@ supplier1 |>
   summarize(resid_mean_sq = sum(resid_sq) / (length(resid_sq) - 1))
 ```
 
-For the null model the residual mean square has a special name: the *variance*. So in this case, our predicted waste is 1.495 percent and the variance is 1.945 ... what? The units of variance are the squared units of the data, which is not intuitive. To get back to the original units, take the square root.
+For the null model the residual mean square has a special name: the *variance*. So in this case, our predicted waste is 1.49 percent and the variance is 1.94 ... what? The units of variance are the squared units of the data, which is not intuitive. To get back to the original units, take the square root.
 
 ```{r}
 supplier1 |> 
@@ -420,13 +421,7 @@ mosaic::mean(~ pct_waste, data = supplier1)
 mosaic::sd(~ pct_waste, data = supplier1)
 ```
 
-Other summary statistics are computed similarly. The mathematical formulas for the sample mean and standard deviation are:
-
-$$\text{Mean: } \bar{x} = \frac{x_1 + x_2+ \ldots + x_n}{n} = \frac{1}{n} \sum_{i=1}^{n}x_i$$
-
-$$\text{Variance: }s^2=\frac{1}{n-1} \sum_{i=1}^{n}(x_i-\bar{x})^2$$
-
-$$\text{Standard deviation: } s = \sqrt{s^2}$$
+Other summary statistics are computed similarly. 
 
 Now we'll learn the specialized tools for fitting models. We'll begin with the null model and later apply these methods to more complex models.
 
@@ -434,7 +429,7 @@ The operator for fitting models is `lm()` for "linear model." The syntax is
 
 $$\texttt{lm(y}\sim \texttt{x, data = mydata, ...)}$$
 
-The first argument is the model formula: `y` is a response variable and `x` is one or more predictor variables. `mydata` is the data set containing`y`and`x`, and the triple dot `...` represents additional arguments as needed.
+The first argument is the model formula: `y` is a response variable and `x` is one or more predictor variables. `mydata` is the data set containing`y` and `x`, and the triple dot `...` represents additional arguments as needed.
 
 For the null model `x` is replaced by `1`. Let's fit the model using our example data.
 
@@ -442,7 +437,7 @@ For the null model `x` is replaced by `1`. Let's fit the model using our example
 lm_null <- lm(pct_waste ~ 1, data = supplier1)
 ```
 
-The result is assigned to an object `lm_null`, which contains all information about the fitted model. The information can be extracted in various ways. Printing the model object gives bare-bones information.
+The result is assigned to an object `lm_null`, which contains all information about the fitted model. We can extract the information in various ways. Printing the model object gives bare-bones information.
 
 ```{r}
 lm_null 
@@ -466,25 +461,13 @@ anova(lm_null)
 
 The number beneath `Mean Sq` is the variance; here 1.95.
 
-Let's recap what we've done. In mathematical terms, the null model is represented as
-
-$$y \approx \mu$$
-
-read as "$y$ is approximately equal to $\mu$, where $\mu$ (Greek "m") is some constant. In the R language, the model is fitted with the `lm()` function.
-
-$$\texttt{lm(y}\sim \texttt{1)}$$
-
-The model fitted from the data is
-
-$$\texttt{pct_waste = 1.495}$$
-
-Now we'll examine the fitted values and residuals, using the `augment()` operator from the `broom` package. This will create a data set containing fitted values, residuals and other information about the model data.
+Now we'll examine the fitted values and residuals, using the `augment()` operator from the `broom` package. This will create  containing fitted values, residuals and other information about the model data.
 
 ```{r}
 broom::augment(lm_null)
 ```
 
-We only need the first three columns: the first contains the data values, the `.fitted` column contains the model fit, and `.resid` contains the residuals. In the null model, the values for `.fitted` are all the same. In Chapter 4, when we fit more interesting models, we'll see how to use this model data.
+We only need the first three columns: the first contains the data values, the `.fitted` column contains the model fit, and `.resid` contains the residuals. In the null model, the values for `.fitted` are all the same; specifically the mean response. In Chapter 4, when we fit more interesting models, we'll see how to use this model data.
 
 ### 3.3.4 Plots of summary statistics
 
@@ -605,3 +588,21 @@ ggformula::gf_point(p ~ shot_size, data = pellets,
                      xlab = "Shot size",
                      ylab = "Fraction of pellets nonconforming") 
 ```
+
+### The mathematics
+
+We've seen how our model works in computer terms. In mathematical terms, the null model is represented as
+
+$$y \approx \mu$$
+
+read as "$y$ is approximately equal to $\mu$, where $\mu$ (Greek "m") is a hypothetical constant. Hypothetical quantities are typically written as Greek letters.
+
+The mathematical formulas for the sample mean and standard deviation are:
+
+$$\text{Mean: } \bar{x} = \frac{x_1 + x_2+ \ldots + x_n}{n} = \frac{1}{n} \sum_{i=1}^{n}x_i$$
+
+$$\text{Variance: }s^2=\frac{1}{n-1} \sum_{i=1}^{n}(x_i-\bar{x})^2$$
+
+$$\text{Standard deviation: } s = \sqrt{s^2}$$
+
+The value of $\mu$ estimated from the data is the sample mean $\bar{x}$. When we fit the null model to a single variable, the model coefficient is the mean and the residual standard error is the standard deviation.
