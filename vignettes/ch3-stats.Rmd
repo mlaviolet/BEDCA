@@ -1,7 +1,8 @@
 ---
 title: "Chapter 3: Elementary Descriptive Statistics"
-# output: rmarkdown::html_vignette
-output: pdf_document
+output: 
+  rmarkdown::html_vignette
+#  rmarkdown::pdf_document
 vignette: >
   %\VignetteIndexEntry{Chapter 3: Elementary Descriptive Statistics}
   %\VignetteEngine{knitr::rmarkdown}
@@ -558,7 +559,7 @@ Figure 3.25 (p. 110) presents a segmented bar chart, which is used to compare ca
 
 ```{r}
 ggformula::gf_col(pct ~ job, data = table3_18,
-                  fill = ~ type,
+                  fill = ~ type, # different colors for each type
                   xlab = "Job number",
                   ylab = "Percent of production")
 ```
@@ -589,7 +590,7 @@ ggformula::gf_point(p ~ shot_size, data = pellets,
                      ylab = "Fraction of pellets nonconforming") 
 ```
 
-### The mathematics
+### Appendix
 
 We've seen how our model works in computer terms. In mathematical terms, the null model is represented as
 
@@ -597,11 +598,13 @@ $$y \approx \mu$$
 
 read as "$y$ is approximately equal to $\mu$, where $\mu$ (Greek "m") is a hypothetical constant. Hypothetical quantities are typically written as Greek letters.
 
-The mathematical formulas for the sample mean and standard deviation are:
+A sample of quantitative or continuous data consists of values $y_1, y_2, \ldots , y_n$. The *sample mean* is 
 
-$$\text{Mean: } \bar{x} = \frac{x_1 + x_2+ \ldots + x_n}{n} = \frac{1}{n} \sum_{i=1}^{n}x_i$$
+$$\text{Mean: } \bar{y} = \frac{1}{n} (y_1 + y_2+ \ldots + y_n) = \frac{1}{n} \sum_{i=1}^{n}y_i$$
 
-$$\text{Variance: }s^2=\frac{1}{n-1} \sum_{i=1}^{n}(x_i-\bar{x})^2$$
+The variance and standard deviation are
+
+$$\text{Variance: }s^2=\frac{1}{n-1} \sum_{i=1}^{n}(y_i-\bar{y})^2$$
 
 $$\text{Standard deviation: } s = \sqrt{s^2}$$
 
