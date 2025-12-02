@@ -1,6 +1,7 @@
 ---
 title: "Chapter 4, Part 1: Fitting Lines, Curves, and Surfaces"
-output: rmarkdown::html_vignette
+# output: rmarkdown::html_vignette
+output: pdf_document
 vignette: >
   %\VignetteIndexEntry{Chapter 4, Part 1: Fitting Lines, Curves, and Surfaces}
   %\VignetteEngine{knitr::rmarkdown}
@@ -61,22 +62,26 @@ We can get more information using the `msummary()` operator from the `mosaic` pa
 mosaic::msummary(lm_density)
 ```
 
-The model is fit applying the least squares principle; the coefficients are computed to minimize the residual sum of squares. The column `Estimate` gives the coefficients. We'll discuss the details of computation shortly.
+Recall that the residuals are the differences between the data values and the model values; that is, the residuals represent the portion of the data not captured by the model. 
+
+The model is fit applying the least squares principle: the coefficients are computed to minimize the sum of the squared residuals.squares. The column `Estimate` gives the coefficients. We'll discuss the details of computation shortly.
 
 The slope is interpreted as the change in the response variable for an increase in the predictor variable of one unit. Here, for each increase of 1,000 (g/cc)/psi the density increases by 0.0487 g/cc. The intercept, the point at which the line crosses the *y*-axis, only makes practical sense if a pressure of 0 psi is meaningful. In almost all cases we focus attention on the slope.
 
-As before, we can obtain fitted values and residuals with the `augment()` function from the `broom` package.
+As in Section 3.3, we can obtain fitted values and residuals with the `augment()` function from the `broom` package. The following produces the fitted values and residuals from the pressure-density data (Table 4.5, p. 136).
 
 ```{r}
 lm_density_aug <- augment(lm_density)
 lm_density_aug
 ```
 
+`augment()` produces a data frame with the variables used to fit the model (`pressure`, `density`), the fitted values (`.fitted`), the residuals (`.resid`), and other information we don't need right now.
+
 One purpose of fitting a model is to make predictions. If, for example, we want to predict the density of a cylinder pressed with 5,000 psi, we only need to substitute the desired pressure in the modeled linear equation.
 
 $$\texttt{density = 2.37 + 0.0487} \times \texttt{5 = 2.619 g/cc}$$
 
-The column `.fitted` in the augmented data gives predictions for *x* values in the original data. To make predictions for other *x* values, we construct a new data set and apply the model.
+To make predictions for other *x* values not in the original data, we construct a new data frame and apply the model.
 
 ```{r}
 pressure_new <- data.frame(pressure = c(5, 7.5))
@@ -98,7 +103,9 @@ ggformula::gf_point(.resid ~ .fitted, data = lm_density_aug) |>
            ylab = "Residual")
 ```
 
-The residuals should be random noise, so the plot should show random scatter about zero. The `gf_hline()` operator adds a horizontal reference line as a visual aid. Now we'll do a normal Q-Q plot of the residuals. Recall that a straight line plot indicates that the data follow a normal (bell) curve. This code produces Figure 4.7 (p. 136).
+If the model tells the full story about the data, then The residuals should be random noise. A plot of residuals against fitteds should show random scatter about zero. The `gf_hline()` operator adds a horizontal reference line as a visual aid.
+
+Now we'll do a normal Q-Q plot of the residuals. Recall that a straight line plot indicates that the data follow a normal (bell-shaped) curve. This code produces Figure 4.7 (p. 136).
 
 ```{r}
 ggformula::gf_qq(~ .resid, data = lm_density_aug,
@@ -107,7 +114,7 @@ ggformula::gf_qq(~ .resid, data = lm_density_aug,
   coord_flip()
 ```
 
-As the authors note, some idiosyncracies in the residual plots warrant further investigation.
+As the authors note, some idiosyncracies in the residual plots warrant further investigation. Normal Q-Q plots are discussed in more detail in Section 5.3.
 
 Let's look at the rest of the brief summary.
 
@@ -131,7 +138,7 @@ We can obtain the partition using the `anova()` function.
 anova(lm_density)
 ```
 
-The `Df` column sums to 14, although the sample size is 15. This is because the null model is considered the baseline model. The model degrees of freedom will always be the number of model terms less one.
+The `Df` column sums to 14, although the sample size is 15. This is because the null model is considered the baseline model and omitted from the report. The model degrees of freedom will always be the number of model terms less one.
 
 The "fitted" (model) and "residual" components of variation are shown in the `Sum Sq` column. These add to a "total sum of squares," or `Sum Sq(total)` which R does not typically show. We can obtain the total sum of squares by multiplying the variance of the responses by the total degrees of freedom; that is, as $(n-1)s^2$. First we obtain the variance.
 
@@ -189,26 +196,23 @@ As we saw in Section 3.3, fitting a model decomposes the data into a part explai
 
 $$\texttt{DATA = FITTED + RESIDUAL}$$
 
-We can easily obtain fitted values and residuals with the `augment()` function from the `broom` package. The following produces the fitted values and residuals from the pressure-density data (Table 4.5, p. 136).
+Let's look again at the augmented data frame from the pressure-density data.
 
 ```{r}
-lm_density_aug <- broom::augment(lm_density)
-lm_density_aug
+head(lm_density_aug) # show first 6 rows
 ```
 
+Plotting residuals is an impoortant tool for checking whether a model is appropriate for the data. This is done in several ways.
 
+-   *Plots of residuals against fitted values.* Residuals should exhibit no patterns; that is, they should be randomly scattered about the zero horizontal line.
 
-Residual plots
+-   *Normal plots of residuals.* Points should fall along a straight line.
 
--   Normal plots of residuals
+-   *Plots of residuals against all $x$ variables.* This applies to models having more than one predictor. All such plots should show random scatter.
 
--   Plots of residuals against all x variables
+-   *Plots of residuals against time order of observation.* These plots can reveal trends not seen in the original model.
 
--   Plots of residuals against fitted values
-
--   Plots of residuals against time order of observation
-
--   Plots of residuals against variables (like machine number or operator) not used in the fitted equation but potentially of importance (use `data` = original_data)
+-   *Plots of residuals against variables (like machine number or operator) not used in the fitted equation but potentially of importance.* By default, the augmented data frame contains only the variable used in the model fit. If that data frame contains additional variables, we can include them in the augmented data with by adding the argument `data = mydata` to `augment()`, where `mydata` is the complete data frame. These plots can reveal patterns that call for revising the model. 
 
 ## 4.2: Fitting Curves and Surfaces by Least Squares
 
