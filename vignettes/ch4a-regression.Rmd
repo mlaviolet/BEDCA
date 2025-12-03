@@ -206,11 +206,11 @@ Plotting residuals is an impoortant tool for checking whether a model is appropr
 
 -   *Plots of residuals against fitted values.* Residuals should exhibit no patterns; that is, they should be randomly scattered about the zero horizontal line.
 
--   *Normal plots of residuals.* Points should fall along a straight line.
+-   *Normal plots of residuals*. Points should fall along a straight line.
 
--   *Plots of residuals against all $x$ variables.* This applies to models having more than one predictor. All such plots should show random scatter.
+-   *Plots of residuals against all $x$ variables*. This applies to models having more than one predictor. All such plots should show random scatter.
 
--   *Plots of residuals against time order of observation.* These plots can reveal trends not seen in the original model.
+-   *Plots of residuals against time order of observation*. These plots can reveal trends not seen in the original model.
 
 -   *Plots of residuals against variables (like machine number or operator) not used in the fitted equation but potentially of importance.* By default, the augmented data frame contains only the variable used in the model fit. If that data frame contains additional variables, we can include them in the augmented data with by adding the argument `data = mydata` to `augment()`, where `mydata` is the complete data frame. These plots can reveal patterns that call for revising the model. 
 
@@ -218,38 +218,53 @@ Plotting residuals is an impoortant tool for checking whether a model is appropr
 
 ### 4.2.1 Curve Fitting by Least Squares
 
-Table 4.3, p. 133
-Figure 4.9, p. 143
+Fitting polynomials to data is an example of *multiple regression*, where the model contains more than one predictor. Example 2 (p. 132) introduces a study where a student examined the compressive strength of concrete-like fly ash cylinders. Data appear in Table 4.3 (p. 133) and in this package as `table4_03`. A scatterplot (Figure 4.9, p. 143) and analysis clearly show that a straight line is a poor fit. The function `gf_smooth()` below provides a general smooth.
 
 ```{r}
-ggformula::gf_point(strength ~ percent, data = table4_03) |> 
-  gf_smooth(se = FALSE)
-```
-
-Correlation coefficient is nearly zero
-
-```{r}
+# Correlation coefficient is nearly zero
 cor(strength ~ percent, data = table4_03)
 ```
 
-Fitting quadratic to data in Table 4.3, p. 133 Actually multiple regression
+```{r}
+# Figure 4.9
+ggformula::gf_point(strength ~ percent, data = table4_03) |> 
+  gf_smooth(se = FALSE,
+            xlab = "Percent ammonium phosphate",
+            ylab = "Compressive strength (psi)")
+```
+
+To fit a quadratic curve, we need to add a squared term to the straight line model. This is accomplished with `I()`; this operator tells R that its argument is meant as an arithmetic operation instead of part of a model formula. 
 
 ```{r}
 fly_ash_q <- lm(strength ~ 1 + percent + I(percent^2), data = table4_03)
 mosaic::msummary(fly_ash_q)
 ```
 
-Using orthogonal polynomials
+The regression report shows that *R*^2^ = 0.867. In multple regression, R-squared is the square of the coefficient between the observed and the fitted responses. The quadratic model accounts for 86.7 percent of the variation in compressive strength.
+
+A more effective way to fit a polynomial is to use *orthogonal polynomial contrasts.* Orthogonal contrasts make the predictors uncorrelated, which is desirable when fitting a regression model. We use the `poly()` operator and let R handle the details. The second argument tells R the degree of polynomial to fit.
 
 ```{r}
-# x values are equally spaced, so okay
 fly_ash_q2 <- lm(strength ~ 1 + poly(percent, 2), data = table4_03)
   mosaic::msummary(fly_ash_q2)
 ```
 
+Both methods of fitting a quadratic curve produce the same predicted values.
+
+The authors also discuss fitting a cubic equation to the data. In fact, the smoothed scatterplot suggests that a cubic fit would be better than a quadratic. We need only change the second argument in `poly()` to 3.
+
+```{r}
+fly_ash_c <- lm(strength ~ 1 + percent + poly(percent, 3), data = table4_03)
+mosaic::msummary(fly_ash_c)
+```
+
+The R-square increases to 0.952, but as the authors point out neither model adequately accounts for the three values where the ammonium phosphate level is 2%.
+
+As with any model, residual plots would be run to assess the adequacy of the model fit. Also, note that with 18 observations and four model terms, the degrees of freedom are 14 (18 - 4).
+
 ### 4.2.2 Surface Fitting by Least Squares
 
-We'll begin this topic with Example 6, where a student studied the effects of positions, relative to the wing, of a canard (a forward lifting surface) and tail on the lift/drag ratio for a three-surface configuration.
+We'll begin this topic with Example 6, where a student investigated the effects of positions, relative to the wing, of a canard (a forward lifting surface) and tail on the lift/drag ratio for a three-surface configuration.
 
 ```{r}
 lm_add <- lm(lift_drag ~ 1 + canard + tail, data = table4_10)
