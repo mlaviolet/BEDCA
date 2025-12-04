@@ -1,7 +1,7 @@
 ---
 title: "Chapter 4, Part 1: Fitting Lines, Curves, and Surfaces"
-# output: rmarkdown::html_vignette
-output: pdf_document
+output: rmarkdown::html_vignette
+# output: pdf_document
 vignette: >
   %\VignetteIndexEntry{Chapter 4, Part 1: Fitting Lines, Curves, and Surfaces}
   %\VignetteEngine{knitr::rmarkdown}
@@ -59,6 +59,7 @@ $$\texttt{density = 2.37500 + 0.04867pressure}$$
 We can get more information using the `msummary()` operator from the `mosaic` package. The base R operator `summary()` will produce a more extensive summary that we don't need yet.
 
 ```{r}
+options('msummary.show.call' = TRUE) # add model call to output
 mosaic::msummary(lm_density)
 ```
 
@@ -240,7 +241,7 @@ fly_ash_q <- lm(strength ~ 1 + percent + I(percent^2), data = table4_03)
 mosaic::msummary(fly_ash_q)
 ```
 
-The regression report shows that *R*^2^ = 0.867. In multple regression, R-squared is the square of the coefficient between the observed and the fitted responses. The quadratic model accounts for 86.7 percent of the variation in compressive strength.
+The regression report shows that $R^2 = 0.867$. In multple regression, R-squared is the square of the coefficient between the observed and the fitted responses. The quadratic model accounts for 86.7 percent of the variation in compressive strength.
 
 A more effective way to fit a polynomial is to use *orthogonal polynomial contrasts.* Orthogonal contrasts make the predictors uncorrelated, which is desirable when fitting a regression model. We use the `poly()` operator and let R handle the details. The second argument tells R the degree of polynomial to fit.
 
@@ -266,6 +267,18 @@ As with any model, residual plots would be run to assess the adequacy of the mod
 
 We'll begin this topic with Example 6, where a student investigated the effects of positions, relative to the wing, of a canard (a forward lifting surface) and tail on the lift/drag ratio for a three-surface configuration.
 
+Before we start fitting models, let's check the correlation between the two predictors.
+
+```{r}
+cor(canard ~ tail, data = table4_10)
+```
+
+The two predictors are uncorrelated, or orthogonal. Orthogonality is a desirable property because it allows us to analyze the impact of one factor without it being "confounded" or mixed up with the effects of another. We've already seen an example: in fitting orthogonal polynomials to data we can separate the effects of the linear, quadratic, and higher-order terms. 
+
+Correlated predictors usually occur in observational studies and require some care in analysis and interpretation. Designed experiments, the focus of these notes, usually contain orthogonal predictors.
+
+Now we'll fit a model to predict the lift/drag ratio using both `canard` and `tail` as predictors. 
+
 ```{r}
 lm_add <- lm(lift_drag ~ 1 + canard + tail, data = table4_10)
 mosaic::msummary(lm_add)
@@ -273,7 +286,10 @@ lm_add_aug <- augment(lm_add) |>
   mutate(tail = factor(tail))
 ```
 
-Graph for additive model
+We'll call this model the *additive model*. For this model $R^2 = 0.394$
+Next we'll construct an interaction plot using `tail` as the trace factor. Although `tail` is a quantitative variable, we need to make it a factor for the plot.
+
+Note: when converting a quantitative variable to a factor, R recodes the factor levels to 1, 2, ... and the original values are discarded. This presents no problem for this example because the values of `tail` are evenly spaced.
 
 ```{r}
 ggformula::gf_point(.fitted ~ canard, data = lm_add_aug,
@@ -283,11 +299,12 @@ ggformula::gf_point(.fitted ~ canard, data = lm_add_aug,
                      show.legend = TRUE,
                      xlab = "Canard position",
                      ylab = "Fitted lift/drag ratio")  +
+  # enhancements
   scale_x_continuous(breaks = c(-1.2, 0, 1.2)) +
   theme(aspect.ratio = 0.62)
 ```
 
-Full model with interaction term
+The plot shows three lines relating lift/drag to canard position, with one line for each tail position. The plot shows that tail position 1.2 produces a higher lift/drag ratio than tail position 0, which in turn produces a higher ratio than tail position -1.2. The parallel lines show that as the canard is raised, the change in ratio is the same for all three tail positions. Are the slopes possibly different? To investigate that, we need to add an interaction term to the model. In the R modeling language, the interaction term is specified as `canard:tail`.
 
 ```{r}
 lm_full <- lm(lift_drag ~ 1 + canard + tail + canard:tail, data = table4_10)
@@ -296,7 +313,7 @@ lm_full_aug <- augment(lm_full) |>
   mutate(tail = factor(tail))
 ```
 
-Fig 4.16, p. 157
+The $R^2$ has ingreased to $0.641$ but more importantly, raising the canard has different effects on the lift/drag ratio depending on the tail position. The inclusion of the interaction term allows the response curves to have different characteristics for different tail positions.
 
 ```{r}
 ggformula::gf_point(.fitted ~ canard, data = lm_full_aug,
@@ -310,7 +327,9 @@ ggformula::gf_point(.fitted ~ canard, data = lm_full_aug,
   theme(aspect.ratio = 0.62)
 ```
 
-```{r, eval=FALSE}
+As the authors note, residual plotting shows that the model could be further refined.
+
+```{r, eval=FALSE,echo=FALSE}
 # Figure 4.16, ggplot version
 ggplot(lm_full_aug) +
   aes(x = canard, y = .fitted, linetype = tail, group = tail, shape = tail) +
@@ -319,7 +338,7 @@ ggplot(lm_full_aug) +
   scale_x_continuous(breaks = c(-1.2, 0, 1.2))
 ```
 
-```{r, eval=FALSE}
+```{r, eval=FALSE,echo=FALSE}
 # model equation 4.22, p. 158
 lm_quad <- 
   lm(lift_drag ~ canard + tail + I(canard^2) + canard:tail, data = table4_10)
@@ -328,7 +347,10 @@ lm_quad2 <-
   lm(lift_drag ~ poly(canard, 2) + tail + canard:tail, data = table4_10)
 ```
 
+$$\texttt{RESUME HERE}$$
+
 Subset of Brownlee stack loss data
+Note correlation of variables--use cor() or some other function for correlation matrices
 
 ```{r}
 lm(stack ~ 1 + air + water + acid, data = table4_08)
