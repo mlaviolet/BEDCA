@@ -63,7 +63,7 @@ options('msummary.show.call' = TRUE) # add model call to output
 mosaic::msummary(lm_density)
 ```
 
-Recall that the residuals are the differences between the data values and the model values; that is, the residuals represent the portion of the data not captured by the model. 
+Recall that the residuals are the differences between the data values and the model values; that is, the residuals represent the portion of the data not captured by the model.
 
 The model is fit applying the least squares principle: the coefficients are computed to minimize the sum of the squared residuals.squares. The column `Estimate` gives the coefficients. We'll discuss the details of computation shortly.
 
@@ -209,11 +209,11 @@ Plotting residuals is an impoortant tool for checking whether a model is appropr
 
 -   *Normal plots of residuals*. Points should fall along a straight line.
 
--   *Plots of residuals against all $x$ variables*. This applies to models having more than one predictor. All such plots should show random scatter.
+-   *Plots of residuals against all* $x$ variables. This applies to models having more than one predictor. All such plots should show random scatter.
 
 -   *Plots of residuals against time order of observation*. These plots can reveal trends not seen in the original model.
 
--   *Plots of residuals against variables (like machine number or operator) not used in the fitted equation but potentially of importance.* By default, the augmented data frame contains only the variable used in the model fit. If that data frame contains additional variables, we can include them in the augmented data with by adding the argument `data = mydata` to `augment()`, where `mydata` is the complete data frame. These plots can reveal patterns that call for revising the model. 
+-   *Plots of residuals against variables (like machine number or operator) not used in the fitted equation but potentially of importance.* By default, the augmented data frame contains only the variable used in the model fit. If that data frame contains additional variables, we can include them in the augmented data with by adding the argument `data = mydata` to `augment()`, where `mydata` is the complete data frame. These plots can reveal patterns that call for revising the model.
 
 ## 4.2: Fitting Curves and Surfaces by Least Squares
 
@@ -234,7 +234,7 @@ ggformula::gf_point(strength ~ percent, data = table4_03) |>
             ylab = "Compressive strength (psi)")
 ```
 
-To fit a quadratic curve, we need to add a squared term to the straight line model. This is accomplished with `I()`; this operator tells R that its argument is meant as an arithmetic operation instead of part of a model formula. 
+To fit a quadratic curve, we need to add a squared term to the straight line model. This is accomplished with `I()`; this operator tells R that its argument is meant as an arithmetic operation instead of part of a model formula.
 
 ```{r}
 fly_ash_q <- lm(strength ~ 1 + percent + I(percent^2), data = table4_03)
@@ -250,7 +250,7 @@ fly_ash_q2 <- lm(strength ~ 1 + poly(percent, 2), data = table4_03)
   mosaic::msummary(fly_ash_q2)
 ```
 
-Both methods of fitting a quadratic curve produce the same predicted values.
+The two methods produce different coefficients but the same predicted values. (For those who know linear algebra: the reason is that both sets of model vectors span the same vector space.)
 
 The authors also discuss fitting a cubic equation to the data. In fact, the smoothed scatterplot suggests that a cubic fit would be better than a quadratic. We need only change the second argument in `poly()` to 3.
 
@@ -273,11 +273,11 @@ Before we start fitting models, let's check the correlation between the two pred
 cor(canard ~ tail, data = table4_10)
 ```
 
-The two predictors are uncorrelated, or orthogonal. Orthogonality is a desirable property because it allows us to analyze the impact of one factor without it being "confounded" or mixed up with the effects of another. We've already seen an example: in fitting orthogonal polynomials to data we can separate the effects of the linear, quadratic, and higher-order terms. 
+The two predictors are uncorrelated, or orthogonal. Orthogonality is a desirable property because it allows us to analyze the impact of one factor without it being "confounded" or mixed up with the effects of another. We've already seen an example: in fitting orthogonal polynomials to data we can separate the effects of the linear, quadratic, and higher-order terms.
 
 Correlated predictors usually occur in observational studies and require some care in analysis and interpretation. Designed experiments, the focus of these notes, usually contain orthogonal predictors.
 
-Now we'll fit a model to predict the lift/drag ratio using both `canard` and `tail` as predictors. 
+Now we'll fit a model to predict the lift/drag ratio using both `canard` and `tail` as predictors.
 
 ```{r}
 lm_add <- lm(lift_drag ~ 1 + canard + tail, data = table4_10)
@@ -286,8 +286,7 @@ lm_add_aug <- augment(lm_add) |>
   mutate(tail = factor(tail))
 ```
 
-We'll call this model the *additive model*. For this model $R^2 = 0.394$
-Next we'll construct an interaction plot using `tail` as the trace factor. Although `tail` is a quantitative variable, we need to make it a factor for the plot.
+We'll call this model the *additive model*. For this model $R^2 = 0.394$ Next we'll construct an interaction plot using `tail` as the trace factor. Although `tail` is a quantitative variable, we need to make it a factor for the plot.
 
 Note: when converting a quantitative variable to a factor, R recodes the factor levels to 1, 2, ... and the original values are discarded. This presents no problem for this example because the values of `tail` are evenly spaced.
 
@@ -300,7 +299,7 @@ ggformula::gf_point(.fitted ~ canard, data = lm_add_aug,
                      xlab = "Canard position",
                      ylab = "Fitted lift/drag ratio")  +
   # enhancements
-  scale_x_continuous(breaks = c(-1.2, 0, 1.2)) +
+  scale_x_continuous(breaks = c(-1.2, 0, 1.2)) + # add canard values as ticks
   theme(aspect.ratio = 0.62)
 ```
 
@@ -327,7 +326,7 @@ ggformula::gf_point(.fitted ~ canard, data = lm_full_aug,
   theme(aspect.ratio = 0.62)
 ```
 
-As the authors note, residual plotting shows that the model could be further refined.
+As the authors note, residual plotting indicates that the model could be further refined.
 
 ```{r, eval=FALSE,echo=FALSE}
 # Figure 4.16, ggplot version
@@ -347,24 +346,56 @@ lm_quad2 <-
   lm(lift_drag ~ poly(canard, 2) + tail + canard:tail, data = table4_10)
 ```
 
+
+
+Most of Section 4.2 discusses as set of data on the operation of a plant for the oxidation of ammonia to nitric acid. The version used by the authors appears in Table 4.8 (p. 150) and in this package as `table4_08`. Variable included are
+
+-   `air`: Flow of cooling air
+
+-   `acid`: Concentration of acid (per 1000, minus 500)
+
+-   `water`: Cooling water inlet temperature
+
+-   `stack`: Stack loss, or ten times the percentage of ingoing ammonia that escapes from the absorption column unabsorbed (i.e., an inverse measure of overall plant efficiency).
+
+The goal is to find a model describing how stack loss depends on air flow, acid concentration, and water inlet temperature. Since the investigator did not fully control the predictor variables, they are likely correlated. We can examine the correlations with the `cor()` operator.
+
+```{r}
+options(digits = 3)
+cor(table4_08)
+```
+
 $$\texttt{RESUME HERE}$$
 
-Subset of Brownlee stack loss data
 Note correlation of variables--use cor() or some other function for correlation matrices
 
 ```{r}
 lm(stack ~ 1 + air + water + acid, data = table4_08)
 ```
 
-Note shortcuts: intercept is not explicit; \* operator for interaction
+**Note**: For exposition, we've included the intercept term in the model formula when using `lm()`. For instance, we fitted a line to the pressure-density data with
 
-<https://cran.r-project.org/web/packages/sjPlot/vignettes/plot_interactions.html>
+$$\texttt{lm(density}\sim\texttt{1 + pressure)}$$
 
-For exposition, we've included the intercept term in the model formula when using `lm()`. We can also fit a regression model with the syntax
+We can also fit this model with the syntax
 
-$$\texttt{lm(y}\sim\texttt{x)}$$
+$$\texttt{lm(density}\sim\texttt{pressure)}$$
 
-The intercept term is included by default.
+The intercept term is included unless explicitly omitted. To do that, replace 1 in the model with -1:
+
+$$\texttt{lm(density}\sim\texttt{-1 + pressure)}$$
+
+This model would force the regression line through the origin. Generally, you'll have no reason to do that unless a zero intercept makes practical sense *and* you have data where $x = 0$.
+
+In fitting a model including two predictors and an interaction term, we used the syntax
+
+$$\texttt{lm(lift_drag}\sim\texttt{1 + canard + tail + canard:tail}$$
+
+We can use a shortened syntax
+
+$$\texttt{lm(lift_drag}\sim\texttt{canard * tail)}$$
+
+This code tells R to fit a model with an intercept, a term for each predictor, and an interaction term combining the two predictors.
 
 ### Appendix
 
@@ -382,12 +413,11 @@ The bivariate sample consists of $n$ ordered pairs $(x_1,y_1), (x_2,y_2), \ldots
 
 $$r = \frac{1}{n-1}\sum_{i=1}^{n}\left(\frac{x_i-\bar{x}}{s_x}\right)\left(\frac{y_i-\bar{y}}{s_y}\right)$$
 
-The values of $x$ and $y$ are *standardized* to the number of standard deviations greater than or less than the mean. 
+The values of $x$ and $y$ are *standardized* to the number of standard deviations greater than or less than the mean.
 
 The least squares principle chooses the slope $b_1$ and intercept $b_0$ to minimize the sum of the squared residuals
 
-$$\sum_{i=1}^{n}(y_i-\hat{y})^2$$
-For the simple linear regression model predicting $y$ from $x$, the coefficients are
+$$\sum_{i=1}^{n}(y_i-\hat{y})^2$$ For the simple linear regression model predicting $y$ from $x$, the coefficients are
 
 $$b_1 = r\frac{s_y}{s_x}$$
 
@@ -397,7 +427,7 @@ $$b_0 = \bar{y}-b_1 \bar{x}$$
 
 The least squares line can thus be expressed in terms of the summaries of the individual variables $x$ and $y$ and the correlation $r$ between them.
 
-The polynomial model is 
+The polynomial model is
 
 $$y \approx \beta_0 + \beta_1 x + \beta_2x^2 + \ldots + \beta_kx^k$$
 
@@ -406,3 +436,5 @@ and the general multiple regression model is
 $$y \approx \beta_0 + \beta_1 x + \beta_2x_2 + \ldots + \beta_kx_k$$
 
 For all the above models, the coefficients are computed by the least squares principle.
+
+<https://cran.r-project.org/web/packages/sjPlot/vignettes/plot_interactions.html> The intercept term is included by default.
