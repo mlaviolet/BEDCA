@@ -80,17 +80,17 @@ coef(lm_cool1)
 Means and effects, default coding
 
 ```{r}
-lsmeans(lm_cool0, ~ cooling)
-lsmeans(lm_cool0, ~ cooling) |> 
-  contrast()
+emmeans::emmeans(lm_cool0, ~ cooling)
+emmeans::emmeans(lm_cool0, ~ cooling) |> 
+  emmeans::contrast()
 ```
 
 Means and effects, effect coding
 
 ```{r}
-lsmeans(lm_cool1, ~ cooling)
-lsmeans(lm_cool1, ~ cooling) |> 
-   contrast()
+emmeans::emmeans(lm_cool1, ~ cooling)
+emmeans::emmeans(lm_cool1, ~ cooling) |> 
+   emmeans::contrast()
 ```
 
 ### One factor, more than two levels
@@ -118,21 +118,21 @@ With default coding
 
 ```{r}
 lm_Sb0 <- lm(strength ~ Sb, data = solder)
-summary(lm_Sb0)
-lsmeans(lm_Sb0, ~ Sb)
-lsmeans(lm_Sb0, ~ Sb) |> 
-  contrast()
+msummary(lm_Sb0)
+emmeans::emmeans(lm_Sb0, ~ Sb)
+emmeans::emmeans(lm_Sb0, ~ Sb) |> 
+  emmeans::contrast()
 ```
 
-With effects coding
+With effects coding; suffix indicates level
 
 ```{r}
 lm_Sb1 <- lm(strength ~ Sb, data = solder,
              contrasts = list(Sb = "contr.sum"))
-summary(lm_Sb1)
-lsmeans(lm_Sb1, ~ Sb)
-lsmeans(lm_Sb1, ~ Sb) |> 
-  contrast()
+msummary(lm_Sb1)
+emmeans::emmeans(lm_Sb1, ~ Sb)
+emmeans::emmeans(lm_Sb1, ~ Sb) |> 
+  emmeans::contrast()
 ```
 
 ### Two factors, additive model
@@ -141,7 +141,7 @@ lsmeans(lm_Sb1, ~ Sb) |>
 lm_add <- lm(strength ~ cooling + Sb, data = solder,
              contrasts = list(cooling = "contr.sum",
                               Sb = "contr.sum"))
-summary(lm_add)
+msummary(lm_add)
 ```
 
 Interaction plot, additive model
@@ -156,7 +156,7 @@ emmip(lm_add, cooling ~ Sb)
 lm_int <- lm(strength ~ cooling * Sb, data = solder,
              contrasts = list(cooling = "contr.sum",
                               Sb = "contr.sum"))
-summary(lm_int)
+msummary(lm_int)
 anova(lm_int)
 ```
 
@@ -164,9 +164,9 @@ anova(lm_int)
 
 ```{r}
 # table 5.4, p. 271
-lsmeans(lm_int, ~ cooling + Sb) 
+emmeans::emmeans(lm_int, ~ cooling + Sb) 
 
-lsmeans(lm_int, ~ Sb + cooling) |> 
+emmeans::emmeans(lm_int, ~ Sb + cooling) |> 
   contrast(interaction = TRUE)
 ```
 
@@ -230,9 +230,9 @@ Fit model with main effects only.
 wj_mod_main <- lm(strength ~ joint + wood, data = wood_joints,
                   contrasts = list(joint = contr.sum,
                                    wood = contr.sum))
-summary(wj_mod_main)
+msummary(wj_mod_main)
 
-lsmeans(wj_mod_main, spec = ~ joint + wood) 
+emmeans::emmeans(wj_mod_main, spec = ~ joint + wood) 
 ```
 
 Interaction plot, main effects only.
@@ -250,8 +250,8 @@ Fit the full model with interaction.
 wj_mod <- lm(strength ~ joint * wood, data = wood_joints,
              contrasts = list(joint = contr.sum,
                               wood = contr.sum))
-summary(wj_mod)
-lsmeans(wj_mod, spec = ~ joint + wood) 
+msummary(wj_mod)
+emmeans::emmeans(wj_mod, spec = ~ joint + wood) 
 ```
 
 Interaction plot, full model with interaction.
@@ -262,7 +262,3 @@ emmip(wj_mod, joint ~ wood, col = "black",
   scale_y_continuous(breaks = seq(600, 2400, 200)) +
   labs(x = "Wood", y = "Stress at failure (psi)")
 ```
-
-
-## 4.4 Transformations and Choice of Measurement Scale
-
