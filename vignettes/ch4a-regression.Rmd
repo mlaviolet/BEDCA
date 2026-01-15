@@ -27,7 +27,7 @@ theme_set(theme_bw())
 
 ## 4.1: Fitting a Line by Least Squares
 
-In Example 1 (p. 124) a group of students studied the effects of varying pressing pressures on the density of cylindrical specimens made by dry pressing a ceramic compound. Part of their data appears on Table 4.1 and data set `table4_01`. We've changed the units of pressure from psi to thousands of psi. First, make a scatterplot.
+In Example 1 (p. 124), a group of students studied the effects of varying pressing pressures on the density of cylindrical specimens made by dry pressing a ceramic compound. Part of their data appears on Table 4.1 and data set `table4_01`. We've changed the units of pressure from psi to thousands of psi. First, make a scatterplot.
 
 ```{r}
 ggformula::gf_point(density ~ pressure, data = table4_01,
@@ -36,7 +36,7 @@ ggformula::gf_point(density ~ pressure, data = table4_01,
   ggformula::gf_lm(se = FALSE) # show the "best-fit" line
 ```
 
-The `gf_lm()` operator adds the best fit line. Since that looks like a good fit, we'll proceed to fit the model using the `lm()` function ("lm" stands for "linear model"). The syntax is
+A straight line seems a reasonable fit. The `gf_lm()` operator adds the best fit line to the plot. We'll proceed to fit the model using the `lm()` function ("lm" stands for "linear model"). The syntax is
 
 $$\texttt{lm(y}\sim\texttt{1 + x)}$$
 
@@ -56,7 +56,7 @@ The `Call:` section repeats the model we fit. The `Coefficients` section gives t
 
 $$\texttt{density = 2.37500 + 0.04867pressure}$$
 
-We can get more information using the `msummary()` operator from the `mosaic` package. The base R operator `summary()` will produce a more extensive summary that we don't need yet.
+We can get more information using the `msummary()` operator from the `mosaic` package. The base R operator `summary()` produces a more extensive summary that we don't need yet.
 
 ```{r}
 options('msummary.show.call' = TRUE) # add model call to output
@@ -65,6 +65,8 @@ mosaic::msummary(lm_density)
 
 Recall that the residuals are the differences between the data values and the model values; that is, the residuals represent the portion of the data not captured by the model.
 
+$$\texttt{DATA = FITTED + RESIDUAL}$$
+
 The model is fit applying the least squares principle: the coefficients are computed to minimize the sum of the squared residuals.squares. The column `Estimate` gives the coefficients. We'll discuss the details of computation shortly.
 
 The slope is interpreted as the change in the response variable for an increase in the predictor variable of one unit. Here, for each increase of 1,000 (g/cc)/psi the density increases by 0.0487 g/cc. The intercept, the point at which the line crosses the *y*-axis, only makes practical sense if a pressure of 0 psi is meaningful. In almost all cases we focus attention on the slope.
@@ -72,7 +74,7 @@ The slope is interpreted as the change in the response variable for an increase 
 As in Section 3.3, we can obtain fitted values and residuals with the `augment()` function from the `broom` package. The following produces the fitted values and residuals from the pressure-density data (Table 4.5, p. 136).
 
 ```{r}
-lm_density_aug <- augment(lm_density)
+lm_density_aug <- broom::augment(lm_density)
 lm_density_aug
 ```
 
@@ -175,7 +177,9 @@ We'll look at the other parts of the regression report later. For now, in a simp
 
 -   `Multiple R-squared` gives the proportion of variation in the data that is accounted for by the model. R-squared is always between 0 and 1. All else being equal, a high R-squared indicates a good fit to the data.
 
-R-squared gets its name because it's the square of the *correlation coefficient* $r$ between $x$ and $y$. The correlation coefficient measures the linear association between two quantitative variables and is computed with the R function `cor()`. For the pressure-density data
+R-squared gets its name because it's the square of the *correlation coefficient* $r$ between the observed values $y$ and the predictor values $x$.
+
+The correlation coefficient measures the linear association between two quantitative variables and is computed with the R function `cor()`. For the pressure-density data
 
 ```{r}
 mosaic::cor(pressure ~ density, data = table4_01)
@@ -185,13 +189,15 @@ and we have $0.991^2=0.982$.
 
 The correlation coefficient $r$ has the following properties:
 
--   $-1 \le r\le 1$; $r$ equals $1 \: (-1)$ when all points fall on a line with positive (negative) slope
+-   $-1 \le r\le 1$; $r$ equals $1 \: (-1)$ when all points fall on a line with positive (negative) slope.
 
--   $r$ does not depend on which variable is the response and which is the predictor; that is, the correlation between $x$ and $y$ is the same as the correlation between $y$ and $x$
+-   $r$ does not depend on which variable is the response and which is the predictor; that is, the correlation between $x$ and $y$ is the same as the correlation between $y$ and $x$.
 
--   $r$ has no units
+-   $r$ has no units.
 
--   $r$ measures linear association specifically, not association in general
+-   $r$ measures linear association specifically, not association in general.
+
+For models with more than one predictor, R-squared is the correlation between $y$ and the fitted values $\hat{y}$. We'll see examples shortly.
 
 As we saw in Section 3.3, fitting a model decomposes the data into a part explained by a a model and the part left over:
 
@@ -203,11 +209,11 @@ Let's look again at the augmented data frame from the pressure-density data.
 head(lm_density_aug) # show first 6 rows
 ```
 
-Plotting residuals is an impoortant tool for checking whether a model is appropriate for the data. This is done in several ways.
+Plotting residuals is an important tool for checking whether a model is appropriate for the data. This is done in several ways.
 
 -   *Plots of residuals against fitted values.* Residuals should exhibit no patterns; that is, they should be randomly scattered about the zero horizontal line.
 
--   *Normal plots of residuals*. Points should fall along a straight line.
+-   *Normal plots of residuals*. Points should fall along a straight line, indicating that the points roughly follow the "normal" bell-shaped curve.
 
 -   *Plots of residuals against all* $x$ variables. This applies to models having more than one predictor. All such plots should show random scatter.
 
@@ -219,12 +225,14 @@ Plotting residuals is an impoortant tool for checking whether a model is appropr
 
 ### 4.2.1 Curve Fitting by Least Squares
 
-Fitting polynomials to data is an example of *multiple regression*, where the model contains more than one predictor. Example 2 (p. 132) introduces a study where a student examined the compressive strength of concrete-like fly ash cylinders. Data appear in Table 4.3 (p. 133) and in this package as `table4_03`. A scatterplot (Figure 4.9, p. 143) and analysis clearly show that a straight line is a poor fit. The function `gf_smooth()` below provides a general smooth.
+Fitting polynomials to data is an example of *multiple regression*, where the model contains more than one predictor. Example 2 (p. 132) introduces a study where a student examined the compressive strength of concrete-like fly ash cylinders. Data appear in Table 4.3 (p. 133) and in this package as `table4_03`. A scatterplot (Figure 4.9, p. 143) and analysis clearly show that a straight line is a poor fit. 
 
 ```{r}
 # Correlation coefficient is nearly zero
 cor(strength ~ percent, data = table4_03)
 ```
+
+The function `gf_smooth()` below provides a general smooth.
 
 ```{r}
 # Figure 4.9
@@ -243,11 +251,11 @@ mosaic::msummary(fly_ash_q)
 
 The regression report shows that $R^2 = 0.867$. In multple regression, R-squared is the square of the coefficient between the observed and the fitted responses. The quadratic model accounts for 86.7 percent of the variation in compressive strength.
 
-A more effective way to fit a polynomial is to use *orthogonal polynomial contrasts.* Orthogonal contrasts make the predictors uncorrelated, which is desirable when fitting a regression model. We use the `poly()` operator and let R handle the details. The second argument tells R the degree of polynomial to fit.
+A more effective way to fit a polynomial is to use *orthogonal polynomial contrasts.* Orthogonal contrasts make the predictors uncorrelated, which is desirable when fitting a regression model. We use the `poly()` operator and let R handle the details. The second argument of `poly()` tells R the degree of polynomial to fit.
 
 ```{r}
 fly_ash_q2 <- lm(strength ~ 1 + poly(percent, 2), data = table4_03)
-  mosaic::msummary(fly_ash_q2)
+mosaic::msummary(fly_ash_q2)
 ```
 
 The two methods produce different coefficients but the same predicted values. (For those who know linear algebra: the reason is that both sets of model vectors span the same vector space.)
@@ -261,7 +269,11 @@ mosaic::msummary(fly_ash_c)
 
 The R-square increases to 0.952, but as the authors point out neither model adequately accounts for the three values where the ammonium phosphate level is 2%.
 
-As with any model, residual plots would be run to assess the adequacy of the model fit. Also, note that with 18 observations and four model terms, the degrees of freedom are 14 (18 - 4).
+As with any model, residual plots would be run to assess the adequacy of the model fit. Also, note that with 18 observations and four model terms, the total degrees of freedom are 17 (apart from the intercept), with three degrees of freedom for the model and 14 for residuals.
+
+```{r}
+anova(fly_ash_c)
+```
 
 ### 4.2.2 Surface Fitting by Least Squares
 
@@ -346,9 +358,7 @@ lm_quad2 <-
   lm(lift_drag ~ poly(canard, 2) + tail + canard:tail, data = table4_10)
 ```
 
-
-
-Most of Section 4.2 discusses as set of data on the operation of a plant for the oxidation of ammonia to nitric acid. The version used by the authors appears in Table 4.8 (p. 150) and in this package as `table4_08`. Variable included are
+Most of Section 4.2 discusses a data set about the operation of a plant for the oxidation of ammonia to nitric acid. The version used by the authors appears in Table 4.8 (p. 150) and in this package as `table4_08`. Variable included are
 
 -   `air`: Flow of cooling air
 
@@ -407,9 +417,9 @@ that is, a straight line with hypothetical slope $\beta_1$ and hypothetical *y*-
 
 $$\hat{y} = b_0 + b_1 x $$
 
-The Greek letters are replaced by Latin letters and the response variable has a "hat" to indicate that $y$ is estimated based on the computed $b_0$ and $b_1$.
+The Greek letters are replaced by Latin letters and the response variable has a "hat" to indicate that $y$ is estimated based on the computed coefficients $b_0$ and $b_1$.
 
-The bivariate sample consists of $n$ ordered pairs $(x_1,y_1), (x_2,y_2), \ldots (x_n,y_n))$. The variables $x$ and $y$ have respective means $\bar{x}$ and $\bar{y}$, and standard deviations $s_x$ and $s_y$. The correlation coefficient $r$ is defined as
+The bivariate sample consists of $n$ ordered pairs $(x_1,y_1), (x_2,y_2), \ldots (x_n,y_n)$. The variables $x$ and $y$ have respective means $\bar{x}$ and $\bar{y}$, and standard deviations $s_x$ and $s_y$. The correlation coefficient $r$ is defined as
 
 $$r = \frac{1}{n-1}\sum_{i=1}^{n}\left(\frac{x_i-\bar{x}}{s_x}\right)\left(\frac{y_i-\bar{y}}{s_y}\right)$$
 
@@ -417,7 +427,9 @@ The values of $x$ and $y$ are *standardized* to the number of standard deviation
 
 The least squares principle chooses the slope $b_1$ and intercept $b_0$ to minimize the sum of the squared residuals
 
-$$\sum_{i=1}^{n}(y_i-\hat{y})^2$$ For the simple linear regression model predicting $y$ from $x$, the coefficients are
+$$\texttt{Sum Sq(Residuals)} = \sum_{i=1}^{n}(y_i-\hat{y})^2$$ 
+
+For the simple linear regression model predicting $y$ from $x$, the coefficients are
 
 $$b_1 = r\frac{s_y}{s_x}$$
 
