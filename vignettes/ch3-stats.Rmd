@@ -422,7 +422,7 @@ mosaic::mean(~ pct_waste, data = supplier1)
 mosaic::sd(~ pct_waste, data = supplier1)
 ```
 
-Other summary statistics are computed similarly. 
+Other summary statistics are computed similarly.
 
 Now we'll learn the specialized tools for fitting models. We'll begin with the null model and later apply these methods to more complex models.
 
@@ -462,7 +462,7 @@ anova(lm_null)
 
 The number beneath `Mean Sq` is the variance; here 1.95.
 
-Now we'll examine the fitted values and residuals, using the `augment()` operator from the `broom` package. This will create  containing fitted values, residuals and other information about the model data.
+Now we'll examine the fitted values and residuals, using the `augment()` operator from the `broom` package. This will create containing fitted values, residuals and other information about the model data.
 
 ```{r}
 broom::augment(lm_null)
@@ -590,6 +590,20 @@ ggformula::gf_point(p ~ shot_size, data = pellets,
                      ylab = "Fraction of pellets nonconforming") 
 ```
 
+### Summary
+
+A single quantitative variable can be summarized graphically by
+
+-   Dot plots, which show the individual values
+
+-   Histograms, which group the data into bins. Histograms show the shape, center, and spread of a distribution
+
+-   Run charts, which show values in time order of collection
+
+Scatterplots are used to show relationships between two quantitative variables
+
+Boxplots are used to compare distributions of quantitative variables at the different levels of a categorical variable.
+
 ### Appendix
 
 We've seen how our model works in computer terms. In mathematical terms, the null model is represented as
@@ -598,7 +612,7 @@ $$y \approx \mu$$
 
 read as "$y$ is approximately equal to $\mu$, where $\mu$ (Greek "m") is a hypothetical constant. Hypothetical quantities are typically written as Greek letters.
 
-A sample of quantitative or continuous data consists of values $y_1, y_2, \ldots , y_n$. The *sample mean* is 
+A sample of quantitative or continuous data consists of values $y_1, y_2, \ldots , y_n$. The *sample mean* is
 
 $$\text{Mean: } \bar{y} = \frac{1}{n} (y_1 + y_2+ \ldots + y_n) = \frac{1}{n} \sum_{i=1}^{n}y_i$$
 
