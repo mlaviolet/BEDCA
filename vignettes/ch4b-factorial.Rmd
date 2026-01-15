@@ -27,6 +27,8 @@ options(digits = 5)
 
 ## 4.3: Fitted Effects for Factorial Data
 
+### 4.3.1: Fitted Effects for 2-Factor Studies
+
 Introduce effects with example in Vardeman-Jobe SMQA, p. 253.
 
 ```{r}
@@ -147,7 +149,7 @@ msummary(lm_add)
 Interaction plot, additive model
 
 ```{r}
-emmip(lm_add, cooling ~ Sb)
+emmeans::emmip(lm_add, cooling ~ Sb)
 ```
 
 ### Two factors, full model with interaction
@@ -173,14 +175,14 @@ emmeans::emmeans(lm_int, ~ Sb + cooling) |>
 
 
 ```{r}
-emmip(lm_int, cooling ~ Sb)
+emmeans::emmip(lm_int, cooling ~ Sb)
 
 ```
 
 Interaction plot, full model
 
 ```{r}
-emmip(lm_int, cooling ~ Sb)
+emmeans::emmip(lm_int, cooling ~ Sb)
 ```
 
 ### Example from student study
@@ -238,7 +240,7 @@ emmeans::emmeans(wj_mod_main, spec = ~ joint + wood)
 Interaction plot, main effects only.
 
 ```{r}
-emmip(wj_mod_main, joint ~ wood, col = "black",
+emmeans::emmip(wj_mod_main, joint ~ wood, col = "black",
       linearg = list(), dotarg = list(size = 2)) +
   scale_y_continuous(breaks = seq(600, 2400, 200)) +
   labs(x = "Wood", y = "Stress at failure (psi)")
@@ -257,8 +259,64 @@ emmeans::emmeans(wj_mod, spec = ~ joint + wood)
 Interaction plot, full model with interaction.
 
 ```{r}
-emmip(wj_mod, joint ~ wood, col = "black",
+emmeans::emmip(wj_mod, joint ~ wood, col = "black",
       linearg = list(), dotarg = list(size = 2)) +
   scale_y_continuous(breaks = seq(600, 2400, 200)) +
   labs(x = "Wood", y = "Stress at failure (psi)")
 ```
+
+### 4.3.2: Simpler Descriptions for Some Two-Way Data Sets
+
+Golf ball flight example
+
+Make compression and evening factors
+
+```{r}
+golf <- table4_15 |> 
+  mutate(across(c(compression, evening), factor))
+```
+
+Means for golf ball flight data
+
+```{r}
+mean(~ distance, data = golf)
+
+mean(distance ~ compression, data = golf)
+
+mean(distance ~ evening, data = golf)
+
+mean(distance ~ compression + evening, data = golf)
+```
+
+Interaction plot, Fig. 4.25, p. 175
+
+```{r}
+lm_golf <- lm(distance ~ compression + evening, data = golf)
+emmeans::emmip(lm_golf, compression ~ evening, 
+               CIs =  TRUE,
+               col = "black",
+               linearg = list(), 
+               dotarg = list(size = 2))
+
+```
+
+### 4.3.3: Fitted Effects for Three-Way (and Higher) Factorials
+
+```{r}
+strength <- table4_20 |> 
+  mutate(temp = factor(temp, labels = c("300F", "330F")),
+         time = factor(time, labels = c("4hr", "12hr")),
+         span = factor(span, labels = c("4hr", "12hr"))
+         )
+
+glimpse(strength)
+
+lm(strength_mean ~ temp * time * span, data = strength,
+   contrasts = list(temp = "contr.sum",
+                    time = "contr.sum",
+                    span = "contr.sum")
+   ) |> 
+  summary()
+  
+```
+
