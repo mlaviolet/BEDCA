@@ -1,0 +1,19 @@
+---
+title: "Chapter 8: Inference for Full and Fractional Factorial Studies"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{ch8-inference_factorial}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(BEDCA)
+```

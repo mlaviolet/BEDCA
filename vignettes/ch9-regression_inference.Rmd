@@ -1,0 +1,19 @@
+---
+title: "Chapter 9: Regression Analysis-—Inference for Curve- and Surface-Fitting"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{ch9-regression_inference}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(BEDCA)
+```

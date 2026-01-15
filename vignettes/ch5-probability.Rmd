@@ -1,0 +1,19 @@
+---
+title: "Chapter 5: Probability, the Mathematics of Randomness"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{ch5-probability}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup, message=FALSE}
+library(BEDCA)
+```
