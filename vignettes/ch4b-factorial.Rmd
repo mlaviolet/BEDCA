@@ -302,6 +302,8 @@ emmeans::emmip(lm_golf, compression ~ evening,
 
 ### 4.3.3: Fitted Effects for Three-Way (and Higher) Factorials
 
+Kinzer data
+
 ```{r}
 strength <- table4_20 |> 
   mutate(temp = factor(temp, labels = c("300F", "330F")),
@@ -311,12 +313,21 @@ strength <- table4_20 |>
 
 glimpse(strength)
 
-lm(strength_mean ~ temp * time * span, data = strength,
-   contrasts = list(temp = "contr.sum",
-                    time = "contr.sum",
-                    span = "contr.sum")
-   ) |> 
-  summary()
+material <- lm(strength_mean ~ temp * time * span, data = strength,
+               contrasts = list(temp = "contr.sum",
+                                time = "contr.sum",
+                                span = "contr.sum")
+               ) 
+
+summary(material)
   
 ```
+
+Cube plot
+
+```{r}
+FrF2::cubePlot(material, "temp", "time", "span", 
+               main = "Strength of Material")
+```
+
 
