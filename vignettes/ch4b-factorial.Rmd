@@ -33,11 +33,11 @@ Introduce effects with example in Vardeman-Jobe SMQA, p. 253.
 
 ```{r}
 solder <- expand_grid(cooling = c("H2O quench", "Oil quench"),
-                      Sb = c(3, 5, 10)) |> 
+                      Sb = (c(3, 5, 10))) |> 
   mutate(k = 3) |> 
   uncount(k) |> 
   mutate(cooling = factor(cooling),
-         Sb = factor(Sb),
+         Sb = factor(Sb, labels = c("3%", "5%", "10%")),
          strength = c(18.6, 19.5, 19.0, 22.3, 19.5, 20.5,
                       15.2, 17.1, 16.6, 20.0, 20.9, 20.4,
                       20.9, 22.9, 20.6, 16.4, 19.0, 18.1))
