@@ -33,7 +33,7 @@ Introduce effects with example in Vardeman-Jobe SMQA, p. 253.
 
 ```{r}
 solder <- expand_grid(cooling = c("H2O quench", "Oil quench"),
-            Sb = c(3, 5, 10)) |> 
+                      Sb = c(3, 5, 10)) |> 
   mutate(k = 3) |> 
   uncount(k) |> 
   mutate(cooling = factor(cooling),
@@ -43,20 +43,21 @@ solder <- expand_grid(cooling = c("H2O quench", "Oil quench"),
                       20.9, 22.9, 20.6, 16.4, 19.0, 18.1))
 ```
 
-### One factor, two levels
-
-```{r}
-levels(solder$cooling)
-options("contrasts")
-```
-
-Means with two levels
-
 All responses
 
 ```{r}
 mosaic::mean_(~ strength, data = solder)
 ```
+
+### One factor, two levels
+
+```{r}
+solder |> 
+  count(cooling)
+# options("contrasts")
+```
+
+Means with two levels
 
 Responses by cooling method
 
@@ -98,16 +99,14 @@ emmeans::emmeans(lm_cool1, ~ cooling) |>
 ### One factor, more than two levels
 
 ```{r}
-levels(solder$Sb)
-solder |> 
-  summarize(.by = Sb,
-            strength_mean = mean(strength))
-```
+solder |>
+  count(Sb)
 
-All responses
+mean(strength ~ Sb, data = solder)
 
-```{r}
-mosaic::mean_(~ strength, data = solder)
+# solder |> 
+#   summarize(.by = Sb,
+#             strength_by_Sb = mean(strength))
 ```
 
 Responses by antimony content
@@ -171,8 +170,6 @@ emmeans::emmeans(lm_int, ~ cooling + Sb)
 emmeans::emmeans(lm_int, ~ Sb + cooling) |> 
   contrast(interaction = TRUE)
 ```
-
-
 
 ```{r}
 emmeans::emmip(lm_int, cooling ~ Sb)
@@ -326,7 +323,7 @@ summary(material)
 Cube plot, Figure 4.28, p. 181
 
 ```{r}
-FrF2::cubePlot(material, "time", "span","temp",  
+FrF2::cubePlot(material, "time", "span", "temp",  
                main = "Strength of Material", size = 0.22)
 
 library(ggplot2)
