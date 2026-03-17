@@ -83,17 +83,17 @@ coef(lm_cool1)
 Means and effects, default coding
 
 ```{r}
-emmeans::emmeans(lm_cool0, ~ cooling)
-emmeans::emmeans(lm_cool0, ~ cooling) |> 
-  emmeans::contrast()
+cooling_means0 <- emmeans::emmeans(lm_cool0, ~ cooling)
+cooling_means0
+emmeans::contrast(cooling_means0)
 ```
 
 Means and effects, effect coding
 
 ```{r}
-emmeans::emmeans(lm_cool1, ~ cooling)
-emmeans::emmeans(lm_cool1, ~ cooling) |> 
-   emmeans::contrast()
+cooling_means1 <- emmeans::emmeans(lm_cool1, ~ cooling)
+cooling_means1
+emmeans::contrast(cooling_means1)
 ```
 
 ### One factor, more than two levels
