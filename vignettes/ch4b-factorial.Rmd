@@ -52,8 +52,10 @@ mosaic::mean_(~ strength, data = solder)
 ### One factor, two levels
 
 ```{r}
-solder |> 
-  count(cooling)
+solder |>
+  summarize(.by = cooling,
+            n = n(),
+            strength_mean = mean(strength))
 # options("contrasts")
 ```
 
@@ -100,13 +102,10 @@ emmeans::contrast(cooling_means1)
 
 ```{r}
 solder |>
-  count(Sb)
-
-mean(strength ~ Sb, data = solder)
-
-# solder |> 
-#   summarize(.by = Sb,
-#             strength_by_Sb = mean(strength))
+  summarize(.by = Sb,
+            n = n(),
+            strength_mean = mean(strength))
+  # count(Sb)
 ```
 
 Responses by antimony content
@@ -115,14 +114,14 @@ Responses by antimony content
 mosaic::mean_(strength ~ Sb, data = solder)
 ```
 
-With default coding
+Means and effects, default coding
 
 ```{r}
 lm_Sb0 <- lm(strength ~ Sb, data = solder)
 msummary(lm_Sb0)
-emmeans::emmeans(lm_Sb0, ~ Sb)
-emmeans::emmeans(lm_Sb0, ~ Sb) |> 
-  emmeans::contrast()
+Sb_means0 <- emmeans::emmeans(lm_Sb0, ~ Sb)
+Sb_means0
+emmeans::contrast(Sb_means0)
 ```
 
 With effects coding; suffix indicates level
@@ -131,10 +130,18 @@ With effects coding; suffix indicates level
 lm_Sb1 <- lm(strength ~ Sb, data = solder,
              contrasts = list(Sb = "contr.sum"))
 msummary(lm_Sb1)
-emmeans::emmeans(lm_Sb1, ~ Sb)
-emmeans::emmeans(lm_Sb1, ~ Sb) |> 
-  emmeans::contrast()
+Sb_means1 <- emmeans::emmeans(lm_Sb1, ~ Sb)
+Sb_means1
+emmeans::contrast(Sb_means1)
 ```
+
+Pairwise comparisons
+
+```{r}
+pairs(Sb_means1) |> 
+  confint()
+```
+
 
 ### Two factors, additive model
 
@@ -143,6 +150,8 @@ lm_add <- lm(strength ~ cooling + Sb, data = solder,
              contrasts = list(cooling = "contr.sum",
                               Sb = "contr.sum"))
 msummary(lm_add)
+cat("\n") # skip line
+anova(lm_add)
 ```
 
 Interaction plot, additive model
@@ -158,6 +167,7 @@ lm_int <- lm(strength ~ cooling * Sb, data = solder,
              contrasts = list(cooling = "contr.sum",
                               Sb = "contr.sum"))
 msummary(lm_int)
+cat("\n") # skip line
 anova(lm_int)
 ```
 
@@ -166,14 +176,12 @@ anova(lm_int)
 ```{r}
 # table 5.4, p. 271
 emmeans::emmeans(lm_int, ~ cooling + Sb) 
-
 emmeans::emmeans(lm_int, ~ Sb + cooling) |> 
   contrast(interaction = TRUE)
 ```
 
 ```{r}
 emmeans::emmip(lm_int, cooling ~ Sb)
-
 ```
 
 Interaction plot, full model
