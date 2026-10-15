@@ -439,6 +439,22 @@ $$b_0 = \bar{y}-b_1 \bar{x}$$
 
 The least squares line can thus be expressed in terms of the summaries of the individual variables $x$ and $y$ and the correlation $r$ between them.
 
+The predicted response is
+
+$$\hat{y}=b_0+b_1x$$
+
+The slope coefficient is the change in the response $y$ for each one-unit increase in the predictor $x$. The intercept coefficient is usually not of direct interest. 
+
+A useful alternate interpretation of the simple regression model comes from the point-slope form of a line.
+
+$$y-y_1=m(x-x_1)$$
+
+Rewriting this in terms of the model gives
+
+$$\hat{y}=\bar{y}+b_1(x-\bar{x})$$
+
+The first term $\bar{y}$ gives the predicted response with no predictors (the null model); that is, a baseline response. The second term $b_1(x-\bar{x})$ represents an adjustment for the numeric predictor. We'll see similar models when we consider categorical predictors.
+
 The polynomial model is
 
 $$y \approx \beta_0 + \beta_1 x + \beta_2x^2 + \ldots + \beta_kx^k$$
