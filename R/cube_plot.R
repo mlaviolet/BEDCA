@@ -18,8 +18,8 @@ cube_coords <- data.frame(
 # Plotting
 ggplot(cube_coords, aes(x=x, y=y)) +
   # Draw lines connecting vertices (manual path ordering required)
-  geom_path(data=cube_coords[c(1,2,4,3,1,5,6,8,7,5,6,8,4,2,6,5,7,8,4,3,7),]) +
-  geom_point(size=5) +
-  geom_text(aes(label=Response), vjust=-1) +
+  geom_path(data = cube_coords[c(1,2,4,3,1,5,6,8,7,5,6,8,4,2,6,5,7,8,4,3,7),]) +
+  geom_point(size = 5) +
+  geom_text(aes(label = Response), vjust = -1) +
   theme_void() +
   labs(title="Factorial Cube Plot")
