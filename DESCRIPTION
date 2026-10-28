@@ -17,6 +17,7 @@ Imports:
     broom,
     dplyr,
     emmeans,
+    FrF2,
     ggformula,
     ggplot2,
     here,
