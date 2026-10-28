@@ -30,7 +30,7 @@ A data frame with three columns and (treatment levels x block levels x reps) row
 Title Randomized Complete Design with One Factor
 }
 \examples{
-design4 <- rcb_dsn(
+design4 <- dsgn_rcb(
 fct_names = c("Nitrogen", "Plot"),
 treatments = LETTERS[1:6],
 blocks = as.character(1:4),

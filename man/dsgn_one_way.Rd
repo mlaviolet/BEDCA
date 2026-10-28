@@ -22,6 +22,6 @@ A data frame with two columns and (levels x reps) rows
 Title Generate Completely Randomized Design with One Factor
 }
 \examples{
-design1 <- one_fct_dsn("Treatment", c("a", "b", "c"), 10)
+design1 <- dsgn_one_way("Treatment", c("a", "b", "c"), 10)
 
 }

@@ -6,6 +6,10 @@
 #' @param reps Number of replications
 #' @param seed Random number seed
 #' @returns A data frame with three columns and (treatment levels x block levels x reps) rows
+#'
+#' @importFrom dplyr mutate slice_sample row_number
+#' @importFrom tidyr uncount
+#' @importFrom utils globalVariables
 #' @export
 #'
 #' @examples
@@ -26,7 +30,7 @@ dsgn_rcb <- function(fct_names = c("Treatment", "Block"),
                      KEEP.OUT.ATTRS = FALSE)
   # 2. Replicate the combinations, group by block, and shuffle the treatments
   dfx <- dfx |>
-    dplyr::group_by(Block) |>
+    dplyr::group_by(.data$Block) |>
     dplyr::mutate(k = reps) |>
     tidyr::uncount(k) |>
     dplyr::slice_sample(prop = 1) |>
@@ -34,8 +38,10 @@ dsgn_rcb <- function(fct_names = c("Treatment", "Block"),
     dplyr::mutate(Run_Order = dplyr::row_number()) |>
     # Add 1, 2, 3... per block
     dplyr::ungroup()    # Remove grouping before returning
-  # dplyr::select(fct_names[2] = Block, fct_names[1] = Treatment, "Run")
   colnames(dfx)[1:2] <- fct_names
   return(dplyr::select(dfx, c(2, 3, 1)))
   }
+
+# Clear the R CMD check notes for non-standard evaluation variables
+utils::globalVariables(c(".data", "k", "Run_Order"))
 

@@ -7,7 +7,9 @@
 #' @param seed Random number seed
 #'
 #' @returns A data frame with three columns and (A levels x B levels x reps) rows
-#' @export
+#' @importFrom dplyr mutate slice_sample row_number
+#' @importFrom tidyr uncount
+#' @importFrom utils globalVariables
 #'
 #' @examples
 #' design2 <- dsgn_two_way(fct_names = c("concentration", "time"),
@@ -21,10 +23,11 @@ dsgn_two_way <- function(fct_names, A_levels, B_levels, reps, seed = 42) {
   colnames(dfx) <- fct_names
   dfx <- dfx |>
     dplyr::mutate(k = reps) |>
-    tidyr::uncount(k) |>
+    tidyr::uncount(.data$k) |>
     dplyr::slice_sample(prop = 1) |>        # shuffle rows in random order
     dplyr::mutate(Run_Order = dplyr::row_number()) # add run order
   return(dfx)
   }
 
-
+# Clear the R CMD check notes for non-standard evaluation variables
+utils::globalVariables(c(".data", "k", "Run_Order"))
