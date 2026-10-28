@@ -13,9 +13,9 @@
 #'
 #' @examples
 #' design2 <- dsgn_two_way(fct_names = c("concentration", "time"),
-#' A_levels = c("50%", "75%", "100%"),
-#' B_levels = c("30 sec", "60 sec", "120 sec"),
-#' reps = 2)
+#'                         A_levels = c("50%", "75%", "100%"),
+#'                         B_levels = c("30 sec", "60 sec", "120 sec"),
+#'                         reps = 2)
 #'
 dsgn_two_way <- function(fct_names, A_levels, B_levels, reps, seed = 42) {
   set.seed(seed)
