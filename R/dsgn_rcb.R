@@ -1,4 +1,4 @@
-#' Title Randomized Complete Design with One Factor
+#' Randomized Complete Design with One Factor
 #'
 #' @param fct_names A character vector of length two specifying the name of the treatment factor and the name of the blocks
 #' @param treatments A character vector of treatment levels

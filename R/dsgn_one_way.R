@@ -1,4 +1,4 @@
-#' Title Generate Completely Randomized Design with One Factor
+#' Generate Completely Randomized Design with One Factor
 #'
 #' @param factor_name A character vector of length one specifying the name of the factor
 #' @param levels A character vector specifying the levels of the factor

@@ -2,7 +2,7 @@
 % Please edit documentation in R/dsgn_one_way.R
 \name{dsgn_one_way}
 \alias{dsgn_one_way}
-\title{Title Generate Completely Randomized Design with One Factor}
+\title{Generate Completely Randomized Design with One Factor}
 \usage{
 dsgn_one_way(factor_name, levels, reps, seed = 42)
 }
@@ -19,7 +19,7 @@ dsgn_one_way(factor_name, levels, reps, seed = 42)
 A data frame with two columns and (levels x reps) rows
 }
 \description{
-Title Generate Completely Randomized Design with One Factor
+Generate Completely Randomized Design with One Factor
 }
 \examples{
 design1 <- dsgn_one_way("Treatment", c("a", "b", "c"), 10)

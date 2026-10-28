@@ -2,7 +2,7 @@
 % Please edit documentation in R/dsgn_two_way.R
 \name{dsgn_two_way}
 \alias{dsgn_two_way}
-\title{Title Generate Completely Randomized Design with Two Factors}
+\title{Generate Completely Randomized Design with Two Factors}
 \usage{
 dsgn_two_way(fct_names, A_levels, B_levels, reps, seed = 42)
 }
@@ -21,7 +21,7 @@ dsgn_two_way(fct_names, A_levels, B_levels, reps, seed = 42)
 A data frame with three columns and (A levels x B levels x reps) rows
 }
 \description{
-Title Generate Completely Randomized Design with Two Factors
+Generate Completely Randomized Design with Two Factors
 }
 \examples{
 design2 <- dsgn_two_way(fct_names = c("concentration", "time"),

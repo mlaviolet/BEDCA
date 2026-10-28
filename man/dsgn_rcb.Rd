@@ -2,7 +2,7 @@
 % Please edit documentation in R/dsgn_rcb.R
 \name{dsgn_rcb}
 \alias{dsgn_rcb}
-\title{Title Randomized Complete Design with One Factor}
+\title{Randomized Complete Design with One Factor}
 \usage{
 dsgn_rcb(
   fct_names = c("Treatment", "Block"),
@@ -27,7 +27,7 @@ dsgn_rcb(
 A data frame with three columns and (treatment levels x block levels x reps) rows
 }
 \description{
-Title Randomized Complete Design with One Factor
+Randomized Complete Design with One Factor
 }
 \examples{
 design4 <- dsgn_rcb(

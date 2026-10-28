@@ -1,4 +1,4 @@
-#' Title Generate Completely Randomized Design with Two Factors
+#' Generate Completely Randomized Design with Two Factors
 #'
 #' @param fct_names A character vector of length two specifying the names of the factors
 #' @param A_levels A character vector specifying the levels of factor A
