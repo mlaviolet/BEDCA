@@ -9,7 +9,7 @@
 #' @export
 #'
 #' @examples
-#' design1 <- one_fct_dsn("Treatment", c("a", "b", "c"), 10)
+#' design1 <- dsgn_one_way("Treatment", c("a", "b", "c"), 10)
 #'
 dsgn_one_way <- function(factor_name, levels, reps, seed = 42) {
   set.seed(seed)
